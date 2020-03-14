@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HbS-T3-aNb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recording View Controller-->
+        <scene sceneID="svy-GO-FfV">
+            <objects>
+                <viewController storyboardIdentifier="GARecordingViewController" id="HbS-T3-aNb" customClass="GARecordingViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jpb-TL-exe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-HU-qep">
+                                <rect key="frame" x="350" y="758" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="RjS-kd-rFC"/>
+                                    <constraint firstAttribute="height" constant="44" id="hQZ-qc-CKZ"/>
+                                </constraints>
+                                <state key="normal" image="recording_icon_ recording"/>
+                                <connections>
+                                    <segue destination="O7v-rq-dcB" kind="push" id="ZHe-5e-1t0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ktH-bJ-JAn" firstAttribute="trailing" secondItem="KVC-HU-qep" secondAttribute="trailing" constant="20" id="OTt-bX-0Yb"/>
+                            <constraint firstItem="ktH-bJ-JAn" firstAttribute="bottom" secondItem="KVC-HU-qep" secondAttribute="bottom" constant="60" id="TYC-Fb-j23"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ktH-bJ-JAn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0e-CK-RdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="91"/>
+        </scene>
+        <!--Recording Add View Controller-->
+        <scene sceneID="gQs-vU-zdC">
+            <objects>
+                <viewController storyboardIdentifier="GARecordingAddViewController" id="O7v-rq-dcB" customClass="GARecordingAddViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ssc-mc-2Fi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2X-Kv-ztY">
+                                <rect key="frame" x="20" y="728" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PUm-7w-srs"/>
+                                </constraints>
+                                <state key="normal" title="实时语音识别"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HdY-Vr-DYz" customClass="GANormalizeTextView" customModule="Need" customModuleProvider="target">
+                                <rect key="frame" x="20" y="60" width="374" height="240"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="gcQ-CM-BgF"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-cj-gNV">
+                                <rect key="frame" x="20" y="668" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mJv-kk-T4T"/>
+                                </constraints>
+                                <state key="normal" title="录音"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="W2X-Kv-ztY" firstAttribute="leading" secondItem="4xj-NB-Pn8" secondAttribute="leading" constant="20" id="0We-NS-2VW"/>
+                            <constraint firstItem="4xj-NB-Pn8" firstAttribute="bottom" secondItem="W2X-Kv-ztY" secondAttribute="bottom" constant="40" id="DJy-0q-yw6"/>
+                            <constraint firstItem="4xj-NB-Pn8" firstAttribute="trailing" secondItem="HdY-Vr-DYz" secondAttribute="trailing" constant="20" id="DYn-dy-qlc"/>
+                            <constraint firstItem="HdY-Vr-DYz" firstAttribute="top" secondItem="4xj-NB-Pn8" secondAttribute="top" constant="60" id="Dwy-XG-YFg"/>
+                            <constraint firstItem="ezO-cj-gNV" firstAttribute="leading" secondItem="4xj-NB-Pn8" secondAttribute="leading" constant="20" id="X7p-G5-nHL"/>
+                            <constraint firstItem="4xj-NB-Pn8" firstAttribute="trailing" secondItem="ezO-cj-gNV" secondAttribute="trailing" constant="20" id="f9T-ZT-qWw"/>
+                            <constraint firstItem="W2X-Kv-ztY" firstAttribute="top" secondItem="ezO-cj-gNV" secondAttribute="bottom" constant="20" id="iJ1-Wq-bUC"/>
+                            <constraint firstItem="4xj-NB-Pn8" firstAttribute="trailing" secondItem="W2X-Kv-ztY" secondAttribute="trailing" constant="20" id="jez-Q7-aXQ"/>
+                            <constraint firstItem="HdY-Vr-DYz" firstAttribute="leading" secondItem="4xj-NB-Pn8" secondAttribute="leading" constant="20" id="qBi-k9-PGY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4xj-NB-Pn8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tUL-kJ-yD7"/>
+                    <connections>
+                        <outlet property="recordingButton" destination="ezO-cj-gNV" id="uj6-Wj-Sx8"/>
+                        <outlet property="speechButton" destination="W2X-Kv-ztY" id="jRg-JD-5ru"/>
+                        <outlet property="textView" destination="HdY-Vr-DYz" id="cw0-M9-UuE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QI2-kp-BJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="97"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="recording_icon_ recording" width="128" height="128"/>
+    </resources>
+</document>

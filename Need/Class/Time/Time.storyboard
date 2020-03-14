@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AnR-EG-r8V">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Time View Controller-->
+        <scene sceneID="jBT-mH-N54">
+            <objects>
+                <viewController storyboardIdentifier="GATimeViewController" id="AnR-EG-r8V" customClass="GATimeViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jSs-E7-tbt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UKD-yh-sa1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gI-Fm-yRj">
+                                <rect key="frame" x="350" y="768" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="PWE-FP-cg3"/>
+                                    <constraint firstAttribute="height" constant="44" id="to2-cY-zgc"/>
+                                </constraints>
+                                <state key="normal" image="time_icon_time"/>
+                                <connections>
+                                    <segue destination="0La-Rg-mwt" kind="presentation" id="Azb-SN-oh9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UKD-yh-sa1" firstAttribute="leading" secondItem="WRi-Wh-PYr" secondAttribute="leading" id="5Q0-d5-igK"/>
+                            <constraint firstItem="WRi-Wh-PYr" firstAttribute="trailing" secondItem="5gI-Fm-yRj" secondAttribute="trailing" constant="20" id="Cho-oP-o4T"/>
+                            <constraint firstItem="WRi-Wh-PYr" firstAttribute="bottom" secondItem="5gI-Fm-yRj" secondAttribute="bottom" constant="50" id="QEm-KY-Gim"/>
+                            <constraint firstItem="WRi-Wh-PYr" firstAttribute="trailing" secondItem="UKD-yh-sa1" secondAttribute="trailing" id="bA2-ZM-zvU"/>
+                            <constraint firstItem="WRi-Wh-PYr" firstAttribute="bottom" secondItem="UKD-yh-sa1" secondAttribute="bottom" id="eZz-CB-DUT"/>
+                            <constraint firstItem="UKD-yh-sa1" firstAttribute="top" secondItem="WRi-Wh-PYr" secondAttribute="top" id="g9O-Gs-O1e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WRi-Wh-PYr"/>
+                    </view>
+                    <connections>
+                        <outlet property="addTimeButton" destination="5gI-Fm-yRj" id="6vk-99-k1y"/>
+                        <outlet property="b_saveTopSpace" destination="g9O-Gs-O1e" id="IFq-sQ-Xlt"/>
+                        <outlet property="tableView" destination="UKD-yh-sa1" id="s1r-hY-dTo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9A-nI-rvk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="78"/>
+        </scene>
+        <!--Time Add View Controller-->
+        <scene sceneID="pBc-Yb-vDQ">
+            <objects>
+                <viewController storyboardIdentifier="GATimeAddViewController" id="0La-Rg-mwt" customClass="GATimeAddViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="81n-dZ-2CI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TJr-kO-hen"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44F-hV-Hks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="574" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="time_icon_time" width="128" height="128"/>
+    </resources>
+</document>
