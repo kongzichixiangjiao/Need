@@ -8,11 +8,52 @@
 
 import UIKit
 import AVFoundation
+enum audioTyp: String {
+    case kAudioFormatLinearPCM               = "lpcm",
+    kAudioFormatAC3                     = "ac-3",
+    kAudioFormat60958AC3                = "cac3",
+    kAudioFormatAppleIMA4               = "ima4",
+    kAudioFormatMPEG4AAC                = "aac ",
+    kAudioFormatMPEG4CELP               = "celp",
+    kAudioFormatMPEG4HVXC               = "hvxc",
+    kAudioFormatMPEG4TwinVQ             = "twvq",
+    kAudioFormatMACE3                   = "MAC3",
+    kAudioFormatMACE6                   = "MAC6",
+    kAudioFormatULaw                    = "ulaw",
+    kAudioFormatALaw                    = "alaw",
+    kAudioFormatQDesign                 = "QDMC",
+    kAudioFormatQDesign2                = "QDM2",
+    kAudioFormatQUALCOMM                = "Qclp",
+    kAudioFormatMPEGLayer1              = ".mp1",
+    kAudioFormatMPEGLayer2              = ".mp2",
+    kAudioFormatMPEGLayer3              = ".mp3",
+    kAudioFormatTimeCode                = "time",
+    kAudioFormatMIDIStream              = "midi",
+    kAudioFormatParameterValueStream    = "apvs",
+    kAudioFormatAppleLossless           = "alac",
+    kAudioFormatMPEG4AAC_HE             = "aach",
+    kAudioFormatMPEG4AAC_LD             = "aacl",
+    kAudioFormatMPEG4AAC_ELD            = "aace",
+    kAudioFormatMPEG4AAC_ELD_SBR        = "aacf",
+    kAudioFormatMPEG4AAC_ELD_V2         = "aacg",
+    kAudioFormatMPEG4AAC_HE_V2          = "aacp",
+    kAudioFormatMPEG4AAC_Spatial        = "aacs",
+    kAudioFormatAMR                     = "samr",
+    kAudioFormatAMR_WB                  = "sawb",
+    kAudioFormatAudible                 = "AUDB",
+    kAudioFormatiLBC                    = "ilbc",
+    kAudioFormatDVIIntelIMA             = "0x6D730011",
+    kAudioFormatMicrosoftGSM            = "0x6D730031",
+    kAudioFormatAES3                    = "aes3",
+    kAudioFormatEnhancedAC3             = "ec-3"
+}
+
+let kAudioType: String = "mp3"
 
 extension GAFilePathManager {
-    public func saveAudioPath(name: String, typeString: String = "wav") -> String {
+    public func saveAudioPath(name: String) -> String {
         let audioFile = filePath(name: Recording.kAudioFileName)
-        let file = audioFile +  "/" + name + "." + typeString
+        let file = audioFile +  "/" + name + "." + kAudioType
         return file
     }
 }
@@ -27,35 +68,20 @@ class Recording: NSObject {
     var isRecording: Bool {
         return audioRecord?.isRecording ?? false
     }
-    lazy var player: AVAudioPlayer? = {
-        do {
-            let m = GAFilePathManager()
-            let file = m.catchFilePath() + "demo.wav"
-            guard let url = URL(string: file) else {
-                return nil
-            }
-            let player = try AVAudioPlayer.init(contentsOf: url)
-            player.prepareToPlay()
-            return player
-        }catch{
-            print(error)
-            return nil
-        }
-    }()
     
     func directoryURL() -> URL? {
         let fileManager = FileManager.default
         let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = urls[0] as URL
-        let soundURL = documentDirectory.appendingPathComponent("sound.caf")
+        let soundURL = documentDirectory.appendingPathComponent("sound" + kAudioType)
         return soundURL
     }
     
     lazy var audioRecord: AVAudioRecorder? = {
         let m = GAFilePathManager()
 
-        let file = m.catchFilePath() + "memo.caf"
-        let url = URL(fileURLWithPath: file)
+        let file = m.catchFilePath() + "memo" + kAudioType
+        let  url = URL(fileURLWithPath: file)
         
         let configDic: [String: AnyObject] = [
             // 编码格式
@@ -73,10 +99,11 @@ class Recording: NSObject {
             let recorder = try AVAudioRecorder(url: url, settings: configDic)
             recorder.delegate = self
             recorder.isMeteringEnabled = true
+            recorder.peakPower(forChannel: 0) // 最大音量
             // 准备录音(系统会给我们分配一些资源)
             recorder.prepareToRecord()
-            print(recorder.record())
-            print(recorder.stop())
+            recorder.record()
+            recorder.pause()
             return recorder
         } catch {
             print(error)
@@ -101,23 +128,27 @@ class Recording: NSObject {
         audioRecord?.stop()
     }
     
-    func play() {
-        self.player?.play()
+    func updateMeters() {
+        audioRecord?.updateMeters()
     }
     
-    func save(fileName: String) -> Bool {
+    func averagePower(forChannel: Int) -> Float {
+        return audioRecord?.averagePower(forChannel: 0) ?? 0.0
+    }
+    
+    func save(fileName: String) -> (String, String) {
         let m = GAFilePathManager()
         let file = m.saveAudioPath(name: fileName)
         let to = URL(fileURLWithPath: file)
 
         guard let at = audioRecord?.url else {
-            return false
+            return ("", "")
         }
         if m.copy(at: at, to: to) {
             audioRecord?.prepareToRecord()
-            return true
+            return (file, fileName)
         }
-        return false
+        return ("", "")
     }
     
     func formattedCurrentTime() -> String {
@@ -129,7 +160,7 @@ class Recording: NSObject {
         
         return timeString
     }
-    
+
 }
 
 extension Recording: AVAudioRecorderDelegate {
@@ -146,14 +177,12 @@ extension Recording: AVAudioRecorderDelegate {
         print(error ?? "")
     }
 
-    
     /* AVAudioRecorder INTERRUPTION NOTIFICATIONS ARE DEPRECATED - Use AVAudioSession instead. */
     
     /* audioRecorderBeginInterruption: is called when the audio session has been interrupted while the recorder was recording. The recorded file will be closed. */
     func audioRecorderBeginInterruption(_ recorder: AVAudioRecorder) {
         
     }
-
     
     /* audioRecorderEndInterruption:withOptions: is called when the audio session interruption has ended and this recorder had been interrupted while recording. */
     /* Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume. */

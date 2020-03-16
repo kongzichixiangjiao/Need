@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		155F0965E657E548E5DECF8E /* Pods_Need.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */; };
+		DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */; };
 		DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745112241C6BAE0038562C /* AppDelegate.swift */; };
 		DC74511A241C6BAE0038562C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC745118241C6BAE0038562C /* Main.storyboard */; };
 		DC74511D241C6BAE0038562C /* Need.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC74511B241C6BAE0038562C /* Need.xcdatamodeld */; };
@@ -139,6 +140,19 @@
 		DC745280241CCA2C0038562C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC74527F241CCA2C0038562C /* CloudKit.framework */; };
 		DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745281241CD19A0038562C /* GAFilePathManager.swift */; };
 		DC745284241CD8770038562C /* GADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745283241CD8770038562C /* GADate.swift */; };
+		DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */; };
+		DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */; };
+		DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */; };
+		DCDD7350241DC191006857BD /* GARecordingModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */; };
+		DCDD7353241DE0D3006857BD /* GARecordingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7352241DE0D3006857BD /* GARecordingBaseViewController.swift */; };
+		DCDD7355241DE3B3006857BD /* GAAudioDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7354241DE3B3006857BD /* GAAudioDetailsViewController.swift */; };
+		DCDD7357241DE5B2006857BD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7356241DE5B2006857BD /* Player.swift */; };
+		DCDD735F241E6194006857BD /* HUDMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735A241E6194006857BD /* HUDMarco.swift */; };
+		DCDD7360241E6194006857BD /* MCRecordHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735C241E6194006857BD /* MCRecordHUD.swift */; };
+		DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735D241E6194006857BD /* MCProgressView.swift */; };
+		DCDD7362241E6194006857BD /* MCVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735E241E6194006857BD /* MCVolumeView.swift */; };
+		DCE576A5241DB3B600266FF2 /* GARecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */; };
+		DCE576A7241DB69100266FF2 /* GALocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE576A6241DB69100266FF2 /* GALocalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +175,7 @@
 /* Begin PBXFileReference section */
 		777FD31DF96635ED57E35C45 /* Pods-Need.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.debug.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.debug.xcconfig"; sourceTree = "<group>"; };
 		CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Need.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghsy.mp3; sourceTree = "<group>"; };
 		DC74510F241C6BAE0038562C /* Need.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Need.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC745112241C6BAE0038562C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC745119241C6BAE0038562C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -300,6 +315,20 @@
 		DC74527F241CCA2C0038562C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DC745281241CD19A0038562C /* GAFilePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFilePathManager.swift; sourceTree = "<group>"; };
 		DC745283241CD8770038562C /* GADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADate.swift; sourceTree = "<group>"; };
+		DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+MagicalRecord.swift"; sourceTree = "<group>"; };
+		DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GACoreData.swift; sourceTree = "<group>"; };
+		DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DCDD7351241DD443006857BD /* Need1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.0.xcdatamodel; sourceTree = "<group>"; };
+		DCDD7352241DE0D3006857BD /* GARecordingBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingBaseViewController.swift; sourceTree = "<group>"; };
+		DCDD7354241DE3B3006857BD /* GAAudioDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAAudioDetailsViewController.swift; sourceTree = "<group>"; };
+		DCDD7356241DE5B2006857BD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DCDD735A241E6194006857BD /* HUDMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDMarco.swift; sourceTree = "<group>"; };
+		DCDD735C241E6194006857BD /* MCRecordHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCRecordHUD.swift; sourceTree = "<group>"; };
+		DCDD735D241E6194006857BD /* MCProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCProgressView.swift; sourceTree = "<group>"; };
+		DCDD735E241E6194006857BD /* MCVolumeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCVolumeView.swift; sourceTree = "<group>"; };
+		DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingViewModel.swift; sourceTree = "<group>"; };
+		DCE576A6241DB69100266FF2 /* GALocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALocalData.swift; sourceTree = "<group>"; };
 		DF9A71F013A30B6E7F726ADF /* Pods-Need.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.release.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -348,6 +377,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC1DF2EE241F1AF500C09048 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		DC745106241C6BAE0038562C = {
 			isa = PBXGroup;
 			children = (
@@ -373,14 +410,16 @@
 		DC745111241C6BAE0038562C /* Need */ = {
 			isa = PBXGroup;
 			children = (
-				DC74527E241CCA170038562C /* Need.entitlements */,
-				DC74525C241C81380038562C /* Other */,
-				DC74525B241C7CC20038562C /* CoreData */,
-				DC74525A241C7C7E0038562C /* System */,
+				DC1DF2EE241F1AF500C09048 /* Source */,
 				DC745259241C7C540038562C /* AppDelegate */,
 				DC745229241C75F70038562C /* Class */,
+				DC74525B241C7CC20038562C /* Data */,
 				DC745145241C73610038562C /* GA */,
 				DC745236241C77740038562C /* GARx */,
+				DC74527E241CCA170038562C /* Need.entitlements */,
+				DC74525C241C81380038562C /* Other */,
+				DCDD7358241E616F006857BD /* Public */,
+				DC74525A241C7C7E0038562C /* System */,
 				DC74527B241CBECF0038562C /* Tools */,
 			);
 			path = Need;
@@ -736,7 +775,10 @@
 			children = (
 				DC74522F241C76480038562C /* Recording.storyboard */,
 				DC74526D241C964A0038562C /* GARecordingViewController.swift */,
+				DCDD7352241DE0D3006857BD /* GARecordingBaseViewController.swift */,
 				DC74526F241C96BD0038562C /* GARecordingAddViewController.swift */,
+				DCDD7354241DE3B3006857BD /* GAAudioDetailsViewController.swift */,
+				DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */,
 			);
 			path = Recording;
 			sourceTree = "<group>";
@@ -819,6 +861,7 @@
 		DC745259241C7C540038562C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */,
 				DC745112241C6BAE0038562C /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
@@ -836,12 +879,16 @@
 			path = System;
 			sourceTree = "<group>";
 		};
-		DC74525B241C7CC20038562C /* CoreData */ = {
+		DC74525B241C7CC20038562C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */,
+				DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */,
 				DC74511B241C6BAE0038562C /* Need.xcdatamodeld */,
+				DCE576A6241DB69100266FF2 /* GALocalData.swift */,
+				DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */,
 			);
-			path = CoreData;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		DC74525C241C81380038562C /* Other */ = {
@@ -857,9 +904,29 @@
 				DC745283241CD8770038562C /* GADate.swift */,
 				DC745271241C976C0038562C /* Speech.swift */,
 				DC74527C241CBEEB0038562C /* Recording.swift */,
+				DCDD7356241DE5B2006857BD /* Player.swift */,
 				DC745281241CD19A0038562C /* GAFilePathManager.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		DCDD7358241E616F006857BD /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DCDD7363241E61EF006857BD /* Sonic（音波） */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		DCDD7363241E61EF006857BD /* Sonic（音波） */ = {
+			isa = PBXGroup;
+			children = (
+				DCDD735A241E6194006857BD /* HUDMarco.swift */,
+				DCDD735C241E6194006857BD /* MCRecordHUD.swift */,
+				DCDD735D241E6194006857BD /* MCProgressView.swift */,
+				DCDD735E241E6194006857BD /* MCVolumeView.swift */,
+			);
+			path = "Sonic（音波）";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -976,6 +1043,7 @@
 				DC745122241C6BAF0038562C /* LaunchScreen.storyboard in Resources */,
 				DC745235241C766B0038562C /* Mine.storyboard in Resources */,
 				DC74511F241C6BAF0038562C /* Assets.xcassets in Resources */,
+				DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */,
 				DC74520D241C73610038562C /* GANormalizeTabsMainCell.xib in Resources */,
 				DC7451FF241C73610038562C /* GANormalizeDatePickerView.xib in Resources */,
 				DC745200241C73610038562C /* GANormalizePickerView.xib in Resources */,
@@ -1069,8 +1137,11 @@
 				DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */,
 				DC74521B241C73610038562C /* GANavViewController.swift in Sources */,
 				DC7451DD241C73610038562C /* Date+Extension.swift in Sources */,
+				DCDD7362241E6194006857BD /* MCVolumeView.swift in Sources */,
 				DC7451F1241C73610038562C /* UIViewController+Rx.swift in Sources */,
+				DCDD7350241DC191006857BD /* GARecordingModel+CoreDataProperties.swift in Sources */,
 				DC745272241C976C0038562C /* Speech.swift in Sources */,
+				DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */,
 				DC7451CB241C73610038562C /* UIImage+Extension.swift in Sources */,
 				DC7451EA241C73610038562C /* Notification+Extension.swift in Sources */,
 				DC745228241C75010038562C /* GABaseXibTabBarView.swift in Sources */,
@@ -1087,6 +1158,7 @@
 				DC7451D2241C73610038562C /* UITableViewCell+Extension.swift in Sources */,
 				DC7451F4241C73610038562C /* GANormalizeTextEditProtocol.swift in Sources */,
 				DC74523F241C77850038562C /* GAViewModel.swift in Sources */,
+				DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */,
 				DC745219241C73610038562C /* GAViewController.swift in Sources */,
 				DC745240241C77850038562C /* GAViewHeightProtocol.swift in Sources */,
 				DC745213241C73610038562C /* GANormalizeTableView.swift in Sources */,
@@ -1095,23 +1167,29 @@
 				DC74526E241C964A0038562C /* GARecordingViewController.swift in Sources */,
 				DC7451CC241C73610038562C /* UINavigationController+Extension.swift in Sources */,
 				DC745204241C73610038562C /* GANormalizeCollectionView.swift in Sources */,
+				DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */,
 				DC7451D9241C73610038562C /* UIApplication+Extension.swift in Sources */,
 				DC7451F3241C73610038562C /* GANormalizeNavigationView.swift in Sources */,
 				DC745241241C77850038562C /* GANibloadable.swift in Sources */,
 				DC7451C9241C73610038562C /* UIButton+Extension.swift in Sources */,
 				DC7451C8241C73610038562C /* UIColor+Extension.swift in Sources */,
+				DCDD7355241DE3B3006857BD /* GAAudioDetailsViewController.swift in Sources */,
 				DC7451E2241C73610038562C /* NotificationCenter+Extension.swift in Sources */,
 				DC7451E8241C73610038562C /* CGPoint+Extension.swift in Sources */,
+				DCE576A7241DB69100266FF2 /* GALocalData.swift in Sources */,
 				DC7451D3241C73610038562C /* View+Layout.swift in Sources */,
 				DC7451FE241C73610038562C /* GANormalizePickerViewConfig.swift in Sources */,
+				DCDD735F241E6194006857BD /* HUDMarco.swift in Sources */,
 				DC745207241C73610038562C /* TabsTestViewController.swift in Sources */,
 				DC745221241C74A00038562C /* GATabBarViewController.swift in Sources */,
 				DC74524B241C778A0038562C /* GANetWork.swift in Sources */,
+				DCDD7360241E6194006857BD /* MCRecordHUD.swift in Sources */,
 				DC745255241C7BA10038562C /* GARxSwiftBaseViewController.swift in Sources */,
 				DC745284241CD8770038562C /* GADate.swift in Sources */,
 				DC745211241C73610038562C /* GANormalizeTabsMainView.swift in Sources */,
 				DC74524D241C778A0038562C /* GAPlugin.swift in Sources */,
 				DC7451EF241C73610038562C /* CGFloat+Extension.swift in Sources */,
+				DCDD7357241DE5B2006857BD /* Player.swift in Sources */,
 				DC745268241C8C820038562C /* GATimeViewModel.swift in Sources */,
 				DC7451E7241C73610038562C /* NSMutableAttributedString+Extension.swift in Sources */,
 				DC745260241C87A50038562C /* GATimeViewController.swift in Sources */,
@@ -1123,12 +1201,14 @@
 				DC7451D8241C73610038562C /* UITableView+Extension.swift in Sources */,
 				DC7451D4241C73610038562C /* UICollectionView+Extension.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
+				DCE576A5241DB3B600266FF2 /* GARecordingViewModel.swift in Sources */,
 				DC7451DF241C73610038562C /* DispatchQueue+Extension.swift in Sources */,
 				DC74521E241C73610038562C /* GACustomCellView.swift in Sources */,
 				DC7451DC241C73610038562C /* Int+Extension.swift in Sources */,
 				DC74524F241C778A0038562C /* GAAPI.swift in Sources */,
 				DC7451FC241C73610038562C /* GANormalizePickerView.swift in Sources */,
 				DC745208241C73610038562C /* GANormalizeBaseTabsView.swift in Sources */,
+				DCDD7353241DE0D3006857BD /* GARecordingBaseViewController.swift in Sources */,
 				DC745253241C7B7D0038562C /* GAHomeViewController.swift in Sources */,
 				DC74524C241C778A0038562C /* ResultData.swift in Sources */,
 				DC74511D241C6BAE0038562C /* Need.xcdatamodeld in Sources */,
@@ -1141,6 +1221,7 @@
 				DC7451ED241C73610038562C /* Path+Extension.swift in Sources */,
 				DC7451F0241C73610038562C /* NotificationCenter+Rx.swift in Sources */,
 				DC74520A241C73610038562C /* GANormalizeTabsView.swift in Sources */,
+				DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */,
 				DC7451FD241C73610038562C /* GANormalizeDatePickerView.swift in Sources */,
 				DC745205241C73610038562C /* GANormalize_JF_TabsStackViewController.swift in Sources */,
 				DC745218241C73610038562C /* GANormalizeOther.swift in Sources */,
@@ -1501,6 +1582,7 @@
 		DC74511B241C6BAE0038562C /* Need.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DCDD7351241DD443006857BD /* Need1.0.xcdatamodel */,
 				DC74511C241C6BAE0038562C /* Need.xcdatamodel */,
 			);
 			currentVersion = DC74511C241C6BAE0038562C /* Need.xcdatamodel */;

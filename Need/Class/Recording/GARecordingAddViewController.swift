@@ -9,27 +9,19 @@
 import UIKit
 import SwiftDate
 import RxSwift
+import MagicalRecord
 
-class GARecordingAddViewController: GARxSwiftNavViewController, GARecordingProtocol {
+class GARecordingAddViewController: GARecordingBaseViewController, GARecordingProtocol {
+    
     var isAllowed: Bool = false 
     
     @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var textView: GANormalizeTextView!
     @IBOutlet weak var recordingButton: UIButton!
     
-    lazy var speech: GASpeech = {
-        let s = GASpeech()
-        s.delegate = self
-        return s
-    }()
-    
-    lazy var recording: Recording = {
-        let r = Recording()
-        return r
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        audioType = .recording
         
         _initViews()
         _addTimer()
@@ -42,6 +34,8 @@ class GARecordingAddViewController: GARxSwiftNavViewController, GARecordingProto
     private func _initViews() {
         b_showNavigationView(title: "增加一段录音记录")
         textView.mDelegate = self
+        
+        chatHUD = MCRecordHUD(type: hudType)
     }
     
     private func _addTimer() {
@@ -54,6 +48,10 @@ class GARecordingAddViewController: GARxSwiftNavViewController, GARecordingProto
         }).disposed(by: disposeBag)
     }
     
+    override func b_speechRecognition(text: String) {
+        textView.text = text
+    }
+    
     deinit {
         print("---")
     }
@@ -64,6 +62,11 @@ extension GARecordingAddViewController {
         
         self.speechButton.rx.tap.subscribe {
             [unowned self] e in
+            let m = GAFilePathManager()
+            let file = m.saveAudioPath(name: "1584203223055_xKZyV")
+            
+            let url = URL(fileURLWithPath: file)
+            self.speech.startUrlRecording(url: url)
             if !self.isAllowed {
                 self.requestRecordPermission()
                 return
@@ -88,20 +91,40 @@ extension GARecordingAddViewController {
                 self.recording.stop {
                     [unowned self] b, message in
                     if b {
-                        if self.recording.save(fileName:self._fileName()) {
-                            GAShowWindow.ga_show(message: "保存成功")
-                        } else {
-                            GAShowWindow.ga_show(message: "保存失败")
-                        }
+                        self._save()
                     } else {
                         GAShowWindow.ga_show(message: message)
                     }
                 }
+                self.stopSonic()
             } else {
                 self.recording.start()
+                self.startSonic()
             }
             self.recordingButton.isSelected = !self.recordingButton.isSelected
         }.disposed(by: disposeBag)
+    }
+    
+    fileprivate func _save() {
+        let input = self.recording.save(fileName:self._fileName())
+        let path = input.0
+        let name = input.1
+        let dateString = Date().toString(.custom(GADateFormatType.y_m_d_h_m_s_chinese.rawValue))
+        if !path.isEmpty {
+            GACoreData.saveDB(type: GARecordingModel.self, name: name, block: { (entity) in
+                entity?.path = path
+                print(path)
+                entity?.name = name
+                entity?.dateString = dateString
+            }) { (models) in
+                let result = GACoreData.findAll(type: GARecordingModel.self)
+                print(result.last?.dateString ?? "")
+                print(result.last?.name ?? "")
+                GAShowWindow.ga_show(message: "保存成功")
+            }
+        } else {
+            GAShowWindow.ga_show(message: "保存失败")
+        }
     }
     
     fileprivate func _fileName() -> String {
@@ -109,17 +132,6 @@ extension GARecordingAddViewController {
     }
 }
 
-extension GARecordingAddViewController: GASpeechDelegate {
-    
-    func ga_speechRecognizer(available: Bool) {
-        
-    }
-    
-    func ga_speechRecognition(text: String) {
-        textView.text = text 
-    }
-    
-}
 extension GARecordingAddViewController: GANormalizeTextViewDelegate {
     func normalizeTextViewClickedReturn(textView: GANormalizeTextView) {
         print(textView)

@@ -26,7 +26,7 @@ struct GANetWork {
         request(api: api, success: { (json) in
             print(json)
         }, error: { (code, json) in
-            print(code, json)
+            print(code, json ?? "")
         }) { (error) in
             print(error)
         }

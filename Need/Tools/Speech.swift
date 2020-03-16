@@ -20,6 +20,7 @@ class GASpeech: NSObject {
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh-CN"))!
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var urlRecognitonRequest: SFSpeechURLRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
@@ -66,6 +67,44 @@ class GASpeech: NSObject {
         }
     }
     
+    func startUrlRecording(url: URL) {
+        if recognitionTask != nil {  // 1
+            recognitionTask?.cancel()
+            recognitionTask = nil
+        }
+        
+        urlRecognitonRequest = SFSpeechURLRecognitionRequest(url: url)
+        guard let urlRecognitonRequest = urlRecognitonRequest else {
+            return
+        }
+        recognitionTask = speechRecognizer.recognitionTask(with: urlRecognitonRequest, resultHandler: { [weak self]
+            result, error in  // 7
+            guard let weakSelf = self else {
+                return
+            }
+            var isFinal = false  // 8
+            
+            if result != nil {
+                print("识别结果：")
+                let text = result?.bestTranscription.formattedString
+                print(text ?? "识别错误...")
+                weakSelf.delegate?.ga_speechRecognition(text: text ?? "识别错误...")
+                isFinal = (result?.isFinal)!
+            }
+            
+            if error != nil || isFinal {  // 10
+                weakSelf.audioEngine.stop()
+//                inputNode.removeTap(onBus: 0)
+                
+                weakSelf.recognitionRequest = nil
+                weakSelf.recognitionTask = nil
+                
+                weakSelf.delegate?.ga_speechRecognizer(available: true)
+                print("识别完成")
+            }
+        })
+    }
+    
     func startRecording() {
         delegate?.ga_speechRecognizer(available: false)
         print("开始说话")
@@ -83,6 +122,7 @@ class GASpeech: NSObject {
             print("audioSession properties weren't set because of an error.")
         }
         
+        urlRecognitonRequest = SFSpeechURLRecognitionRequest(url: URL(fileURLWithPath: "")) // 3-1
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()  // 3
         
         let inputNode = audioEngine.inputNode// 4
@@ -137,6 +177,9 @@ class GASpeech: NSObject {
             print("audioEngine couldn't start because of an error.")
         }
         print("正在说话.......")
+    }
+    
+    func urlStart () {
     }
     
 }

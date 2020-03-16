@@ -118,6 +118,12 @@ extension UIViewController {
     
 }
 
+extension UIViewController {
+    func ga_storyboardVC<T: UIViewController>(type: T.Type, name: String) -> T {
+        let vc = UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: String(describing: type)) as! T
+        return vc
+    }
+}
 
 extension UIViewController {
     // mandatoryLandscape: true横屏 false竖屏

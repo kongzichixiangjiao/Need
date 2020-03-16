@@ -3,6 +3,8 @@ platform :ios, '10.0'
 
 inhibit_all_warnings! # 消除警告
 
+source 'https://github.com/CocoaPods/Specs.git' # 解决错误：[!] CDN: trunk Repo update failed - 20 error(s):
+
 target 'Need' do
   
   use_frameworks!
@@ -44,4 +46,7 @@ target 'Need' do
       pod 'SwiftDate'
       pod 'SwiftyRSA'
       pod 'FreeStreamer' # 音频
+      pod 'SCLAlertView' # 5k弹框
+      pod 'MagicalRecord' # CoreData
+      
 end

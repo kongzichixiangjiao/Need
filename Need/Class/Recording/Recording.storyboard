@@ -16,6 +16,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-vq-5MJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GARecordingCell" rowHeight="137" id="J0i-m8-zaB" customClass="GARecordingCell" customModule="Need" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="137"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J0i-m8-zaB" id="KOr-5u-YOD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnA-gD-B5i">
+                                                    <rect key="frame" x="12" y="12" width="382" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-t3-Sid">
+                                                    <rect key="frame" x="12" y="108" width="382" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GnA-gD-B5i" firstAttribute="leading" secondItem="KOr-5u-YOD" secondAttribute="leading" constant="12" id="9L4-HJ-Z23"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pcb-t3-Sid" secondAttribute="bottom" constant="12" id="P9h-vb-b76"/>
+                                                <constraint firstItem="Pcb-t3-Sid" firstAttribute="leading" secondItem="KOr-5u-YOD" secondAttribute="leading" constant="12" id="W9b-YG-S0j"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pcb-t3-Sid" secondAttribute="trailing" constant="20" id="uVe-aV-TAr"/>
+                                                <constraint firstAttribute="trailing" secondItem="GnA-gD-B5i" secondAttribute="trailing" constant="20" id="wBZ-qu-ku6"/>
+                                                <constraint firstItem="GnA-gD-B5i" firstAttribute="top" secondItem="KOr-5u-YOD" secondAttribute="top" constant="12" id="zTz-u1-PJQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Pcb-t3-Sid" id="mxu-Uy-pgh"/>
+                                            <outlet property="nameLabel" destination="GnA-gD-B5i" id="AFZ-Is-rey"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVC-HU-qep">
                                 <rect key="frame" x="350" y="758" width="44" height="44"/>
                                 <constraints>
@@ -24,21 +64,58 @@
                                 </constraints>
                                 <state key="normal" image="recording_icon_ recording"/>
                                 <connections>
-                                    <segue destination="O7v-rq-dcB" kind="push" id="ZHe-5e-1t0"/>
+                                    <segue destination="O7v-rq-dcB" kind="show" id="Bgb-pl-VuX"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="8Ps-vq-5MJ" firstAttribute="leading" secondItem="ktH-bJ-JAn" secondAttribute="leading" id="1tc-dm-pyV"/>
+                            <constraint firstItem="ktH-bJ-JAn" firstAttribute="bottom" secondItem="8Ps-vq-5MJ" secondAttribute="bottom" id="FGz-L5-hWw"/>
+                            <constraint firstItem="ktH-bJ-JAn" firstAttribute="trailing" secondItem="8Ps-vq-5MJ" secondAttribute="trailing" id="J06-Dl-Dp2"/>
+                            <constraint firstItem="8Ps-vq-5MJ" firstAttribute="top" secondItem="ktH-bJ-JAn" secondAttribute="top" id="NSI-uB-3Wg"/>
                             <constraint firstItem="ktH-bJ-JAn" firstAttribute="trailing" secondItem="KVC-HU-qep" secondAttribute="trailing" constant="20" id="OTt-bX-0Yb"/>
                             <constraint firstItem="ktH-bJ-JAn" firstAttribute="bottom" secondItem="KVC-HU-qep" secondAttribute="bottom" constant="60" id="TYC-Fb-j23"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktH-bJ-JAn"/>
                     </view>
+                    <connections>
+                        <outlet property="b_saveTopSpace" destination="NSI-uB-3Wg" id="64m-WH-wfj"/>
+                        <outlet property="tableView" destination="8Ps-vq-5MJ" id="rKr-qj-26z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0e-CK-RdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="91"/>
+            <point key="canvasLocation" x="-117.39130434782609" y="90.401785714285708"/>
+        </scene>
+        <!--Audio Details View Controller-->
+        <scene sceneID="Vja-a8-Hkg">
+            <objects>
+                <viewController storyboardIdentifier="GAAudioDetailsViewController" id="Doc-k9-1S3" customClass="GAAudioDetailsViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="err-kl-Gxb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOF-RU-aj3">
+                                <rect key="frame" x="143" y="634" width="128" height="128"/>
+                                <state key="normal" image="recordingList_icon_play"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vOF-RU-aj3" firstAttribute="centerX" secondItem="err-kl-Gxb" secondAttribute="centerX" id="5Eh-z2-21E"/>
+                            <constraint firstItem="mt1-8K-gR0" firstAttribute="bottom" secondItem="vOF-RU-aj3" secondAttribute="bottom" constant="100" id="fAN-rU-Oil"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mt1-8K-gR0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rd0-lL-0tT"/>
+                    <connections>
+                        <outlet property="playButton" destination="vOF-RU-aj3" id="VTO-zb-dIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KhZ-FK-Te4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="-560"/>
         </scene>
         <!--Recording Add View Controller-->
         <scene sceneID="gQs-vU-zdC">
@@ -100,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="recordingList_icon_play" width="128" height="128"/>
         <image name="recording_icon_ recording" width="128" height="128"/>
     </resources>
 </document>

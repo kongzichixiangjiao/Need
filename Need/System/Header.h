@@ -10,5 +10,6 @@
 #define Header_h
 
 #import <CommonCrypto/CommonCrypto.h>
+#import <FSAudioController.h>
 
 #endif /* Header_h */
