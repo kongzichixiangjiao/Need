@@ -2,7 +2,7 @@
 //  GARecordingModel+CoreDataProperties.swift
 //  Need
 //
-//  Created by houjianan on 2020/3/15.
+//  Created by houjianan on 2020/3/16.
 //  Copyright © 2020 houjianan. All rights reserved.
 //
 //
@@ -18,8 +18,9 @@ extension GARecordingModel {
     }
 
     @NSManaged public var data: Data?
+    @NSManaged public var dateString: String?
     @NSManaged public var name: String?
     @NSManaged public var path: String?
-    @NSManaged public var dateString: String?
+    @NSManaged public var totalTime: Double
 
 }

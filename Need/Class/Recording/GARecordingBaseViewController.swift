@@ -4,30 +4,32 @@
 //
 //  Created by houjianan on 2020/3/15.
 //  Copyright © 2020 houjianan. All rights reserved.
-//
+//  录音、语音播放、语音识别的基类
 
 import Foundation
+import RxSwift
 
 enum GAAudioType: Int {
     case play = 0, recording = 1
 }
 
-class GARecordingBaseViewController: GARxSwiftNavViewController {
-    // MARK:
+class GARecordingBaseViewController: GARxSwiftNavViewController, GARecordingProtocol {
+    
+    var isAllowed: Bool = false
+    
+    // MARK: 录音声波
     var audioType: GAAudioType = .play
     // MARK: 录音音波
     // 录音框
     var chatHUD: MCRecordHUD!
     // HUD类型
     var hudType: HUDType = .bar
-    // 录音计时器
-    var timer: Timer?
     // 波形更新间隔
     let updateFequency = 0.05
     // 声音数据数组
     var soundMeters: [Float] = []
     // 声音数据数组容量
-    let soundMeterCount = Int(VolumeViewWidth / 6)
+    let soundMeterCount = Int(VolumeViewWidth / 6) // = 33
     // 录音时间
     var recordTime = 0.00
     
@@ -41,10 +43,10 @@ class GARecordingBaseViewController: GARxSwiftNavViewController {
         }
         recordTime += updateFequency
 
-        // MARK: TODO
-        if recordTime >= 60.0 {
-            endRecordVoice()
-        }
+//        // MARK: TODO
+//        if recordTime >= 60.0 {
+//            endRecordVoice()
+//        }
     }
     
     func addSoundMeter(item: Float) {
@@ -61,35 +63,41 @@ class GARecordingBaseViewController: GARxSwiftNavViewController {
             
             chatHUD.updateView(soundMeters: soundMeters)
         }
-        print(soundMeters)
     }
     
-    func endRecordVoice() {
+    func endRecordVoice() -> Double {
         recording.stop { (b, s) in
             
         }
         
-        timer?.invalidate()
-        chatHUD.removeFromSuperview()
-//        view.isUserInteractionEnabled = true  //录音完了才能点击其他地方
         chatHUD.stopCounting()
         soundMeters.removeAll()
+        
+        return recordTime
     }
     
     func startSonic() {
-        self.view.addSubview(self.chatHUD)
-//        self.view.isUserInteractionEnabled = false  //录音时候禁止点击其他地方
+        self.chatHUD.isHidden = false
         self.chatHUD.startCounting()
-        self.soundMeters = [Float]()
-        self.timer = Timer.scheduledTimer(timeInterval: self.updateFequency, target: self, selector: #selector(self.updateMeters), userInfo: nil, repeats: true)
+        soundMeters = Array(repeating: -120.0, count: 34)
+        
+        let timer = Observable<Int>.interval(self.updateFequency, scheduler: MainScheduler.asyncInstance)
+        timer.subscribe(onNext: {
+            [weak self] timer in
+            if let weakSelf = self {
+                if weakSelf.recording.isRecording {
+                    weakSelf.updateMeters()
+                }
+            }
+        }).disposed(by: disposeBag)
     }
     
-    func stopSonic() {
-        self.timer?.invalidate()
-        self.chatHUD.removeFromSuperview()
-//        self.view.isUserInteractionEnabled = true  //录音完了才能点击其他地方
+    func stopSonic() -> Double  {
+        self.chatHUD.isHidden = true
         self.chatHUD.stopCounting()
         self.soundMeters.removeAll()
+        
+        return recordTime
     }
     
     // MARK: 语音识别
@@ -120,11 +128,20 @@ class GARecordingBaseViewController: GARxSwiftNavViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestRecordPermission()
+        
+        _initChatHUD()
+    }
+    
+    private func _initChatHUD() {
+        chatHUD = MCRecordHUD(type: hudType)
+        chatHUD.isHidden = true
+        self.view.addSubview(chatHUD)
     }
     
     deinit {
         print("base deinit")
-        timer?.invalidate()
     }
 }
 
@@ -136,5 +153,30 @@ extension GARecordingBaseViewController: GASpeechDelegate {
     
     func ga_speechRecognition(text: String) {
         b_speechRecognition(text: text)
+    }
+}
+
+protocol GARecordingProtocol {
+    var isAllowed: Bool { set get }
+    
+}
+
+import AVFoundation
+
+extension GARecordingProtocol where Self: UIViewController {
+    func requestRecordPermission() {
+        //首先要判断是否允许访问麦克风
+        AVAudioSession.sharedInstance().requestRecordPermission { [weak self] (allowed) in
+            if !allowed{
+                let alert = UIAlertController(title: "无法访问您的麦克风",
+                                              message: "请到设置 -> 隐私 -> 麦克风 ，打开访问权限",
+                                              preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "好的", style: .cancel, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
+                self?.isAllowed = false
+            }else{
+                self?.isAllowed = true
+            }
+        }
     }
 }

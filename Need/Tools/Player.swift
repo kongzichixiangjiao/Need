@@ -44,21 +44,36 @@ class Player: NSObject {
     }()
     
     lazy var streamlayer: FSAudioStream = {
-        let s = FSAudioStream()
+        let config = FSStreamConfiguration()
+        config.httpConnectionBufferSize *= 2
+        config.enableTimeAndPitchConversion = true
+        
+        guard let s = FSAudioStream(configuration: config) else {
+            return FSAudioStream()
+        }
+    
         s.onFailure = {
             error, message in
-            print(error, message)
+            print(error, message ?? "")
         }
         s.onCompletion = {
-            s.volume = 0.5
+            print("播放完成")
+            s.play()
         }
+        s.onStateChange = {
+            state in
+            print(state)
+        }
+        s.volume = 0.5
+        //设置播放速率
+        s.setPlayRate(1.0)
         // 不进行检测格式 <开启检测之后，有些网络音频链接无法播放>
-//        s.strictContentTypeChecking = false
-//        s.defaultContentType = ("audio/" + kAudioType) as NSString
+        s.strictContentTypeChecking = false
+        s.defaultContentType = ("audio/" + kAudioType) as NSString
         return s
     }()
     
-    lazy var controllerPlayer: FSAudioController = {
+    lazy var audioController: FSAudioController = {
         let s = FSAudioController()
         s.delegate = self
         return s
@@ -69,29 +84,29 @@ class Player: NSObject {
             print("ERROR ------ URL不能为nil")
             return
         }
-        print(url)
-//        /var/mobile/Containers/Data/Application/D2FAEB2B-8B38-4E10-BD0F-5968A1F54204/Documents/audio_yy/1584326314295_ftGTd.mp3
-//        /var/mobile/Containers/Data/Application/D2FAEB2B-8B38-4E10-BD0F-5968A1F54204/Documents/audio_yy/1584326314295_ftGTd.mp3
+        
 //        if !(self.player?.isPlaying ?? false) {
 //            print(self.player?.play())
 //            print(self.player?.isPlaying)
 //        }
         
-//        streamlayer.play(from: url)
-        let url1 = Bundle.main.url(forResource: "ghsy", withExtension: "mp3")
-        controllerPlayer.url = url as NSURL
-        controllerPlayer.play()
-
+//        streamlayer.play(from: URL(string: "http://q79yxbmtx.bkt.clouddn.com/1584363194818_tGBlb.mp3"))
+        streamlayer.play(from: url)
+        
+//        audioController.url = url as NSURL
+//        audioController.play()
     }
     
     func pause() {
-        if self.player?.isPlaying ?? false {
-            self.player?.pause()
-        }
+//        if self.player?.isPlaying ?? false {
+//            self.player?.pause()
+//        }
+        streamlayer.pause()
     }
     
     func stop() {
-        self.player?.stop()
+//        self.player?.stop()
+        streamlayer.stop()
     }
     
     func updateMeters() {
@@ -101,6 +116,17 @@ class Player: NSObject {
     func averagePower(forChannel: Int) -> Float {
         return player?.peakPower(forChannel: forChannel) ?? 0.0
     }
+    
+    func totalTime() -> (FSStreamPosition, FSStreamPosition) {
+        let cur = streamlayer.currentTimePlayed
+        let end =  streamlayer.duration
+        
+        let currentTime = cur.minute * 60 + cur.second; //音频已加载播放时长
+        let totalTime = end.minute * 60 + end.second //音频总时长
+        print(currentTime, totalTime)
+        return (cur, end)
+    }
+    
 }
 
 extension Player: FSAudioControllerDelegate {

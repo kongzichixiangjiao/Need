@@ -567,8 +567,19 @@ extension String {
     
 }
 
+// 通知key
 extension String {
     var ga_notificationName: NSNotification.Name {
         return NSNotification.Name("GA" + self)
+    }
+}
+
+extension String {
+    static func ga_formate(time: Int, fromat: String = "%.2d : %.2d : %.2d") -> String {
+        let h = time / 3600
+        let m = time / 60 % 60
+        let s = time % 60
+        let timeString = String(format: "%.2d : %.2d : %.2d", h, m, s)
+        return timeString
     }
 }

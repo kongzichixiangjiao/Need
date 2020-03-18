@@ -76,13 +76,13 @@ extension MCProgressView {
         blurView.contentView.layer.addSublayer(progressLayer)
         
         animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 60 //最大录音时长
+        animation.duration = StrokeEndDuration //最大录音时长
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)    //匀速前进
         animation.fillMode = CAMediaTimingFillMode.forwards
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.autoreverses = false
-        animation.repeatCount = 1
+        animation.repeatCount = 9999999
     }
     
     private func setUpBlurView() {

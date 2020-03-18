@@ -30,3 +30,7 @@ internal let VolumeViewWidth = 200
 
 /// 音量左右编剧
 internal let VolumeViewLeftSpace = 50
+
+// strokeEnd动画时长
+internal let StrokeEndDuration: Double = 60.0
+

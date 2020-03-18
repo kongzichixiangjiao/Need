@@ -4,14 +4,15 @@
 //
 //  Created by houjianan on 2020/3/14.
 //  Copyright © 2020 houjianan. All rights reserved.
-//
+//  语音录制的列表
 
 import Foundation
 import RxSwift
 import RxDataSources
 import MJRefresh
+import SCLAlertView
 
-class GARecordingViewController: GARecordingBaseViewController, Refreshable {
+class GARecordingListViewController: GARxSwiftNavViewController, Refreshable {
     
     @IBOutlet weak var tableView: UITableView!
     var refreshHeader: MJRefreshHeader!
@@ -38,10 +39,10 @@ class GARecordingViewController: GARecordingBaseViewController, Refreshable {
         
         tableView.rx.modelSelected(GARecordingModel.self).subscribe(onNext: {
             [unowned self] model in
-            let vc = self.ga_storyboardVC(type: GAAudioDetailsViewController.self, name: "Recording")
+            let vc = self.ga_storyboardVC(type: GAAudioDetailsViewController.self, storyboardName: RecordingStoryboard.name)
             vc.model = model
             vc.publishModel?.subscribe(onNext: { (model) in
-                print(model)
+                
             }).disposed(by: self.disposeBag)
             self.navigationController?.pushViewController(vc, animated: true)
         }).disposed(by: disposeBag)
@@ -51,13 +52,28 @@ class GARecordingViewController: GARecordingBaseViewController, Refreshable {
     
     private func _getDataSorce() -> RxTableViewSectionedReloadDataSource<GARecordingSection> {
         let dataSource = RxTableViewSectionedReloadDataSource<GARecordingSection>(configureCell: {
-            s, tableView, indexPath, model in
+            [weak self] s, tableView, indexPath, model in
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: GARecordingCell.identifier, for: indexPath) as! GARecordingCell
             cell.nameLabel.text = model.name
             cell.dateLabel.text = model.dateString
+            cell.totalLabel.text = String.ga_formate(time: Int(model.totalTime))
+            if let weakSelf = self {
+                cell.rightButtons = weakSelf.rightButtons()
+                cell.scrollDelegate = self
+                cell.row = indexPath.row
+            }
             return cell
         })
         return dataSource
+    }
+    
+    func rightButtons() -> [UIButton] {
+        let v = UIButton()
+        v.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        v.setTitle("删除", for: .normal)
+        v.backgroundColor = UIColor.red
+        return [v]
     }
     
     private func _initViews() {
@@ -69,15 +85,33 @@ class GARecordingViewController: GARecordingBaseViewController, Refreshable {
     }
 }
 
-extension GARecordingViewController: UITableViewDelegate {
+extension GARecordingListViewController: GATableScrollCellDelegate {
+    func tableScrollCellClicked(row: Int, tag: Int) {
+        let appearance = SCLAlertView.SCLAppearance(
+            kWindowWidth: kScreenWidth - 40, showCloseButton: false, circleBackgroundColor: UIColor.white
+        )
+        
+        let alert = SCLAlertView(appearance: appearance)
+        alert.addButton("确定", backgroundColor: kMainButtonDefaultColor) {
+            self.vm.delete(row: row, tag: tag)
+        }
+        alert.addButton("取消", backgroundColor: kMainButtonDefaultColor) {
+            
+        }
+        alert.showInfo("删除", subTitle: "确定要删除这条数据吗？")
+    }
+}
+
+extension GARecordingListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
 }
 
-class GARecordingCell: UITableViewCell {
+class GARecordingCell: GATableScrollCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
 }
 

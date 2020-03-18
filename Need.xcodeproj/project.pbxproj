@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		155F0965E657E548E5DECF8E /* Pods_Need.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */; };
 		DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */; };
+		DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */; };
+		DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E1186242066070043396D /* RecordingStoryboard.swift */; };
 		DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745112241C6BAE0038562C /* AppDelegate.swift */; };
 		DC74511A241C6BAE0038562C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC745118241C6BAE0038562C /* Main.storyboard */; };
 		DC74511D241C6BAE0038562C /* Need.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC74511B241C6BAE0038562C /* Need.xcdatamodeld */; };
@@ -133,13 +135,15 @@
 		DC745268241C8C820038562C /* GATimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745267241C8C820038562C /* GATimeViewModel.swift */; };
 		DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745269241C8C8D0038562C /* GATimeModel.swift */; };
 		DC74526C241C94E40038562C /* GATimeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526B241C94E40038562C /* GATimeAddViewController.swift */; };
-		DC74526E241C964A0038562C /* GARecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526D241C964A0038562C /* GARecordingViewController.swift */; };
+		DC74526E241C964A0038562C /* GARecordingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526D241C964A0038562C /* GARecordingListViewController.swift */; };
 		DC745270241C96BD0038562C /* GARecordingAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526F241C96BD0038562C /* GARecordingAddViewController.swift */; };
 		DC745272241C976C0038562C /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745271241C976C0038562C /* Speech.swift */; };
 		DC74527D241CBEEB0038562C /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74527C241CBEEB0038562C /* Recording.swift */; };
 		DC745280241CCA2C0038562C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC74527F241CCA2C0038562C /* CloudKit.framework */; };
 		DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745281241CD19A0038562C /* GAFilePathManager.swift */; };
 		DC745284241CD8770038562C /* GADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745283241CD8770038562C /* GADate.swift */; };
+		DCAE671C24207B33000A1A42 /* GATableScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */; };
+		DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE671E2421129E000A1A42 /* YYOnePixView.swift */; };
 		DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */; };
 		DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */; };
 		DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */; };
@@ -176,6 +180,13 @@
 		777FD31DF96635ED57E35C45 /* Pods-Need.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.debug.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.debug.xcconfig"; sourceTree = "<group>"; };
 		CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Need.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghsy.mp3; sourceTree = "<group>"; };
+		DC5E117F241FB4850043396D /* Need1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.1.xcdatamodel; sourceTree = "<group>"; };
+		DC5E1180241FBEB30043396D /* Need1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.2.xcdatamodel; sourceTree = "<group>"; };
+		DC5E1181241FBF5A0043396D /* Need1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.3.xcdatamodel; sourceTree = "<group>"; };
+		DC5E1182241FBF8D0043396D /* Need1.4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.4.xcdatamodel; sourceTree = "<group>"; };
+		DC5E1183241FC38B0043396D /* Need1.5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.5.xcdatamodel; sourceTree = "<group>"; };
+		DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASpeechRecognitionViewController.swift; sourceTree = "<group>"; };
+		DC5E1186242066070043396D /* RecordingStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingStoryboard.swift; sourceTree = "<group>"; };
 		DC74510F241C6BAE0038562C /* Need.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Need.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC745112241C6BAE0038562C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC745119241C6BAE0038562C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -307,7 +318,7 @@
 		DC745267241C8C820038562C /* GATimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeViewModel.swift; sourceTree = "<group>"; };
 		DC745269241C8C8D0038562C /* GATimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeModel.swift; sourceTree = "<group>"; };
 		DC74526B241C94E40038562C /* GATimeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeAddViewController.swift; sourceTree = "<group>"; };
-		DC74526D241C964A0038562C /* GARecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingViewController.swift; sourceTree = "<group>"; };
+		DC74526D241C964A0038562C /* GARecordingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingListViewController.swift; sourceTree = "<group>"; };
 		DC74526F241C96BD0038562C /* GARecordingAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingAddViewController.swift; sourceTree = "<group>"; };
 		DC745271241C976C0038562C /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		DC74527C241CBEEB0038562C /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
@@ -315,6 +326,8 @@
 		DC74527F241CCA2C0038562C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DC745281241CD19A0038562C /* GAFilePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFilePathManager.swift; sourceTree = "<group>"; };
 		DC745283241CD8770038562C /* GADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADate.swift; sourceTree = "<group>"; };
+		DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATableScrollCell.swift; sourceTree = "<group>"; };
+		DCAE671E2421129E000A1A42 /* YYOnePixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYOnePixView.swift; sourceTree = "<group>"; };
 		DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+MagicalRecord.swift"; sourceTree = "<group>"; };
 		DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GACoreData.swift; sourceTree = "<group>"; };
 		DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -724,6 +737,7 @@
 				DC745181241C73610038562C /* BaseView */,
 				DC745222241C75010038562C /* GATabBar */,
 				DC7451BE241C73610038562C /* GACustomCellView.swift */,
+				DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -774,11 +788,13 @@
 			isa = PBXGroup;
 			children = (
 				DC74522F241C76480038562C /* Recording.storyboard */,
-				DC74526D241C964A0038562C /* GARecordingViewController.swift */,
+				DC74526D241C964A0038562C /* GARecordingListViewController.swift */,
 				DCDD7352241DE0D3006857BD /* GARecordingBaseViewController.swift */,
 				DC74526F241C96BD0038562C /* GARecordingAddViewController.swift */,
 				DCDD7354241DE3B3006857BD /* GAAudioDetailsViewController.swift */,
 				DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */,
+				DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */,
+				DC5E1186242066070043396D /* RecordingStoryboard.swift */,
 			);
 			path = Recording;
 			sourceTree = "<group>";
@@ -910,9 +926,18 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		DCAE671D2421129E000A1A42 /* OnePixView（一像素） */ = {
+			isa = PBXGroup;
+			children = (
+				DCAE671E2421129E000A1A42 /* YYOnePixView.swift */,
+			);
+			path = "OnePixView（一像素）";
+			sourceTree = "<group>";
+		};
 		DCDD7358241E616F006857BD /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DCAE671D2421129E000A1A42 /* OnePixView（一像素） */,
 				DCDD7363241E61EF006857BD /* Sonic（音波） */,
 			);
 			path = Public;
@@ -1136,6 +1161,7 @@
 				DC7451F6241C73610038562C /* GANormalizeTextField.swift in Sources */,
 				DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */,
 				DC74521B241C73610038562C /* GANavViewController.swift in Sources */,
+				DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */,
 				DC7451DD241C73610038562C /* Date+Extension.swift in Sources */,
 				DCDD7362241E6194006857BD /* MCVolumeView.swift in Sources */,
 				DC7451F1241C73610038562C /* UIViewController+Rx.swift in Sources */,
@@ -1164,7 +1190,7 @@
 				DC745213241C73610038562C /* GANormalizeTableView.swift in Sources */,
 				DC7451C6241C73610038562C /* UIImageView+Extension.swift in Sources */,
 				DC7451E4241C73610038562C /* IndexPath+Extension.swift in Sources */,
-				DC74526E241C964A0038562C /* GARecordingViewController.swift in Sources */,
+				DC74526E241C964A0038562C /* GARecordingListViewController.swift in Sources */,
 				DC7451CC241C73610038562C /* UINavigationController+Extension.swift in Sources */,
 				DC745204241C73610038562C /* GANormalizeCollectionView.swift in Sources */,
 				DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */,
@@ -1215,6 +1241,7 @@
 				DC745250241C778A0038562C /* RxObjectMapper.swift in Sources */,
 				DC74521D241C73610038562C /* GABaseDefine.swift in Sources */,
 				DC74527D241CBEEB0038562C /* Recording.swift in Sources */,
+				DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */,
 				DC745270241C96BD0038562C /* GARecordingAddViewController.swift in Sources */,
 				DC7451CD241C73610038562C /* UIView+Icon.swift in Sources */,
 				DC7451E0241C73610038562C /* Bundle+Extension.swift in Sources */,
@@ -1242,7 +1269,9 @@
 				DC7451EE241C73610038562C /* NotificationName+Extension.swift in Sources */,
 				DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */,
 				DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */,
+				DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */,
 				DC74521A241C73610038562C /* GANavigationViewController.swift in Sources */,
+				DCAE671C24207B33000A1A42 /* GATableScrollCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,6 +1447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Need/Need.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = Need/System/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1582,6 +1612,11 @@
 		DC74511B241C6BAE0038562C /* Need.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DC5E1183241FC38B0043396D /* Need1.5.xcdatamodel */,
+				DC5E1182241FBF8D0043396D /* Need1.4.xcdatamodel */,
+				DC5E1181241FBF5A0043396D /* Need1.3.xcdatamodel */,
+				DC5E1180241FBEB30043396D /* Need1.2.xcdatamodel */,
+				DC5E117F241FB4850043396D /* Need1.1.xcdatamodel */,
 				DCDD7351241DD443006857BD /* Need1.0.xcdatamodel */,
 				DC74511C241C6BAE0038562C /* Need.xcdatamodel */,
 			);

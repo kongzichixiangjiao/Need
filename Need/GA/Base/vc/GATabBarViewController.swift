@@ -127,17 +127,19 @@ class GATabBarViewController: UITabBarController {
     private func _hideTopLineView() {
         if #available(iOS 13, *) {
             let appearance = self.tabBar.standardAppearance.copy()
-            appearance.backgroundImage = UIColor.randomColor().ga_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
-            appearance.shadowImage = UIColor.randomColor().ga_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
+            appearance.backgroundImage = bgColor.tab_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
+            appearance.shadowImage = shadowColor.tab_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
             appearance.shadowColor = .clear
             //            appearance.configureWithTransparentBackground() // 隐藏topline需要打开注释
             self.tabBar.standardAppearance = appearance
         } else {
-            self.tabBar.shadowImage = UIColor.randomColor().ga_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
-            self.tabBar.backgroundImage = UIColor.randomColor().ga_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
+            self.tabBar.shadowImage = shadowColor.tab_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
+            self.tabBar.backgroundImage = bgColor.tab_image(viewSize: CGSize(width: self.tabBar.width, height: 1))
         }
     }
     
+    var bgColor: UIColor = 0x666666.tab_toUIColor()
+    var shadowColor: UIColor = 0x999999.tab_toUIColor()
 }
 
 extension GATabBarViewController: UITabBarControllerDelegate {
@@ -177,8 +179,35 @@ extension UIViewController {
 
 
 
+extension UIColor {
+    // 获取纯色图片
+    func tab_image(viewSize: CGSize) -> UIImage {
+        let rect: CGRect = CGRect(x: 0, y: 0, width: viewSize.width, height: viewSize.height)
+        UIGraphicsBeginImageContext(rect.size)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        context.setFillColor(self.cgColor)
+        context.fill(rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsGetCurrentContext()
+        return image!
+        
+    }
+}
 
 
-
-
+extension Int {
+    func tab_toUIColor() -> UIColor {
+        return UIColor(
+            red: CGFloat((self & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((self & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(self & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    func tab_toCGColor() -> CGColor {
+        return self.tab_toUIColor().cgColor
+    }
+}
 

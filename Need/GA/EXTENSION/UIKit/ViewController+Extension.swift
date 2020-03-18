@@ -119,8 +119,8 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    func ga_storyboardVC<T: UIViewController>(type: T.Type, name: String) -> T {
-        let vc = UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: String(describing: type)) as! T
+    func ga_storyboardVC<T: UIViewController>(type: T.Type, storyboardName: String) -> T {
+        let vc = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: type)) as! T
         return vc
     }
 }

@@ -85,7 +85,7 @@ class Recording: NSObject {
         
         let configDic: [String: AnyObject] = [
             // 编码格式
-            AVFormatIDKey: NSNumber(value: Int32(kAudioFormatAppleIMA4)),
+            AVFormatIDKey: NSNumber(value: Int32(kAudioFormatMPEG4AAC)),
             // 采样率
             AVSampleRateKey: NSNumber(value: 11025.0),
             // 通道数
@@ -116,6 +116,12 @@ class Recording: NSObject {
     }
     // 开始录音
     func start() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord)
+        } catch {
+            print(error)
+        }
+        
         audioRecord?.record()
     }
     
@@ -124,6 +130,11 @@ class Recording: NSObject {
     }
     
     func stop(handler: @escaping FinishedHandler) {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord)
+        } catch {
+            print(error)
+        }
         finishedHandler = handler
         audioRecord?.stop()
     }
@@ -153,12 +164,7 @@ class Recording: NSObject {
     
     func formattedCurrentTime() -> String {
         guard let time = self.audioRecord?.currentTime else { return "00:00:00" }
-        let h = Int(time) / 3600
-        let m = Int(time / 60) % 60
-        let s = Int(time) % 60
-        let timeString = String(format: "%.2d, %.2d, %.2d", h, m, s)
-        
-        return timeString
+        return String.ga_formate(time: Int(time))
     }
 
 }

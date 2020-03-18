@@ -28,7 +28,7 @@
                                 </constraints>
                                 <state key="normal" image="time_icon_time"/>
                                 <connections>
-                                    <segue destination="0La-Rg-mwt" kind="presentation" id="Azb-SN-oh9"/>
+                                    <segue destination="0La-Rg-mwt" kind="show" id="l4G-kw-ICb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,13 +56,87 @@
         <!--Time Add View Controller-->
         <scene sceneID="pBc-Yb-vDQ">
             <objects>
-                <viewController storyboardIdentifier="GATimeAddViewController" id="0La-Rg-mwt" customClass="GATimeAddViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GATimeAddViewController" id="0La-Rg-mwt" customClass="GATimeAddViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81n-dZ-2CI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qH-nm-cML">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYa-wN-A2T" customClass="GANormalizeTextField" customModule="Need" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="374" height="40"/>
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Pck-MP-ToP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="mMaxCount">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7k7-9E-tdJ" customClass="YYOnePixView" customModule="Need" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="60" width="374" height="1"/>
+                                        <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="SMV-XI-DqP"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Suz-2Z-Rh2" customClass="GANormalizeTextView" customModule="Need" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="81" width="374" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="gaI-aT-aDc"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ga_masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ga_borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="ga_borderColor">
+                                                <color key="value" red="0.92156863209999995" green="0.92156863209999995" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="mTintColor">
+                                                <color key="value" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Suz-2Z-Rh2" firstAttribute="leading" secondItem="7qH-nm-cML" secondAttribute="leading" constant="20" id="613-TY-lHu"/>
+                                    <constraint firstAttribute="trailing" secondItem="MYa-wN-A2T" secondAttribute="trailing" constant="20" id="B35-8f-aL1"/>
+                                    <constraint firstItem="Suz-2Z-Rh2" firstAttribute="top" secondItem="7k7-9E-tdJ" secondAttribute="bottom" constant="20" id="Fny-9J-RZ8"/>
+                                    <constraint firstItem="MYa-wN-A2T" firstAttribute="leading" secondItem="7qH-nm-cML" secondAttribute="leading" constant="20" id="FxP-He-gJK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Suz-2Z-Rh2" secondAttribute="trailing" constant="20" id="L0V-Vv-14y"/>
+                                    <constraint firstItem="MYa-wN-A2T" firstAttribute="top" secondItem="7qH-nm-cML" secondAttribute="top" constant="20" id="QW4-b9-B7V"/>
+                                    <constraint firstItem="7k7-9E-tdJ" firstAttribute="leading" secondItem="MYa-wN-A2T" secondAttribute="leading" id="Yhg-ql-AHE"/>
+                                    <constraint firstItem="7k7-9E-tdJ" firstAttribute="top" secondItem="MYa-wN-A2T" secondAttribute="bottom" id="aQM-sm-Bfj"/>
+                                    <constraint firstItem="7k7-9E-tdJ" firstAttribute="trailing" secondItem="MYa-wN-A2T" secondAttribute="trailing" id="d8s-UE-Tcf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TJr-kO-hen" firstAttribute="bottom" secondItem="7qH-nm-cML" secondAttribute="bottom" id="2tD-SO-RYi"/>
+                            <constraint firstItem="TJr-kO-hen" firstAttribute="trailing" secondItem="7qH-nm-cML" secondAttribute="trailing" id="GzT-im-lpQ"/>
+                            <constraint firstItem="7qH-nm-cML" firstAttribute="top" secondItem="TJr-kO-hen" secondAttribute="top" id="d9h-DS-q2i"/>
+                            <constraint firstItem="7qH-nm-cML" firstAttribute="leading" secondItem="TJr-kO-hen" secondAttribute="leading" id="vEa-Mj-78q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TJr-kO-hen"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Q3U-8H-6K1"/>
+                    <connections>
+                        <outlet property="b_saveTopSpace" destination="d9h-DS-q2i" id="yS3-zC-nmA"/>
+                        <outlet property="contentTextView" destination="Suz-2Z-Rh2" id="i3E-Nk-2Yb"/>
+                        <outlet property="titleTextField" destination="MYa-wN-A2T" id="NUo-qf-QuR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44F-hV-Hks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

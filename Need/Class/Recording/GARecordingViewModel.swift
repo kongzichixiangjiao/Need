@@ -49,12 +49,24 @@ extension GARecordingViewModel: GAViewModelType {
             guard let weakSelf = self else {
                 return
             }
-            let result = GARecordingModel.mr_findAll() as! [GARecordingModel]
+            
+            let result = GACoreData.findAll(type: GARecordingModel.self)
             weakSelf.vmDatas.value = [(result)]
 
             out.refreshStatus.value = .endHeaderRefresh
         }).disposed(by: disposeBag)
         return out
+    }
+    
+    func delete(row: Int, tag: Int) {
+        let result = GACoreData.findAll(type: GARecordingModel.self)
+        
+        GACoreData.delete(type: GARecordingModel.self, name: result[row].name ?? "") {
+            [weak self] result in
+            if let weakSelf = self {
+                weakSelf.vmDatas.value = [(result)]
+            }
+        }
     }
 }
 

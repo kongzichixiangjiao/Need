@@ -4,20 +4,18 @@
 //
 //  Created by houjianan on 2020/3/14.
 //  Copyright © 2020 houjianan. All rights reserved.
-//
+//  录音
 
 import UIKit
 import SwiftDate
 import RxSwift
 import MagicalRecord
+import SCLAlertView
 
-class GARecordingAddViewController: GARecordingBaseViewController, GARecordingProtocol {
+class GARecordingAddViewController: GARecordingBaseViewController {
     
-    var isAllowed: Bool = false 
-    
-    @IBOutlet weak var speechButton: UIButton!
-    @IBOutlet weak var textView: GANormalizeTextView!
     @IBOutlet weak var recordingButton: UIButton!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +23,12 @@ class GARecordingAddViewController: GARecordingBaseViewController, GARecordingPr
         
         _initViews()
         _addTimer()
-        requestRecordPermission()
         
-        _speechButtonAction()
         _recordingButtonAction()
     }
     
     private func _initViews() {
         b_showNavigationView(title: "增加一段录音记录")
-        textView.mDelegate = self
-        
-        chatHUD = MCRecordHUD(type: hudType)
     }
     
     private func _addTimer() {
@@ -43,14 +36,11 @@ class GARecordingAddViewController: GARecordingBaseViewController, GARecordingPr
         timer.subscribe(onNext: {
             [weak self] time in
             if self?.recording.isRecording ?? false {
-                print(self?.recording.formattedCurrentTime() ?? "")
+                self?.currentTimeLabel.text = self?.recording.formattedCurrentTime() ?? ""
             }
         }).disposed(by: disposeBag)
     }
     
-    override func b_speechRecognition(text: String) {
-        textView.text = text
-    }
     
     deinit {
         print("---")
@@ -58,28 +48,7 @@ class GARecordingAddViewController: GARecordingBaseViewController, GARecordingPr
 }
 
 extension GARecordingAddViewController {
-    fileprivate func _speechButtonAction() {
-        
-        self.speechButton.rx.tap.subscribe {
-            [unowned self] e in
-            let m = GAFilePathManager()
-            let file = m.saveAudioPath(name: "1584203223055_xKZyV")
-            
-            let url = URL(fileURLWithPath: file)
-            self.speech.startUrlRecording(url: url)
-            if !self.isAllowed {
-                self.requestRecordPermission()
-                return
-            }
-            if self.speechButton.isSelected   {
-                self.speech.stop()
-            } else {
-                self.speech.start()
-            }
-            self.speechButton.isSelected = !self.speechButton.isSelected
-        }.disposed(by: disposeBag)
-    }
-    
+
     fileprivate func _recordingButtonAction() {
         self.recordingButton.rx.tap.subscribe {
             [unowned self] e in
@@ -91,12 +60,11 @@ extension GARecordingAddViewController {
                 self.recording.stop {
                     [unowned self] b, message in
                     if b {
-                        self._save()
+                        self._save(totalTime: self.stopSonic())
                     } else {
                         GAShowWindow.ga_show(message: message)
                     }
                 }
-                self.stopSonic()
             } else {
                 self.recording.start()
                 self.startSonic()
@@ -105,25 +73,43 @@ extension GARecordingAddViewController {
         }.disposed(by: disposeBag)
     }
     
-    fileprivate func _save() {
-        let input = self.recording.save(fileName:self._fileName())
-        let path = input.0
-        let name = input.1
-        let dateString = Date().toString(.custom(GADateFormatType.y_m_d_h_m_s_chinese.rawValue))
-        if !path.isEmpty {
-            GACoreData.saveDB(type: GARecordingModel.self, name: name, block: { (entity) in
-                entity?.path = path
-                print(path)
-                entity?.name = name
-                entity?.dateString = dateString
-            }) { (models) in
-                let result = GACoreData.findAll(type: GARecordingModel.self)
-                print(result.last?.dateString ?? "")
-                print(result.last?.name ?? "")
-                GAShowWindow.ga_show(message: "保存成功")
+    fileprivate func _save(totalTime: Double) {
+        
+        let appearance = SCLAlertView.SCLAppearance(
+             kWindowWidth: kScreenWidth - 40, showCloseButton: false, circleBackgroundColor: UIColor.white
+        )
+        
+        let alert = SCLAlertView(appearance: appearance)
+        let txt = alert.addTextField("请输入文件名字")
+        alert.addButton("确定", backgroundColor: kMainButtonDefaultColor) {
+            save(title: txt.text ?? self._fileName())
+        }
+        alert.addButton("使用默认名称", backgroundColor: kMainButtonDefaultColor) {
+            save(title: self._fileName())
+        }
+        
+        alert.showEdit("文件名称", subTitle: "输入一个有针对性的名称", colorStyle: 0x999999)
+        
+        func save(title: String) {
+            let input = self.recording.save(fileName: title)
+            let path = input.0
+            let name = input.1
+            let dateString = GADate.currentDateToDateString(dateFormat: GADateFormatType.y_m_d_h_m_s_chinese.rawValue)
+            if !path.isEmpty {
+                GACoreData.saveDB(type: GARecordingModel.self, name: name, block: { (entity) in
+                    entity?.path = path
+                    entity?.name = name
+                    entity?.dateString = dateString
+                    entity?.totalTime = totalTime
+                }) { (models) in
+                    let result = GACoreData.findAll(type: GARecordingModel.self)
+                    print(result.last?.dateString ?? "")
+                    print(result.last?.name ?? "")
+                    GAShowWindow.ga_show(message: "保存成功")
+                }
+            } else {
+                GAShowWindow.ga_show(message: "保存失败")
             }
-        } else {
-            GAShowWindow.ga_show(message: "保存失败")
         }
     }
     
@@ -132,49 +118,3 @@ extension GARecordingAddViewController {
     }
 }
 
-extension GARecordingAddViewController: GANormalizeTextViewDelegate {
-    func normalizeTextViewClickedReturn(textView: GANormalizeTextView) {
-        print(textView)
-    }
-    
-    func normalizeTextViewContentOffset(textView: GANormalizeTextView) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 3, left: 2, bottom: 0, right: 0)
-    }
-    
-    func normalizeTextViewPlaceholdView(textView: GANormalizeTextView) -> UIView {
-        let l = UILabel().then {
-            $0.frame = CGRect(x: 0, y: textView.height / 2 - 15, width: 100, height: 15)
-            $0.textAlignment = .center
-            $0.font = UIFont.systemFont(ofSize: 24)
-            $0.textColor = kFont_2_9_LevelColor
-            $0.text = "录语音识别或者手动输入"
-        }
-        return l
-    }
-}
-
-
-protocol GARecordingProtocol {
-    var isAllowed: Bool { set get }
-    
-}
-
-import AVFoundation
-
-extension GARecordingProtocol where Self: UIViewController {
-    func requestRecordPermission() {
-        //首先要判断是否允许访问麦克风
-        AVAudioSession.sharedInstance().requestRecordPermission { [weak self] (allowed) in
-            if !allowed{
-                let alert = UIAlertController(title: "无法访问您的麦克风",
-                                              message: "请到设置 -> 隐私 -> 麦克风 ，打开访问权限",
-                                              preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "好的", style: .cancel, handler: nil))
-                self?.present(alert, animated: true, completion: nil)
-                self?.isAllowed = false
-            }else{
-                self?.isAllowed = true
-            }
-        }
-    }
-}

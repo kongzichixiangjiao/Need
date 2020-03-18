@@ -26,9 +26,15 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageHighlightName" value="tabbar_icon07"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageDefaultName" value="tabbar_icon07"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="000000"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="FFFFFF"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="labelName" value="home"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="cccccc"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="999999"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelTopSpace">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMX-sr-SSN" customClass="GAXibTabBarItem" customModule="Need" customModuleProvider="target">
@@ -43,9 +49,15 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageHighlightName" value="tabbar_icon01"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageDefaultName" value="tabbar_icon01"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="000000"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="FFFFFF"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="labelName" value="time"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="cccccc"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="999999"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelTopSpace">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHs-T4-sAu" customClass="GAXibTabBarItem" customModule="Need" customModuleProvider="target">
@@ -60,9 +72,15 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageHighlightName" value="tabbar_icon02"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="imageDefaultName" value="tabbar_icon02"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="000000"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="FFFFFF"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="labelName" value="recording"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="cccccc"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="999999"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelTopSpace">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK9-NG-HOm" customClass="GAXibTabBarItem" customModule="Need" customModuleProvider="target">
@@ -77,9 +95,15 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="mTag">
                             <integer key="value" value="3"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="000000"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelSelectedColor" value="FFFFFF"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="labelName" value="mine"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="cccccc"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelNormalColor" value="999999"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="labelTopSpace">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
