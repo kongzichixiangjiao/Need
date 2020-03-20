@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-enum audioTyp: String {
+enum AudioTyp: String {
     case kAudioFormatLinearPCM               = "lpcm",
     kAudioFormatAC3                     = "ac-3",
     kAudioFormat60958AC3                = "cac3",

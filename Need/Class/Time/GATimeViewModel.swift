@@ -43,13 +43,11 @@ extension GATimeViewModel {
             }
         }.asDriver(onErrorJustReturn: [])
         
-        
         let out = TimeOutput(sections: sections)
         
         return out
     }
 }
-
 
 struct TimeSection {
     var items: [Item]

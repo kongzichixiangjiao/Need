@@ -31,6 +31,7 @@ class GARecordingListViewController: GARxSwiftNavViewController, Refreshable {
         out.sections.drive(tableView.rx.items(dataSource: _getDataSorce())).disposed(by: disposeBag)
         
         refreshHeader = initRefreshHeader(tableView, {
+            [unowned self] in
             self.out.requestCommand.onNext(true)
         })
         
@@ -70,7 +71,7 @@ class GARecordingListViewController: GARxSwiftNavViewController, Refreshable {
     
     func rightButtons() -> [UIButton] {
         let v = UIButton()
-        v.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        v.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
         v.setTitle("删除", for: .normal)
         v.backgroundColor = UIColor.red
         return [v]
@@ -83,6 +84,10 @@ class GARecordingListViewController: GARxSwiftNavViewController, Refreshable {
     private func _request() {
         
     }
+    
+    deinit {
+        print("---")
+    }
 }
 
 extension GARecordingListViewController: GATableScrollCellDelegate {
@@ -90,13 +95,13 @@ extension GARecordingListViewController: GATableScrollCellDelegate {
         let appearance = SCLAlertView.SCLAppearance(
             kWindowWidth: kScreenWidth - 40, showCloseButton: false, circleBackgroundColor: UIColor.white
         )
-        
+
         let alert = SCLAlertView(appearance: appearance)
         alert.addButton("确定", backgroundColor: kMainButtonDefaultColor) {
             self.vm.delete(row: row, tag: tag)
         }
         alert.addButton("取消", backgroundColor: kMainButtonDefaultColor) {
-            
+
         }
         alert.showInfo("删除", subTitle: "确定要删除这条数据吗？")
     }
@@ -113,6 +118,9 @@ class GARecordingCell: GATableScrollCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    deinit {
+        print("2123")
+    }
 }
 
 

@@ -64,6 +64,8 @@ class GASpeech: NSObject {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
+
+            self.audioEngine.inputNode.removeTap(onBus: 0)
         }
     }
     

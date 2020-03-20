@@ -3,6 +3,7 @@ PODS:
   - Differentiator (3.1.0)
   - FreeStreamer (4.0.0):
     - Reachability (~> 3.0)
+  - GAAlertPresentation (0.0.7)
   - IQKeyboardManagerSwift (6.5.4)
   - Kingfisher (5.11.0):
     - Kingfisher/Core (= 5.11.0)
@@ -58,6 +59,7 @@ PODS:
 
 DEPENDENCIES:
   - FreeStreamer
+  - GAAlertPresentation
   - IQKeyboardManagerSwift
   - Kingfisher
   - MagicalRecord
@@ -88,6 +90,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - FreeStreamer
+    - GAAlertPresentation
     - MagicalRecord
     - Reachability
     - SCLAlertView
@@ -123,6 +126,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   FreeStreamer: 7e9c976045701ac2f7e9c14c17245203c37bf2ea
+  GAAlertPresentation: d93bad5a2fef4fca14b6bce68018376676643411
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
@@ -151,6 +155,6 @@ SPEC CHECKSUMS:
   TYPagerController: 262556ecef99986d26ed77fb1288a198ed42f4af
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
 
-PODFILE CHECKSUM: 16df44f77beaabdf477ab1f2134829f97c7b6641
+PODFILE CHECKSUM: be4b73f6861a7c736961d63cb01a3c413e0f9153
 
 COCOAPODS: 1.8.4

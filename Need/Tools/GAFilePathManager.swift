@@ -9,17 +9,19 @@
 import Foundation
 
 class GAFilePathManager {
-    
     public func filePath(name: String = "audio_yy") -> String {
         let path = NSHomeDirectory() + "/Documents/audio_yy"
-        
         if !FileManager.default.fileExists(atPath: path) {
-            try! FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            do {
+                try FileManager.default.createDirectory(atPath: path,
+                                                        withIntermediateDirectories: true,
+                                                        attributes: nil)
+            } catch {
+                return ""
+            }
         }
-
         return path
     }
-    
     public func filesCount(fileName: String = "") -> Int {
         let path = filePath()
         do {
@@ -29,11 +31,9 @@ class GAFilePathManager {
             return 0
         }
     }
-    
     public func catchFilePath() -> String {
         return NSTemporaryDirectory()
     }
-    
     public func copy(at: URL, to: URL) -> Bool {
         do {
             try FileManager.default.copyItem(at: at, to: to)

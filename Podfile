@@ -12,6 +12,8 @@ target 'Need' do
   # Architecture
       pod 'ReactorKit'  #https://github.com/ReactorKit/ReactorKit
       
+      pod 'GAAlertPresentation'
+      
       # Networking
       pod 'RxAlamofire'
       pod 'Moya/RxSwift'
@@ -48,5 +50,5 @@ target 'Need' do
       pod 'FreeStreamer' # 音频
       pod 'SCLAlertView' # 5k弹框
       pod 'MagicalRecord' # CoreData
-      
+#      pod 'SwiftLint' # 代码规范
 end

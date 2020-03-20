@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		155F0965E657E548E5DECF8E /* Pods_Need.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */; };
 		DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */; };
+		DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40552423264800C4819C /* GAKeyboardObserver.swift */; };
+		DC2F40582423279700C4819C /* GAKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40572423279700C4819C /* GAKeyboardView.swift */; };
+		DC2F40602423448000C4819C /* GAIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F405F2423448000C4819C /* GAIconButton.swift */; };
 		DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */; };
 		DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E1186242066070043396D /* RecordingStoryboard.swift */; };
 		DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745112241C6BAE0038562C /* AppDelegate.swift */; };
@@ -80,8 +83,6 @@
 		DC7451FF241C73610038562C /* GANormalizeDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC745194241C73610038562C /* GANormalizeDatePickerView.xib */; };
 		DC745200241C73610038562C /* GANormalizePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC745195241C73610038562C /* GANormalizePickerView.xib */; };
 		DC745201241C73610038562C /* GANormalizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745196241C73610038562C /* GANormalizeView.swift */; };
-		DC745202241C73610038562C /* GANormalizeIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745198241C73610038562C /* GANormalizeIconButton.swift */; };
-		DC745203241C73610038562C /* GANormalizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745199241C73610038562C /* GANormalizeButton.swift */; };
 		DC745204241C73610038562C /* GANormalizeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74519A241C73610038562C /* GANormalizeCollectionView.swift */; };
 		DC745205241C73610038562C /* GANormalize_JF_TabsStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74519D241C73610038562C /* GANormalize_JF_TabsStackViewController.swift */; };
 		DC745206241C73610038562C /* TabsTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC74519E241C73610038562C /* TabsTestViewController.xib */; };
@@ -144,6 +145,12 @@
 		DC745284241CD8770038562C /* GADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745283241CD8770038562C /* GADate.swift */; };
 		DCAE671C24207B33000A1A42 /* GATableScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */; };
 		DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE671E2421129E000A1A42 /* YYOnePixView.swift */; };
+		DCB44C9C24225EBB0000D3C3 /* GAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44C9924225EBB0000D3C3 /* GAPickerView.swift */; };
+		DCB44C9D24225EBB0000D3C3 /* GAPickerDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB44C9A24225EBB0000D3C3 /* GAPickerDataCell.xib */; };
+		DCB44C9E24225EBB0000D3C3 /* GAPickerDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44C9B24225EBB0000D3C3 /* GAPickerDataCell.swift */; };
+		DCB44CA824230C350000D3C3 /* GAPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44CA624230C350000D3C3 /* GAPickerViewController.swift */; };
+		DCB44CA924230C350000D3C3 /* GAPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB44CA724230C350000D3C3 /* GAPickerViewController.xib */; };
+		DCB44CB02423164A0000D3C3 /* GAMicrophoneKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */; };
 		DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */; };
 		DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */; };
 		DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */; };
@@ -180,6 +187,9 @@
 		777FD31DF96635ED57E35C45 /* Pods-Need.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.debug.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.debug.xcconfig"; sourceTree = "<group>"; };
 		CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Need.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghsy.mp3; sourceTree = "<group>"; };
+		DC2F40552423264800C4819C /* GAKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardObserver.swift; sourceTree = "<group>"; };
+		DC2F40572423279700C4819C /* GAKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardView.swift; sourceTree = "<group>"; };
+		DC2F405F2423448000C4819C /* GAIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAIconButton.swift; sourceTree = "<group>"; };
 		DC5E117F241FB4850043396D /* Need1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.1.xcdatamodel; sourceTree = "<group>"; };
 		DC5E1180241FBEB30043396D /* Need1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.2.xcdatamodel; sourceTree = "<group>"; };
 		DC5E1181241FBF5A0043396D /* Need1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.3.xcdatamodel; sourceTree = "<group>"; };
@@ -262,8 +272,6 @@
 		DC745194241C73610038562C /* GANormalizeDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GANormalizeDatePickerView.xib; sourceTree = "<group>"; };
 		DC745195241C73610038562C /* GANormalizePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GANormalizePickerView.xib; sourceTree = "<group>"; };
 		DC745196241C73610038562C /* GANormalizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GANormalizeView.swift; sourceTree = "<group>"; };
-		DC745198241C73610038562C /* GANormalizeIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GANormalizeIconButton.swift; sourceTree = "<group>"; };
-		DC745199241C73610038562C /* GANormalizeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GANormalizeButton.swift; sourceTree = "<group>"; };
 		DC74519A241C73610038562C /* GANormalizeCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GANormalizeCollectionView.swift; sourceTree = "<group>"; };
 		DC74519D241C73610038562C /* GANormalize_JF_TabsStackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GANormalize_JF_TabsStackViewController.swift; sourceTree = "<group>"; };
 		DC74519E241C73610038562C /* TabsTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabsTestViewController.xib; sourceTree = "<group>"; };
@@ -328,6 +336,12 @@
 		DC745283241CD8770038562C /* GADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADate.swift; sourceTree = "<group>"; };
 		DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATableScrollCell.swift; sourceTree = "<group>"; };
 		DCAE671E2421129E000A1A42 /* YYOnePixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYOnePixView.swift; sourceTree = "<group>"; };
+		DCB44C9924225EBB0000D3C3 /* GAPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPickerView.swift; sourceTree = "<group>"; };
+		DCB44C9A24225EBB0000D3C3 /* GAPickerDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAPickerDataCell.xib; sourceTree = "<group>"; };
+		DCB44C9B24225EBB0000D3C3 /* GAPickerDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPickerDataCell.swift; sourceTree = "<group>"; };
+		DCB44CA624230C350000D3C3 /* GAPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPickerViewController.swift; sourceTree = "<group>"; };
+		DCB44CA724230C350000D3C3 /* GAPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPickerViewController.xib; sourceTree = "<group>"; };
+		DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMicrophoneKeyboardView.swift; sourceTree = "<group>"; };
 		DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+MagicalRecord.swift"; sourceTree = "<group>"; };
 		DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GACoreData.swift; sourceTree = "<group>"; };
 		DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -396,6 +410,24 @@
 				DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		DC2F4059242327F600C4819C /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DC2F40552423264800C4819C /* GAKeyboardObserver.swift */,
+				DC2F40572423279700C4819C /* GAKeyboardView.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		DC5481DE24245F1B0041E0BD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC7451BE241C73610038562C /* GACustomCellView.swift */,
+				DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		DC745106241C6BAE0038562C = {
@@ -630,8 +662,7 @@
 		DC745197241C73610038562C /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				DC745198241C73610038562C /* GANormalizeIconButton.swift */,
-				DC745199241C73610038562C /* GANormalizeButton.swift */,
+				DC2F405F2423448000C4819C /* GAIconButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -734,10 +765,9 @@
 		DC7451BD241C73610038562C /* view */ = {
 			isa = PBXGroup;
 			children = (
+				DC5481DE24245F1B0041E0BD /* TableViewCell */,
 				DC745181241C73610038562C /* BaseView */,
 				DC745222241C75010038562C /* GATabBar */,
-				DC7451BE241C73610038562C /* GACustomCellView.swift */,
-				DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -755,6 +785,7 @@
 		DC745229241C75F70038562C /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				DCB44CA524230C180000D3C3 /* Alert */,
 				DC745233241C765F0038562C /* Mine */,
 				DC745232241C76510038562C /* Recording */,
 				DC745231241C764B0038562C /* Time */,
@@ -917,6 +948,7 @@
 		DC74527B241CBECF0038562C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DC2F4059242327F600C4819C /* Keyboard */,
 				DC745283241CD8770038562C /* GADate.swift */,
 				DC745271241C976C0038562C /* Speech.swift */,
 				DC74527C241CBEEB0038562C /* Recording.swift */,
@@ -934,9 +966,30 @@
 			path = "OnePixView（一像素）";
 			sourceTree = "<group>";
 		};
+		DCB44C9824225EBB0000D3C3 /* GAPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				DCB44C9924225EBB0000D3C3 /* GAPickerView.swift */,
+				DCB44C9A24225EBB0000D3C3 /* GAPickerDataCell.xib */,
+				DCB44C9B24225EBB0000D3C3 /* GAPickerDataCell.swift */,
+			);
+			path = GAPickerView;
+			sourceTree = "<group>";
+		};
+		DCB44CA524230C180000D3C3 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				DCB44CA624230C350000D3C3 /* GAPickerViewController.swift */,
+				DCB44CA724230C350000D3C3 /* GAPickerViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		DCDD7358241E616F006857BD /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */,
+				DCB44C9824225EBB0000D3C3 /* GAPickerView */,
 				DCAE671D2421129E000A1A42 /* OnePixView（一像素） */,
 				DCDD7363241E61EF006857BD /* Sonic（音波） */,
 			);
@@ -1072,7 +1125,9 @@
 				DC74520D241C73610038562C /* GANormalizeTabsMainCell.xib in Resources */,
 				DC7451FF241C73610038562C /* GANormalizeDatePickerView.xib in Resources */,
 				DC745200241C73610038562C /* GANormalizePickerView.xib in Resources */,
+				DCB44CA924230C350000D3C3 /* GAPickerViewController.xib in Resources */,
 				DC7451C1241C73610038562C /* toast_icon_right@2x.png in Resources */,
+				DCB44C9D24225EBB0000D3C3 /* GAPickerDataCell.xib in Resources */,
 				DC74511A241C6BAE0038562C /* Main.storyboard in Resources */,
 				DC74520E241C73610038562C /* GANormalizeTabsCell.xib in Resources */,
 				DC745230241C76480038562C /* Recording.storyboard in Resources */,
@@ -1150,7 +1205,6 @@
 				DC74524E241C778A0038562C /* GAService.swift in Sources */,
 				DC7451D0241C73610038562C /* View+GestureRecognizer.swift in Sources */,
 				DC7451BF241C73610038562C /* View+Toast.swift in Sources */,
-				DC745203241C73610038562C /* GANormalizeButton.swift in Sources */,
 				DC7451CF241C73610038562C /* UIView+Watermark.swift in Sources */,
 				DC74526C241C94E40038562C /* GATimeAddViewController.swift in Sources */,
 				DC74520C241C73610038562C /* GANormalizeTabsCell.swift in Sources */,
@@ -1170,9 +1224,9 @@
 				DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */,
 				DC7451CB241C73610038562C /* UIImage+Extension.swift in Sources */,
 				DC7451EA241C73610038562C /* Notification+Extension.swift in Sources */,
+				DCB44CA824230C350000D3C3 /* GAPickerViewController.swift in Sources */,
 				DC745228241C75010038562C /* GABaseXibTabBarView.swift in Sources */,
 				DC74521C241C73610038562C /* GATableViewController.swift in Sources */,
-				DC745202241C73610038562C /* GANormalizeIconButton.swift in Sources */,
 				DC7451D1241C73610038562C /* UIView+Shot.swift in Sources */,
 				DC7451D5241C73610038562C /* UIScrollView+SaveArea.swift in Sources */,
 				DC7451EC241C73610038562C /* Dictionary+Extension.swift in Sources */,
@@ -1227,6 +1281,7 @@
 				DC7451D8241C73610038562C /* UITableView+Extension.swift in Sources */,
 				DC7451D4241C73610038562C /* UICollectionView+Extension.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
+				DCB44C9E24225EBB0000D3C3 /* GAPickerDataCell.swift in Sources */,
 				DCE576A5241DB3B600266FF2 /* GARecordingViewModel.swift in Sources */,
 				DC7451DF241C73610038562C /* DispatchQueue+Extension.swift in Sources */,
 				DC74521E241C73610038562C /* GACustomCellView.swift in Sources */,
@@ -1248,6 +1303,7 @@
 				DC7451ED241C73610038562C /* Path+Extension.swift in Sources */,
 				DC7451F0241C73610038562C /* NotificationCenter+Rx.swift in Sources */,
 				DC74520A241C73610038562C /* GANormalizeTabsView.swift in Sources */,
+				DCB44CB02423164A0000D3C3 /* GAMicrophoneKeyboardView.swift in Sources */,
 				DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */,
 				DC7451FD241C73610038562C /* GANormalizeDatePickerView.swift in Sources */,
 				DC745205241C73610038562C /* GANormalize_JF_TabsStackViewController.swift in Sources */,
@@ -1262,13 +1318,17 @@
 				DC745210241C73610038562C /* GANormalizeTabsStackViewController.swift in Sources */,
 				DC7451CE241C73610038562C /* UIScrollView+PlaceHolder.swift in Sources */,
 				DC7451C7241C73610038562C /* UIFont+Extension.swift in Sources */,
+				DC2F40582423279700C4819C /* GAKeyboardView.swift in Sources */,
 				DC745217241C73610038562C /* GAIphoneType.swift in Sources */,
 				DC745201241C73610038562C /* GANormalizeView.swift in Sources */,
 				DC7451DB241C73610038562C /* NSArray+Extension.swift in Sources */,
 				DC745214241C73610038562C /* GANormalizeOther+Class.swift in Sources */,
 				DC7451EE241C73610038562C /* NotificationName+Extension.swift in Sources */,
 				DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */,
+				DC2F40602423448000C4819C /* GAIconButton.swift in Sources */,
 				DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */,
+				DCB44C9C24225EBB0000D3C3 /* GAPickerView.swift in Sources */,
+				DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */,
 				DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */,
 				DC74521A241C73610038562C /* GANavigationViewController.swift in Sources */,
 				DCAE671C24207B33000A1A42 /* GATableScrollCell.swift in Sources */,

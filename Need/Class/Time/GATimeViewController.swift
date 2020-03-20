@@ -22,7 +22,6 @@ class GATimeViewController: GARxSwiftNavViewController, GANavViewControllerProto
 
 }
 
-
 extension GATimeViewController {
    
 }

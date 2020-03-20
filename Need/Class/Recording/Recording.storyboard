@@ -11,7 +11,7 @@
         <!--Recording List View Controller-->
         <scene sceneID="svy-GO-FfV">
             <objects>
-                <viewController storyboardIdentifier="GARecordingViewController" id="HbS-T3-aNb" customClass="GARecordingListViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GARecordingListViewController" id="HbS-T3-aNb" customClass="GARecordingListViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jpb-TL-exe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,9 +79,9 @@
                                     <constraint firstAttribute="width" constant="44" id="RjS-kd-rFC"/>
                                     <constraint firstAttribute="height" constant="44" id="hQZ-qc-CKZ"/>
                                 </constraints>
-                                <state key="normal" image="recording_icon_ recording"/>
+                                <state key="normal" image="recording_icon_recording"/>
                                 <connections>
-                                    <segue destination="O7v-rq-dcB" kind="show" id="Bgb-pl-VuX"/>
+                                    <segue destination="HbS-T3-aNb" kind="show" id="nTg-1L-zzo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,18 +162,18 @@
             <objects>
                 <viewController storyboardIdentifier="GARecordingAddViewController" id="O7v-rq-dcB" customClass="GARecordingAddViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssc-mc-2Fi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-cj-gNV">
-                                <rect key="frame" x="20" y="668" width="374" height="40"/>
+                                <rect key="frame" x="20" y="722" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mJv-kk-T4T"/>
                                 </constraints>
                                 <state key="normal" title="开始录音"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfq-Ko-P4V">
-                                <rect key="frame" x="20" y="410.5" width="374" height="21"/>
+                                <rect key="frame" x="20" y="437.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,6 +250,6 @@
     </scenes>
     <resources>
         <image name="recordingList_icon_play" width="128" height="128"/>
-        <image name="recording_icon_ recording" width="128" height="128"/>
+        <image name="recording_icon_recording" width="128" height="128"/>
     </resources>
 </document>

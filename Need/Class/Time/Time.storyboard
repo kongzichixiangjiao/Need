@@ -107,18 +107,28 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWB-3r-fsI">
+                                        <rect key="frame" x="0.0" y="608" width="414" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="zdU-Fe-PRT"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Suz-2Z-Rh2" firstAttribute="leading" secondItem="7qH-nm-cML" secondAttribute="leading" constant="20" id="613-TY-lHu"/>
                                     <constraint firstAttribute="trailing" secondItem="MYa-wN-A2T" secondAttribute="trailing" constant="20" id="B35-8f-aL1"/>
+                                    <constraint firstAttribute="bottom" secondItem="jWB-3r-fsI" secondAttribute="bottom" id="EWe-ua-zp4"/>
                                     <constraint firstItem="Suz-2Z-Rh2" firstAttribute="top" secondItem="7k7-9E-tdJ" secondAttribute="bottom" constant="20" id="Fny-9J-RZ8"/>
                                     <constraint firstItem="MYa-wN-A2T" firstAttribute="leading" secondItem="7qH-nm-cML" secondAttribute="leading" constant="20" id="FxP-He-gJK"/>
+                                    <constraint firstAttribute="trailing" secondItem="jWB-3r-fsI" secondAttribute="trailing" id="HO2-QP-4xI"/>
                                     <constraint firstAttribute="trailing" secondItem="Suz-2Z-Rh2" secondAttribute="trailing" constant="20" id="L0V-Vv-14y"/>
                                     <constraint firstItem="MYa-wN-A2T" firstAttribute="top" secondItem="7qH-nm-cML" secondAttribute="top" constant="20" id="QW4-b9-B7V"/>
                                     <constraint firstItem="7k7-9E-tdJ" firstAttribute="leading" secondItem="MYa-wN-A2T" secondAttribute="leading" id="Yhg-ql-AHE"/>
                                     <constraint firstItem="7k7-9E-tdJ" firstAttribute="top" secondItem="MYa-wN-A2T" secondAttribute="bottom" id="aQM-sm-Bfj"/>
                                     <constraint firstItem="7k7-9E-tdJ" firstAttribute="trailing" secondItem="MYa-wN-A2T" secondAttribute="trailing" id="d8s-UE-Tcf"/>
+                                    <constraint firstItem="jWB-3r-fsI" firstAttribute="leading" secondItem="7qH-nm-cML" secondAttribute="leading" id="wuy-n8-oEf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -135,6 +145,7 @@
                     <connections>
                         <outlet property="b_saveTopSpace" destination="d9h-DS-q2i" id="yS3-zC-nmA"/>
                         <outlet property="contentTextView" destination="Suz-2Z-Rh2" id="i3E-Nk-2Yb"/>
+                        <outlet property="pickerBgView" destination="jWB-3r-fsI" id="taX-ks-FDT"/>
                         <outlet property="titleTextField" destination="MYa-wN-A2T" id="NUo-qf-QuR"/>
                     </connections>
                 </viewController>
