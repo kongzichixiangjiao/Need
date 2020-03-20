@@ -35,6 +35,7 @@ class GAShowWindow: UIWindow {
     }
     
     static func ga_init(windowFrame: CGRect, message: String = "", type: GAToastType, duration: TimeInterval, touchEnable: Bool) {
+        
         let window = ga_initWindow(frame: windowFrame)
         
         if touchEnable {

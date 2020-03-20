@@ -81,7 +81,7 @@
                                 </constraints>
                                 <state key="normal" image="recording_icon_recording"/>
                                 <connections>
-                                    <segue destination="HbS-T3-aNb" kind="show" id="nTg-1L-zzo"/>
+                                    <segue destination="O7v-rq-dcB" kind="show" id="yq8-2n-sSq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,67 +113,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOF-RU-aj3">
-                                <rect key="frame" x="187" y="722" width="40" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzI-zB-6He">
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOF-RU-aj3">
+                                        <rect key="frame" x="20" y="35" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Nmi-e3-3du"/>
+                                            <constraint firstAttribute="height" constant="30" id="f0N-Tm-LRt"/>
+                                        </constraints>
+                                        <state key="normal" image="recordingList_icon_play"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6e-GG-m2w" customClass="YYPlayerSlider" customModule="Need" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="37.5" width="341" height="25"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="HiC-Jl-ntP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultProgressColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                <color key="value" red="0.94901960780000005" green="0.42745098040000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dragColor">
+                                                <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEN-RG-kMJ">
+                                        <rect key="frame" x="65" y="30.5" width="29" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUN-Ge-t0a">
+                                        <rect key="frame" x="377" y="30.5" width="29" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="Nmi-e3-3du"/>
-                                    <constraint firstAttribute="height" constant="40" id="f0N-Tm-LRt"/>
+                                    <constraint firstItem="vOF-RU-aj3" firstAttribute="leading" secondItem="XzI-zB-6He" secondAttribute="leading" constant="20" id="02d-3j-LjB"/>
+                                    <constraint firstAttribute="trailing" secondItem="e6e-GG-m2w" secondAttribute="trailing" constant="8" id="1Sk-aD-Kg9"/>
+                                    <constraint firstItem="vOF-RU-aj3" firstAttribute="centerY" secondItem="XzI-zB-6He" secondAttribute="centerY" id="1x7-gb-fze"/>
+                                    <constraint firstItem="e6e-GG-m2w" firstAttribute="leading" secondItem="bEN-RG-kMJ" secondAttribute="leading" id="5Js-jS-TO7"/>
+                                    <constraint firstItem="e6e-GG-m2w" firstAttribute="leading" secondItem="vOF-RU-aj3" secondAttribute="trailing" constant="15" id="6Nz-KX-P1u"/>
+                                    <constraint firstAttribute="height" constant="100" id="RHq-Sl-UGi"/>
+                                    <constraint firstItem="e6e-GG-m2w" firstAttribute="top" secondItem="bEN-RG-kMJ" secondAttribute="bottom" constant="-5" id="daV-jM-6p1"/>
+                                    <constraint firstItem="nUN-Ge-t0a" firstAttribute="trailing" secondItem="e6e-GG-m2w" secondAttribute="trailing" id="pOw-bf-FGu"/>
+                                    <constraint firstItem="e6e-GG-m2w" firstAttribute="centerY" secondItem="vOF-RU-aj3" secondAttribute="centerY" id="r8p-fM-2lM"/>
+                                    <constraint firstItem="e6e-GG-m2w" firstAttribute="top" secondItem="nUN-Ge-t0a" secondAttribute="bottom" constant="-5" id="uOf-KK-7ql"/>
                                 </constraints>
-                                <state key="normal" image="recordingList_icon_play"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00：00：00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4R-0u-Xgm">
-                                <rect key="frame" x="158.5" y="144" width="97" height="21"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rko-k3-cbP">
+                                <rect key="frame" x="37" y="72" width="329" height="570"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEy-oB-SV2">
-                                <rect key="frame" x="176" y="662" width="62" height="30"/>
+                                <rect key="frame" x="0.0" y="717" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wZX-Nm-Opd"/>
+                                </constraints>
                                 <state key="normal" title="识别语音"/>
-                                <connections>
-                                    <segue destination="Iat-ue-jEx" kind="show" id="QUi-uO-6ZW"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="t4R-0u-Xgm" firstAttribute="centerX" secondItem="err-kl-Gxb" secondAttribute="centerX" id="1mP-AC-q6W"/>
-                            <constraint firstItem="vOF-RU-aj3" firstAttribute="centerX" secondItem="err-kl-Gxb" secondAttribute="centerX" id="5Eh-z2-21E"/>
-                            <constraint firstItem="hEy-oB-SV2" firstAttribute="centerX" secondItem="vOF-RU-aj3" secondAttribute="centerX" id="7m2-TH-3LQ"/>
-                            <constraint firstItem="t4R-0u-Xgm" firstAttribute="top" secondItem="mt1-8K-gR0" secondAttribute="top" constant="100" id="JP6-fX-FEv"/>
-                            <constraint firstItem="vOF-RU-aj3" firstAttribute="top" secondItem="hEy-oB-SV2" secondAttribute="bottom" constant="30" id="Zu5-rj-emk"/>
-                            <constraint firstItem="mt1-8K-gR0" firstAttribute="bottom" secondItem="vOF-RU-aj3" secondAttribute="bottom" constant="100" id="fAN-rU-Oil"/>
+                            <constraint firstItem="mt1-8K-gR0" firstAttribute="trailing" secondItem="hEy-oB-SV2" secondAttribute="trailing" id="2Xc-cj-hlw"/>
+                            <constraint firstItem="hEy-oB-SV2" firstAttribute="leading" secondItem="mt1-8K-gR0" secondAttribute="leading" id="DFl-PX-Iop"/>
+                            <constraint firstItem="XzI-zB-6He" firstAttribute="leading" secondItem="mt1-8K-gR0" secondAttribute="leading" id="TXO-8d-JSR"/>
+                            <constraint firstItem="mt1-8K-gR0" firstAttribute="bottom" secondItem="XzI-zB-6He" secondAttribute="bottom" id="XTr-qC-cDn"/>
+                            <constraint firstItem="mt1-8K-gR0" firstAttribute="trailing" secondItem="XzI-zB-6He" secondAttribute="trailing" id="ate-Xa-sak"/>
+                            <constraint firstItem="XzI-zB-6He" firstAttribute="top" secondItem="hEy-oB-SV2" secondAttribute="bottom" constant="5" id="w2A-By-yeO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mt1-8K-gR0"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rd0-lL-0tT"/>
                     <connections>
+                        <outlet property="currentTimeLabel" destination="bEN-RG-kMJ" id="Gwk-cw-naI"/>
                         <outlet property="playButton" destination="vOF-RU-aj3" id="VTO-zb-dIb"/>
                         <outlet property="recognitionButton" destination="hEy-oB-SV2" id="e5g-FX-naf"/>
-                        <outlet property="totalLabel" destination="t4R-0u-Xgm" id="hgl-2C-4Dg"/>
+                        <outlet property="resultTextLabel" destination="rko-k3-cbP" id="lzL-xw-af0"/>
+                        <outlet property="slider" destination="e6e-GG-m2w" id="3fh-Pk-jX9"/>
+                        <outlet property="totalTimeLabel" destination="nUN-Ge-t0a" id="HQk-av-x5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhZ-FK-Te4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="775"/>
+            <point key="canvasLocation" x="-117.39130434782609" y="774.77678571428567"/>
         </scene>
         <!--Recording Add View Controller-->
         <scene sceneID="gQs-vU-zdC">
             <objects>
                 <viewController storyboardIdentifier="GARecordingAddViewController" id="O7v-rq-dcB" customClass="GARecordingAddViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ssc-mc-2Fi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-cj-gNV">
-                                <rect key="frame" x="20" y="722" width="374" height="40"/>
+                                <rect key="frame" x="20" y="668" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mJv-kk-T4T"/>
                                 </constraints>
                                 <state key="normal" title="开始录音"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfq-Ko-P4V">
-                                <rect key="frame" x="20" y="437.5" width="374" height="21"/>
+                                <rect key="frame" x="20" y="410.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -205,18 +257,18 @@
             <objects>
                 <viewController storyboardIdentifier="GASpeechRecognitionViewController" id="Iat-ue-jEx" customClass="GASpeechRecognitionViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Dr-sI-QCG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmi-7m-tTP">
-                                <rect key="frame" x="20" y="728" width="374" height="40"/>
+                                <rect key="frame" x="20" y="782" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ljM-6j-y2y"/>
                                 </constraints>
                                 <state key="normal" title="实时语音识别"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f8M-uZ-Hp4" customClass="GANormalizeTextView" customModule="Need" customModuleProvider="target">
-                                <rect key="frame" x="20" y="60" width="374" height="240"/>
+                                <rect key="frame" x="20" y="104" width="374" height="240"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="3Eo-1L-Sa4"/>

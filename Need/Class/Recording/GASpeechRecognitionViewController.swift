@@ -7,6 +7,7 @@
 //  语音识别
 
 import UIKit
+import SCLAlertView
 
 enum GASpeechRecognitionFromType: Int {
     case audioDetails = 1, speech = 2
@@ -25,6 +26,12 @@ class GASpeechRecognitionViewController: GARecordingBaseViewController {
         
         _initViews()
         _speechButtonAction()
+        
+        if fromType == .audioDetails {
+            _sppechLocalAudio()
+//            GAShowWindow.ga_showLoading()
+        }
+        
     }
     
     private func _initViews() {
@@ -33,7 +40,37 @@ class GASpeechRecognitionViewController: GARecordingBaseViewController {
     }
     
     override func b_speechRecognition(text: String) {
-        textView.text = text
+//        GAShowWindow.ga_show(message: text)
+        textView.mText = text
+    }
+    
+    override func b_speechRecognizer(available: Bool) {
+        if fromType == .audioDetails {
+            speechButton.isSelected = false
+        }
+//        GAShowWindow.ga_hideLoading()
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            kWindowWidth: kScreenWidth - 40, showCloseButton: false, circleBackgroundColor: UIColor.white
+        )
+        
+        let alert = SCLAlertView(appearance: appearance)
+        alert.addButton("确定", backgroundColor: kMainButtonDefaultColor) {
+            GACoreData.saveDB(type: GARecordingModel.self, name: self.model.name ?? "", block: { (entity) in
+                entity?.resultText = self.textView.mText
+            }) { (models) in
+                let result = GACoreData.findAll(type: GARecordingModel.self)
+                print(result.last?.resultText ?? "")
+                print(result.last?.name ?? "")
+                GAShowWindow.ga_show(message: "保存成功")
+            }
+        }
+        alert.addButton("取消", backgroundColor: kMainButtonDefaultColor) {
+            
+        }
+        
+        alert.showInfo("保存", subTitle: "是否保存识别结果？")
+        
     }
 }
 

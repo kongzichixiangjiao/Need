@@ -14,9 +14,13 @@ class GAAudioDetailsViewController: GARecordingBaseViewController {
     
     var model: GARecordingModel!
     var publishModel: PublishSubject<GARecordingModel>?
-    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var recognitionButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var slider: YYPlayerSlider!
+    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet weak var totalTimeLabel: UILabel!
+    @IBOutlet weak var resultTextLabel: UILabel!
+    private var _isEndTimer: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +29,25 @@ class GAAudioDetailsViewController: GARecordingBaseViewController {
         _initViews()
         _request()
         
-//        publicModel?.on(<#T##event: Event<GARecordingModel>##Event<GARecordingModel>#>)
-        
         _initPlayer()
         _playerButtonAction()
+        _addTimer()
+        _recognitionButtonAction()
+        
     }
     
     private func _initViews() {
-        b_showNavigationView(title: "录音")
+        b_showNavigationView(title: "播放/识别")
+        slider.delegate = self
+        
+        resultTextLabel.text = model.resultText ?? ""
     }
     
     private func _request() {
         
     }
+    
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -46,13 +56,43 @@ class GAAudioDetailsViewController: GARecordingBaseViewController {
     }
 }
 
+extension GAAudioDetailsViewController: YYPlayerSliderDelegate {
+    func playerSliderBegan(progress: CGFloat) {
+        _isEndTimer = true
+    }
+    
+    func playerSliderChanged(progress: CGFloat) {
+        
+    }
+    
+    func playerSliderEnd(progress: CGFloat) {
+        player.setSeek(progress: Float(progress))
+        _isEndTimer = false
+    }
+}
+
 extension GAAudioDetailsViewController {
     private func _addTimer() {
         let timer = Observable<Int>.interval(1, scheduler: MainScheduler.asyncInstance)
         timer.subscribe(onNext: {
             [weak self] timer in
-            let time = self?.player.totalTime()
-            self?.totalLabel.text = String(time?.0.minute ?? 0) + ":" + String(time?.0.second ?? 0)
+            if let weakSelf = self {
+                if weakSelf._isEndTimer {
+                    return
+                }
+            }
+            guard let total = self?.player.totalTime() else {
+                return
+            }
+            self?.totalTimeLabel.text = String.ga_formate(time: Int(total))
+            guard let current = self?.player.currentTime() else {
+                return
+            }
+            self?.currentTimeLabel.text = String.ga_formate(time: Int(current))
+            if total != 0 {
+                let progress = CGFloat(current) / CGFloat(total)
+                self?.slider.setupProgress(progress)
+            }
         }).disposed(by: disposeBag)
     }
     
@@ -70,9 +110,15 @@ extension GAAudioDetailsViewController {
             guard let weakSelf = self else {
                 return
             }
-            weakSelf.player.play()
-            weakSelf.startSonic()
+//            if weakSelf.player.isPlaying {
+//                weakSelf.player.pause()
+//            } else {
+                weakSelf.player.play()
+            print("------------")
+//            }
+//            weakSelf.startSonic()
         }.disposed(by: disposeBag)
+        
     }
     
     private func _recognitionButtonAction() {

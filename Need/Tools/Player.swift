@@ -14,64 +14,17 @@ class Player: NSObject {
     typealias FinishedHandler = (_ b: Bool, _ message: String) -> ()
     var finishedHandler: FinishedHandler?
     
+    var isPause: Bool = false
+    
     var isPlaying: Bool {
-        return player?.isPlaying ?? false
+        return audioController.isPlaying()
     }
     
-    var playUrl: URL?
-    
-    lazy var player: AVAudioPlayer? = {
-        do {
-            guard let url = playUrl else {
-                return nil
-            }
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            } catch {
-                print(error)
-            }
-            try! AVAudioSession.sharedInstance().setActive(true)
-            
-            let player = try AVAudioPlayer.init(contentsOf: url)
-            player.delegate = self
-            player.prepareToPlay()
-            return player
-        }catch{
-            print(error)
-            return nil
+    var playUrl: URL? {
+        didSet {
+            audioController.url = playUrl! as NSURL
         }
-    }()
-    
-    lazy var streamlayer: FSAudioStream = {
-        let config = FSStreamConfiguration()
-        config.httpConnectionBufferSize *= 2
-        config.enableTimeAndPitchConversion = true
-        
-        guard let s = FSAudioStream(configuration: config) else {
-            return FSAudioStream()
-        }
-    
-        s.onFailure = {
-            error, message in
-            print(error, message ?? "")
-        }
-        s.onCompletion = {
-            print("播放完成")
-            s.play()
-        }
-        s.onStateChange = {
-            state in
-            print(state)
-        }
-        s.volume = 0.5
-        //设置播放速率
-        s.setPlayRate(1.0)
-        // 不进行检测格式 <开启检测之后，有些网络音频链接无法播放>
-        s.strictContentTypeChecking = false
-        s.defaultContentType = ("audio/" + kAudioType) as NSString
-        return s
-    }()
+    }
     
     lazy var audioController: FSAudioController = {
         let s = FSAudioController()
@@ -80,53 +33,73 @@ class Player: NSObject {
     }()
     
     func play() {
-        guard let url = playUrl else {
-            print("ERROR ------ URL不能为nil")
-            return
+        if audioController.isPlaying() {
+            pause()
+        } else {
+            if isPause {
+                audioController.pause()
+                isPause = false
+            } else {
+                audioController.play()
+            }
         }
-        
-//        if !(self.player?.isPlaying ?? false) {
-//            print(self.player?.play())
-//            print(self.player?.isPlaying)
-//        }
-        
-//        streamlayer.play(from: URL(string: "http://q79yxbmtx.bkt.clouddn.com/1584363194818_tGBlb.mp3"))
-        streamlayer.play(from: url)
-        
-//        audioController.url = url as NSURL
-//        audioController.play()
     }
     
+    
     func pause() {
-//        if self.player?.isPlaying ?? false {
-//            self.player?.pause()
-//        }
-        streamlayer.pause()
+        audioController.pause()
+        isPause = true
+    }
+    
+    func rePlay() {
+        audioController.play()
     }
     
     func stop() {
-//        self.player?.stop()
-        streamlayer.stop()
+        audioController.stop()
+    }
+
+    func totalTime() -> Int {
+        if audioController.activeStream == nil {
+            return 0
+        }
+        let total = audioController.activeStream.duration
+        let totalTime = total.minute * 60 + total.second //音频总时长
+
+        return Int(totalTime)
     }
     
-    func updateMeters() {
-        player?.updateMeters()
-    }
-    
-    func averagePower(forChannel: Int) -> Float {
-        return player?.peakPower(forChannel: forChannel) ?? 0.0
-    }
-    
-    func totalTime() -> (FSStreamPosition, FSStreamPosition) {
-        let cur = streamlayer.currentTimePlayed
-        let end =  streamlayer.duration
-        
+    func currentTime() -> Int {
+        if audioController.activeStream == nil {
+            return 0
+        }
+        let cur = audioController.activeStream.currentTimePlayed
         let currentTime = cur.minute * 60 + cur.second; //音频已加载播放时长
-        let totalTime = end.minute * 60 + end.second //音频总时长
-        print(currentTime, totalTime)
-        return (cur, end)
+        return Int(currentTime)
     }
     
+    func progress() -> CGFloat {
+        if totalTime() == 0 {
+            return 0.0
+        }
+        
+        return CGFloat(currentTime()) / CGFloat(totalTime())
+    }
+    
+    func setSeek(progress: Float) {
+        if audioController.activeStream == nil {
+            return
+        }
+        let currentTime = Int(Float(totalTime()) * progress)
+        let m = currentTime / 60
+        let s = currentTime % 60
+        print(m)
+        print(s)
+        var p = FSStreamPosition(minute: UInt32(m), second: UInt32(s), playbackTimeInSeconds: 0, position: progress)
+        p.position = progress
+        audioController.activeStream.seek(to: p)
+
+    }
 }
 
 extension Player: FSAudioControllerDelegate {

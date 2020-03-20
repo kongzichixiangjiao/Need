@@ -35,8 +35,6 @@ class GARecordingBaseViewController: GARxSwiftNavViewController, GARecordingProt
     
     @objc func updateMeters() {
         if audioType == .play {
-            player.updateMeters()
-            addSoundMeter(item: player.averagePower(forChannel: 0))
         } else {
             recording.updateMeters()
             addSoundMeter(item: recording.averagePower(forChannel: 0))
@@ -122,6 +120,10 @@ class GARecordingBaseViewController: GARxSwiftNavViewController, GARecordingProt
         
     }
     
+    func b_speechRecognizer(available: Bool) {
+        
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
@@ -148,7 +150,7 @@ class GARecordingBaseViewController: GARxSwiftNavViewController, GARecordingProt
 extension GARecordingBaseViewController: GASpeechDelegate {
     
     func ga_speechRecognizer(available: Bool) {
-        
+        b_speechRecognizer(available: available)
     }
     
     func ga_speechRecognition(text: String) {

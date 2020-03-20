@@ -41,14 +41,12 @@ class GARecordingAddViewController: GARecordingBaseViewController {
         }).disposed(by: disposeBag)
     }
     
-    
     deinit {
         print("---")
     }
 }
 
 extension GARecordingAddViewController {
-
     fileprivate func _recordingButtonAction() {
         self.recordingButton.rx.tap.subscribe {
             [unowned self] e in

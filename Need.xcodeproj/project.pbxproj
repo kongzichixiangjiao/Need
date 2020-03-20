@@ -12,6 +12,7 @@
 		DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40552423264800C4819C /* GAKeyboardObserver.swift */; };
 		DC2F40582423279700C4819C /* GAKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40572423279700C4819C /* GAKeyboardView.swift */; };
 		DC2F40602423448000C4819C /* GAIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F405F2423448000C4819C /* GAIconButton.swift */; };
+		DC5482052424A6800041E0BD /* YYPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5482042424A67F0041E0BD /* YYPlayerSlider.swift */; };
 		DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */; };
 		DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E1186242066070043396D /* RecordingStoryboard.swift */; };
 		DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745112241C6BAE0038562C /* AppDelegate.swift */; };
@@ -190,6 +191,9 @@
 		DC2F40552423264800C4819C /* GAKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardObserver.swift; sourceTree = "<group>"; };
 		DC2F40572423279700C4819C /* GAKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardView.swift; sourceTree = "<group>"; };
 		DC2F405F2423448000C4819C /* GAIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAIconButton.swift; sourceTree = "<group>"; };
+		DC5482042424A67F0041E0BD /* YYPlayerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPlayerSlider.swift; sourceTree = "<group>"; };
+		DC54820B24250A400041E0BD /* Need1.6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.6.xcdatamodel; sourceTree = "<group>"; };
+		DC54820C24250A840041E0BD /* Need1.7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.7.xcdatamodel; sourceTree = "<group>"; };
 		DC5E117F241FB4850043396D /* Need1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.1.xcdatamodel; sourceTree = "<group>"; };
 		DC5E1180241FBEB30043396D /* Need1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.2.xcdatamodel; sourceTree = "<group>"; };
 		DC5E1181241FBF5A0043396D /* Need1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.3.xcdatamodel; sourceTree = "<group>"; };
@@ -988,6 +992,7 @@
 		DCDD7358241E616F006857BD /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DC5482042424A67F0041E0BD /* YYPlayerSlider.swift */,
 				DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */,
 				DCB44C9824225EBB0000D3C3 /* GAPickerView */,
 				DCAE671D2421129E000A1A42 /* OnePixView（一像素） */,
@@ -1278,6 +1283,7 @@
 				DC7451C3241C73610038562C /* GAToast.swift in Sources */,
 				DC7451F5241C73610038562C /* GANormalizeTextView.swift in Sources */,
 				DC7451EB241C73610038562C /* Timer+Extension.swift in Sources */,
+				DC5482052424A6800041E0BD /* YYPlayerSlider.swift in Sources */,
 				DC7451D8241C73610038562C /* UITableView+Extension.swift in Sources */,
 				DC7451D4241C73610038562C /* UICollectionView+Extension.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
@@ -1672,6 +1678,8 @@
 		DC74511B241C6BAE0038562C /* Need.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DC54820C24250A840041E0BD /* Need1.7.xcdatamodel */,
+				DC54820B24250A400041E0BD /* Need1.6.xcdatamodel */,
 				DC5E1183241FC38B0043396D /* Need1.5.xcdatamodel */,
 				DC5E1182241FBF8D0043396D /* Need1.4.xcdatamodel */,
 				DC5E1181241FBF5A0043396D /* Need1.3.xcdatamodel */,
