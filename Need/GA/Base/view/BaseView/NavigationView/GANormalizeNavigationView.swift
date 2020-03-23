@@ -34,9 +34,12 @@ class GANormalizeNavigationView: UIView {
     @IBOutlet weak var titleLabelRightSpace: NSLayoutConstraint!
     @IBOutlet weak var lineViewHeight: NSLayoutConstraint!
     @IBOutlet weak var rightButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var leftButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var leftButtonLeftSpace: NSLayoutConstraint!
     
     typealias ButtonHandler = (_ title: String) -> ()
     private var rightButtonHandler: ButtonHandler?
+    private var leftButtonHandler: ButtonHandler?
     
     public var isShowLineView: Bool! {
         didSet {
@@ -91,7 +94,12 @@ class GANormalizeNavigationView: UIView {
             if let rHandler = rightButtonHandler {
                 rHandler(sender.titleLabel?.text ?? "")
             }
+        } else if type == .left {
+            leftButtonHandler?(sender.titleLabel?.text ?? "")
+        } else {
+            
         }
+        
     }
     
     public func nav_show(isShowLineView line: Bool = false, isShowLeftButton left: Bool = true, isShowLeftOtherButton leftOther: Bool = false, isShowRightButton right: Bool = false) {
@@ -109,17 +117,46 @@ class GANormalizeNavigationView: UIView {
         self.nav_addLayout(top: 0, bottom: 0, left: 0, right: 0, item: customerView)
     }
     
-    public func nav_showNavigationRightButton(title: String = "", imgName: String = "", buttonHandler: @escaping (_ title: String) -> ()) {
+    public func nav_showNavigationLeftButton(title: String = "", imgName: String = "", buttonHandler: @escaping ButtonHandler) {
+        isShowLeftButton = true
+        
+        if title.isEmpty {
+            leftButton.setImage(UIImage(named: imgName), for: .normal)
+            leftButtonLeftSpace.constant = 10
+        } else {
+            leftButton.setImage(UIImage(named: ""), for: .normal)
+            leftButton.setTitle(title, for: .normal)
+            let w = title.ga_widthWith(15, height: 15)
+            leftButtonWidth.constant = w
+            leftButtonLeftSpace.constant = 20
+        }
+        leftButton.titleLabel?.text = title
+        leftButtonHandler = buttonHandler
+    }
+    
+    public func nav_showNavigationRightButton(title: String = "", imgName: String = "", buttonHandler: @escaping ButtonHandler) {
+        _initRightButton(title: title, imgName: imgName)
+        
+        rightButtonHandler = buttonHandler
+    }
+    
+    public func nav_updateNavigationRightButton(title: String = "", imgName: String = "") {
+        _initRightButton(title: title, imgName: imgName)
+    }
+    
+    private func _initRightButton(title: String = "", imgName: String = "") {
         isShowRightButton = true
         
         if title.isEmpty {
             rightButton.setImage(UIImage(named: imgName), for: .normal)
+            rightButton.setTitle(title, for: .normal)
         } else {
+            rightButton.setImage(UIImage(named: ""), for: .normal)
             rightButton.setTitle(title, for: .normal)
             let w = title.ga_widthWith(15, height: 15)
             rightButtonWidth.constant = w
         }
-        rightButtonHandler = buttonHandler
+        rightButton.titleLabel?.text = title
     }
     
     static func loadNavigationView() -> GANormalizeNavigationView {

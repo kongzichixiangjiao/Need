@@ -65,7 +65,7 @@ class Player: NSObject {
         }
         let total = audioController.activeStream.duration
         let totalTime = total.minute * 60 + total.second //音频总时长
-
+        print("totalTime", totalTime)
         return Int(totalTime)
     }
     
@@ -75,6 +75,7 @@ class Player: NSObject {
         }
         let cur = audioController.activeStream.currentTimePlayed
         let currentTime = cur.minute * 60 + cur.second; //音频已加载播放时长
+        print("currentTime", currentTime)
         return Int(currentTime)
     }
     

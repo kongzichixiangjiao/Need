@@ -66,6 +66,10 @@ class GANavViewController: GAViewController {
     public func b_showNavigationRightButton(title: String = "", imgName: String = "", buttonHandler: @escaping (_ title: String) -> ()) {
         b_navigationView.nav_showNavigationRightButton(title: title, imgName: imgName, buttonHandler: buttonHandler)
     }
+    
+    public func b_showNavigationLeftButton(title: String = "", imgName: String = "", buttonHandler: @escaping (_ title: String) -> ()) {
+        b_navigationView.nav_showNavigationLeftButton(title: title, imgName: imgName, buttonHandler: buttonHandler)
+    }
 
     private func _initNavigationView(title: String) {
       if _isShowNavigationView {

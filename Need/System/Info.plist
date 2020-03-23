@@ -38,9 +38,9 @@
 		</dict>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Your microphone will be used to record your speech when you press the "Start Recording" button.</string>
+	<string>Your microphone will be used to record your speech when you press the &quot;Start Recording&quot; button.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speech recognition will be used to determine which words you speak into this device's microphone.</string>
+	<string>Speech recognition will be used to determine which words you speak into this device&apos;s microphone.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -68,5 +68,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>访问相册了</string>
 </dict>
 </plist>

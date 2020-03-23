@@ -15,11 +15,13 @@ enum GASpeechRecognitionFromType: Int {
 
 class GASpeechRecognitionViewController: GARecordingBaseViewController {
     
-    @IBOutlet weak var speechButton: UIButton!
+    @IBOutlet weak var speechButton: GAIconButton!
     @IBOutlet weak var textView: GANormalizeTextView!
     
     var model: GARecordingModel!
     var fromType: GASpeechRecognitionFromType = .audioDetails
+    
+    var GAShowWindowFrame: CGRect!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,26 +31,38 @@ class GASpeechRecognitionViewController: GARecordingBaseViewController {
         
         if fromType == .audioDetails {
             _sppechLocalAudio()
-//            GAShowWindow.ga_showLoading()
+            
+            GAShowWindowFrame = self.view.bounds.ga_yChangTo(b_navigationViewMaxY).ga_heightChang(-b_navigationViewMaxY)
+            GAShowWindow.ga_showLoading(windowFrame: GAShowWindowFrame)
+            
+            self.speechButton.ga_changeIsSelected(!self.speechButton.isSelected)
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
+        GAShowWindow.ga_hideLoading()
     }
     
     private func _initViews() {
         b_showNavigationView(title: "语音识别")
         textView.mDelegate = self
+        if fromType == .audioDetails {
+            speechButton.normalTitle = "重新识别"
+            speechButton.selectedTitle = "正在识别..."
+        }
     }
     
     override func b_speechRecognition(text: String) {
-//        GAShowWindow.ga_show(message: text)
-        textView.mText = text
+        GAShowWindow.ga_show(windowFrame: GAShowWindowFrame, message: text, isHideBefore: true)
+        textView.text = text
     }
     
     override func b_speechRecognizer(available: Bool) {
-        if fromType == .audioDetails {
-            speechButton.isSelected = false
-        }
-//        GAShowWindow.ga_hideLoading()
+        GAShowWindow.ga_hideAll()
+        
+        self.speechButton.ga_changeIsSelected(!self.speechButton.isSelected)
         
         let appearance = SCLAlertView.SCLAppearance(
             kWindowWidth: kScreenWidth - 40, showCloseButton: false, circleBackgroundColor: UIColor.white
@@ -56,34 +70,25 @@ class GASpeechRecognitionViewController: GARecordingBaseViewController {
         
         let alert = SCLAlertView(appearance: appearance)
         alert.addButton("确定", backgroundColor: kMainButtonDefaultColor) {
-            GACoreData.saveDB(type: GARecordingModel.self, name: self.model.name ?? "", block: { (entity) in
-                entity?.resultText = self.textView.mText
-            }) { (models) in
-                let result = GACoreData.findAll(type: GARecordingModel.self)
-                print(result.last?.resultText ?? "")
-                print(result.last?.name ?? "")
-                GAShowWindow.ga_show(message: "保存成功")
-            }
+            GACoreData.ga_save(resultText: self.textView.text, name: self.model.name)
         }
         alert.addButton("取消", backgroundColor: kMainButtonDefaultColor) {
             
         }
         
         alert.showInfo("保存", subTitle: "是否保存识别结果？")
-        
     }
 }
 
 extension GASpeechRecognitionViewController {
     fileprivate func _speechButtonAction() {
-        self.speechButton.rx.tap.subscribe {
-            [unowned self] e in
-            
+        speechButton.addEndAction {
+            [unowned self] _, _ in
             if !self.isAllowed {
                 self.requestRecordPermission()
                 return
             }
-            
+
             if self.fromType == .audioDetails {
                 self._sppechLocalAudio()
             } else {
@@ -93,8 +98,8 @@ extension GASpeechRecognitionViewController {
                     self.speech.start()
                 }
             }
-            self.speechButton.isSelected = !self.speechButton.isSelected
-        }.disposed(by: disposeBag)
+            self.speechButton.ga_changeIsSelected(!self.speechButton.isSelected)
+        }
     }
     
     private func _sppechLocalAudio() {
@@ -116,11 +121,13 @@ extension GASpeechRecognitionViewController: GANormalizeTextViewDelegate {
     
     func normalizeTextViewPlaceholdView(textView: GANormalizeTextView) -> UIView {
         let l = UILabel().then {
-            $0.frame = CGRect(x: 0, y: textView.height / 2 - 15, width: 100, height: 15)
+            $0.frame = CGRect(x: 0, y: textView.height / 2 - 15, width: kScreenWidth, height: 15)
             $0.textAlignment = .center
             $0.font = UIFont.systemFont(ofSize: 24)
             $0.textColor = kFont_2_9_LevelColor
-            $0.text = "录语音识别或者手动输入"
+            if fromType != .audioDetails {
+                $0.text = "录语音识别或者手动输入"
+            }
         }
         return l
     }

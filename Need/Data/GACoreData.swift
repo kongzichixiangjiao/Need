@@ -41,6 +41,10 @@ class GACoreData: MagicalRecord {
         return type.mr_findAll() as! [T]
     }
     
+    static func findAllSorted<T: NSManagedObject>(type: T.Type, by: String = "date", ascending: Bool = true) -> [T] {
+        return type.mr_findAllSorted(by: "createTime", ascending: ascending) as! [T]
+    }
+    
     static func delete<T: NSManagedObject>(type: T.Type, name: String, completion: @escaping CompletionHandler<T>) {
         MagicalRecord.save({ (context) in
             let predicate = NSPredicate(format: "name==%@", name)

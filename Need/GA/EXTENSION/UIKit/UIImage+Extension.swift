@@ -65,7 +65,7 @@ extension UIImage {
     func compressImage(_ maxLength: Int) -> Data? {
         
         let newSize = self.scaleImage(self, imageLength: 300)
-        let newImage = self.resizeImage(newSize: newSize)
+        let newImage = self.ga_resizeImage(newSize: newSize)
         
         var compress:CGFloat = 0.9
         var data = newImage.jpegData(compressionQuality: compress)
@@ -124,18 +124,40 @@ extension UIImage {
      *
      *  return 调整后的图片
      */
-    func resizeImage(newSize: CGSize, scale: CGFloat = 2) -> UIImage {
-        UIGraphicsBeginImageContext(newSize)
-        
-        UIGraphicsBeginImageContextWithOptions(newSize, false, scale)
-        
+    func ga_resizeImage(newSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(CGSize(width: newSize.width, height: newSize.height))
+
+//        UIGraphicsBeginImageContextWithOptions(newSize, true, scale)
+
         self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        
+
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        
+
         UIGraphicsEndImageContext()
         
+//        UIGraphicsBeginImageContext(newSize)
+//        let context = UIGraphicsGetCurrentContext()!
+//        //做CTM变换
+//
+//        context.translateBy(x: 0.0, y: newSize.height)
+//        //做CTM变换
+//        context.scaleBy(x: 1.0, y: -1.0)
+//        context.rotate(by: 0)
+//        context.translateBy(x: 0, y: 0)
+//
+//        context.scaleBy(x: 1, y: 1)
+//        //绘制图片
+//        context.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
         return newImage!
+    }
+    /**
+     *  等比率缩放
+     */
+    func ga_scaleImage(scaleSize: CGFloat) -> UIImage {
+        let newSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
+        return ga_resizeImage(newSize: newSize)
     }
     
 }

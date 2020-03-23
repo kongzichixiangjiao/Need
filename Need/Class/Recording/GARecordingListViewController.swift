@@ -12,7 +12,7 @@ import RxDataSources
 import MJRefresh
 import SCLAlertView
 
-class GARecordingListViewController: GARxSwiftNavViewController, Refreshable {
+class GARecordingListViewController: GARxSwiftNavViewController, Refreshable, GANavViewControllerProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     var refreshHeader: MJRefreshHeader!
@@ -79,6 +79,7 @@ class GARecordingListViewController: GARxSwiftNavViewController, Refreshable {
     
     private func _initViews() {
         b_showNavigationView(title: "录音列表")
+        nav_hideBackButton()
     }
     
     private func _request() {

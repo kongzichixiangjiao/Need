@@ -85,6 +85,9 @@ extension GARecordingAddViewController {
         alert.addButton("使用默认名称", backgroundColor: kMainButtonDefaultColor) {
             save(title: self._fileName())
         }
+        alert.addButton("不保存", backgroundColor: kMainButtonDefaultColor) {
+            
+        }
         
         alert.showEdit("文件名称", subTitle: "输入一个有针对性的名称", colorStyle: 0x999999)
         

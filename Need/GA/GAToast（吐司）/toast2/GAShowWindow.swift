@@ -20,6 +20,7 @@ class GAShowViewController: UIViewController {
 class GAShowWindow: UIWindow {
     
     static var isShowLoading: Bool = false
+    static var windows: [GAShowWindow] = []
     
     static func ga_initWindow(frame: CGRect = CGRect.zero) -> GAShowWindow {
         let window = GAShowWindow(frame: frame == CGRect.zero ? UIScreen.main.bounds : frame)
@@ -37,6 +38,7 @@ class GAShowWindow: UIWindow {
     static func ga_init(windowFrame: CGRect, message: String = "", type: GAToastType, duration: TimeInterval, touchEnable: Bool) {
         
         let window = ga_initWindow(frame: windowFrame)
+        windows.append(window)
         
         if touchEnable {
             let tap = UITapGestureRecognizer(target: window, action: #selector(show_removeFromSuperview))
@@ -58,7 +60,10 @@ class GAShowWindow: UIWindow {
     }
     
     // MARK: 文案提醒
-    static func ga_show(windowFrame: CGRect = CGRect.zero, message: String, duration: TimeInterval = 2.5, touchEnable:Bool = false) {
+    static func ga_show(windowFrame: CGRect = CGRect.zero, message: String, duration: TimeInterval = 2.5, touchEnable:Bool = false, isHideBefore: Bool = false) {
+        if isHideBefore {
+            ga_hideAll()
+        }
         ga_init(windowFrame: windowFrame, message: message, type: .message, duration: duration, touchEnable: touchEnable)
     }
     
@@ -108,6 +113,13 @@ class GAShowWindow: UIWindow {
         window?.isHidden = true
     }
     
+    static func ga_hideAll() {
+        for window in windows {
+            window.show_removeFromSuperview()
+        }
+
+        GAShowWindow.isShowLoading = false
+    }
 }
 
 protocol GAShowWindowProtocol {

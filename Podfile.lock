@@ -56,6 +56,7 @@ PODS:
   - TYCyclePagerView (1.2.0)
   - TYPagerController (2.1.2)
   - URLNavigator (2.3.0)
+  - VegaScrollFlowLayout (1.1)
 
 DEPENDENCIES:
   - FreeStreamer
@@ -86,6 +87,7 @@ DEPENDENCIES:
   - TYCyclePagerView
   - TYPagerController
   - URLNavigator
+  - VegaScrollFlowLayout
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -94,6 +96,7 @@ SPEC REPOS:
     - MagicalRecord
     - Reachability
     - SCLAlertView
+    - VegaScrollFlowLayout
   trunk:
     - Alamofire
     - Differentiator
@@ -154,7 +157,8 @@ SPEC CHECKSUMS:
   TYCyclePagerView: 2b051dade0615c70784aa34f40c646feeddb7344
   TYPagerController: 262556ecef99986d26ed77fb1288a198ed42f4af
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+  VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: be4b73f6861a7c736961d63cb01a3c413e0f9153
+PODFILE CHECKSUM: e1cc5667131cb7b3243101a8a2f600eeb196b12a
 
 COCOAPODS: 1.8.4
