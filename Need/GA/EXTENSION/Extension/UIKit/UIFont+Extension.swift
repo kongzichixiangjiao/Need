@@ -12,7 +12,7 @@
 
 import UIKit
 
-extension UIFont {
+public extension UIFont {
 
     static func ga_regularFont(ofSize: CGFloat) -> UIFont {
         return UIFont.systemFont(ofSize: ofSize, weight: UIFont.Weight.regular)

@@ -9,14 +9,14 @@
 import UIKit
 
 // MARK: add
-extension UIView {
+public extension UIView {
     func ga_add(son: UIView) {
         self.addSubview(son)
     }
 }
 
 // MARK: layout
-extension UIView {
+public extension UIView {
     func ga_addLayout(top: CGFloat, left: CGFloat, right: CGFloat, bottom: CGFloat, item: UIView, toItem: UIView) {
         self.addConstraint(NSLayoutConstraint(item: item, attribute: .top, relatedBy: .equal, toItem: toItem, attribute: .top, multiplier: 1, constant: top))
         self.addConstraint(NSLayoutConstraint(item: item, attribute: .left, relatedBy: .equal, toItem: toItem, attribute: .left, multiplier: 1, constant: left))

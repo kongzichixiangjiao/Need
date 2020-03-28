@@ -8,16 +8,20 @@
 
 import UIKit
 
-extension UITextField {
+public extension UITextField {
     
-    func ga_changeselfiledPlaceHolderColor(colors:UIColor) -> Void {
+    func ga_changeselfiledPlaceHolderColor(color: UIColor) {
         // 占位符字体颜色
-        self.setValue(colors, forKeyPath: "_placeholderLabel.textColor")
+//        self.setValue(colors, forKeyPath: "_placeholderLabel.textColor")
+        
+        self.attributedPlaceholder = NSAttributedString(string:self.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor: color])
     }
     
-    func ga_changeselfiledPlaceHolderFont(fonts:UIFont) -> Void {
+    func ga_changeselfiledPlaceHolderFont(font: UIFont) {
         // 占位符字体大小
-        self.setValue(fonts, forKeyPath: "_placeholderLabel.font")
+//        self.setValue(fonts, forKeyPath: "_placeholderLabel.font")
+        
+        self.attributedPlaceholder = NSAttributedString(string:self.placeholder ?? "", attributes: [NSAttributedString.Key.font: font])
     }
     
     func ga_writeMustChinese() {

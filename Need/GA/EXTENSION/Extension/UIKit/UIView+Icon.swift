@@ -8,11 +8,11 @@
 
 import UIKit
 
-enum UIViewIconDirection: Int {
+public enum UIViewIconDirection: Int {
     case left = 1, right = 2, top = 3, bottom = 4
 }
 
-extension UIView {
+public extension UIView {
     
     // self.layer.masksToBounds -> false
     func ga_addIcon(named: String, direction: UIViewIconDirection = .right, space: CGFloat = 5) {

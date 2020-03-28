@@ -51,7 +51,7 @@ extension UIImageView {
 */
 
 import AVFoundation
-extension UIImageView {
+public extension UIImageView {
     // 获取视频第一针图片
     func ga_vidoeImage(url:String) {
         DispatchQueue.global().async {

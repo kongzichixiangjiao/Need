@@ -25,7 +25,7 @@ extension UIButton: UIButtonExtensionProtocol {
 }
 
 // 添加圆角 // 继承自定义button，使用xib，在plus上会出现问题
-extension UIButton {
+public extension UIButton {
     func ga_button_circularBead(byRoundingCorners: UIRectCorner, cornerRadii: CGSize) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: byRoundingCorners, cornerRadii: cornerRadii)
         path.lineCapStyle = .round
@@ -52,7 +52,7 @@ extension UIButton {
  */
 
 // 防止重复点击
-extension UIButton {
+public extension UIButton {
     
     static var kEventUnavailableKey: UInt = 101901
     static var kEventAfterDelay: UInt = 101902

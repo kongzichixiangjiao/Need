@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UINavigationController {
+public extension UINavigationController {
     func ga_isEnabledPop(_ b: Bool) {
         self.interactivePopGestureRecognizer?.isEnabled = b
     }

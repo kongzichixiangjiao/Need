@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension UITableView {
+public extension UITableView {
     
     // 注册单个xib cell
     func ga_register(nibName: String) {
@@ -30,7 +30,7 @@ extension UITableView {
 }
 
 // 注册cell
-extension UITableView {
+public extension UITableView {
     func ga_register(cellClass: AnyClass) -> Void {
         let identifier = String(describing: cellClass)
         register(cellClass, forCellReuseIdentifier: identifier)
@@ -68,7 +68,7 @@ extension UITableView {
 }
 
 // cell 复用  不必写 as! UITableViewCell
-extension UITableView {
+public extension UITableView {
     func ga_dequeueReusableCell<T: UITableViewCell>(cellClass: T.Type) -> T {
         let identifier = String(describing: cellClass)
         return self.dequeueReusableCell(withIdentifier: identifier) as! T

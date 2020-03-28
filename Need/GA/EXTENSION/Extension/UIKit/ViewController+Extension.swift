@@ -14,7 +14,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     func ga_storyboardRootVC(name: String) -> UIViewController? {
         if name.isEmpty {
             print("error ga_storyboardRootVC name字符串为空")
@@ -29,7 +29,7 @@ extension UIViewController {
 }
 
 // MARK: - Push Pop 方法
-extension UIViewController {
+public extension UIViewController {
     /// PUSH
     func ga_push(vc: UIViewController, animated: Bool = true) {
         guard let nv = self.navigationController else {
@@ -107,7 +107,7 @@ extension UIViewController {
     
 }
 
-extension UIViewController {
+public extension UIViewController {
     
     func ga_resentVC(vc: UIViewController) -> UIViewController? {
         guard let p = vc.presentedViewController else {
@@ -118,50 +118,19 @@ extension UIViewController {
     
 }
 
-extension UIViewController {
+public extension UIViewController {
     func ga_storyboardVC<T: UIViewController>(type: T.Type, storyboardName: String) -> T {
         let vc = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: String(describing: type)) as! T
         return vc
     }
 }
 
-extension UIViewController {
-    // mandatoryLandscape: true横屏 false竖屏
-    func ga_showScreenDirection(mandatoryLandscape: Bool) {
-        
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.vc_mandatoryLandscape = mandatoryLandscape
-        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
-    }
-}
-
-var vc_viewController_key: UInt = 191211
-extension AppDelegate {
-    
-    var vc_mandatoryLandscape: Bool? {
-        get {
-            return objc_getAssociatedObject(self, &vc_viewController_key) as? Bool
-        }
-        set(newValue) {
-            objc_setAssociatedObject(self, &vc_viewController_key, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-        // 项目实现这个方法
-//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//        if vc_mandatoryLandscape ?? false {
-//            return .landscapeLeft //强制横屏时这里可保持一个方向
-//        }
-//        return .portrait
-//    }
-    
-}
-
 // plist View controller-based status bar appearance   YES
-extension UIAlertController {
-    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+public extension UIAlertController {
+     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
     }
-    open override var shouldAutorotate: Bool {
+     override var shouldAutorotate: Bool {
         return false
     }
 }

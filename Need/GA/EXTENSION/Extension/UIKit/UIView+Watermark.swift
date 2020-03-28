@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     /*
      *  text 水印内容
      *  color 水印颜色
@@ -99,7 +99,7 @@ extension UIView {
     
 }
 
-extension String{
+public extension String{
     func watermark_sizeWithText(font: UIFont) -> CGSize {
         let attributes = [NSAttributedString.Key.font: font]
         let option = NSStringDrawingOptions.usesLineFragmentOrigin

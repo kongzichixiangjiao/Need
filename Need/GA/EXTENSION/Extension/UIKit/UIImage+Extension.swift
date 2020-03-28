@@ -27,7 +27,7 @@ extension UIImage: UIImageSizeProtocol {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     static func ga_init(_ color: UIColor, andFrame frame: CGRect) -> UIImage {
         UIGraphicsBeginImageContext(frame.size)
         
@@ -43,7 +43,7 @@ extension UIImage {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     ///对指定图片进行拉伸
     func resizableImage(_ name: String) -> UIImage {
         var normal = UIImage(named: name)!
@@ -162,7 +162,7 @@ extension UIImage {
     
 }
 
-extension UIImage {
+public extension UIImage {
     var ga_mainColor: UIColor {
         //获取图片信息
         let imgWidth:Int = Int(self.size.width) / 2
@@ -230,7 +230,7 @@ extension UIImage {
     
 }
 
-extension UIImage {
+public extension UIImage {
     // 图片旋转
     static func ga_imageRotation(image: UIImage, orientation:UIImage.Orientation) -> UIImage
     {
@@ -289,7 +289,7 @@ extension UIImage {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     func ga_imageWithTintColor(tintColor:UIColor, blendMode:CGBlendMode) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
         tintColor.setFill()
@@ -308,7 +308,7 @@ extension UIImage {
 }
 
 // MARK: 图片拼接
-extension UIImage {
+public extension UIImage {
     static func ga_compose(upImg: UIImage, downImg: UIImage, w: CGFloat) -> UIImage? {
         let upScale = (w / upImg.size.width)
         let downScale = (w / downImg.size.width)

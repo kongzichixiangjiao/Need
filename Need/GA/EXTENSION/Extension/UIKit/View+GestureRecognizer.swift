@@ -9,8 +9,7 @@
 import UIKit
 
 // 添加手势
-extension UIView {
-
+public extension UIView {
     // 添加单机手势
     func ga_addTapGestureRecognizer(target: Any?, action: Selector?) {
         let tap = UITapGestureRecognizer(target: target, action: action)

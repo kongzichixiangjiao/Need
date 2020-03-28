@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
     func ga_register(nibName: AnyClass) {
         let identifier = String(describing: nibName)
@@ -21,7 +21,7 @@ extension UICollectionView {
     }
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     
     func ga_register(nibName: String) {
         self.register(UINib(nibName: nibName, bundle: nil), forCellWithReuseIdentifier: nibName)
@@ -48,19 +48,19 @@ extension UICollectionView {
     }
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     static var identifier: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 }
 
-extension UICollectionReusableView {
+public extension UICollectionReusableView {
     static var identifier: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     var ga_edgeInsetTop: CGFloat {
         set {
             self.contentInset = UIEdgeInsets(top: newValue, left: self.contentInset.left, bottom: self.contentInset.bottom, right: self.contentInset.right)

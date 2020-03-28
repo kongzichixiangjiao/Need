@@ -15,7 +15,7 @@
     003、self.tableView.ga_reloadData()
  
     004、// 实现代理UITableViewPlaceHolderDelegate方法
- extension <#UIViewController#>: UITableViewPlaceHolderDelegate {
+ public extension <#UIViewController#>: UITableViewPlaceHolderDelegate {
     func tableViewPlaceHolderView() -> UIView {
         let v = <#UIView#>
         return v
@@ -29,18 +29,18 @@
 
 import UIKit
 
-enum UIScrollViewHolderType: Int {
+public enum UIScrollViewHolderType: Int {
     case empty = 0, noNetwork = 1
 }
 
-protocol UITableViewPlaceHolderDelegate {
+public protocol UITableViewPlaceHolderDelegate {
     func tableViewPlaceHolderView() -> UIView
     func tableViewEnableScrollWhenPlaceHolderViewShowing() -> Bool
     func tableViewClickedPlaceHolderViewRefresh()
     func tableViewPlaceHolder_NoNetWork_View() -> UIView?
 }
 
-extension UITableView {
+public extension UITableView {
     
     static var k_t_EmptyDelegateKey: UInt = 149001
     static var k_t_ScrollWasEnabledKey: UInt = 149002
@@ -76,7 +76,7 @@ extension UITableView {
         }
     }
     
-    public func ga_reloadData() {
+    func ga_reloadData() {
         self.reloadData()
         self.ga_judgeEmpty()
     }
@@ -155,7 +155,7 @@ extension UITableView {
 }
 
 
-@objc protocol UICollectionViewPlaceHolderDelegate: class {
+@objc public protocol UICollectionViewPlaceHolderDelegate: class {
     func collectionViewPlaceHolderView() -> UIView
     func collectionViewEnableScrollWhenPlaceHolderViewShowing() -> Bool
     @objc optional func collectionViewPlaceHolderViewFrame() -> CGRect
@@ -163,7 +163,7 @@ extension UITableView {
     func collectionViewClickedPlaceHolderViewRefresh()
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     
     static var k_c_EmptyDelegateKey: UInt = 149004
     static var k_c_ScrollWasEnabledKey: UInt = 149005
@@ -199,7 +199,7 @@ extension UICollectionView {
         }
     }
     
-    public func ga_reloadData() {
+    func ga_reloadData() {
         self.reloadData()
         self.ga_judgeEmpty()
     }
@@ -283,7 +283,7 @@ struct UIScrollViewKey {
 }
 
 import Alamofire
-extension UIScrollView {
+public extension UIScrollView {
     var netWorkManager: NetworkReachabilityManager {
         set {
             objc_setAssociatedObject(self, &UIScrollViewKey.kNetWorkManager, newValue, .OBJC_ASSOCIATION_RETAIN)

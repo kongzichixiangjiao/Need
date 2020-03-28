@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     static func randomCGColor(alpha a: CGFloat = 1) -> CGColor {
         return self.randomColor(a).cgColor
     }
@@ -36,7 +36,7 @@ extension UIColor {
     
 }
 
-extension UIColor {
+public extension UIColor {
     convenience init(colorWithHexValue value: Int, alpha:CGFloat = 1.0){
         self.init(
             red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
@@ -47,7 +47,7 @@ extension UIColor {
     }
 }
 
-extension UIColor {
+public extension UIColor {
     
     // 获取纯色图片
     func ga_image(viewSize: CGSize) -> UIImage {
@@ -64,7 +64,7 @@ extension UIColor {
     }
 }
 
-extension Int {
+public extension Int {
     
     func ga_toUIColor() -> UIColor {
         return UIColor(
@@ -80,7 +80,7 @@ extension Int {
     }
 }
 
-extension UInt {
+public extension UInt {
     
     func ga_toUIColor() -> UIColor {
         return UIColor(

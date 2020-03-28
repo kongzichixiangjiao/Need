@@ -55,7 +55,6 @@
 		DC7451D2241C73610038562C /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74515F241C73610038562C /* UITableViewCell+Extension.swift */; };
 		DC7451D3241C73610038562C /* View+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745160241C73610038562C /* View+Layout.swift */; };
 		DC7451D4241C73610038562C /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745161241C73610038562C /* UICollectionView+Extension.swift */; };
-		DC7451D5241C73610038562C /* UIScrollView+SaveArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745162241C73610038562C /* UIScrollView+SaveArea.swift */; };
 		DC7451D6241C73610038562C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745163241C73610038562C /* UITextField+Extension.swift */; };
 		DC7451D7241C73610038562C /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745164241C73610038562C /* ViewController+Extension.swift */; };
 		DC7451D8241C73610038562C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745165241C73610038562C /* UITableView+Extension.swift */; };
@@ -286,7 +285,6 @@
 		DC74515F241C73610038562C /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		DC745160241C73610038562C /* View+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Layout.swift"; sourceTree = "<group>"; };
 		DC745161241C73610038562C /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		DC745162241C73610038562C /* UIScrollView+SaveArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+SaveArea.swift"; sourceTree = "<group>"; };
 		DC745163241C73610038562C /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		DC745164241C73610038562C /* ViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		DC745165241C73610038562C /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -676,7 +674,6 @@
 				DC74515F241C73610038562C /* UITableViewCell+Extension.swift */,
 				DC745160241C73610038562C /* View+Layout.swift */,
 				DC745161241C73610038562C /* UICollectionView+Extension.swift */,
-				DC745162241C73610038562C /* UIScrollView+SaveArea.swift */,
 				DC745163241C73610038562C /* UITextField+Extension.swift */,
 				DC745164241C73610038562C /* ViewController+Extension.swift */,
 				DC745165241C73610038562C /* UITableView+Extension.swift */,
@@ -1471,7 +1468,6 @@
 				DC74521C241C73610038562C /* GATableViewController.swift in Sources */,
 				DCACF6CE242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift in Sources */,
 				DC7451D1241C73610038562C /* UIView+Shot.swift in Sources */,
-				DC7451D5241C73610038562C /* UIScrollView+SaveArea.swift in Sources */,
 				DC7451EC241C73610038562C /* Dictionary+Extension.swift in Sources */,
 				DC745215241C73610038562C /* GANormalizeOther+Enum.swift in Sources */,
 				DC7451D7241C73610038562C /* ViewController+Extension.swift in Sources */,

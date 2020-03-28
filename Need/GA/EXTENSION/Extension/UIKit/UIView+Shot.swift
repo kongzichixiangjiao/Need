@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     func ga_screenshot() -> UIImage? {
         if UIScrollView.classForCoder() == self.classForCoder {
             let scrollView = self as! UIScrollView
