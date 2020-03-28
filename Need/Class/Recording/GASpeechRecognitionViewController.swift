@@ -70,7 +70,7 @@ class GASpeechRecognitionViewController: GARecordingBaseViewController {
         
         let alert = SCLAlertView(appearance: appearance)
         alert.addButton("确定", backgroundColor: kMainButtonDefaultColor) {
-            GACoreData.ga_save(resultText: self.textView.text, name: self.model.name)
+            GACoreData.ga_save_recordingModel(resultText: self.textView.text, name: self.model.name)
         }
         alert.addButton("取消", backgroundColor: kMainButtonDefaultColor) {
             

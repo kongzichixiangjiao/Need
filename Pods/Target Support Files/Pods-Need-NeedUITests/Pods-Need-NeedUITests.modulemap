@@ -1,0 +1,6 @@
+framework module Pods_Need_NeedUITests {
+  umbrella header "Pods-Need-NeedUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GAPickerViewController" customModule="Need" customModuleProvider="target">
             <connections>
-                <outlet property="bgView" destination="huu-lP-eeD" id="NYM-Qz-iF0"/>
-                <outlet property="bgViewBottomSpace" destination="pjV-tg-1Qh" id="QT4-AG-Ocq"/>
+                <outlet property="bgView" destination="LtM-HT-1ff" id="5Nf-bj-Uq8"/>
+                <outlet property="bgViewBottomSpace" destination="1OM-Zc-WbL" id="QOS-tM-vPs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huu-lP-eeD">
-                    <rect key="frame" x="0.0" y="627" width="414" height="235"/>
+                    <rect key="frame" x="0.0" y="596" width="414" height="300"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDT-7P-t9q">
                             <rect key="frame" x="354" y="0.0" width="50" height="35"/>
@@ -34,20 +34,30 @@
                                 <action selector="confirmA:" destination="-1" eventType="touchUpInside" id="fp1-t7-GJL"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtM-HT-1ff">
+                            <rect key="frame" x="0.0" y="35" width="414" height="200"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="pkI-16-htH"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="235" id="4Na-kI-4AQ"/>
+                        <constraint firstAttribute="height" constant="300" id="4Na-kI-4AQ"/>
+                        <constraint firstItem="LtM-HT-1ff" firstAttribute="leading" secondItem="huu-lP-eeD" secondAttribute="leading" id="5tP-NW-BJr"/>
                         <constraint firstItem="JDT-7P-t9q" firstAttribute="top" secondItem="huu-lP-eeD" secondAttribute="top" id="7IB-vq-Tym"/>
+                        <constraint firstAttribute="trailing" secondItem="LtM-HT-1ff" secondAttribute="trailing" id="CNy-Xo-3Wd"/>
+                        <constraint firstItem="LtM-HT-1ff" firstAttribute="top" secondItem="JDT-7P-t9q" secondAttribute="bottom" id="Lep-RP-dnX"/>
                         <constraint firstAttribute="trailing" secondItem="JDT-7P-t9q" secondAttribute="trailing" constant="10" id="d2G-kc-6hp"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="huu-lP-eeD" secondAttribute="bottom" id="1OM-Zc-WbL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="huu-lP-eeD" secondAttribute="trailing" id="5GN-wP-sA3"/>
                 <constraint firstItem="huu-lP-eeD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qsq-A0-DtV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="huu-lP-eeD" secondAttribute="bottom" id="pjV-tg-1Qh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>

@@ -41,6 +41,10 @@ class GACoreData: MagicalRecord {
         return type.mr_findAll() as! [T]
     }
     
+    static func findAll<T: NSManagedObject>(type: T.Type, byAttribute: String = "name", andOrderBy: String = "createTime", value: String) -> [T] {
+        return type.mr_find(byAttribute: byAttribute, withValue: value, andOrderBy: andOrderBy, ascending: true) as! [T]
+    }
+    
     static func findAllSorted<T: NSManagedObject>(type: T.Type, by: String = "date", ascending: Bool = true) -> [T] {
         return type.mr_findAllSorted(by: "createTime", ascending: ascending) as! [T]
     }

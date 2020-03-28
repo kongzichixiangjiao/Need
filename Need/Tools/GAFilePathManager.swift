@@ -22,6 +22,7 @@ class GAFilePathManager {
         }
         return path
     }
+    
     public func filesCount(fileName: String = "") -> Int {
         let path = filePath()
         do {
@@ -31,9 +32,11 @@ class GAFilePathManager {
             return 0
         }
     }
+    
     public func catchFilePath() -> String {
         return NSTemporaryDirectory()
     }
+    
     public func copy(at: URL, to: URL) -> Bool {
         do {
             try FileManager.default.copyItem(at: at, to: to)

@@ -27,8 +27,12 @@ class GAViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = GABaseBackColor
-        
-        automaticallyAdjustsScrollViewInsets = false
+
+        if #available(iOS 11.0, *) {
+            UIScrollView.appearance().translatesAutoresizingMaskIntoConstraints = false 
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
     }
 
     var onceLayoutSubviews: Int = 0

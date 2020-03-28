@@ -124,8 +124,9 @@ class GANormalizeNavigationView: UIView {
             leftButton.setImage(UIImage(named: imgName), for: .normal)
             leftButtonLeftSpace.constant = 10
         } else {
-            leftButton.setImage(UIImage(named: ""), for: .normal)
+            leftButton.setImage(nil, for: .normal)
             leftButton.setTitle(title, for: .normal)
+            leftButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             let w = title.ga_widthWith(15, height: 15)
             leftButtonWidth.constant = w
             leftButtonLeftSpace.constant = 20
@@ -153,6 +154,7 @@ class GANormalizeNavigationView: UIView {
         } else {
             rightButton.setImage(UIImage(named: ""), for: .normal)
             rightButton.setTitle(title, for: .normal)
+            rightButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             let w = title.ga_widthWith(15, height: 15)
             rightButtonWidth.constant = w
         }

@@ -35,18 +35,24 @@ class GAXibTabBarItem: UIView {
     var isHighlight: Bool! {
         didSet {
             if isHighlight && !imageHighlightName.isEmpty {
-                imageV.image = UIImage(named: self.imageHighlightName)
+                if !self.imageHighlightName.isEmpty {
+                    imageV.image = UIImage(named: self.imageHighlightName)
+                }
                 mLabel.textColor = self.labelSelectedColor.tabbarItem_color0X
             } else {
-                imageV.image = UIImage(named: self.imageDefaultName)
-                mLabel.textColor = self.labelNormalColor.tabbarItem_color0X
+                if !self.imageDefaultName.isEmpty {
+                    imageV.image = UIImage(named: self.imageDefaultName)
+                    mLabel.textColor = self.labelNormalColor.tabbarItem_color0X
+                }
             }
         }
     }
     
     lazy var imageV: UIImageView = {
         let v = UIImageView()
-        v.image = UIImage(named: self.imageDefaultName)
+        if !self.imageDefaultName.isEmpty {
+            v.image = UIImage(named: self.imageDefaultName)
+        }
         v.contentMode = .scaleAspectFit
         v.translatesAutoresizingMaskIntoConstraints = false
         return v

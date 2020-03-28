@@ -13,7 +13,7 @@ import RxDataSources
 import RxCocoa
 
 class GAHomeViewModel: GAViewModel {
-    private let vmDatas = Variable<[([GAPlanModel])]>([])
+    private let vmDatas = Variable<[([GAListingModel])]>([])
 }
 
 extension GAHomeViewModel: GAViewModelType {
@@ -51,7 +51,7 @@ extension GAHomeViewModel: GAViewModelType {
                 return
             }
             
-            let result = GACoreData.findAllSorted(type: GAPlanModel.self)
+            let result = GACoreData.findAllSorted(type: GAListingModel.self)
             weakSelf.vmDatas.value = [(result)]
 
             out.refreshStatus.value = .endHeaderRefresh
@@ -67,9 +67,9 @@ struct GAPlanSection {
 
 extension GAPlanSection: SectionModelType {
     
-    typealias Item = GAPlanModel
+    typealias Item = GAListingModel
     
-    init(original: GAPlanSection, items: [GAPlanModel]) {
+    init(original: GAPlanSection, items: [GAListingModel]) {
         self = original
         self.items = items
     }

@@ -18,7 +18,7 @@ class GAPickerViewController: YYPresentationBaseViewController {
     @IBOutlet weak var bgViewBottomSpace: NSLayoutConstraint!
     
     lazy var pickerView: GAPickerView = {
-        let v = GAPickerView(frame: CGRect(x: 0, y: self.topViewHeight, width: self.bgView.bounds.width, height: kPickerViewHeight), dataSource: self.dataSource, configModel: nil)
+        let v = GAPickerView(frame: CGRect(x: 0, y: self.topViewHeight, width: kScreenWidth, height: kPickerViewHeight), dataSource: self.dataSource, configModel: nil)
         v.tag = 20200318
         return v
     }()
@@ -38,14 +38,14 @@ class GAPickerViewController: YYPresentationBaseViewController {
     func show(dataSource: [[String]]) {
         self.dataSource = dataSource
         self.bgView.addSubview(pickerView)
-        self.bgViewBottomSpace.constant = self.safeBottomHeight()
+        self.bgViewBottomSpace.constant = 0
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
     }
     
     func hide() {
-        self.bgViewBottomSpace.constant = 0
+        self.bgViewBottomSpace.constant = -300
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }

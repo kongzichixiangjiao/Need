@@ -51,5 +51,16 @@ target 'Need' do
       pod 'SCLAlertView' # 5k弹框
       pod 'MagicalRecord' # CoreData
 #      pod 'SwiftLint' # 代码规范
-      pod 'VegaScrollFlowLayout' 
+      pod 'VegaScrollFlowLayout'
+      pod 'SwipeCellKit'
+      
+      pod 'SwiftMonkeyPaws'
+      
+      target 'NeedTests' do
+        
+      end
+      target 'NeedUITests' do
+        pod 'SwiftMonkey'
+      end
 end
+

@@ -9,128 +9,159 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
+import TYPagerController
+import RxDataSources
+import MJRefresh
 
-class GAListingViewController: GARxSwiftNavViewController {
-    
-    var model: GAPlanModel!
+class GAListingViewController: GARxSwiftNavViewController, Refreshable {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var topHeight: CGFloat = 400
-    private let fixedHeight: CGFloat = 90
-    private var _containerView: UIView!
-    
-    lazy var topView: UIView = {
-        let v = GADemoView()
-        v.frame = CGRect(x: 0, y: -topHeight, width: self.view.width, height: topHeight)
-        return v
-    }()
-    
-    lazy var fixedView: GADemoView = {
-        let v = GADemoView()
-        v.frame = CGRect(x: 0, y: b_navigationViewMaxY, width: self.view.width, height: fixedHeight)
-        v.text = "fixedView"
-        v.isHidden = true
-        return v
-    }()
-    
-    lazy var navView: GADemoView = {
-        let v = GADemoView()
-        v.frame = CGRect(x: 0, y: 0, width: self.view.width, height: b_navigationViewMaxY)
-        v.text = "navView"
-        v.isHidden = true
-        return v
-    }()
+    var listingModel: GAListingModel!
+    var vm: GAListingViewModel = GAListingViewModel()
+    var out: GAListingViewModel.ListingOutput!
+    var refreshHeader: MJRefreshHeader!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        out = vm.transform(input: GAListingViewModel.ListingInput())
+        out.sections.drive(tableView.rx.items(dataSource: _getDataSorce())).disposed(by: disposeBag)
+        refreshHeader = initRefreshHeader(tableView, {
+            [unowned self] in
+            self.out.requestCommand.onNext((true, self.listingModel.name ?? ""))
+        })
+        
+        out.autoSetRefreshHeaderStatus(header: refreshHeader, footer: nil).disposed(by: disposeBag)
+        refreshHeader.beginRefreshing()
+        
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(GAPlanModel.self).subscribe(onNext: {
+            [unowned self] model in
+            let vc = self.ga_storyboardVC(type: GAPlanAddViewController.self, storyboardName: HomeStoryboard.name)
+            vc.listingModel = self.listingModel
+            vc.fromType = .listing 
+            vc.planModel = GAPlanItemModel.getItem(planModel: model)
+            self.ga_push(vc: vc)
+        }).disposed(by: disposeBag)
+        
         _initViews()
         _request()
-        _request()
-        _request()
+        
+    }
+    
+    private func _getDataSorce() -> RxTableViewSectionedReloadDataSource<GAListingSection> {
+        let dataSource = RxTableViewSectionedReloadDataSource<GAListingSection>(configureCell: {
+            [unowned self] s, tableView, indexPath, model in
+            let cell = tableView.dequeueReusableCell(withIdentifier: GAListingCell.identifier, for: indexPath) as! GAListingCell
+            let imgName = model.isFinished ? Other.kNotiFinished : model.iconName
+            cell.iconButton.setImage(UIImage(named: imgName ?? ""), for: .normal)
+            cell.nameLabel.text = model.name ?? ""
+            cell.noteLabel.text = model.note ?? ""
+            cell.iconAction.subscribe { (b) in
+                GACoreData.ga_save_planModel(name: model.name ?? "", isFinished: !model.isFinished) { [unowned self] models in
+                    GAShowWindow.ga_show(message: "操作完成")
+                    self.refreshHeader.beginRefreshing()
+                }
+            }.disposed(by: self.disposeBag)
+            return cell
+        })
+        return dataSource
     }
     
     private func _initViews() {
-        b_showNavigationView(title: model.name ?? "")
         
-        b_showNavigationRightButton(imgName: Other.kNavImgName_add) {
-            [unowned self] title in
-            
-        }
-        
-        self.tableView.addSubview(topView)
-        self.view.addSubview(fixedView)
-        let vc = self.ga_storyboardVC(type: GAListingContainerViewController.self, storyboardName: HomeStoryboard.name)
-        vc.delegate = self
-        guard let containerView = vc.view else {
-                return
-        }
-        _containerView = containerView
-        self.topView.addSubview(_containerView)
     }
     
     private func _request() {
         
     }
     
-    override func b_viewDidLayoutSubviews() {
-        self._containerView.frame = self.topView.bounds
-        self.topView.frame = CGRect(x: 0, y: -self.topHeight, width: self.view.width, height: self.topHeight)
-        self.tableView.contentInset = UIEdgeInsets(top: self.topHeight, left: 0, bottom: 0, right: 0)
-        self.tableView.contentOffset = CGPoint(x: 0, y: -self.topHeight)
-        self.tableView.reloadData()
-    }
-    
 }
 
-extension GAListingViewController: GAListingContainerViewControllerDelegate {
-
-}
-
-extension GAListingViewController: UITableViewDelegate, UITableViewDataSource{
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = scrollView.contentOffset.y
-        if y <= -self.topHeight {
-            self.topView.y = -topHeight + (y + topHeight)
-            self.topView.height = -y
-            return
-        }
-        
-        if y > -fixedHeight {
-            self.topView.y = -topHeight + fixedHeight + y
-            navView.isHidden = false
-        } else {
-            navView.isHidden = true
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
+extension GAListingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 80
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.ga_dequeueReusableCell(cellClass: GAListingCell.self)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
-    
 }
 
 class GAListingCell: UITableViewCell {
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var noteLabel: UILabel!
     
+    let iconAction = PublishSubject<Bool>()
+    
+    @IBAction func iconAction(_ sender: UIButton) {
+        iconAction.onNext(true)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+}
+
+import RxSwift
+import RxDataSources
+import RxCocoa
+
+class GAListingViewModel: GAViewModel {
+    private let vmDatas = Variable<[([GAPlanModel])]>([])
+}
+
+extension GAListingViewModel: GAViewModelType {
+    typealias Input = ListingInput
+    
+    typealias Output = ListingOutput
+    
+    struct ListingInput {
+        
+    }
+    
+    struct ListingOutput: OutputRefreshProtocol {
+        var sections: Driver<[GAListingSection]>
+        var refreshStatus: Variable<GARefreshStatus>
+        let requestCommand = PublishSubject<(Bool, String)>()
+        
+        init(sections: Driver<[GAListingSection]>) {
+            self.sections = sections
+            refreshStatus = Variable(GARefreshStatus.none)
+        }
+    }
+    
+    func transform(input: GAListingViewModel.ListingInput) -> GAListingViewModel.ListingOutput {
+        let sections = vmDatas.asObservable().map { (sections) -> [GAListingSection] in
+            sections.map { (models) -> GAListingSection in
+                return GAListingSection(items: models)
+            }
+        }.asDriver(onErrorJustReturn: [])
+        
+        let out = ListingOutput(sections: sections)
+        out.requestCommand.subscribe(onNext: { [unowned self] model in
+            let result = GACoreData.ga_find_planModels(value: model.1)
+            print(result)
+            self.vmDatas.value = [result]
+            out.refreshStatus.value = .endHeaderRefresh
+        }).disposed(by: disposeBag)
+        
+        return out
+    }
+}
+
+
+struct GAListingSection {
+    var items: [Item]
+}
+
+extension GAListingSection: SectionModelType {
+    
+    typealias Item = GAPlanModel
+    
+    init(original: GAListingSection, items: [GAPlanModel]) {
+        self = original
+        self.items = items
+    }
 }

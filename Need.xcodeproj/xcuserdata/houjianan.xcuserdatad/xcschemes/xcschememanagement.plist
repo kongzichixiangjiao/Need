@@ -7,7 +7,35 @@
 		<key>Need.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>35</integer>
+			<integer>0</integer>
+		</dict>
+		<key>NeedTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>40</integer>
+		</dict>
+		<key>NeedUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>41</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DC74510E241C6BAE0038562C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC745127241C6BAF0038562C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC745132241C6BAF0038562C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

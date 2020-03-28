@@ -103,109 +103,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0"
+            uuid = "AA123E1A-E780-4CAB-BE16-257839B1BA56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Need/GA/EXTENSION/UIKit/UIImage+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "resizableImage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6669E6C9-A8AF-4E7A-9BE6-575DDCB9D58D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Need/GA/EXTENSION/UIKit/UIView+Icon.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ga_addIcon(named:direction:space:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "492C17FF-330C-4397-BF28-F545C6DB6915"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Need/GA/EXTENSION/UIKit/UIView+Icon.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "ga_subViewAddIcon(named:direction:space:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "165FD997-E928-4DDE-8DBA-173A0CD41CAA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "draw(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0 - f780df382408fbca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Need.GAIconButton.draw(__C.CGRect) -&gt; ()"
-                  moduleName = "Need"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/houjianan/Documents/GitHub/iOS/Need/Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "275"
-                  endingLineNumber = "275"
-                  offsetFromSymbolStart = "2880">
-               </Location>
-               <Location
-                  uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0 - f780df382408fbca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Need.GAIconButton.draw(__C.CGRect) -&gt; ()"
-                  moduleName = "Need"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/houjianan/Documents/GitHub/iOS/Need/Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "275"
-                  endingLineNumber = "275"
-                  offsetFromSymbolStart = "2908">
-               </Location>
-               <Location
-                  uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0 - f780df382408fbca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Need.GAIconButton.draw(__C.CGRect) -&gt; ()"
-                  moduleName = "Need"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/houjianan/Documents/GitHub/iOS/Need/Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "275"
-                  endingLineNumber = "275"
-                  offsetFromSymbolStart = "3420">
-               </Location>
-               <Location
-                  uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0 - f780df382408fbca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Need.GAIconButton.draw(__C.CGRect) -&gt; ()"
-                  moduleName = "Need"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/houjianan/Documents/GitHub/iOS/Need/Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "275"
-                  endingLineNumber = "275"
-                  offsetFromSymbolStart = "3824">
-               </Location>
-               <Location
-                  uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0 - f780df382408fbca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Need.GAIconButton.draw(__C.CGRect) -&gt; ()"
-                  moduleName = "Need"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/houjianan/Documents/GitHub/iOS/Need/Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "275"
-                  endingLineNumber = "275"
-                  offsetFromSymbolStart = "4224">
-               </Location>
-               <Location
-                  uuid = "831CAAC9-6CE9-4054-A3C1-AE8CD422CAD0 - f780df382408fbca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Need.GAIconButton.draw(__C.CGRect) -&gt; ()"
-                  moduleName = "Need"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/houjianan/Documents/GitHub/iOS/Need/Need/GA/Base/view/BaseView/Button/GAIconButton.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "275"
-                  endingLineNumber = "275"
-                  offsetFromSymbolStart = "4628">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C68E25F-D8E5-4230-8499-7CCB396DC41C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Need/GA/Base/view/GATabBar/GAXibTabBarItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "isHighlight"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AC560D2-FC44-482F-9397-2DA1DDA1FD66"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Need/GA/Base/view/GATabBar/GAXibTabBarItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "isHighlight"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B49852E-C2CC-4356-BCFB-A58F3A207AF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Need/GA/Base/view/GATabBar/GAXibTabBarItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "imageV"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

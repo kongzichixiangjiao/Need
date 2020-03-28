@@ -1,0 +1,6 @@
+framework module Pods_Need_NeedTests {
+  umbrella header "Pods-Need-NeedTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

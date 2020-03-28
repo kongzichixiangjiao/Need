@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		155F0965E657E548E5DECF8E /* Pods_Need.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */; };
+		5AF89C799F42DE3E82A01F82 /* Pods_Need_NeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB01949B2D44E258B2C04372 /* Pods_Need_NeedUITests.framework */; };
+		9FCD8BB8AD6D551948C5D071 /* Pods_Need_NeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D07BA2F2ABE171A1ACFA3F8 /* Pods_Need_NeedTests.framework */; };
 		DC178F952426244300ABE3F2 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178F942426244300ABE3F2 /* CGRect+Extension.swift */; };
 		DC178F99242629CA00ABE3F2 /* GACoreData+Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178F98242629CA00ABE3F2 /* GACoreData+Need.swift */; };
-		DC178FC824266A6600ABE3F2 /* 1024.0*1024.0.png in Resources */ = {isa = PBXBuildFile; fileRef = DC178FC724266A6600ABE3F2 /* 1024.0*1024.0.png */; };
 		DC178FCC2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FCB2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift */; };
 		DC178FCE2427005600ABE3F2 /* GAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */; };
-		DC178FD2242701DD00ABE3F2 /* GAPlanModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FD0242701DD00ABE3F2 /* GAPlanModel+CoreDataClass.swift */; };
-		DC178FD3242701DD00ABE3F2 /* GAPlanModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FD1242701DD00ABE3F2 /* GAPlanModel+CoreDataProperties.swift */; };
 		DC178FD52427093300ABE3F2 /* GAPlanAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FD42427093300ABE3F2 /* GAPlanAddViewController.swift */; };
 		DC178FD724270B6B00ABE3F2 /* HomeStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FD624270B6B00ABE3F2 /* HomeStoryboard.swift */; };
 		DC178FD924270BE100ABE3F2 /* GAListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FD824270BE100ABE3F2 /* GAListingViewController.swift */; };
+		DC191292242ECDF100C9992B /* GANormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC191290242ECDF100C9992B /* GANormalViewController.swift */; };
+		DC191293242ECDF100C9992B /* GANormalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC191291242ECDF100C9992B /* GANormalViewController.xib */; };
 		DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */; };
 		DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40552423264800C4819C /* GAKeyboardObserver.swift */; };
 		DC2F40582423279700C4819C /* GAKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40572423279700C4819C /* GAKeyboardView.swift */; };
@@ -154,6 +155,11 @@
 		DC745280241CCA2C0038562C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC74527F241CCA2C0038562C /* CloudKit.framework */; };
 		DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745281241CD19A0038562C /* GAFilePathManager.swift */; };
 		DC745284241CD8770038562C /* GADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745283241CD8770038562C /* GADate.swift */; };
+		DCACF6C6242B2F41002FADA5 /* GAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C5242B2F41002FADA5 /* GAImageView.swift */; };
+		DCACF6C9242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */; };
+		DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */; };
+		DCACF6CE242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6CC242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift */; };
+		DCACF6CF242B3837002FADA5 /* GAPlanModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6CD242B3837002FADA5 /* GAPlanModel+CoreDataProperties.swift */; };
 		DCAE671C24207B33000A1A42 /* GATableScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */; };
 		DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAE671E2421129E000A1A42 /* YYOnePixView.swift */; };
 		DCB44C9C24225EBB0000D3C3 /* GAPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44C9924225EBB0000D3C3 /* GAPickerView.swift */; };
@@ -168,7 +174,16 @@
 		DCC8AF1824276AF20037BB9E /* GADemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1724276AF20037BB9E /* GADemoView.swift */; };
 		DCC8AF1A24279B210037BB9E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1924279B210037BB9E /* Other.swift */; };
 		DCC8AF1C24279DF10037BB9E /* GAListingSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1B24279DF10037BB9E /* GAListingSettingCell.swift */; };
-		DCC8AF1E2427A58E0037BB9E /* GAListingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1D2427A58E0037BB9E /* GAListingContainerViewController.swift */; };
+		DCCDCF092428824000BB6A78 /* GAListingSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDCF082428824000BB6A78 /* GAListingSettingViewController.swift */; };
+		DCCDCF0B242884A300BB6A78 /* IMG_4527.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF0A242884A300BB6A78 /* IMG_4527.jpg */; };
+		DCCDCF0F2428916100BB6A78 /* GAPlanAddTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDCF0D2428916100BB6A78 /* GAPlanAddTitleCell.swift */; };
+		DCCDCF102428916100BB6A78 /* GAPlanAddTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF0E2428916100BB6A78 /* GAPlanAddTitleCell.xib */; };
+		DCCDCF13242891AA00BB6A78 /* GAPlanAddNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDCF11242891AA00BB6A78 /* GAPlanAddNoteCell.swift */; };
+		DCCDCF14242891AA00BB6A78 /* GAPlanAddNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF12242891AA00BB6A78 /* GAPlanAddNoteCell.xib */; };
+		DCCDCF1B242892D700BB6A78 /* GAPlanAddBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDCF19242892D700BB6A78 /* GAPlanAddBasicCell.swift */; };
+		DCCDCF1C242892D700BB6A78 /* GAPlanAddBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF1A242892D700BB6A78 /* GAPlanAddBasicCell.xib */; };
+		DCCDCF1E2428A73700BB6A78 /* planAdd.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF1D2428A73700BB6A78 /* planAdd.plist */; };
+		DCCDCF202428A87100BB6A78 /* GAPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDCF1F2428A87100BB6A78 /* GAPlistManager.swift */; };
 		DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */; };
 		DCDD7350241DC191006857BD /* GARecordingModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */; };
 		DCDD7353241DE0D3006857BD /* GARecordingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7352241DE0D3006857BD /* GARecordingBaseViewController.swift */; };
@@ -179,7 +194,10 @@
 		DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735D241E6194006857BD /* MCProgressView.swift */; };
 		DCDD7362241E6194006857BD /* MCVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735E241E6194006857BD /* MCVolumeView.swift */; };
 		DCE576A5241DB3B600266FF2 /* GARecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */; };
-		DCE576A7241DB69100266FF2 /* GALocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE576A6241DB69100266FF2 /* GALocalData.swift */; };
+		DCF703A52429A2A70052755F /* 123.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCF703A42429A2A70052755F /* 123.pdf */; };
+		DCF703A72429A6750052755F /* ContractSign.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCF703A62429A6750052755F /* ContractSign.pdf */; };
+		DCF703B02429F3EE0052755F /* GAPickerDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF703AE2429F3EE0052755F /* GAPickerDateViewController.swift */; };
+		DCF703B12429F3EE0052755F /* GAPickerDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF703AF2429F3EE0052755F /* GAPickerDateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,19 +218,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D07BA2F2ABE171A1ACFA3F8 /* Pods_Need_NeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Need_NeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65BD0F323B6A6C46535A5E12 /* Pods-Need-NeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need-NeedTests.release.xcconfig"; path = "Target Support Files/Pods-Need-NeedTests/Pods-Need-NeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		777FD31DF96635ED57E35C45 /* Pods-Need.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.debug.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.debug.xcconfig"; sourceTree = "<group>"; };
+		7F23D3285DC9663DF3A27024 /* Pods-Need-NeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need-NeedUITests.debug.xcconfig"; path = "Target Support Files/Pods-Need-NeedUITests/Pods-Need-NeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		988E0A2AA107849029E6D59D /* Pods-Need-NeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need-NeedUITests.release.xcconfig"; path = "Target Support Files/Pods-Need-NeedUITests/Pods-Need-NeedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AE9F5B92C2E6DDE3DC4A7496 /* Pods-NeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeedTests.release.xcconfig"; path = "Target Support Files/Pods-NeedTests/Pods-NeedTests.release.xcconfig"; sourceTree = "<group>"; };
+		B7AA3969FB3ECBC198CA4151 /* Pods-Need-NeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need-NeedTests.debug.xcconfig"; path = "Target Support Files/Pods-Need-NeedTests/Pods-Need-NeedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB01949B2D44E258B2C04372 /* Pods_Need_NeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Need_NeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Need.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC178F942426244300ABE3F2 /* CGRect+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
 		DC178F98242629CA00ABE3F2 /* GACoreData+Need.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GACoreData+Need.swift"; sourceTree = "<group>"; };
-		DC178FC724266A6600ABE3F2 /* 1024.0*1024.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1024.0*1024.0.png"; sourceTree = "<group>"; };
 		DC178FCB2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAHomeViewModel.swift; sourceTree = "<group>"; };
 		DC178FCF2427019E00ABE3F2 /* Need1.8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.8.xcdatamodel; sourceTree = "<group>"; };
-		DC178FD0242701DD00ABE3F2 /* GAPlanModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAPlanModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DC178FD1242701DD00ABE3F2 /* GAPlanModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAPlanModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DC178FD42427093300ABE3F2 /* GAPlanAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPlanAddViewController.swift; sourceTree = "<group>"; };
 		DC178FD624270B6B00ABE3F2 /* HomeStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStoryboard.swift; sourceTree = "<group>"; };
 		DC178FD824270BE100ABE3F2 /* GAListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingViewController.swift; sourceTree = "<group>"; };
+		DC191290242ECDF100C9992B /* GANormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GANormalViewController.swift; sourceTree = "<group>"; };
+		DC191291242ECDF100C9992B /* GANormalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GANormalViewController.xib; sourceTree = "<group>"; };
 		DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghsy.mp3; sourceTree = "<group>"; };
 		DC2F40552423264800C4819C /* GAKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardObserver.swift; sourceTree = "<group>"; };
 		DC2F40572423279700C4819C /* GAKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardView.swift; sourceTree = "<group>"; };
@@ -364,6 +388,13 @@
 		DC74527F241CCA2C0038562C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DC745281241CD19A0038562C /* GAFilePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFilePathManager.swift; sourceTree = "<group>"; };
 		DC745283241CD8770038562C /* GADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADate.swift; sourceTree = "<group>"; };
+		DCACF6C5242B2F41002FADA5 /* GAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAImageView.swift; sourceTree = "<group>"; };
+		DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAListingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAListingModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DCACF6CB242B374D002FADA5 /* Need1.9.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.9.xcdatamodel; sourceTree = "<group>"; };
+		DCACF6CC242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAPlanModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DCACF6CD242B3837002FADA5 /* GAPlanModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAPlanModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DCACF6D0242B4340002FADA5 /* Need2.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need2.0.xcdatamodel; sourceTree = "<group>"; };
 		DCAE671B24207B33000A1A42 /* GATableScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATableScrollCell.swift; sourceTree = "<group>"; };
 		DCAE671E2421129E000A1A42 /* YYOnePixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYOnePixView.swift; sourceTree = "<group>"; };
 		DCB44C9924225EBB0000D3C3 /* GAPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPickerView.swift; sourceTree = "<group>"; };
@@ -378,7 +409,16 @@
 		DCC8AF1724276AF20037BB9E /* GADemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADemoView.swift; sourceTree = "<group>"; };
 		DCC8AF1924279B210037BB9E /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		DCC8AF1B24279DF10037BB9E /* GAListingSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingSettingCell.swift; sourceTree = "<group>"; };
-		DCC8AF1D2427A58E0037BB9E /* GAListingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingContainerViewController.swift; sourceTree = "<group>"; };
+		DCCDCF082428824000BB6A78 /* GAListingSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingSettingViewController.swift; sourceTree = "<group>"; };
+		DCCDCF0A242884A300BB6A78 /* IMG_4527.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4527.jpg; sourceTree = "<group>"; };
+		DCCDCF0D2428916100BB6A78 /* GAPlanAddTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPlanAddTitleCell.swift; sourceTree = "<group>"; };
+		DCCDCF0E2428916100BB6A78 /* GAPlanAddTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPlanAddTitleCell.xib; sourceTree = "<group>"; };
+		DCCDCF11242891AA00BB6A78 /* GAPlanAddNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPlanAddNoteCell.swift; sourceTree = "<group>"; };
+		DCCDCF12242891AA00BB6A78 /* GAPlanAddNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPlanAddNoteCell.xib; sourceTree = "<group>"; };
+		DCCDCF19242892D700BB6A78 /* GAPlanAddBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPlanAddBasicCell.swift; sourceTree = "<group>"; };
+		DCCDCF1A242892D700BB6A78 /* GAPlanAddBasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPlanAddBasicCell.xib; sourceTree = "<group>"; };
+		DCCDCF1D2428A73700BB6A78 /* planAdd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = planAdd.plist; sourceTree = "<group>"; };
+		DCCDCF1F2428A87100BB6A78 /* GAPlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPlistManager.swift; sourceTree = "<group>"; };
 		DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DCDD7351241DD443006857BD /* Need1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.0.xcdatamodel; sourceTree = "<group>"; };
@@ -390,8 +430,13 @@
 		DCDD735D241E6194006857BD /* MCProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCProgressView.swift; sourceTree = "<group>"; };
 		DCDD735E241E6194006857BD /* MCVolumeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCVolumeView.swift; sourceTree = "<group>"; };
 		DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingViewModel.swift; sourceTree = "<group>"; };
-		DCE576A6241DB69100266FF2 /* GALocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GALocalData.swift; sourceTree = "<group>"; };
+		DCF703A22429A1290052755F /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		DCF703A42429A2A70052755F /* 123.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 123.pdf; sourceTree = "<group>"; };
+		DCF703A62429A6750052755F /* ContractSign.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ContractSign.pdf; sourceTree = "<group>"; };
+		DCF703AE2429F3EE0052755F /* GAPickerDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPickerDateViewController.swift; sourceTree = "<group>"; };
+		DCF703AF2429F3EE0052755F /* GAPickerDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPickerDateViewController.xib; sourceTree = "<group>"; };
 		DF9A71F013A30B6E7F726ADF /* Pods-Need.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.release.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.release.xcconfig"; sourceTree = "<group>"; };
+		E11BD422375D30DD6CA2BCA9 /* Pods-NeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeedTests.debug.xcconfig"; path = "Target Support Files/Pods-NeedTests/Pods-NeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCD8BB8AD6D551948C5D071 /* Pods_Need_NeedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +461,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF89C799F42DE3E82A01F82 /* Pods_Need_NeedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +473,12 @@
 			children = (
 				777FD31DF96635ED57E35C45 /* Pods-Need.debug.xcconfig */,
 				DF9A71F013A30B6E7F726ADF /* Pods-Need.release.xcconfig */,
+				E11BD422375D30DD6CA2BCA9 /* Pods-NeedTests.debug.xcconfig */,
+				AE9F5B92C2E6DDE3DC4A7496 /* Pods-NeedTests.release.xcconfig */,
+				7F23D3285DC9663DF3A27024 /* Pods-Need-NeedUITests.debug.xcconfig */,
+				988E0A2AA107849029E6D59D /* Pods-Need-NeedUITests.release.xcconfig */,
+				B7AA3969FB3ECBC198CA4151 /* Pods-Need-NeedTests.debug.xcconfig */,
+				65BD0F323B6A6C46535A5E12 /* Pods-Need-NeedTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -433,8 +486,11 @@
 		8F9E330CB874CE432F5D0CEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCF703A22429A1290052755F /* QuickLook.framework */,
 				DC74527F241CCA2C0038562C /* CloudKit.framework */,
 				CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */,
+				BB01949B2D44E258B2C04372 /* Pods_Need_NeedUITests.framework */,
+				0D07BA2F2ABE171A1ACFA3F8 /* Pods_Need_NeedTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -447,11 +503,23 @@
 			path = FlowLayout;
 			sourceTree = "<group>";
 		};
+		DC1912A6242EE98B00C9992B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DC745152241C73610038562C /* UIKit */,
+				DC745166241C73610038562C /* Foundation */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		DC1DF2EE241F1AF500C09048 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DCF703A62429A6750052755F /* ContractSign.pdf */,
+				DCCDCF0A242884A300BB6A78 /* IMG_4527.jpg */,
+				DCF703A42429A2A70052755F /* 123.pdf */,
 				DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */,
-				DC178FC724266A6600ABE3F2 /* 1024.0*1024.0.png */,
+				DCCDCF1D2428A73700BB6A78 /* planAdd.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -584,9 +652,8 @@
 		DC745151241C73610038562C /* EXTENSION */ = {
 			isa = PBXGroup;
 			children = (
-				DC745152241C73610038562C /* UIKit */,
-				DC745166241C73610038562C /* Foundation */,
-				DC74517E241C73610038562C /* RX */,
+				DC1912A6242EE98B00C9992B /* Extension */,
+				DC74517E241C73610038562C /* ExtensionRX */,
 			);
 			path = EXTENSION;
 			sourceTree = "<group>";
@@ -648,13 +715,13 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		DC74517E241C73610038562C /* RX */ = {
+		DC74517E241C73610038562C /* ExtensionRX */ = {
 			isa = PBXGroup;
 			children = (
 				DC74517F241C73610038562C /* NotificationCenter+Rx.swift */,
 				DC745180241C73610038562C /* UIViewController+Rx.swift */,
 			);
-			path = RX;
+			path = ExtensionRX;
 			sourceTree = "<group>";
 		};
 		DC745181241C73610038562C /* BaseView */ = {
@@ -668,6 +735,7 @@
 				DC74519A241C73610038562C /* GANormalizeCollectionView.swift */,
 				DC74519B241C73610038562C /* TabsView */,
 				DC7451AF241C73610038562C /* GANormalizeTableView.swift */,
+				DCACF6C5242B2F41002FADA5 /* GAImageView.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -844,15 +912,16 @@
 		DC74522A241C76060038562C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DCCDCF0C2428910100BB6A78 /* addCells */,
 				DC74522B241C761A0038562C /* Home.storyboard */,
 				DC745252241C7B7D0038562C /* GAHomeViewController.swift */,
 				DC178FD42427093300ABE3F2 /* GAPlanAddViewController.swift */,
 				DC178FD824270BE100ABE3F2 /* GAListingViewController.swift */,
+				DCCDCF082428824000BB6A78 /* GAListingSettingViewController.swift */,
 				DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */,
 				DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */,
 				DC178FD624270B6B00ABE3F2 /* HomeStoryboard.swift */,
 				DCC8AF1B24279DF10037BB9E /* GAListingSettingCell.swift */,
-				DCC8AF1D2427A58E0037BB9E /* GAListingContainerViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -983,12 +1052,13 @@
 		DC74525B241C7CC20038562C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DC178FD0242701DD00ABE3F2 /* GAPlanModel+CoreDataClass.swift */,
-				DC178FD1242701DD00ABE3F2 /* GAPlanModel+CoreDataProperties.swift */,
+				DCACF6CC242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift */,
+				DCACF6CD242B3837002FADA5 /* GAPlanModel+CoreDataProperties.swift */,
+				DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */,
+				DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */,
 				DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */,
 				DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */,
 				DC74511B241C6BAE0038562C /* Need.xcdatamodeld */,
-				DCE576A6241DB69100266FF2 /* GALocalData.swift */,
 				DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */,
 				DC178F98242629CA00ABE3F2 /* GACoreData+Need.swift */,
 			);
@@ -1005,6 +1075,7 @@
 		DC74527B241CBECF0038562C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DCCDCF1F2428A87100BB6A78 /* GAPlistManager.swift */,
 				DC2F4059242327F600C4819C /* Keyboard */,
 				DC745283241CD8770038562C /* GADate.swift */,
 				DC745271241C976C0038562C /* Speech.swift */,
@@ -1038,8 +1109,25 @@
 			children = (
 				DCB44CA624230C350000D3C3 /* GAPickerViewController.swift */,
 				DCB44CA724230C350000D3C3 /* GAPickerViewController.xib */,
+				DCF703AE2429F3EE0052755F /* GAPickerDateViewController.swift */,
+				DCF703AF2429F3EE0052755F /* GAPickerDateViewController.xib */,
+				DC191290242ECDF100C9992B /* GANormalViewController.swift */,
+				DC191291242ECDF100C9992B /* GANormalViewController.xib */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		DCCDCF0C2428910100BB6A78 /* addCells */ = {
+			isa = PBXGroup;
+			children = (
+				DCCDCF0D2428916100BB6A78 /* GAPlanAddTitleCell.swift */,
+				DCCDCF0E2428916100BB6A78 /* GAPlanAddTitleCell.xib */,
+				DCCDCF11242891AA00BB6A78 /* GAPlanAddNoteCell.swift */,
+				DCCDCF12242891AA00BB6A78 /* GAPlanAddNoteCell.xib */,
+				DCCDCF19242892D700BB6A78 /* GAPlanAddBasicCell.swift */,
+				DCCDCF1A242892D700BB6A78 /* GAPlanAddBasicCell.xib */,
+			);
+			path = addCells;
 			sourceTree = "<group>";
 		};
 		DCDD7358241E616F006857BD /* Public */ = {
@@ -1092,9 +1180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC74513F241C6BAF0038562C /* Build configuration list for PBXNativeTarget "NeedTests" */;
 			buildPhases = (
+				6227A657A30694995CE4661B /* [CP] Check Pods Manifest.lock */,
 				DC745124241C6BAF0038562C /* Sources */,
 				DC745125241C6BAF0038562C /* Frameworks */,
 				DC745126241C6BAF0038562C /* Resources */,
+				91475C2E52A9095F818EE0B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1110,9 +1200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC745142241C6BAF0038562C /* Build configuration list for PBXNativeTarget "NeedUITests" */;
 			buildPhases = (
+				70D8413B22C2B42E6879CE2E /* [CP] Check Pods Manifest.lock */,
 				DC74512F241C6BAF0038562C /* Sources */,
 				DC745130241C6BAF0038562C /* Frameworks */,
 				DC745131241C6BAF0038562C /* Resources */,
+				AAC2672754481DCCE3F53EF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1176,13 +1268,16 @@
 				DC7451C0241C73610038562C /* toast_icon_error@2x.png in Resources */,
 				DC7451F2241C73610038562C /* GANormalizeNavigationView.xib in Resources */,
 				DC74522C241C761A0038562C /* Home.storyboard in Resources */,
+				DCCDCF0B242884A300BB6A78 /* IMG_4527.jpg in Resources */,
 				DC74522E241C76340038562C /* Time.storyboard in Resources */,
+				DCCDCF1E2428A73700BB6A78 /* planAdd.plist in Resources */,
+				DCCDCF1C242892D700BB6A78 /* GAPlanAddBasicCell.xib in Resources */,
+				DCCDCF14242891AA00BB6A78 /* GAPlanAddNoteCell.xib in Resources */,
 				DC745122241C6BAF0038562C /* LaunchScreen.storyboard in Resources */,
 				DC745235241C766B0038562C /* Mine.storyboard in Resources */,
 				DC74511F241C6BAF0038562C /* Assets.xcassets in Resources */,
 				DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */,
 				DC74520D241C73610038562C /* GANormalizeTabsMainCell.xib in Resources */,
-				DC178FC824266A6600ABE3F2 /* 1024.0*1024.0.png in Resources */,
 				DC7451FF241C73610038562C /* GANormalizeDatePickerView.xib in Resources */,
 				DC745200241C73610038562C /* GANormalizePickerView.xib in Resources */,
 				DCB44CA924230C350000D3C3 /* GAPickerViewController.xib in Resources */,
@@ -1190,9 +1285,14 @@
 				DCB44C9D24225EBB0000D3C3 /* GAPickerDataCell.xib in Resources */,
 				DC74511A241C6BAE0038562C /* Main.storyboard in Resources */,
 				DC74520E241C73610038562C /* GANormalizeTabsCell.xib in Resources */,
+				DCF703A52429A2A70052755F /* 123.pdf in Resources */,
 				DC745230241C76480038562C /* Recording.storyboard in Resources */,
+				DC191293242ECDF100C9992B /* GANormalViewController.xib in Resources */,
 				DC745266241C8A6F0038562C /* nav_back_icon@3x.png in Resources */,
 				DC7451C5241C73610038562C /* GAToast.xib in Resources */,
+				DCCDCF102428916100BB6A78 /* GAPlanAddTitleCell.xib in Resources */,
+				DCF703B12429F3EE0052755F /* GAPickerDateViewController.xib in Resources */,
+				DCF703A72429A6750052755F /* ContractSign.pdf in Resources */,
 				DC745206241C73610038562C /* TabsTestViewController.xib in Resources */,
 				DC745227241C75010038562C /* GABaseXibTabBarView.xib in Resources */,
 			);
@@ -1215,6 +1315,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6227A657A30694995CE4661B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Need-NeedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70D8413B22C2B42E6879CE2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Need-NeedUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8B629128C6CB92ED0160E889 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1235,6 +1379,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91475C2E52A9095F818EE0B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Need-NeedTests/Pods-Need-NeedTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Need-NeedTests/Pods-Need-NeedTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Need-NeedTests/Pods-Need-NeedTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAC2672754481DCCE3F53EF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Need-NeedUITests/Pods-Need-NeedUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Need-NeedUITests/Pods-Need-NeedUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Need-NeedUITests/Pods-Need-NeedUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D87BEF67F6DA59C255A56706 /* [CP] Embed Pods Frameworks */ = {
@@ -1272,7 +1450,7 @@
 				DC7451E6241C73610038562C /* UIStoryboard+Extension.swift in Sources */,
 				DC7451E3241C73610038562C /* URL+Extension.swift in Sources */,
 				DC7451E9241C73610038562C /* CoreMedia+Extension.swift in Sources */,
-				DCC8AF1E2427A58E0037BB9E /* GAListingContainerViewController.swift in Sources */,
+				DC191292242ECDF100C9992B /* GANormalViewController.swift in Sources */,
 				DC7451E1241C73610038562C /* JSON+Extension.swift in Sources */,
 				DC7451F6241C73610038562C /* GANormalizeTextField.swift in Sources */,
 				DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */,
@@ -1291,6 +1469,7 @@
 				DCB44CA824230C350000D3C3 /* GAPickerViewController.swift in Sources */,
 				DC745228241C75010038562C /* GABaseXibTabBarView.swift in Sources */,
 				DC74521C241C73610038562C /* GATableViewController.swift in Sources */,
+				DCACF6CE242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift in Sources */,
 				DC7451D1241C73610038562C /* UIView+Shot.swift in Sources */,
 				DC7451D5241C73610038562C /* UIScrollView+SaveArea.swift in Sources */,
 				DC7451EC241C73610038562C /* Dictionary+Extension.swift in Sources */,
@@ -1304,26 +1483,28 @@
 				DC7451F4241C73610038562C /* GANormalizeTextEditProtocol.swift in Sources */,
 				DC74523F241C77850038562C /* GAViewModel.swift in Sources */,
 				DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */,
+				DCCDCF0F2428916100BB6A78 /* GAPlanAddTitleCell.swift in Sources */,
 				DC745219241C73610038562C /* GAViewController.swift in Sources */,
+				DCCDCF13242891AA00BB6A78 /* GAPlanAddNoteCell.swift in Sources */,
 				DC745240241C77850038562C /* GAViewHeightProtocol.swift in Sources */,
 				DC745213241C73610038562C /* GANormalizeTableView.swift in Sources */,
 				DC7451C6241C73610038562C /* UIImageView+Extension.swift in Sources */,
 				DC7451E4241C73610038562C /* IndexPath+Extension.swift in Sources */,
+				DCACF6CF242B3837002FADA5 /* GAPlanModel+CoreDataProperties.swift in Sources */,
 				DC74526E241C964A0038562C /* GARecordingListViewController.swift in Sources */,
 				DC7451CC241C73610038562C /* UINavigationController+Extension.swift in Sources */,
+				DCCDCF202428A87100BB6A78 /* GAPlistManager.swift in Sources */,
 				DC178FCC2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift in Sources */,
 				DC745204241C73610038562C /* GANormalizeCollectionView.swift in Sources */,
 				DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */,
 				DC7451D9241C73610038562C /* UIApplication+Extension.swift in Sources */,
 				DC7451F3241C73610038562C /* GANormalizeNavigationView.swift in Sources */,
-				DC178FD3242701DD00ABE3F2 /* GAPlanModel+CoreDataProperties.swift in Sources */,
 				DC745241241C77850038562C /* GANibloadable.swift in Sources */,
 				DC7451C9241C73610038562C /* UIButton+Extension.swift in Sources */,
 				DC7451C8241C73610038562C /* UIColor+Extension.swift in Sources */,
 				DCDD7355241DE3B3006857BD /* GAAudioDetailsViewController.swift in Sources */,
 				DC7451E2241C73610038562C /* NotificationCenter+Extension.swift in Sources */,
 				DC7451E8241C73610038562C /* CGPoint+Extension.swift in Sources */,
-				DCE576A7241DB69100266FF2 /* GALocalData.swift in Sources */,
 				DC7451D3241C73610038562C /* View+Layout.swift in Sources */,
 				DC7451FE241C73610038562C /* GANormalizePickerViewConfig.swift in Sources */,
 				DCDD735F241E6194006857BD /* HUDMarco.swift in Sources */,
@@ -1333,6 +1514,7 @@
 				DCDD7360241E6194006857BD /* MCRecordHUD.swift in Sources */,
 				DC745255241C7BA10038562C /* GARxSwiftBaseViewController.swift in Sources */,
 				DC745284241CD8770038562C /* GADate.swift in Sources */,
+				DCACF6C6242B2F41002FADA5 /* GAImageView.swift in Sources */,
 				DC178F952426244300ABE3F2 /* CGRect+Extension.swift in Sources */,
 				DC745211241C73610038562C /* GANormalizeTabsMainView.swift in Sources */,
 				DC74524D241C778A0038562C /* GAPlugin.swift in Sources */,
@@ -1347,6 +1529,7 @@
 				DC7451F5241C73610038562C /* GANormalizeTextView.swift in Sources */,
 				DC7451EB241C73610038562C /* Timer+Extension.swift in Sources */,
 				DC5482052424A6800041E0BD /* YYPlayerSlider.swift in Sources */,
+				DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */,
 				DC7451D8241C73610038562C /* UITableView+Extension.swift in Sources */,
 				DC7451D4241C73610038562C /* UICollectionView+Extension.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
@@ -1358,7 +1541,9 @@
 				DC74521E241C73610038562C /* GACustomCellView.swift in Sources */,
 				DC7451DC241C73610038562C /* Int+Extension.swift in Sources */,
 				DC74524F241C778A0038562C /* GAAPI.swift in Sources */,
+				DCF703B02429F3EE0052755F /* GAPickerDateViewController.swift in Sources */,
 				DC7451FC241C73610038562C /* GANormalizePickerView.swift in Sources */,
+				DCACF6C9242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift in Sources */,
 				DC745208241C73610038562C /* GANormalizeBaseTabsView.swift in Sources */,
 				DCDD7353241DE0D3006857BD /* GARecordingBaseViewController.swift in Sources */,
 				DC745253241C7B7D0038562C /* GAHomeViewController.swift in Sources */,
@@ -1382,13 +1567,14 @@
 				DC745205241C73610038562C /* GANormalize_JF_TabsStackViewController.swift in Sources */,
 				DC745218241C73610038562C /* GANormalizeOther.swift in Sources */,
 				DC74520B241C73610038562C /* GANormalizeTabsMainCell.swift in Sources */,
-				DC178FD2242701DD00ABE3F2 /* GAPlanModel+CoreDataClass.swift in Sources */,
+				DCCDCF092428824000BB6A78 /* GAListingSettingViewController.swift in Sources */,
 				DC745212241C73610038562C /* GANormalizeTabsContentView.swift in Sources */,
 				DC178FD724270B6B00ABE3F2 /* HomeStoryboard.swift in Sources */,
 				DC7451DA241C73610038562C /* UIDevice+Extension.swift in Sources */,
 				DC74520F241C73610038562C /* GANormalizeTabsBaseViewController.swift in Sources */,
 				DC745226241C75010038562C /* GAXibTabBarItem.swift in Sources */,
 				DC7451D6241C73610038562C /* UITextField+Extension.swift in Sources */,
+				DCCDCF1B242892D700BB6A78 /* GAPlanAddBasicCell.swift in Sources */,
 				DC7451DE241C73610038562C /* NSObject+Extension.swift in Sources */,
 				DC745210241C73610038562C /* GANormalizeTabsStackViewController.swift in Sources */,
 				DC7451CE241C73610038562C /* UIScrollView+PlaceHolder.swift in Sources */,
@@ -1585,6 +1771,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = Need/System/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1606,6 +1793,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = Need/System/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1620,9 +1808,11 @@
 		};
 		DC745140241C6BAF0038562C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7AA3969FB3ECBC198CA4151 /* Pods-Need-NeedTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = NeedTests/Info.plist;
@@ -1634,6 +1824,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = houjianan.NeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Need.app/Need";
@@ -1642,9 +1833,11 @@
 		};
 		DC745141241C6BAF0038562C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65BD0F323B6A6C46535A5E12 /* Pods-Need-NeedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HGA4995V4J;
 				INFOPLIST_FILE = NeedTests/Info.plist;
@@ -1656,6 +1849,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = houjianan.NeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Need.app/Need";
@@ -1664,6 +1858,7 @@
 		};
 		DC745143241C6BAF0038562C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F23D3285DC9663DF3A27024 /* Pods-Need-NeedUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1684,6 +1879,7 @@
 		};
 		DC745144241C6BAF0038562C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 988E0A2AA107849029E6D59D /* Pods-Need-NeedUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1747,6 +1943,8 @@
 		DC74511B241C6BAE0038562C /* Need.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DCACF6D0242B4340002FADA5 /* Need2.0.xcdatamodel */,
+				DCACF6CB242B374D002FADA5 /* Need1.9.xcdatamodel */,
 				DC178FCF2427019E00ABE3F2 /* Need1.8.xcdatamodel */,
 				DC54820C24250A840041E0BD /* Need1.7.xcdatamodel */,
 				DC54820B24250A400041E0BD /* Need1.6.xcdatamodel */,

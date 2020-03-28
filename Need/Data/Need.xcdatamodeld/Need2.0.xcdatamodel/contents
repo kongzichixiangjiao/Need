@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G3020" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="GAListingModel" representedClassName="GAListingModel" syncable="YES">
+        <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="describe" optional="YES" attributeType="String"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="isFinished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isPlanning" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isRepeat" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="GAPlanAddModel" representedClassName="GAPlanAddModel" syncable="YES">
+        <attribute name="buttonIcons" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="cellType" optional="YES" attributeType="String"/>
+        <attribute name="dataSource" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="editText" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="String"/>
+        <attribute name="isClicked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isEdited" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isVip" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="selectedIcon" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="GARecordingModel" representedClassName="GARecordingModel" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <attribute name="dateString" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="path" optional="YES" attributeType="String"/>
+        <attribute name="resultText" optional="YES" attributeType="String"/>
+        <attribute name="totalTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="GAListingModel" positionX="160" positionY="192" width="128" height="163"/>
+        <element name="GAPlanAddModel" positionX="-315" positionY="162" width="128" height="223"/>
+        <element name="GARecordingModel" positionX="-525.484375" positionY="4.24609375" width="128" height="133"/>
+    </elements>
+</model>

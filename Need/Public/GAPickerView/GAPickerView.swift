@@ -42,6 +42,7 @@ class GAPickerView: UIView {
     
     private var redundantCount: Int = -1
     private var tableViews = [UITableView]()
+    private var _isShowMaskView: Bool = true
     
     lazy var mainView: UIView = {
         let v = UIView()
@@ -57,7 +58,7 @@ class GAPickerView: UIView {
         return v
     }()
     
-    convenience init(frame: CGRect, dataSource: [[String]], configModel: GAPickerViewModel?) {
+    convenience init(frame: CGRect, dataSource: [[String]], isShowMaskView: Bool = true, configModel: GAPickerViewModel?) {
         self.init(frame: frame)
         
         if let item = configModel {
@@ -65,7 +66,7 @@ class GAPickerView: UIView {
         }
         
         self.dataSource = dataSource
-        
+        self._isShowMaskView = isShowMaskView
         _initViews()
         _initData()
     }
@@ -80,6 +81,7 @@ class GAPickerView: UIView {
             t.showsVerticalScrollIndicator = false
             t.delegate = self
             t.dataSource = self
+            t.separatorStyle = .none
             t.register(UINib(nibName: "GAPickerDataCell", bundle: nil), forCellReuseIdentifier: "GAPickerDataCell")
             stackView.addArrangedSubview(t)
             
@@ -87,6 +89,22 @@ class GAPickerView: UIView {
             t.isScrollEnabled = data.count > 1
             
             tableViews.append(t)
+        }
+        
+        if _isShowMaskView {
+            let y = (self.frame.size.height - configModel.kItemHeight) / 2
+            let h: CGFloat = 1 / UIScreen.main.scale
+            let up = UIView()
+            up.isUserInteractionEnabled = true
+            up.frame = CGRect(x: 0, y: y, width: self.width, height: h)
+            up.backgroundColor = "333333".color0X(0.3)
+            self.addSubview(up)
+            
+            let bottom = UIView()
+            bottom.isUserInteractionEnabled = true
+            bottom.frame = CGRect(x: 0, y: y + configModel.kItemHeight, width: self.width, height: h)
+            bottom.backgroundColor = "333333".color0X(0.3)
+            self.addSubview(bottom)
         }
     }
     
@@ -111,6 +129,7 @@ class GAPickerView: UIView {
     deinit {
         print("GASelectedStarEndDateViewController - deinit")
     }
+    var currentRow: Int = -1
 }
 
 extension GAPickerView: UIScrollViewDelegate {
@@ -131,7 +150,6 @@ extension GAPickerView: UIScrollViewDelegate {
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         getResultData(scrollView)
-        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -146,13 +164,13 @@ extension GAPickerView: UIScrollViewDelegate {
         let count = Int(y / configModel.kItemHeight)
         resultData[tag] = dataSource[tag][count + redundantCount]
         
-        print(resultData)
-        
         let _ = tableViews.map {
             if $0.tag != scrollView.tag && dataSource[$0.tag].count != (redundantCount * 2 + 1) {
                 $0.isScrollEnabled = true
             }
         }
+        print(tag)
+        currentRow = count + redundantCount
     }
     
     private func _setupPosition(scrollView: UIScrollView) {
@@ -169,8 +187,6 @@ extension GAPickerView: UIScrollViewDelegate {
             }
         }
     }
-    
-        
 }
 
 extension GAPickerView: UITableViewDelegate, UITableViewDataSource {

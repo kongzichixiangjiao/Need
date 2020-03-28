@@ -57,7 +57,7 @@ class GAAudioDetailsViewController: GARecordingBaseViewController {
             if self.resultTextView.text == self.model.resultText {
                 GAShowWindow.ga_show(message: "别乱点...")
             } else {
-                GACoreData.ga_save(resultText: self.resultTextView.text, name: self.model.name)
+                GACoreData.ga_save_recordingModel(resultText: self.resultTextView.text, name: self.model.name)
             }
         }
     }
