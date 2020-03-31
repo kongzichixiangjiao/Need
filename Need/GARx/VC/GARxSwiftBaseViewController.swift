@@ -19,8 +19,19 @@ import RxSwift
 
 class GARxSwiftViewController: OSViewController {
     var disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = Need.vcBgColor
+    }
 }
 
 class GARxSwiftNavViewController: GANavViewController {
     var disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = Need.vcBgColor
+    }
 }

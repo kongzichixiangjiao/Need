@@ -14,14 +14,11 @@ class GACoreData: MagicalRecord {
     typealias CompletionHandler<T: NSManagedObject> = (_ models: [T]) -> ()
     typealias Block<T: NSManagedObject> = (_ entity: T?) -> ()
     typealias BlockArray<T: NSManagedObject> = (_ entities: [T]) -> ()
+    typealias FinishedHanlder = () -> ()
     
-    static func create(obj: NSManagedObject) {
-        
-    }
-    
-    static func saveDB<T: NSManagedObject>(type: T.Type, name: String, block: @escaping Block<T>, completion: @escaping CompletionHandler<T>) {
+    static func saveDB<T: NSManagedObject>(type: T.Type, key: String = "name", value: String, block: @escaping Block<T>, completion: @escaping CompletionHandler<T>) {
         MagicalRecord.save({ (context) in
-            let predicate = NSPredicate(format: "name==%@", name)
+            let predicate = NSPredicate(format: key + "==%@", value)
             let count = type.mr_countOfEntities(with: predicate)
             var entity: T?
             if count == 0 {
@@ -37,8 +34,16 @@ class GACoreData: MagicalRecord {
         }
     }
     
+    static func count<T: NSManagedObject>(type: T.Type) -> Int {
+        return Int(type.mr_countOfEntities())
+    }
+    
     static func findAll<T: NSManagedObject>(type: T.Type) -> [T] {
         return type.mr_findAll() as! [T]
+    }
+    
+    static func findAll<T: NSManagedObject>(type: T.Type, key: String, value: String) -> [T] {
+        return type.mr_find(byAttribute: key, withValue: value) as! [T]
     }
     
     static func findAll<T: NSManagedObject>(type: T.Type, byAttribute: String = "name", andOrderBy: String = "createTime", value: String) -> [T] {

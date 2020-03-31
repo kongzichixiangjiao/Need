@@ -28,6 +28,7 @@ class GASelectedStarEndDateViewController: GANavViewController {
 */
 
 import UIKit
+import GAExtension
 
 class GAPickerViewModel {
     var kItemHeight: CGFloat = 40
@@ -38,6 +39,7 @@ class GAPickerView: UIView {
     var dataSource: [[String]] = []
     
     var resultData = [String]()
+    var isMultipleChoice: Bool = false
     var configModel: GAPickerViewModel = GAPickerViewModel()
     
     private var redundantCount: Int = -1
@@ -58,14 +60,18 @@ class GAPickerView: UIView {
         return v
     }()
     
-    convenience init(frame: CGRect, dataSource: [[String]], isShowMaskView: Bool = true, configModel: GAPickerViewModel?) {
+    convenience init(frame: CGRect, dataSource: [[String]], isMultipleChoice: Bool = false, resultData: [String] = [], isShowMaskView: Bool = true, configModel: GAPickerViewModel?) {
         self.init(frame: frame)
         
         if let item = configModel {
             self.configModel = item
         }
         
+        if isMultipleChoice {
+            self.resultData = resultData
+        }
         self.dataSource = dataSource
+        self.isMultipleChoice = isMultipleChoice
         self._isShowMaskView = isShowMaskView
         _initViews()
         _initData()
@@ -162,14 +168,15 @@ extension GAPickerView: UIScrollViewDelegate {
         let tag = t.tag
         let y = t.contentOffset.y
         let count = Int(y / configModel.kItemHeight)
-        resultData[tag] = dataSource[tag][count + redundantCount]
+        if resultData.count > 0 && !isMultipleChoice {
+            resultData[tag] = dataSource[tag][count + redundantCount]
+        }
         
         let _ = tableViews.map {
             if $0.tag != scrollView.tag && dataSource[$0.tag].count != (redundantCount * 2 + 1) {
                 $0.isScrollEnabled = true
             }
         }
-        print(tag)
         currentRow = count + redundantCount
     }
     
@@ -208,12 +215,33 @@ extension GAPickerView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GAPickerDataCell", for: indexPath) as! GAPickerDataCell
         let tag = tableView.tag
         let model = dataSource[tag]
-        cell.l.text = model[indexPath.row]
+        let text = model[indexPath.row]
+        cell.l.text = text
+        if isMultipleChoice {
+            cell.selectedImageView.isHidden = !resultData.contains(text)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !isMultipleChoice {
+            return
+        }
+        let tag = tableView.tag
+        let model = dataSource[tag]
+        let text = model[indexPath.row]
+        print(resultData)
+        if resultData.contains(text) {
+            resultData = resultData.filter({ (t) -> Bool in
+                return t != text 
+            })
+            print(resultData)
+        } else {
+            resultData.append(text)
+            print(resultData)
+        }
         
+        tableView.reloadData()
     }
     
     

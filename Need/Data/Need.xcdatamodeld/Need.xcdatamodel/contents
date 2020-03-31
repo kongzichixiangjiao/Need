@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G3020" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="GAListingModel" representedClassName="GAListingModel" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="coverImage" optional="YES" attributeType="Binary"/>
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="describe" optional="YES" attributeType="String"/>
         <attribute name="iconName" optional="YES" attributeType="String"/>
         <attribute name="isFinished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isPlanning" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isRepeat" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="listingId" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nameNote" optional="YES" attributeType="String"/>
+        <attribute name="planCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="GAPlanModel" representedClassName="GAPlanModel" syncable="YES">
@@ -16,10 +21,13 @@
         <attribute name="file" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="iconName" optional="YES" attributeType="String"/>
         <attribute name="isFinished" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="listingId" optional="YES" attributeType="String"/>
         <attribute name="listingName" optional="YES" attributeType="String"/>
         <attribute name="location" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="people" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="planId" optional="YES" attributeType="String"/>
         <attribute name="repeatString" optional="YES" attributeType="String"/>
         <attribute name="subtasks" optional="YES" attributeType="Transformable"/>
     </entity>
@@ -32,8 +40,8 @@
         <attribute name="totalTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="GAListingModel" positionX="160" positionY="192" width="128" height="163"/>
-        <element name="GAPlanModel" positionX="-306" positionY="171" width="128" height="208"/>
+        <element name="GAListingModel" positionX="160" positionY="192" width="128" height="238"/>
+        <element name="GAPlanModel" positionX="-306" positionY="171" width="128" height="253"/>
         <element name="GARecordingModel" positionX="-525.484375" positionY="4.24609375" width="128" height="133"/>
     </elements>
 </model>

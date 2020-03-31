@@ -97,7 +97,7 @@ extension GARecordingAddViewController {
             let name = input.1
             let dateString = GADate.currentDateToDateString(dateFormat: GADateFormatType.y_m_d_h_m_s_chinese.rawValue)
             if !path.isEmpty {
-                GACoreData.saveDB(type: GARecordingModel.self, name: name, block: { (entity) in
+                GACoreData.saveDB(type: GARecordingModel.self, value: name, block: { (entity) in
                     entity?.path = path
                     entity?.name = name
                     entity?.dateString = dateString

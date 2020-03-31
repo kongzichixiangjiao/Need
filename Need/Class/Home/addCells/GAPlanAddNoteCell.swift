@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class GAPlanAddNoteCell: UITableViewCell {
+class GAPlanAddNoteCell: NeedCell {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var stackView: UIStackView!

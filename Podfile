@@ -11,8 +11,9 @@ target 'Need' do
 
   # Architecture
       pod 'ReactorKit'  #https://github.com/ReactorKit/ReactorKit
-      
+      # MY
       pod 'GAAlertPresentation'
+      pod 'GAExtension'
       
       # Networking
       pod 'RxAlamofire'

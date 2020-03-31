@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GATimeViewController: GARxSwiftNavViewController, GANavViewControllerProtocol {
+class GATimeViewController: NeedNavViewController, GANavViewControllerProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addTimeButton: UIButton!

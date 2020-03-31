@@ -9,20 +9,20 @@
 import UIKit
 import TYPagerController
 
-class GAListingDetailsViewController: GARxSwiftNavViewController {
+class GAListingDetailsViewController: NeedNavViewController {
     var listingModel: GAListingModel!
     
     private let titles: [String] = ["新增", "列表", "设置"]
     private let pageVc = TYTabPagerController().then {
         $0.tabBarHeight = 30.0
-        $0.tabBar.backgroundColor = kSecondaryBackgroundColor
+        $0.tabBar.backgroundColor = Need.tabsBgColor
         $0.tabBar.layout.barStyle = .progressElasticView
         $0.tabBar.layout.cellWidth = kScreenWidth / 3
         $0.tabBar.layout.cellSpacing = 0
         $0.tabBar.layout.cellEdging = 0
-        $0.tabBar.layout.progressColor = kFont_3_6_LevelColor
-        $0.tabBar.layout.normalTextColor = kFont_2_9_LevelColor!
-        $0.tabBar.layout.selectedTextColor = kFont_4_3_LevelColor!
+        $0.tabBar.layout.progressColor = Need.title1Color
+        $0.tabBar.layout.normalTextColor = Need.title2Color!
+        $0.tabBar.layout.selectedTextColor = Need.title1Color!
     }
     private var vcs: [UIViewController] = []
     override func viewDidLoad() {
@@ -41,7 +41,6 @@ class GAListingDetailsViewController: GARxSwiftNavViewController {
         
     }
 }
-
 
 extension GAListingDetailsViewController {
     private func _initPageController() {
@@ -74,7 +73,9 @@ extension GAListingDetailsViewController: TYTabPagerControllerDelegate, TYTabPag
             vc.listingModel = listingModel
             return vc
         } else if index == 2 {
-            return self.ga_storyboardVC(type: GAListingSettingViewController.self, storyboardName: HomeStoryboard.name)
+            let vc = self.ga_storyboardVC(type: GAListingSettingViewController.self, storyboardName: HomeStoryboard.name)
+            vc.listingModel = listingModel
+            return vc
         }
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.orange

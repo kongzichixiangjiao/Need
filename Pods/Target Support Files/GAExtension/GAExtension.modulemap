@@ -1,0 +1,6 @@
+framework module GAExtension {
+  umbrella header "GAExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

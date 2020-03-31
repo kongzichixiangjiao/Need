@@ -13,7 +13,7 @@ enum GAAudioType: Int {
     case play = 0, recording = 1
 }
 
-class GARecordingBaseViewController: GARxSwiftNavViewController, GARecordingProtocol {
+class GARecordingBaseViewController: NeedNavViewController, GARecordingProtocol {
     
     var isAllowed: Bool = false
     

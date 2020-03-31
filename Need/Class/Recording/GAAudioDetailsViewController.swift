@@ -11,6 +11,7 @@ import RxSwift
 import Then
 import RxCocoa
 import NSObject_Rx
+import GAExtension
 
 class GAAudioDetailsViewController: GARecordingBaseViewController {
     

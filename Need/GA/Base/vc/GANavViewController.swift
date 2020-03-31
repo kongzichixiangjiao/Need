@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GAExtension
 
 protocol GANavViewControllerProtocol {
     

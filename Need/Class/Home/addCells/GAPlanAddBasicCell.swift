@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GAPlanAddBasicCell: UITableViewCell {
+class GAPlanAddBasicCell: NeedCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: GAImageView!
@@ -16,8 +16,11 @@ class GAPlanAddBasicCell: UITableViewCell {
     
     var model: GAPlanAddModel! {
         didSet {
-            titleLabel.text = model.isEdited ? model.editText : model.title
-            print(model.icon)
+            if model.people.count != 0 {
+                titleLabel.text = model.people.joined(separator: Other.kStringSegmentationSymbols)
+            } else {
+                titleLabel.text = model.isEdited ? model.editText : model.title
+            }
             iconImageView.iconName = model.icon
             vipImageView.isHidden = !model.isVip
             self.selectionStyle = model.isClicked ? .default : .none

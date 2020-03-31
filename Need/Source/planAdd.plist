@@ -153,6 +153,40 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>跟谁</string>
+		<key>identifier</key>
+		<string>10</string>
+		<key>icon</key>
+		<string>listing_details_icon_people</string>
+		<key>cellType</key>
+		<string>GAPlanAddBasicCell</string>
+		<key>isEdited</key>
+		<false/>
+		<key>editText</key>
+		<string></string>
+		<key>height</key>
+		<string>50</string>
+		<key>buttonIcons</key>
+		<array/>
+		<key>isClicked</key>
+		<true/>
+		<key>dataSource</key>
+		<array>
+			<string>爸爸</string>
+			<string>妈妈</string>
+			<string>老婆</string>
+			<string>女朋友</string>
+			<string>姐姐</string>
+			<string>弟弟</string>
+			<string>哥哥</string>
+		</array>
+		<key>isVip</key>
+		<false/>
+		<key>content</key>
+		<array/>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>添加文件</string>
 		<key>identifier</key>
 		<string>5</string>

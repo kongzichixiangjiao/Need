@@ -4,6 +4,7 @@ PODS:
   - FreeStreamer (4.0.0):
     - Reachability (~> 3.0)
   - GAAlertPresentation (0.0.7)
+  - GAExtension (0.1.1)
   - IQKeyboardManagerSwift (6.5.4)
   - Kingfisher (5.11.0):
     - Kingfisher/Core (= 5.11.0)
@@ -64,6 +65,7 @@ PODS:
 DEPENDENCIES:
   - FreeStreamer
   - GAAlertPresentation
+  - GAExtension
   - IQKeyboardManagerSwift
   - Kingfisher
   - MagicalRecord
@@ -97,24 +99,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - FreeStreamer
-    - GAAlertPresentation
-    - MagicalRecord
-    - Reachability
-    - SCLAlertView
-    - SwiftMonkey
-    - SwiftMonkeyPaws
-    - SwipeCellKit
-    - VegaScrollFlowLayout
-  trunk:
     - Alamofire
     - Differentiator
+    - FreeStreamer
+    - GAAlertPresentation
+    - GAExtension
     - IQKeyboardManagerSwift
     - Kingfisher
+    - MagicalRecord
     - MJRefresh
     - Moya
     - "NSObject+Rx"
     - ObjectMapper
+    - Reachability
     - ReactorKit
     - Result
     - ReusableKit
@@ -123,22 +120,28 @@ SPEC REPOS:
     - RxDataSources
     - RxGesture
     - RxSwift
+    - SCLAlertView
     - SnapKit
     - SwiftDate
+    - SwiftMonkey
+    - SwiftMonkeyPaws
     - SwiftyColor
     - SwiftyJSON
     - SwiftyRSA
+    - SwipeCellKit
     - Then
     - TTRangeSlider
     - TYCyclePagerView
     - TYPagerController
     - URLNavigator
+    - VegaScrollFlowLayout
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   FreeStreamer: 7e9c976045701ac2f7e9c14c17245203c37bf2ea
   GAAlertPresentation: d93bad5a2fef4fca14b6bce68018376676643411
+  GAExtension: d6d4deb97006b9732d55fee4d1589c5000406198
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
@@ -171,6 +174,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: 8cbf5b358002cfd18dd5aac06e3643737dd82b28
+PODFILE CHECKSUM: f36aef50f2e136cd8788d67f27ec8c76f298b867
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

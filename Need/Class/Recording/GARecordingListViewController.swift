@@ -12,7 +12,7 @@ import RxDataSources
 import MJRefresh
 import SCLAlertView
 
-class GARecordingListViewController: GARxSwiftNavViewController, Refreshable, GANavViewControllerProtocol {
+class GARecordingListViewController: NeedNavViewController, Refreshable, GANavViewControllerProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     var refreshHeader: MJRefreshHeader!

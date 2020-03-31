@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psb-4b-5wl" customClass="YYOnePixView" customModule="Need" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psb-4b-5wl" customClass="NeedOnePixView" customModule="Need" customModuleProvider="target">
                         <rect key="frame" x="82" y="80" width="332" height="1"/>
                         <color key="backgroundColor" red="0.92156863209999995" green="0.92156863209999995" blue="0.92156863209999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -37,9 +37,6 @@
                             <constraint firstAttribute="width" constant="32" id="16x-cZ-MdS"/>
                             <constraint firstAttribute="height" constant="32" id="t5f-KX-ejE"/>
                         </constraints>
-                        <connections>
-                            <action selector="iconAction:" destination="mPX-Rk-Gde" eventType="touchUpInside" id="Apa-4a-1Mp"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>

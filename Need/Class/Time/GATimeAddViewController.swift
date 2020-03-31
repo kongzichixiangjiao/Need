@@ -8,6 +8,7 @@
 
 import Foundation
 import Then
+import GAExtension
 
 class GATimeAddViewController: GARecordingBaseViewController, GAPickerViewProtocol {
     

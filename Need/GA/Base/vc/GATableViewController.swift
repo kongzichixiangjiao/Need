@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GAExtension
 
 class GATableViewController: GAViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -50,7 +51,7 @@ class GANavTableViewController: GANavViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.emptyDelegate = self
+//        tableView.emptyDelegate = self
     }
     
     public func b_clickedPlaceHolderViewrefresh() {
@@ -78,22 +79,22 @@ extension GANavTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension GANavTableViewController: UITableViewPlaceHolderDelegate {
-    // 如果有其他样式图片可以重写此方法
-    @objc func tableViewPlaceHolderView() -> UIView {
-        let v = UIView()
-        return v
-    }
-    
-    func tableViewEnableScrollWhenPlaceHolderViewShowing() -> Bool {
-        return false
-    }
-    
-    func tableViewClickedPlaceHolderViewRefresh() {
-        b_clickedPlaceHolderViewrefresh()
-    }
-    
-    func tableViewPlaceHolder_NoNetWork_View() -> UIView? {
-        return nil 
-    }
-}
+//extension GANavTableViewController: UITableViewPlaceHolderDelegate {
+//    // 如果有其他样式图片可以重写此方法
+//    @objc func tableViewPlaceHolderView() -> UIView {
+//        let v = UIView()
+//        return v
+//    }
+//
+//    func tableViewEnableScrollWhenPlaceHolderViewShowing() -> Bool {
+//        return false
+//    }
+//
+//    func tableViewClickedPlaceHolderViewRefresh() {
+//        b_clickedPlaceHolderViewrefresh()
+//    }
+//
+//    func tableViewPlaceHolder_NoNetWork_View() -> UIView? {
+//        return nil
+//    }
+//}

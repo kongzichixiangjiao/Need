@@ -9,21 +9,16 @@
 import UIKit
 import RxSwift
 
-class GAPlanAddTitleCell: UITableViewCell {
+class GAPlanAddTitleCell: NeedCell {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var iconButton: UIButton!
     
     var publishModel = PublishSubject<String>()
-    var iconAction = PublishSubject<Bool>()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    }
-
-    @IBAction func iconAction(_ sender: Any) {
-        iconAction.onNext(true)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

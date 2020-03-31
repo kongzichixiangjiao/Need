@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GAExtension
 
 class GADemoView: UIView {
 

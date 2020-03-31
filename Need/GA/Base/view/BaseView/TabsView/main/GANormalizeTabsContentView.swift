@@ -7,6 +7,7 @@
 //  tabsview承载内容的类
 
 import UIKit
+import GAExtension
 
 protocol GANormalizeTabsContentViewDelegate: class {
     func ga_normalizeTabsContentViewMoveTo(index: Int, vc: UIViewController)

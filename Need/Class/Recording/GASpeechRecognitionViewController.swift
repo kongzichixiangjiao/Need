@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import GAExtension
 
 enum GASpeechRecognitionFromType: Int {
     case audioDetails = 1, speech = 2

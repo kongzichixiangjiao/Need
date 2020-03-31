@@ -14,16 +14,18 @@ import MJRefresh
 import CoreData
 
 enum GAPlanAddCellType: String {
-    case date = "3", `repeat` = "7", updateList = "2", add = "9", note = "1", title = "0"
+    case date = "3", `repeat` = "7", updateList = "2", add = "9", note = "1", title = "0", people = "10"
 }
 
 enum GAPlanAddFromType: Int {
     case normal = 0, listing = 1
 }
 
-class GAPlanAddViewController: GARxSwiftNavViewController, GAPickerViewProtocol, Refreshable {
+class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refreshable, GAAlertProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var deleteButton: UIButton!
+    
     var fromType: GAPlanAddFromType = .normal
     
     var listingModel: GAListingModel!
@@ -85,8 +87,19 @@ class GAPlanAddViewController: GARxSwiftNavViewController, GAPickerViewProtocol,
                 }
                 break
             case GAPlanAddCellType.add.rawValue:
-                GACoreData.ga_save_planModel(model: self.planModel, listingName: self.listingModel.name!)
+                self.planModel.listingId = self.listingModel.listingId ?? ""
+                GACoreData.ga_save_planModel(model: self.planModel) { _ in
+                    
+                }
                 break
+            case GAPlanAddCellType.people.rawValue:
+                self.pickerNormalView_show(dataSource: [model.dataSource], isMultipleChoice: true, resultData: model.people) { [unowned self] result in
+                    self.planModel.people = result
+                    model.people = result
+                    model.isEdited = true
+                    self.tableView.reloadRows(at: [indexPath], with: .left)
+                }
+                return
             default:
                 if !model.isClicked {
                     
@@ -113,11 +126,11 @@ class GAPlanAddViewController: GARxSwiftNavViewController, GAPickerViewProtocol,
                 }).disposed(by: self.disposeBag)
                 cell.textField.text = model.isEdited ? model.editText : ""
                 cell.iconButton.setImage(UIImage(named: model.icon), for: .normal)
-                cell.iconAction.subscribe(onNext: { [unowned self] event in
+                cell.iconButton.rx.tap.asDriver().drive(onNext: { [unowned self] in
                     GACoreData.ga_save_planModel(name: self.planModel.name, isFinished: !self.planModel.isFinished) { [unowned self] models in
                         self.planModel.isFinished = !self.planModel.isFinished
-                        GAShowWindow.ga_show(message: "操作完成")
-                        self.refreshHeader.beginRefreshing()
+                        self._model(indexPath).icon = self.planModel.isFinished ? Other.kNotiFinished : self.planModel.iconName
+                        self.tableView.reloadItemsAtIndexPaths([indexPath], animationStyle: .bottom)
                     }
                 }).disposed(by: self.disposeBag)
                 return cell
@@ -144,7 +157,7 @@ class GAPlanAddViewController: GARxSwiftNavViewController, GAPickerViewProtocol,
                 cell.model = model
                 return cell
             default:
-                return UITableViewCell()
+                return NeedCell()
             }
         })
         return dataSource
@@ -169,6 +182,8 @@ class GAPlanAddViewController: GARxSwiftNavViewController, GAPickerViewProtocol,
                 }
             }
         }
+        deleteButton.isHidden = fromType == .normal
+        
         tableView.ga_register(nibNames: [GAPlanAddTitleCell.identifier, GAPlanAddNoteCell.identifier, GAPlanAddBasicCell.identifier])
     }
     
@@ -184,8 +199,13 @@ class GAPlanAddViewController: GARxSwiftNavViewController, GAPickerViewProtocol,
     
     // MARK: 删除
     @IBAction func deleteAction(_ sender: Any) {
-        GACoreData.delete(type: GAPlanModel.self, name: self.planModel.name) { (result) in
-            
+        alertNormal_show(title: "删除操作", message: "删除将不会再找回") { [unowned self] b in
+            if b {
+                GACoreData.ga_delete_planModel(name: self.planModel.name) {
+                    [unowned self] in
+                    self.ga_pop()
+                }
+            }
         }
     }
     
@@ -284,8 +304,12 @@ extension GAPlanAddViewModel: GAViewModelType {
                         result[i].editText = input.planModel.note
                         result[i].isEdited = true
                         break
-                        case GAPlanAddCellType.add.rawValue:
+                    case GAPlanAddCellType.add.rawValue:
                         result[i].title = "保存"
+                        break
+                    case GAPlanAddCellType.people.rawValue:
+                        result[i].people = input.planModel.people
+                        result[i].isEdited = true
                         break
                     default:
                         break
@@ -323,7 +347,6 @@ class GAPlanAddModel: Mappable {
         
     }
     
-    
     public func mapping(map: Map) {
         icon <- map["icon"]
         title <- map["title"]
@@ -332,6 +355,7 @@ class GAPlanAddModel: Mappable {
         editText <- map["editText"]
         height <- map["height"]
         buttonIcons <- map["buttonIcons"]
+        people <- map["people"]
         selectedIcon <- map["selectedIcon"]
         identifier <- map["identifier"]
         dataSource <- map["dataSource"]
@@ -346,6 +370,7 @@ class GAPlanAddModel: Mappable {
     var editText: String = ""
     var height: String = "0"
     var buttonIcons: [String] = []
+    var people: [String] = []
     var selectedIcon: String = ""
     var identifier: String = ""
     var dataSource: [String] = []

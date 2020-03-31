@@ -7,6 +7,7 @@
 //  self.title = "" 这个不要设置  GABaseXibTabBarView配置导航样式  storyboard增删vc
 
 import UIKit
+import GAExtension
 
 class GATabBarViewController: UITabBarController {
     

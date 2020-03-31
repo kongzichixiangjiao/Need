@@ -11,14 +11,18 @@ import GAAlertPresentation
 
 class GAPickerViewController: YYPresentationBaseViewController {
 
+    @IBOutlet weak var bgViewBottomSpace: NSLayoutConstraint!
     @IBOutlet weak var bgView: UIView!
+    
     var dataSource: [[String]] = []
     var kPickerViewHeight: CGFloat = 40 * 5
+    var isMultipleChoice: Bool = false
+    var resultData: [String] = []
+    
     let topViewHeight: CGFloat = 35
-    @IBOutlet weak var bgViewBottomSpace: NSLayoutConstraint!
     
     lazy var pickerView: GAPickerView = {
-        let v = GAPickerView(frame: CGRect(x: 0, y: self.topViewHeight, width: kScreenWidth, height: kPickerViewHeight), dataSource: self.dataSource, configModel: nil)
+        let v = GAPickerView(frame: CGRect(x: 0, y: self.topViewHeight, width: kScreenWidth, height: kPickerViewHeight), dataSource: self.dataSource, isMultipleChoice: self.isMultipleChoice, resultData: self.resultData, configModel: nil)
         v.tag = 20200318
         return v
     }()
@@ -68,9 +72,11 @@ protocol GAPickerViewProtocol {
 }
 
 extension GAPickerViewProtocol where Self: UIViewController {
-    func pickerNormalView_show(dataSource: [[String]], confirmHandler: @escaping ([String]) -> ()) {
+    func pickerNormalView_show(dataSource: [[String]], isMultipleChoice: Bool = false, resultData: [String] = [], confirmHandler: @escaping ([String]) -> ()) {
         let d = YYPresentationDelegate(animationType: .sheet, isShowMaskView: true, maskViewColor: "000000".color0X(0.6))
         let vc = GAPickerViewController(nibName: "GAPickerViewController", bundle: nil, delegate: d)
+        vc.isMultipleChoice = isMultipleChoice
+        vc.resultData = resultData
         vc.dataSource = dataSource
         vc.clickedHandler = {
             tag, model in

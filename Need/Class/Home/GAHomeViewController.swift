@@ -15,8 +15,9 @@ import MJRefresh
 import RxSwift
 import RxCocoa
 import GAAlertPresentation
+import MagicalRecord
 
-class GAHomeViewController: GARxSwiftNavViewController, GANavViewControllerProtocol, Refreshable {
+class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, Refreshable {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -44,7 +45,10 @@ class GAHomeViewController: GARxSwiftNavViewController, GANavViewControllerProto
         
         out.autoSetRefreshHeaderStatus(header: refreshHeader, footer: nil).disposed(by: disposeBag)
         
-        refreshHeader.beginRefreshing()
+        refreshHeader.beginRefreshing {
+            [unowned self] in
+            self.collectionView.ga_reloadData()
+        }
         
         collectionView.rx.modelSelected(GAListingModel.self).subscribe(onNext: {
             [unowned self] model in
@@ -60,6 +64,9 @@ class GAHomeViewController: GARxSwiftNavViewController, GANavViewControllerProto
         let dataSource = RxCollectionViewSectionedReloadDataSource<GAPlanSection>(configureCell: { (dataSource, collectionView, indexPath, model) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GAHomeCell.identifier, for: indexPath) as! GAHomeCell
             cell.nameLabel.text = model.name
+            if model.planCount > 0 {
+                cell.planCountsLabel.text = String(model.planCount)
+            }
             return cell
         }, configureSupplementaryView: {
             [unowned self] dataSource, collectionView, kinds, indexPath in
@@ -75,6 +82,8 @@ class GAHomeViewController: GARxSwiftNavViewController, GANavViewControllerProto
         nav_hideBackButton()
         b_showNavigationView(title: "Need")
         _initNavigationButtons()
+        
+        collectionView.emptyDelegate = self
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
@@ -111,8 +120,10 @@ class GAHomeViewController: GARxSwiftNavViewController, GANavViewControllerProto
     
     private func _save() {
         let name = _newAddName
-        GACoreData.saveDB(type: GAListingModel.self, name: name, block: { (empty) in
+        GACoreData.saveDB(type: GAListingModel.self, value: name, block: { (empty) in
             empty?.name = name
+            let listingId = String.ga_randomNums(count: 18)
+            empty?.listingId = listingId
         }) { (result) in
             self.refreshHeader.beginRefreshing()
         }
@@ -139,10 +150,37 @@ extension GAHomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-class GAHomeCell: UICollectionViewCell {
+extension GAHomeViewController: UICollectionViewPlaceHolderDelegate {
+    func collectionViewPlaceHolderView() -> UIView {
+        let v = GAListPlaceholderView.ga_xibView()
+        v.imgName = "scrollView_noData_icon"
+        return v
+    }
+    
+    func collectionViewEnableScrollWhenPlaceHolderViewShowing() -> Bool {
+        return true
+    }
+    
+    func tableViewPlaceHolderViewOffSetY() -> CGFloat {
+        return 80
+    }
+    
+    func collectionViewPlaceHolder_NoNetWork_View() -> UIView? {
+        return nil
+    }
+    
+    func collectionViewClickedPlaceHolderViewRefresh() {
+        
+    }
+    
+    
+}
+
+class GAHomeCell: NeedCollectionCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var planCountsLabel: UILabel!
+    
 }
 
 protocol GAHomeHeaderDelegate: class {

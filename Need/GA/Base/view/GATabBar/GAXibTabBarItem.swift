@@ -34,7 +34,7 @@ class GAXibTabBarItem: UIView {
     
     var isHighlight: Bool! {
         didSet {
-            if isHighlight && !imageHighlightName.isEmpty {
+            if isHighlight {
                 if !self.imageHighlightName.isEmpty {
                     imageV.image = UIImage(named: self.imageHighlightName)
                 }
@@ -42,8 +42,9 @@ class GAXibTabBarItem: UIView {
             } else {
                 if !self.imageDefaultName.isEmpty {
                     imageV.image = UIImage(named: self.imageDefaultName)
-                    mLabel.textColor = self.labelNormalColor.tabbarItem_color0X
                 }
+                mLabel.textColor = self.labelNormalColor.tabbarItem_color0X
+                
             }
         }
     }

@@ -14,7 +14,7 @@ import TYPagerController
 import RxDataSources
 import MJRefresh
 
-class GAListingViewController: GARxSwiftNavViewController, Refreshable {
+class GAListingViewController: NeedNavViewController, Refreshable {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,15 +26,19 @@ class GAListingViewController: GARxSwiftNavViewController, Refreshable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.emptyDelegate = self
+        
         out = vm.transform(input: GAListingViewModel.ListingInput())
         out.sections.drive(tableView.rx.items(dataSource: _getDataSorce())).disposed(by: disposeBag)
         refreshHeader = initRefreshHeader(tableView, {
             [unowned self] in
-            self.out.requestCommand.onNext((true, self.listingModel.name ?? ""))
+            self.out.requestCommand.onNext((true, self.listingModel.listingId ?? ""))
         })
         
         out.autoSetRefreshHeaderStatus(header: refreshHeader, footer: nil).disposed(by: disposeBag)
-        refreshHeader.beginRefreshing()
+        refreshHeader.beginRefreshing {
+            self.tableView.ga_reloadData()
+        }
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
@@ -60,6 +64,7 @@ class GAListingViewController: GARxSwiftNavViewController, Refreshable {
             cell.iconButton.setImage(UIImage(named: imgName ?? ""), for: .normal)
             cell.nameLabel.text = model.name ?? ""
             cell.noteLabel.text = model.note ?? ""
+            cell.peopleLabel.text = model.people?.joined(separator: Other.kStringSegmentationSymbols)
             cell.iconAction.subscribe { (b) in
                 GACoreData.ga_save_planModel(name: model.name ?? "", isFinished: !model.isFinished) { [unowned self] models in
                     GAShowWindow.ga_show(message: "操作完成")
@@ -83,14 +88,40 @@ class GAListingViewController: GARxSwiftNavViewController, Refreshable {
 
 extension GAListingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
 }
 
-class GAListingCell: UITableViewCell {
+extension GAListingViewController: UITableViewPlaceHolderDelegate {
+    func tableViewPlaceHolderViewOffSetY() -> CGFloat {
+        return 50
+    }
+    
+    // 如果有其他样式图片可以重写此方法
+    @objc func tableViewPlaceHolderView() -> UIView {
+        let v = GAListPlaceholderView.ga_xibView()
+        v.imgName = "scrollView_noData_icon"
+        return v
+    }
+    
+    func tableViewEnableScrollWhenPlaceHolderViewShowing() -> Bool {
+        return true
+    }
+    
+    func tableViewClickedPlaceHolderViewRefresh() {
+        
+    }
+    
+    func tableViewPlaceHolder_NoNetWork_View() -> UIView? {
+        return nil
+    }
+}
+
+class GAListingCell: NeedCell {
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var peopleLabel: UILabel!
     
     let iconAction = PublishSubject<Bool>()
     
