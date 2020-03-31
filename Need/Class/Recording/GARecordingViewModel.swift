@@ -61,12 +61,13 @@ extension GARecordingViewModel: GAViewModelType {
     func delete(row: Int, tag: Int) {
         let result = GACoreData.findAll(type: GARecordingModel.self)
         
-        GACoreData.delete(type: GARecordingModel.self, name: result[row].name ?? "") {
+        GACoreData.delete(type: GARecordingModel.self, key: "name", value: result[row].name ?? "") {
             [weak self] result in
             if let weakSelf = self {
                 weakSelf.vmDatas.value = [(result)]
             }
         }
+        
     }
 }
 

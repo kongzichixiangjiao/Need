@@ -32,20 +32,20 @@ extension GACoreData {
     
     /// 保存计划
     static func ga_save_planModel(model: GAPlanItemModel, block: @escaping Block<GAPlanModel>) {
-        let planId = String.ga_randomNums(count: 18)
+        let planId = model.planId.isEmpty ? String.ga_randomNums(count: 18) : model.planId
         GACoreData.saveDB(type: GAPlanModel.self, key: "planId", value: planId, block: { (empty) in
             empty?.planId = planId
             empty?.listingId = model.listingId
             empty?.createTime = GADate.currentDate
             empty?.date = model.date.ga_checkEmpty(s: Other.kAddPlan_default_dateString)
-            empty?.note = model.note
-            empty?.name = model.name
+            empty?.note = model.note.ga_checkEmpty(s: DefaultText.note)
+            empty?.name = model.name.ga_checkEmpty(s: DefaultText.name)
             empty?.iconName = (model.iconName.isEmpty) ? Other.kAddPlanImgName_not : model.iconName
             empty?.listingName = model.listingName
             empty?.repeatString = model.repeatString.ga_checkEmpty(s: Other.kAddPlan_default_repeatString)
             empty?.location = model.location
             empty?.subtasks = model.subtasks
-            empty?.people = model.people
+            empty?.people = model.people.count == 0 ?DefaultText.people : model.people
             empty?.file = model.file
         }) { (result) in
             let objects = GACoreData.findAll(type: GAPlanModel.self, key: "listingId", value: model.listingId)            
@@ -69,8 +69,14 @@ extension GACoreData {
     }
     
     /// 删除计划
-    static func ga_delete_planModel(name: String, finished: @escaping FinishedHanlder) {
-        GACoreData.delete(type: GAPlanModel.self, name: name) { result in
+    static func ga_delete_planModel(planId: String, finished: @escaping FinishedHanlder) {
+        GACoreData.delete(type: GAPlanModel.self, key: "planId", value: planId) { result in
+            finished()
+        }
+    }
+    
+    static func ga_delete_listingModel(listingId: String, finished: @escaping FinishedHanlder) {
+        GACoreData.delete(type: GAListingModel.self, key: "listingId", value: listingId) { result in
             finished()
         }
     }

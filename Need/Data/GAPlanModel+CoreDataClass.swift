@@ -15,16 +15,6 @@ public class GAPlanModel: NSManagedObject {
   
 }
 
-extension GAPlanModel {
-    static func createModel() -> GAPlanModel {
-//        let context = NSManagedObjectContext.mr_default()
-//        let entity = NSEntityDescription.entity(forEntityName: "GAPlanModel", in: context)!
-//        let model = GAPlanModel(entity: entity, insertInto: context)
-        let model = GAPlanModel.mr_createEntity()
-        return model!
-    }
-}
-
 class GAPlanItemModel {
     var createTime: Date?
     var date: String = ""
@@ -55,23 +45,7 @@ class GAPlanItemModel {
         model.name = planModel.name ?? ""
         model.isFinished = planModel.isFinished
         model.people = planModel.people ?? []
+        model.planId = planModel.planId ?? ""
         return model
-    }
-    
-    func getPlanModel() -> GAPlanModel {
-        let model = GAPlanModel()
-        model.createTime = self.createTime
-        model.date = self.date
-        model.file = self.file
-        model.iconName = self.iconName
-        model.listingName = self.listingName
-        model.location = self.location
-        model.note = self.note
-        model.repeatString = self.repeatString
-        model.subtasks = self.subtasks
-        model.name = self.name
-        model.isFinished = self.isFinished
-        model.people = self.people
-        return model 
     }
 }

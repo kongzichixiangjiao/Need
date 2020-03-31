@@ -34,3 +34,10 @@ struct Need {
     static let tabsBgColor = "F5F5F5".color0X
     
 }
+
+struct DefaultText {
+    static let note = "补充一段神奇的备注吧"
+    static let name = "默认的标题"
+    static let `repeat` = "关闭"
+    static let people = ["自己"]
+}

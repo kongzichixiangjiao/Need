@@ -66,6 +66,9 @@ class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAler
                 self.ga_push(vc: vc)
                 break
             case GAListingSettingCellType.delete.rawValue:
+                GACoreData.ga_delete_listingModel(listingId: self.listingModel.listingId ?? "") {
+                    
+                }
                 break
             default:
                 break 

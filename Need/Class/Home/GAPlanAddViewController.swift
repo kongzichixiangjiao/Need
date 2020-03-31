@@ -201,7 +201,7 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
     @IBAction func deleteAction(_ sender: Any) {
         alertNormal_show(title: "删除操作", message: "删除将不会再找回") { [unowned self] b in
             if b {
-                GACoreData.ga_delete_planModel(name: self.planModel.name) {
+                GACoreData.ga_delete_planModel(planId: self.planModel.planId) {
                     [unowned self] in
                     self.ga_pop()
                 }
