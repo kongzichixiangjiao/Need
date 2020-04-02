@@ -17,11 +17,14 @@ struct Other {
     static let kAddPlan_default_repeatString = "关闭"
     static let kAddPlan_default_dateString = "何时"
     static let kStringSegmentationSymbols = "，"
+    static let kListingDefaultIconName = "listingDefaultIcon"
+    
 }
 
 struct Need {
-    static let vcBgColor = "F5F5F5".color0X
-    static let cellBgColor = "EAEAEA".color0X
+    static let name = "Need"
+    static let vcBgColor = "FFFFFF".color0X
+    static let cellBgColor = "F5F5F5".color0X
     static let iconColor = "007A85".color0X
     
     static let title1Color = "0F0F0F".color0X
@@ -33,6 +36,7 @@ struct Need {
     static let navBgColor = "F5F5F5".color0X
     static let tabsBgColor = "F5F5F5".color0X
     
+    static let kListingDefaultColor = "FFFFFF"
 }
 
 struct DefaultText {
@@ -40,4 +44,7 @@ struct DefaultText {
     static let name = "默认的标题"
     static let `repeat` = "关闭"
     static let people = ["自己"]
+    struct Toast {
+        static let success = "保存成功"
+    }
 }

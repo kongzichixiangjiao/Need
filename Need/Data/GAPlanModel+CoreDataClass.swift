@@ -18,6 +18,7 @@ public class GAPlanModel: NSManagedObject {
 class GAPlanItemModel {
     var createTime: Date?
     var date: String = ""
+    var alertTime: Date?
     var file: [String] = []
     var iconName: String = ""
     var listingName: String = ""
@@ -46,6 +47,7 @@ class GAPlanItemModel {
         model.isFinished = planModel.isFinished
         model.people = planModel.people ?? []
         model.planId = planModel.planId ?? ""
+        model.alertTime = planModel.alertTime
         return model
     }
 }

@@ -27,6 +27,7 @@ class GAPlanAddNoteCell: NeedCell {
                 b.setImage(UIImage(named: name), for: .normal)
                 b.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
             }
+            textField.text = model.editText
         }
     }
     

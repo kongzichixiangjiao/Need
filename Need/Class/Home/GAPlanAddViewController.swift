@@ -14,7 +14,7 @@ import MJRefresh
 import CoreData
 
 enum GAPlanAddCellType: String {
-    case date = "3", `repeat` = "7", updateList = "2", add = "9", note = "1", title = "0", people = "10"
+    case date = "3", `repeat` = "7", updateList = "2", add = "9", note = "1", title = "0", people = "10", alertDate = "11"
 }
 
 enum GAPlanAddFromType: Int {
@@ -88,8 +88,12 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                 break
             case GAPlanAddCellType.add.rawValue:
                 self.planModel.listingId = self.listingModel.listingId ?? ""
-                GACoreData.ga_save_planModel(model: self.planModel) { _ in
-                    
+                GACoreData.ga_save_planModel(model: self.planModel) { [unowned self] planModel in
+                    if self.planModel.alertTime != nil {
+                        DispatchQueue.main.async {
+                            GALocalPushManager.share.post(planModel: self.planModel)
+                        }
+                    }
                 }
                 break
             case GAPlanAddCellType.people.rawValue:
@@ -99,7 +103,15 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                     model.isEdited = true
                     self.tableView.reloadRows(at: [indexPath], with: .left)
                 }
-                return
+                break
+            case GAPlanAddCellType.alertDate.rawValue:
+                self.pickerDateView_show(dateModel: .dateAndTime) {
+                    [unowned self] date in
+                    let dateString = date.toString(.custom(GADateFormatType.h_m_s.rawValue))
+                    self._editedReload(model: &model, restult: dateString, indexPath: indexPath)
+                    self.planModel.alertTime = date
+                }
+                break
             default:
                 if !model.isClicked {
                     
@@ -203,6 +215,7 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
             if b {
                 GACoreData.ga_delete_planModel(planId: self.planModel.planId) {
                     [unowned self] in
+                    GALocalPushManager.share.remove(requesIDs: [self.planModel.planId])
                     self.ga_pop()
                 }
             }
@@ -376,4 +389,26 @@ class GAPlanAddModel: Mappable {
     var dataSource: [String] = []
     var isClicked: Bool = false
     var isVip: Bool = false
+}
+
+extension String {
+    
+    func getRepeatType() -> NSCalendar.Unit? {
+        switch self {
+        case "每分":
+            return .minute
+        case "每时":
+            return .hour
+        case "每天":
+            return .day
+        case "每月":
+            return .month
+        case "每年":
+            return .year
+        case "关闭":
+            return nil
+        default:
+            return nil
+        }
+    }
 }

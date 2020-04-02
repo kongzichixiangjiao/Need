@@ -60,11 +60,8 @@ class GAListingViewController: NeedNavViewController, Refreshable {
         let dataSource = RxTableViewSectionedReloadDataSource<GAListingSection>(configureCell: {
             [unowned self] s, tableView, indexPath, model in
             let cell = tableView.dequeueReusableCell(withIdentifier: GAListingCell.identifier, for: indexPath) as! GAListingCell
-            let imgName = model.isFinished ? Other.kNotiFinished : model.iconName
-            cell.iconButton.setImage(UIImage(named: imgName ?? ""), for: .normal)
-            cell.nameLabel.text = model.name ?? ""
-            cell.noteLabel.text = model.note ?? ""
-            cell.peopleLabel.text = model.people?.joined(separator: Other.kStringSegmentationSymbols)
+            cell.listingModel = self.listingModel
+            cell.model = model
             cell.iconAction.subscribe { (b) in
                 GACoreData.ga_save_planModel(name: model.name ?? "", isFinished: !model.isFinished) { [unowned self] models in
                     GAShowWindow.ga_show(message: "操作完成")
@@ -124,6 +121,22 @@ class GAListingCell: NeedCell {
     @IBOutlet weak var peopleLabel: UILabel!
     
     let iconAction = PublishSubject<Bool>()
+    
+    var listingModel: GAListingModel! {
+        didSet {
+            self.nameLabel.textColor = (listingModel.color ?? Need.kListingDefaultColor).color0X
+        }
+    }
+    
+    var model: GAPlanModel! {
+        didSet {
+            let imgName = model.isFinished ? Other.kNotiFinished : model.iconName
+            self.iconButton.setImage(UIImage(named: imgName ?? ""), for: .normal)
+            self.nameLabel.text = model.name ?? ""
+            self.noteLabel.text = model.note ?? ""
+            self.peopleLabel.text = model.people?.joined(separator: Other.kStringSegmentationSymbols)
+        }
+    }
     
     @IBAction func iconAction(_ sender: UIButton) {
         iconAction.onNext(true)

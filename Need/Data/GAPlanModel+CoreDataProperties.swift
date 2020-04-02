@@ -2,7 +2,7 @@
 //  GAPlanModel+CoreDataProperties.swift
 //  Need
 //
-//  Created by houjianan on 2020/3/29.
+//  Created by houjianan on 2020/4/2.
 //  Copyright © 2020 houjianan. All rights reserved.
 //
 //
@@ -17,19 +17,21 @@ extension GAPlanModel {
         return NSFetchRequest<GAPlanModel>(entityName: "GAPlanModel")
     }
 
+    @NSManaged public var color: String?
     @NSManaged public var createTime: Date?
     @NSManaged public var date: String?
     @NSManaged public var file: [String]?
     @NSManaged public var iconName: String?
     @NSManaged public var isFinished: Bool
+    @NSManaged public var listingId: String?
     @NSManaged public var listingName: String?
     @NSManaged public var location: String?
     @NSManaged public var name: String?
     @NSManaged public var note: String?
     @NSManaged public var people: [String]?
+    @NSManaged public var planId: String?
     @NSManaged public var repeatString: String?
     @NSManaged public var subtasks: NSObject?
-    @NSManaged public var listingId: String?
-    @NSManaged public var planId: String?
+    @NSManaged public var alertTime: Date?
 
 }

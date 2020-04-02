@@ -16,6 +16,8 @@
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="GAPlanModel" representedClassName="GAPlanModel" syncable="YES">
+        <attribute name="alertTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="file" optional="YES" attributeType="Transformable" customClassName="[String]"/>
@@ -41,7 +43,7 @@
     </entity>
     <elements>
         <element name="GAListingModel" positionX="160" positionY="192" width="128" height="238"/>
-        <element name="GAPlanModel" positionX="-306" positionY="171" width="128" height="253"/>
+        <element name="GAPlanModel" positionX="-306" positionY="171" width="128" height="283"/>
         <element name="GARecordingModel" positionX="-525.484375" positionY="4.24609375" width="128" height="133"/>
     </elements>
 </model>

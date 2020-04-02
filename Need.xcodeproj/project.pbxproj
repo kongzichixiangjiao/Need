@@ -36,7 +36,7 @@
 		DC557791243045AF00A65832 /* NeedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC557790243045AF00A65832 /* NeedLabel.swift */; };
 		DC5577932430528100A65832 /* listingSetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC5577922430528100A65832 /* listingSetting.plist */; };
 		DC55779524305CE900A65832 /* GARenameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55779424305CE900A65832 /* GARenameViewController.swift */; };
-		DC55779724305D2100A65832 /* Rename.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC55779624305D2100A65832 /* Rename.storyboard */; };
+		DC55779724305D2100A65832 /* ListingSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC55779624305D2100A65832 /* ListingSetting.storyboard */; };
 		DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */; };
 		DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E1186242066070043396D /* RecordingStoryboard.swift */; };
 		DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745112241C6BAE0038562C /* AppDelegate.swift */; };
@@ -126,6 +126,8 @@
 		DC745280241CCA2C0038562C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC74527F241CCA2C0038562C /* CloudKit.framework */; };
 		DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745281241CD19A0038562C /* GAFilePathManager.swift */; };
 		DC745284241CD8770038562C /* GADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745283241CD8770038562C /* GADate.swift */; };
+		DC774A95243387900088D0F5 /* ListingSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC774A94243387900088D0F5 /* ListingSetting.swift */; };
+		DC774A97243387D60088D0F5 /* GASelectedColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC774A96243387D60088D0F5 /* GASelectedColorsViewController.swift */; };
 		DCACF6C6242B2F41002FADA5 /* GAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C5242B2F41002FADA5 /* GAImageView.swift */; };
 		DCACF6C9242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */; };
 		DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */; };
@@ -141,6 +143,15 @@
 		DCB44CB02423164A0000D3C3 /* GAMicrophoneKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */; };
 		DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */; };
 		DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */; };
+		DCBDEE63243573DC005ABAF7 /* GALocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */; };
+		DCBDEE66243573DC005ABAF7 /* GAAppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE50243573DC005ABAF7 /* GAAppRootViewController.swift */; };
+		DCBDEE67243573DC005ABAF7 /* GAClock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE51243573DC005ABAF7 /* GAClock.storyboard */; };
+		DCBDEE69243573DC005ABAF7 /* GAClockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE54243573DC005ABAF7 /* GAClockDetailsViewController.swift */; };
+		DCBDEE6A243573DC005ABAF7 /* GAClockTagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE55243573DC005ABAF7 /* GAClockTagViewController.xib */; };
+		DCBDEE6B243573DC005ABAF7 /* GAClockRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE56243573DC005ABAF7 /* GAClockRepeatViewController.swift */; };
+		DCBDEE6C243573DC005ABAF7 /* GAClockRepeatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE57243573DC005ABAF7 /* GAClockRepeatViewController.xib */; };
+		DCBDEE6D243573DC005ABAF7 /* GAClockTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE58243573DC005ABAF7 /* GAClockTagViewController.swift */; };
+		DCBDEE6E243573DC005ABAF7 /* GAClockDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE59243573DC005ABAF7 /* GAClockDetailsViewController.xib */; };
 		DCC8AF16242728410037BB9E /* GAListingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */; };
 		DCC8AF1824276AF20037BB9E /* GADemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1724276AF20037BB9E /* GADemoView.swift */; };
 		DCC8AF1A24279B210037BB9E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1924279B210037BB9E /* Other.swift */; };
@@ -217,6 +228,7 @@
 		DC32EC912431C09F00699317 /* GAListPlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAListPlaceholderView.xib; sourceTree = "<group>"; };
 		DC32EC922431C09F00699317 /* GAListPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAListPlaceholderView.swift; sourceTree = "<group>"; };
 		DC32EC952431C63100699317 /* GAGlobal+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GAGlobal+Runtime.swift"; sourceTree = "<group>"; };
+		DC377D96243608180039AF69 /* dx07.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dx07.caf; sourceTree = "<group>"; };
 		DC5482042424A67F0041E0BD /* YYPlayerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPlayerSlider.swift; sourceTree = "<group>"; };
 		DC54820B24250A400041E0BD /* Need1.6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.6.xcdatamodel; sourceTree = "<group>"; };
 		DC54820C24250A840041E0BD /* Need1.7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.7.xcdatamodel; sourceTree = "<group>"; };
@@ -227,7 +239,7 @@
 		DC557790243045AF00A65832 /* NeedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedLabel.swift; sourceTree = "<group>"; };
 		DC5577922430528100A65832 /* listingSetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = listingSetting.plist; sourceTree = "<group>"; };
 		DC55779424305CE900A65832 /* GARenameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARenameViewController.swift; sourceTree = "<group>"; };
-		DC55779624305D2100A65832 /* Rename.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rename.storyboard; sourceTree = "<group>"; };
+		DC55779624305D2100A65832 /* ListingSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListingSetting.storyboard; sourceTree = "<group>"; };
 		DC5E117F241FB4850043396D /* Need1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.1.xcdatamodel; sourceTree = "<group>"; };
 		DC5E1180241FBEB30043396D /* Need1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.2.xcdatamodel; sourceTree = "<group>"; };
 		DC5E1181241FBF5A0043396D /* Need1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.3.xcdatamodel; sourceTree = "<group>"; };
@@ -330,6 +342,8 @@
 		DC74527F241CCA2C0038562C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DC745281241CD19A0038562C /* GAFilePathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFilePathManager.swift; sourceTree = "<group>"; };
 		DC745283241CD8770038562C /* GADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADate.swift; sourceTree = "<group>"; };
+		DC774A94243387900088D0F5 /* ListingSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingSetting.swift; sourceTree = "<group>"; };
+		DC774A96243387D60088D0F5 /* GASelectedColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASelectedColorsViewController.swift; sourceTree = "<group>"; };
 		DCACF6C5242B2F41002FADA5 /* GAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAImageView.swift; sourceTree = "<group>"; };
 		DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAListingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAListingModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -347,6 +361,15 @@
 		DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMicrophoneKeyboardView.swift; sourceTree = "<group>"; };
 		DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+MagicalRecord.swift"; sourceTree = "<group>"; };
 		DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GACoreData.swift; sourceTree = "<group>"; };
+		DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GALocalPushManager.swift; sourceTree = "<group>"; };
+		DCBDEE50243573DC005ABAF7 /* GAAppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAAppRootViewController.swift; sourceTree = "<group>"; };
+		DCBDEE51243573DC005ABAF7 /* GAClock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GAClock.storyboard; sourceTree = "<group>"; };
+		DCBDEE54243573DC005ABAF7 /* GAClockDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAClockDetailsViewController.swift; sourceTree = "<group>"; };
+		DCBDEE55243573DC005ABAF7 /* GAClockTagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAClockTagViewController.xib; sourceTree = "<group>"; };
+		DCBDEE56243573DC005ABAF7 /* GAClockRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAClockRepeatViewController.swift; sourceTree = "<group>"; };
+		DCBDEE57243573DC005ABAF7 /* GAClockRepeatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAClockRepeatViewController.xib; sourceTree = "<group>"; };
+		DCBDEE58243573DC005ABAF7 /* GAClockTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAClockTagViewController.swift; sourceTree = "<group>"; };
+		DCBDEE59243573DC005ABAF7 /* GAClockDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAClockDetailsViewController.xib; sourceTree = "<group>"; };
 		DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingDetailsViewController.swift; sourceTree = "<group>"; };
 		DCC8AF1724276AF20037BB9E /* GADemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADemoView.swift; sourceTree = "<group>"; };
 		DCC8AF1924279B210037BB9E /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
@@ -452,6 +475,7 @@
 				DCCDCF0A242884A300BB6A78 /* IMG_4527.jpg */,
 				DCF703A42429A2A70052755F /* 123.pdf */,
 				DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */,
+				DC377D96243608180039AF69 /* dx07.caf */,
 				DCCDCF1D2428A73700BB6A78 /* planAdd.plist */,
 				DC5577922430528100A65832 /* listingSetting.plist */,
 			);
@@ -788,6 +812,7 @@
 			isa = PBXGroup;
 			children = (
 				DCC8AF1924279B210037BB9E /* Other.swift */,
+				DCBDEE4A243573DC005ABAF7 /* GAClock */,
 				DC557787243042BD00A65832 /* Base */,
 				DCB44CA524230C180000D3C3 /* Alert */,
 				DC745233241C765F0038562C /* Mine */,
@@ -803,16 +828,18 @@
 			children = (
 				DCCDCF0C2428910100BB6A78 /* addCells */,
 				DC74522B241C761A0038562C /* Home.storyboard */,
-				DC55779624305D2100A65832 /* Rename.storyboard */,
+				DC55779624305D2100A65832 /* ListingSetting.storyboard */,
 				DC745252241C7B7D0038562C /* GAHomeViewController.swift */,
 				DC178FD42427093300ABE3F2 /* GAPlanAddViewController.swift */,
 				DC178FD824270BE100ABE3F2 /* GAListingViewController.swift */,
 				DCCDCF082428824000BB6A78 /* GAListingSettingViewController.swift */,
+				DC774A96243387D60088D0F5 /* GASelectedColorsViewController.swift */,
 				DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */,
 				DC55779424305CE900A65832 /* GARenameViewController.swift */,
 				DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */,
 				DC178FD624270B6B00ABE3F2 /* HomeStoryboard.swift */,
 				DCC8AF1B24279DF10037BB9E /* GAListingSettingCell.swift */,
+				DC774A94243387900088D0F5 /* ListingSetting.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1012,6 +1039,38 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		DCBDEE4A243573DC005ABAF7 /* GAClock */ = {
+			isa = PBXGroup;
+			children = (
+				DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */,
+				DCBDEE4F243573DC005ABAF7 /* Root */,
+				DCBDEE53243573DC005ABAF7 /* Class */,
+			);
+			path = GAClock;
+			sourceTree = "<group>";
+		};
+		DCBDEE4F243573DC005ABAF7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DCBDEE50243573DC005ABAF7 /* GAAppRootViewController.swift */,
+				DCBDEE51243573DC005ABAF7 /* GAClock.storyboard */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DCBDEE53243573DC005ABAF7 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				DCBDEE54243573DC005ABAF7 /* GAClockDetailsViewController.swift */,
+				DCBDEE59243573DC005ABAF7 /* GAClockDetailsViewController.xib */,
+				DCBDEE56243573DC005ABAF7 /* GAClockRepeatViewController.swift */,
+				DCBDEE57243573DC005ABAF7 /* GAClockRepeatViewController.xib */,
+				DCBDEE58243573DC005ABAF7 /* GAClockTagViewController.swift */,
+				DCBDEE55243573DC005ABAF7 /* GAClockTagViewController.xib */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		DCCDCF0C2428910100BB6A78 /* addCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1161,7 +1220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC55779724305D2100A65832 /* Rename.storyboard in Resources */,
+				DC55779724305D2100A65832 /* ListingSetting.storyboard in Resources */,
 				DC7451C2241C73610038562C /* toast_icon_failure@2x.png in Resources */,
 				DC7451C0241C73610038562C /* toast_icon_error@2x.png in Resources */,
 				DC7451F2241C73610038562C /* GANormalizeNavigationView.xib in Resources */,
@@ -1173,6 +1232,8 @@
 				DCCDCF1C242892D700BB6A78 /* GAPlanAddBasicCell.xib in Resources */,
 				DC32EC932431C09F00699317 /* GAListPlaceholderView.xib in Resources */,
 				DCCDCF14242891AA00BB6A78 /* GAPlanAddNoteCell.xib in Resources */,
+				DCBDEE6C243573DC005ABAF7 /* GAClockRepeatViewController.xib in Resources */,
+				DCBDEE6A243573DC005ABAF7 /* GAClockTagViewController.xib in Resources */,
 				DC745122241C6BAF0038562C /* LaunchScreen.storyboard in Resources */,
 				DC745235241C766B0038562C /* Mine.storyboard in Resources */,
 				DC74511F241C6BAF0038562C /* Assets.xcassets in Resources */,
@@ -1186,6 +1247,7 @@
 				DCB44C9D24225EBB0000D3C3 /* GAPickerDataCell.xib in Resources */,
 				DC74511A241C6BAE0038562C /* Main.storyboard in Resources */,
 				DC74520E241C73610038562C /* GANormalizeTabsCell.xib in Resources */,
+				DCBDEE6E243573DC005ABAF7 /* GAClockDetailsViewController.xib in Resources */,
 				DCF703A52429A2A70052755F /* 123.pdf in Resources */,
 				DC5577932430528100A65832 /* listingSetting.plist in Resources */,
 				DC745230241C76480038562C /* Recording.storyboard in Resources */,
@@ -1198,6 +1260,7 @@
 				DCF703A72429A6750052755F /* ContractSign.pdf in Resources */,
 				DC745206241C73610038562C /* TabsTestViewController.xib in Resources */,
 				DC745227241C75010038562C /* GABaseXibTabBarView.xib in Resources */,
+				DCBDEE67243573DC005ABAF7 /* GAClock.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1365,6 +1428,8 @@
 				DCACF6CE242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift in Sources */,
 				DC745215241C73610038562C /* GANormalizeOther+Enum.swift in Sources */,
 				DC32EC962431C63100699317 /* GAGlobal+Runtime.swift in Sources */,
+				DC774A95243387900088D0F5 /* ListingSetting.swift in Sources */,
+				DCBDEE6B243573DC005ABAF7 /* GAClockRepeatViewController.swift in Sources */,
 				DC178FD924270BE100ABE3F2 /* GAListingViewController.swift in Sources */,
 				DC745209241C73610038562C /* GANormalizeTabsStackView.swift in Sources */,
 				DC745251241C778A0038562C /* String+RSA.swift in Sources */,
@@ -1375,6 +1440,7 @@
 				DCCDCF0F2428916100BB6A78 /* GAPlanAddTitleCell.swift in Sources */,
 				DC32EC942431C09F00699317 /* GAListPlaceholderView.swift in Sources */,
 				DC745219241C73610038562C /* GAViewController.swift in Sources */,
+				DC774A97243387D60088D0F5 /* GASelectedColorsViewController.swift in Sources */,
 				DCCDCF13242891AA00BB6A78 /* GAPlanAddNoteCell.swift in Sources */,
 				DC745240241C77850038562C /* GAViewHeightProtocol.swift in Sources */,
 				DC55778D2430439F00A65832 /* NeedScrollView.swift in Sources */,
@@ -1386,6 +1452,7 @@
 				DC745204241C73610038562C /* GANormalizeCollectionView.swift in Sources */,
 				DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */,
 				DC7451F3241C73610038562C /* GANormalizeNavigationView.swift in Sources */,
+				DCBDEE69243573DC005ABAF7 /* GAClockDetailsViewController.swift in Sources */,
 				DC745241241C77850038562C /* GANibloadable.swift in Sources */,
 				DCDD7355241DE3B3006857BD /* GAAudioDetailsViewController.swift in Sources */,
 				DC7451FE241C73610038562C /* GANormalizePickerViewConfig.swift in Sources */,
@@ -1405,8 +1472,10 @@
 				DC745260241C87A50038562C /* GATimeViewController.swift in Sources */,
 				DC7451C4241C73610038562C /* GAShowWindow.swift in Sources */,
 				DC7451C3241C73610038562C /* GAToast.swift in Sources */,
+				DCBDEE63243573DC005ABAF7 /* GALocalPushManager.swift in Sources */,
 				DC7451F5241C73610038562C /* GANormalizeTextView.swift in Sources */,
 				DC5482052424A6800041E0BD /* YYPlayerSlider.swift in Sources */,
+				DCBDEE6D243573DC005ABAF7 /* GAClockTagViewController.swift in Sources */,
 				DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
 				DCB44C9E24225EBB0000D3C3 /* GAPickerDataCell.swift in Sources */,
@@ -1438,6 +1507,7 @@
 				DC178FD52427093300ABE3F2 /* GAPlanAddViewController.swift in Sources */,
 				DC55778F243043B200A65832 /* NeedOnePixView.swift in Sources */,
 				DC745205241C73610038562C /* GANormalize_JF_TabsStackViewController.swift in Sources */,
+				DCBDEE66243573DC005ABAF7 /* GAAppRootViewController.swift in Sources */,
 				DC745218241C73610038562C /* GANormalizeOther.swift in Sources */,
 				DC74520B241C73610038562C /* GANormalizeTabsMainCell.swift in Sources */,
 				DCCDCF092428824000BB6A78 /* GAListingSettingViewController.swift in Sources */,

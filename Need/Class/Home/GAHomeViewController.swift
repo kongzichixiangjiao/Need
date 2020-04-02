@@ -64,6 +64,9 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
         let dataSource = RxCollectionViewSectionedReloadDataSource<GAPlanSection>(configureCell: { (dataSource, collectionView, indexPath, model) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GAHomeCell.identifier, for: indexPath) as! GAHomeCell
             cell.nameLabel.text = model.name
+            cell.noteLabel.text = model.nameNote
+            cell.iconImageView.iconColor = model.color?.color0X
+            cell.iconImageView.iconName = model.iconName ?? Other.kListingDefaultIconName
             if model.planCount > 0 {
                 cell.planCountsLabel.text = String(model.planCount)
             }
@@ -80,14 +83,13 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
     
     private func _initViews() {
         nav_hideBackButton()
-        b_showNavigationView(title: "Need")
+        b_showNavigationView(title: Need.name)
         _initNavigationButtons()
         
         collectionView.emptyDelegate = self
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.collectionViewLayout = layout
     }
     
@@ -99,6 +101,7 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
 
             self.b_navigationView.nav_updateNavigationRightButton(imgName: imgName)
             self.b_navigationView.leftButton.isHidden = true
+            
         }
         self.b_navigationView.leftButton.isHidden = true
         
@@ -115,6 +118,7 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
                 self.collectionView.reloadData()
             }
             self._isAdd = title != bTitle
+            
         }
     }
     
@@ -124,6 +128,8 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
             empty?.name = name
             let listingId = String.ga_randomNums(count: 18)
             empty?.listingId = listingId
+            empty?.color = Need.kListingDefaultColor
+            empty?.iconName = Other.kListingDefaultIconName
         }) { (result) in
             self.refreshHeader.beginRefreshing()
         }
@@ -146,7 +152,7 @@ extension GAHomeViewController: UICollectionViewDelegateFlowLayout {
         return _isAdd ? CGSize(width: kScreenWidth, height: 150) : CGSize.zero
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: kScreenWidth - 40, height: 60)
+        return CGSize(width: kScreenWidth - 40, height: 80)
     }
 }
 
@@ -178,8 +184,9 @@ extension GAHomeViewController: UICollectionViewPlaceHolderDelegate {
 
 class GAHomeCell: NeedCollectionCell {
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconImageView: GAImageView!
     @IBOutlet weak var planCountsLabel: UILabel!
+    @IBOutlet weak var noteLabel: UILabel!
     
 }
 

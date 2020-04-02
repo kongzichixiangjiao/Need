@@ -230,15 +230,12 @@ extension GAPickerView: UITableViewDelegate, UITableViewDataSource {
         let tag = tableView.tag
         let model = dataSource[tag]
         let text = model[indexPath.row]
-        print(resultData)
         if resultData.contains(text) {
             resultData = resultData.filter({ (t) -> Bool in
                 return t != text 
             })
-            print(resultData)
         } else {
             resultData.append(text)
-            print(resultData)
         }
         
         tableView.reloadData()

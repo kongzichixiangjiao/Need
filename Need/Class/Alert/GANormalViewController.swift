@@ -32,6 +32,7 @@ class GANormalViewController: YYPresentationBaseViewController {
     }
     
     @IBAction func confirm(_ sender: Any) {
+        dismiss()
         clickedHandler?(1, true)
     }
 }

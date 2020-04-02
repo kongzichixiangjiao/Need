@@ -55,19 +55,27 @@ class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAler
             case GAListingSettingCellType.conver.rawValue:
                 break
             case GAListingSettingCellType.color.rawValue:
+                let vc = self.ga_storyboardVC(type: GASelectedColorsViewController.self, storyboardName: ListingSetting.name)
+                vc.listingModel = self.listingModel
+                self.ga_push(vc: vc)
                 break
             case GAListingSettingCellType.voice.rawValue:
                 break
             case GAListingSettingCellType.password.rawValue:
                 break
             case GAListingSettingCellType.name.rawValue:
-                let vc = self.ga_storyboardVC(type: GARenameViewController.self, storyboardName: "Rename")
+                let vc = self.ga_storyboardVC(type: GARenameViewController.self, storyboardName: ListingSetting.name)
                 vc.listingModel = self.listingModel
                 self.ga_push(vc: vc)
                 break
             case GAListingSettingCellType.delete.rawValue:
-                GACoreData.ga_delete_listingModel(listingId: self.listingModel.listingId ?? "") {
-                    
+                self.alertNormal_show(title: "确定删除吗？", message: "如果删除这条清单，内部的计划一并被清除") {
+                    [unowned self] b in
+                    if b {
+                        GACoreData.ga_delete_listingModel(listingId: self.listingModel.listingId ?? "") {
+                            
+                        }
+                    }
                 }
                 break
             default:

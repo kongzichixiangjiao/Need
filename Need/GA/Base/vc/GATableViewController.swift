@@ -79,22 +79,27 @@ extension GANavTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//extension GANavTableViewController: UITableViewPlaceHolderDelegate {
-//    // 如果有其他样式图片可以重写此方法
-//    @objc func tableViewPlaceHolderView() -> UIView {
-//        let v = UIView()
-//        return v
-//    }
-//
-//    func tableViewEnableScrollWhenPlaceHolderViewShowing() -> Bool {
-//        return false
-//    }
-//
-//    func tableViewClickedPlaceHolderViewRefresh() {
-//        b_clickedPlaceHolderViewrefresh()
-//    }
-//
-//    func tableViewPlaceHolder_NoNetWork_View() -> UIView? {
-//        return nil
-//    }
-//}
+extension GANavTableViewController: UITableViewPlaceHolderDelegate {
+    func tableViewPlaceHolderViewOffSetY() -> CGFloat {
+        return 50
+    }
+    
+    // 如果有其他样式图片可以重写此方法
+    @objc func tableViewPlaceHolderView() -> UIView {
+        let v = GAListPlaceholderView.ga_xibView()
+        v.imgName = "scrollView_noData_icon"
+        return v
+    }
+    
+    func tableViewEnableScrollWhenPlaceHolderViewShowing() -> Bool {
+        return true
+    }
+    
+    func tableViewClickedPlaceHolderViewRefresh() {
+        
+    }
+    
+    func tableViewPlaceHolder_NoNetWork_View() -> UIView? {
+        return nil
+    }
+}

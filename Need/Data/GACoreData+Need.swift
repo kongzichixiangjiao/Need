@@ -37,6 +37,7 @@ extension GACoreData {
             empty?.planId = planId
             empty?.listingId = model.listingId
             empty?.createTime = GADate.currentDate
+            empty?.alertTime = model.alertTime
             empty?.date = model.date.ga_checkEmpty(s: Other.kAddPlan_default_dateString)
             empty?.note = model.note.ga_checkEmpty(s: DefaultText.note)
             empty?.name = model.name.ga_checkEmpty(s: DefaultText.name)
@@ -47,6 +48,7 @@ extension GACoreData {
             empty?.subtasks = model.subtasks
             empty?.people = model.people.count == 0 ?DefaultText.people : model.people
             empty?.file = model.file
+            block(empty)
         }) { (result) in
             let objects = GACoreData.findAll(type: GAPlanModel.self, key: "listingId", value: model.listingId)            
             GACoreData.saveDB(type: GAListingModel.self, key: "listingId", value: model.listingId, block: { (empty) in
