@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NeedCell: UITableViewCell {
+class NeedCell: GARxTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.backgroundColor = Need.cellBgColor

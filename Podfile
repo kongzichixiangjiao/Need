@@ -29,15 +29,16 @@ target 'Need' do
       pod 'RxDataSources'
       pod 'NSObject+Rx'
       pod 'RxGesture'
-
+      # pod 'Action' #rxswift action
+      
       # UI
       pod 'SnapKit'
       pod 'TYCyclePagerView'
       pod 'TYPagerController'
       pod 'MJRefresh'
+      # pod 'TextFieldEffects'
+      pod 'lottie-ios' # 动画
 
-      # Logging
-      
       # Misc.
       pod 'IQKeyboardManagerSwift'
       pod 'Then'
@@ -45,6 +46,9 @@ target 'Need' do
       pod 'SwiftyColor'
   #    pod 'MLeaksFinder' # 检测内存泄漏
       pod 'URLNavigator' #路由
+      # pod 'XCoordinator' # 路由
+      # pod 'XCoordinator/RxSwift', '~> 2.0'
+      
       pod 'TTRangeSlider'
       pod 'SwiftDate'
       pod 'SwiftyRSA'
@@ -53,13 +57,16 @@ target 'Need' do
       pod 'MagicalRecord' # CoreData
 #      pod 'SwiftLint' # 代码规范
       pod 'VegaScrollFlowLayout'
-      pod 'SwipeCellKit'
+      pod 'SwipeCellKit'  # 侧滑cell出按钮
       
-      pod 'SwiftMonkeyPaws'
+      pod 'SwiftMonkeyPaws' # UI测试
+
+      
       
       target 'NeedTests' do
         
       end
+      
       target 'NeedUITests' do
         pod 'SwiftMonkey'
       end

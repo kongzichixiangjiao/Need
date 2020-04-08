@@ -2,7 +2,7 @@
 //  GAPlanModel+CoreDataProperties.swift
 //  Need
 //
-//  Created by houjianan on 2020/4/2.
+//  Created by houjianan on 2020/4/4.
 //  Copyright © 2020 houjianan. All rights reserved.
 //
 //
@@ -17,6 +17,7 @@ extension GAPlanModel {
         return NSFetchRequest<GAPlanModel>(entityName: "GAPlanModel")
     }
 
+    @NSManaged public var alertTime: Date?
     @NSManaged public var color: String?
     @NSManaged public var createTime: Date?
     @NSManaged public var date: String?
@@ -32,6 +33,9 @@ extension GAPlanModel {
     @NSManaged public var planId: String?
     @NSManaged public var repeatString: String?
     @NSManaged public var subtasks: NSObject?
-    @NSManaged public var alertTime: Date?
+    @NSManaged public var weeks: [String]?
+    @NSManaged public var alertTimeString: String?
+    @NSManaged public var alertDate: Date?
+    @NSManaged public var alertDateString: String?
 
 }

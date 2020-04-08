@@ -12,4 +12,5 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import <FSAudioController.h>
 #import <GAExtension/GAExtension-umbrella.h>
+#import <CoreLocation/CoreLocation.h>
 #endif /* Header_h */

@@ -16,6 +16,7 @@ import RxSwift
 import RxCocoa
 import GAAlertPresentation
 import MagicalRecord
+import SwiftDate
 
 class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, Refreshable {
     
@@ -30,6 +31,7 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         _initViews()
         _request()

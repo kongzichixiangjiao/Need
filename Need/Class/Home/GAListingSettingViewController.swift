@@ -20,6 +20,7 @@ enum GAListingSettingCellType: Int {
 class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAlertProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var listingModel: GAListingModel!
     var refreshHeader: MJRefreshHeader!
@@ -51,6 +52,9 @@ class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAler
             let identifier = model["identifier"] as! Int
             switch identifier {
             case GAListingSettingCellType.iconName.rawValue:
+                let vc = self.ga_storyboardVC(type: GASelectedIconViewController.self, storyboardName: ListingSetting.name)
+                vc.listingModel = self.listingModel
+                self.ga_push(vc: vc)
                 break
             case GAListingSettingCellType.conver.rawValue:
                 break
@@ -68,25 +72,32 @@ class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAler
                 vc.listingModel = self.listingModel
                 self.ga_push(vc: vc)
                 break
-            case GAListingSettingCellType.delete.rawValue:
-                self.alertNormal_show(title: "确定删除吗？", message: "如果删除这条清单，内部的计划一并被清除") {
-                    [unowned self] b in
-                    if b {
-                        GACoreData.ga_delete_listingModel(listingId: self.listingModel.listingId ?? "") {
-                            
-                        }
-                    }
-                }
-                break
             default:
                 break 
             }
         }).disposed(by: disposeBag)
+        
+        deleteButton.rx.tap.asDriver().drive(onNext: { [unowned self] in
+            self.alertNormal_show(title: "确定删除吗？", message: "如果删除这条清单，内部的计划一并被清除") {
+                [unowned self] b in
+                if b {
+                    GACoreData.ga_delete_listingModel(listingId: self.listingModel.listingId ?? "") {
+                        
+                    }
+                }
+            }
+            }).disposed(by: disposeBag)
     }
+    
     private func _getDataSorce() -> RxTableViewSectionedReloadDataSource<GAListingSettingSection> {
         let dataSource = RxTableViewSectionedReloadDataSource<GAListingSettingSection>(configureCell: {
             s, tableView, indexPath, model in
             let cell = tableView.dequeueReusableCell(withIdentifier: GAPlanAddBasicCell.identifier, for: indexPath) as! GAPlanAddBasicCell
+            if GAListingSettingCellType(rawValue: indexPath.row) == .color {
+                cell.iconImageView.iconColor = (self.listingModel.color ?? "").color0X
+            } else {
+                cell.iconImageView.iconColor = Need.iconColor
+            }
             cell.iconImageView.iconName = model["icon"] as! String
             cell.titleLabel.text = model["title"] as? String
             cell.vipImageView.isHidden = !(model["isVip"] as! Bool)
@@ -94,6 +105,7 @@ class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAler
         })
         return dataSource
     }
+    
     private func _initViews() {
         tableView.ga_register(nibName: GAPlanAddBasicCell.identifier)
     }

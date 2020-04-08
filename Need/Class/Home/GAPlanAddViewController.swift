@@ -12,9 +12,14 @@ import RxCocoa
 import RxDataSources
 import MJRefresh
 import CoreData
+import SwiftDate
 
-enum GAPlanAddCellType: String {
-    case date = "3", `repeat` = "7", updateList = "2", add = "9", note = "1", title = "0", people = "10", alertDate = "11"
+enum GAPlanAddCellType: Int {
+    case date = 3, `repeat` = 7, listtingTitle = 2, add = 9, note = 1, title = 0, people = 10, alertTime = 11, alertDate = 12, alertWeek = 13
+}
+
+enum GARepeatStringType: String {
+    case `default` = "指定时间", minute = "每分", hour = "每时", day = "每天", week = "每周", month = "每月", year = "每年"
 }
 
 enum GAPlanAddFromType: Int {
@@ -42,7 +47,7 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
         _request()
         
         vm = GAPlanAddViewModel()
-        out = vm.transform(input: GAPlanAddViewModel.GAPlanAddInput(fromType: fromType, planModel: planModel))
+        out = vm.transform(input: GAPlanAddViewModel.GAPlanAddInput(fromType: fromType, planModel: planModel, listingModel: listingModel))
         
         dataSource = _getDataSorce()
         
@@ -50,14 +55,7 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
-        refreshHeader = initRefreshHeader(tableView, {
-            [unowned self] in
-            self.out.requestCommand.onNext(true)
-        })
-        
-        out.autoSetRefreshHeaderStatus(header: refreshHeader, footer: nil).disposed(by: disposeBag)
-        
-        refreshHeader.beginRefreshing()
+        self.out.requestCommand.onNext(true)
         
         tableView.rx.itemSelected.subscribe(onNext: {
             [unowned self] indexPath in
@@ -76,9 +74,12 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                     let repeatString = (result.first ?? "")
                     self._editedReload(model: &model, restult: repeatString, indexPath: indexPath)
                     self.planModel.repeatString = repeatString
+                    
+                    self.vm.reloadAlertTime(dataSource: self.dataSource[0], repeatType: GARepeatStringType(rawValue: repeatString) ?? .default)
+                    self.tableView.reloadData()
                 }
                 break
-            case GAPlanAddCellType.updateList.rawValue:
+            case GAPlanAddCellType.listtingTitle.rawValue:
                 let dataSource = GACoreData.ga_find_planModel_names()
                 self.pickerNormalView_show(dataSource: [dataSource]) { [unowned self] result in
                     let listingName = (result.first ?? "")
@@ -86,12 +87,16 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                     self.planModel.listingName = listingName
                 }
                 break
+            // MARK: 添加
             case GAPlanAddCellType.add.rawValue:
                 self.planModel.listingId = self.listingModel.listingId ?? ""
-                GACoreData.ga_save_planModel(model: self.planModel) { [unowned self] planModel in
-                    if self.planModel.alertTime != nil {
-                        DispatchQueue.main.async {
-                            GALocalPushManager.share.post(planModel: self.planModel)
+                if self.fromType == .normal {
+                    GALocalPushManager.share.remove(requesIDs: [self.planModel.planId])
+                }
+                GACoreData.ga_save_planModel(model: self.planModel, isAdd: self.fromType == .normal) { planModel in
+                    DispatchQueue.main.async {
+                        if self.fromType == .normal {
+                            self.dismiss(animated: true, completion: nil)
                         }
                     }
                 }
@@ -105,13 +110,27 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                 }
                 break
             case GAPlanAddCellType.alertDate.rawValue:
-                self.pickerDateView_show(dateModel: .dateAndTime) {
-                    [unowned self] date in
-                    let dateString = date.toString(.custom(GADateFormatType.h_m_s.rawValue))
-                    self._editedReload(model: &model, restult: dateString, indexPath: indexPath)
-                    self.planModel.alertTime = date
+                self.b_endEdit()
+                self.pickerDateView_show(dateModel: .date) { (date) in
+                    let alertDateString = date.dateString(formate: .y_m_d)
+                    self.planModel.alertDateString = alertDateString
+                    self.planModel.alertDate = date
+                    self._editedReload(model: &model, restult: alertDateString, indexPath: indexPath)
                 }
                 break
+            case GAPlanAddCellType.alertWeek.rawValue:
+                self.b_endEdit()
+                break
+            case GAPlanAddCellType.alertTime.rawValue:
+                self.b_endEdit()
+                self.pickerDateView_show(dateModel: .time) { (date) in
+                    let alertTimeString = date.dateString(formate: .h_m)
+                    self.planModel.alertTimeString = alertTimeString
+                    self.planModel.alertTime = date
+                    self._editedReload(model: &model, restult: alertTimeString, indexPath: indexPath)
+                }
+                break
+                
             default:
                 if !model.isClicked {
                     
@@ -139,7 +158,7 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                 cell.textField.text = model.isEdited ? model.editText : ""
                 cell.iconButton.setImage(UIImage(named: model.icon), for: .normal)
                 cell.iconButton.rx.tap.asDriver().drive(onNext: { [unowned self] in
-                    GACoreData.ga_save_planModel(name: self.planModel.name, isFinished: !self.planModel.isFinished) { [unowned self] models in
+                    GACoreData.ga_save_planModel(model: self.planModel, isFinished: !self.planModel.isFinished) { [unowned self] models in
                         self.planModel.isFinished = !self.planModel.isFinished
                         self._model(indexPath).icon = self.planModel.isFinished ? Other.kNotiFinished : self.planModel.iconName
                         self.tableView.reloadItemsAtIndexPaths([indexPath], animationStyle: .bottom)
@@ -168,6 +187,12 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
                 let cell = tableView.ga_dequeueReusableCell(cellClass: GAPlanAddBasicCell.self)
                 cell.model = model
                 return cell
+            case GASelectedDataCell.identifier:
+                let cell = tableView.ga_dequeueReusableCell(cellClass: GASelectedDataCell.self)
+                cell.delegate = self
+                cell.selectedData = model.weeks
+                cell.dataSource = model.dataSource
+                return cell
             default:
                 return NeedCell()
             }
@@ -186,17 +211,19 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
             b_showNavigationView(title: planModel.name)
             if planModel.isFinished {
                 b_showNavigationRightButton(imgName: Other.kNavImgName_refresh) { [unowned self] _ in
-                    GACoreData.ga_save_planModel(name: self.planModel.name, isFinished: false) { [unowned self] _ in
+                    GACoreData.ga_save_planModel(model: self.planModel, isFinished: false) { [unowned self] _ in
                         self.planModel.isFinished = false
                         self.refreshHeader.beginRefreshing()
                         self.b_navigationView.isShowRightButton = false 
                     }
                 }
             }
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: deleteButton.height * 2, right: 0)
         }
         deleteButton.isHidden = fromType == .normal
         
-        tableView.ga_register(nibNames: [GAPlanAddTitleCell.identifier, GAPlanAddNoteCell.identifier, GAPlanAddBasicCell.identifier])
+        tableView.ga_register(nibNames: [GAPlanAddTitleCell.identifier, GAPlanAddNoteCell.identifier,
+                                         GAPlanAddBasicCell.identifier, GASelectedDataCell.identifier])
     }
     
     private func _request() {
@@ -229,9 +256,21 @@ class GAPlanAddViewController: NeedNavViewController, GAPickerViewProtocol, Refr
 
 extension GAPlanAddViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return _model(indexPath).height.ga_toCGFloat() ?? 0
+        let model = _model(indexPath)
+        return model.isShow ? (model.height.ga_toCGFloat() ?? 0) : 0
     }
 }
+extension GAPlanAddViewController: GASelectedDataCellDelegate {
+    func selectedDataCell_didSelected(data: [String]) {
+        let section = dataSource[0]
+        for item in section.items {
+            if item.identifier == GAPlanAddCellType.alertWeek.rawValue {
+                self.planModel.weeks = data 
+            }
+        }
+    }
+}
+
 
 // MARK: ViewModel
 import RxSwift
@@ -247,14 +286,15 @@ extension GAPlanAddViewModel: GAViewModelType {
     
     typealias Output = GAPlanAddOutput
     
-    
     struct GAPlanAddInput {
         var fromType: GAPlanAddFromType!
         var planModel: GAPlanItemModel!
+        var listingModel: GAListingModel!
         
-        init(fromType: GAPlanAddFromType, planModel: GAPlanItemModel) {
+        init(fromType: GAPlanAddFromType, planModel: GAPlanItemModel, listingModel: GAListingModel) {
             self.fromType = fromType
             self.planModel = planModel
+            self.listingModel = listingModel
         }
     }
     
@@ -275,6 +315,8 @@ extension GAPlanAddViewModel: GAViewModelType {
                 return GAPlanAddSection(items: models)
             }
         }.asDriver(onErrorJustReturn: [])
+        
+        input.planModel.listingName = input.listingModel.name ?? ""
         
         let out = GAPlanAddOutput(sections: sections)
         out.requestCommand.subscribe(onNext: { [weak self]
@@ -309,12 +351,12 @@ extension GAPlanAddViewModel: GAViewModelType {
                         result[i].editText = input.planModel.repeatString
                         result[i].isEdited = true
                         break
-                    case GAPlanAddCellType.updateList.rawValue:
-                        result[i].editText = input.planModel.listingName
-                        result[i].isEdited = true
-                        break
                     case GAPlanAddCellType.note.rawValue:
                         result[i].editText = input.planModel.note
+                        result[i].isEdited = true
+                        break
+                    case GAPlanAddCellType.listtingTitle.rawValue:
+                        result[i].editText = input.planModel.listingName
                         result[i].isEdited = true
                         break
                     case GAPlanAddCellType.add.rawValue:
@@ -324,10 +366,21 @@ extension GAPlanAddViewModel: GAViewModelType {
                         result[i].people = input.planModel.people
                         result[i].isEdited = true
                         break
+                    case GAPlanAddCellType.alertDate.rawValue:
+                        result[i].editText = input.planModel.alertDateString ?? ""
+                        result[i].isEdited = true
+                    case GAPlanAddCellType.alertTime.rawValue:
+                        result[i].editText = input.planModel.alertTimeString ?? ""
+                        result[i].isEdited = true
+                    case GAPlanAddCellType.alertWeek.rawValue:
+                        result[i].weeks = input.planModel.weeks
+                        result[i].isEdited = true
                     default:
                         break
                     }
                 }
+                let section = GAPlanAddSection(items: result)
+                weakSelf.reloadAlertTime(dataSource: section, repeatType: GARepeatStringType(rawValue: input.planModel.repeatString) ?? .default)
             }
             weakSelf.vmDatas.value = [(result)]
             
@@ -335,6 +388,27 @@ extension GAPlanAddViewModel: GAViewModelType {
         }).disposed(by: disposeBag)
         return out
     }
+    // MARK: 选择重复类型 更新cell显示
+    func reloadAlertTime(dataSource: GAPlanAddSection, repeatType: GARepeatStringType) {
+        for item in dataSource.items {
+            let isDate = item.identifier == GAPlanAddCellType.alertDate.rawValue
+            let isTime = item.identifier == GAPlanAddCellType.alertTime.rawValue
+            let isWeek = item.identifier == GAPlanAddCellType.alertWeek.rawValue
+            if isDate || isTime || isWeek {
+                switch repeatType {
+                case .default:
+                    item.isShow = isDate || isTime
+                case .minute:
+                    item.isShow = false
+                case .day:
+                    item.isShow = isWeek || isTime
+                case .hour, .week, .month, .year:
+                    break
+                }
+            }
+        }
+    }
+    
 }
 
 
@@ -374,6 +448,11 @@ class GAPlanAddModel: Mappable {
         dataSource <- map["dataSource"]
         isClicked <- map["isClicked"]
         isVip <- map["isVip"]
+        isShow <- map["isShow"]
+        weeks <- map["weeks"]
+        alertDate <- map["alertDate"]
+        alertTime <- map["alertTime"]
+        
     }
     
     var icon: String = ""
@@ -385,30 +464,12 @@ class GAPlanAddModel: Mappable {
     var buttonIcons: [String] = []
     var people: [String] = []
     var selectedIcon: String = ""
-    var identifier: String = ""
+    var identifier: Int = -1
     var dataSource: [String] = []
     var isClicked: Bool = false
     var isVip: Bool = false
-}
-
-extension String {
-    
-    func getRepeatType() -> NSCalendar.Unit? {
-        switch self {
-        case "每分":
-            return .minute
-        case "每时":
-            return .hour
-        case "每天":
-            return .day
-        case "每月":
-            return .month
-        case "每年":
-            return .year
-        case "关闭":
-            return nil
-        default:
-            return nil
-        }
-    }
+    var isShow: Bool = true
+    var weeks: [String] = []
+    var alertDate: String = ""
+    var alertTime: String = ""
 }

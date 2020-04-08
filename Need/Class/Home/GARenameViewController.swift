@@ -4,7 +4,7 @@
 //
 //  Created by houjianan on 2020/3/29.
 //  Copyright © 2020 houjianan. All rights reserved.
-//
+//  重命名 添加备注
 
 import UIKit
 
@@ -23,7 +23,7 @@ class GARenameViewController: NeedNavViewController {
     }
     
     private func _initViews() {
-        b_showNavigationView(title: "")
+        b_showNavigationView(title: "重命名")
         nameTextField.text = listingModel.name ?? ""
         noteTextField.text = listingModel.nameNote ?? ""
     }
@@ -34,7 +34,7 @@ class GARenameViewController: NeedNavViewController {
     
     override func b_clickedLeftButtonAction() {
         let newName = nameTextField.text
-        let newNameNote = listingModel.nameNote
+        let newNameNote = noteTextField.text
         GACoreData.saveDB(type: GAListingModel.self, value: listingModel.name ?? "", block: { (empty) in
             empty?.name = newName
             empty?.nameNote = newNameNote

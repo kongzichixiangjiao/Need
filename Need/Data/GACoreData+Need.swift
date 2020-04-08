@@ -31,23 +31,45 @@ extension GACoreData {
     }
     
     /// 保存计划
-    static func ga_save_planModel(model: GAPlanItemModel, block: @escaping Block<GAPlanModel>) {
+    static func ga_save_planModel(model: GAPlanItemModel, isAdd: Bool = true, block: @escaping Block<GAPlanModel>) {
+        if isAdd {
+            let count = GACoreData.findAll(type: GAPlanModel.self, key: "name", value: model.name.ga_checkEmpty(s: DefaultText.name)).count
+            if count > 0 {
+                GAShowWindow.ga_show(message: "已经存在", duration: 0.5)
+                return
+            }
+        }
         let planId = model.planId.isEmpty ? String.ga_randomNums(count: 18) : model.planId
         GACoreData.saveDB(type: GAPlanModel.self, key: "planId", value: planId, block: { (empty) in
             empty?.planId = planId
             empty?.listingId = model.listingId
             empty?.createTime = GADate.currentDate
             empty?.alertTime = model.alertTime
-            empty?.date = model.date.ga_checkEmpty(s: Other.kAddPlan_default_dateString)
+            empty?.alertTimeString = model.alertTimeString
+            empty?.alertDate = model.alertDate
+            empty?.alertDateString = model.alertDateString
+            empty?.date = model.date.ga_checkEmpty(s: DefaultText.addPlan_dateString)
             empty?.note = model.note.ga_checkEmpty(s: DefaultText.note)
             empty?.name = model.name.ga_checkEmpty(s: DefaultText.name)
             empty?.iconName = (model.iconName.isEmpty) ? Other.kAddPlanImgName_not : model.iconName
             empty?.listingName = model.listingName
-            empty?.repeatString = model.repeatString.ga_checkEmpty(s: Other.kAddPlan_default_repeatString)
+            empty?.repeatString = model.repeatString.ga_checkEmpty(s: DefaultText.addPlan_repeatString)
             empty?.location = model.location
             empty?.subtasks = model.subtasks
+            empty?.color = Need.kListingDefaultColor
             empty?.people = model.people.count == 0 ?DefaultText.people : model.people
             empty?.file = model.file
+            empty?.isFinished = false 
+            if GARepeatStringType(rawValue: empty?.repeatString ?? "") == .day {
+                let weeks = model.weeks
+                for week in weeks {
+                    empty?.weeks = [week]
+                    GALocalPushManager.share.post(planModel: empty!)
+                }
+            } else {
+                GALocalPushManager.share.post(planModel: empty!)
+            }
+            empty?.weeks = model.weeks
             block(empty)
         }) { (result) in
             let objects = GACoreData.findAll(type: GAPlanModel.self, key: "listingId", value: model.listingId)            
@@ -60,9 +82,20 @@ extension GACoreData {
     }
     
     /// 更新计划：是否完成
-    static func ga_save_planModel(name: String, isFinished: Bool, completion: @escaping CompletionHandler<GAPlanModel>) {
-        GACoreData.saveDB(type: GAPlanModel.self, value: name, block: { (entity) in
+    static func ga_save_planModel(model: GAPlanItemModel, isFinished: Bool, completion: @escaping CompletionHandler<GAPlanModel>) {
+        GACoreData.saveDB(type: GAPlanModel.self, key: "planId", value: model.planId, block: { (entity) in
             entity?.isFinished = isFinished
+            if !isFinished {
+                if GARepeatStringType(rawValue: entity?.repeatString ?? "") == .day {
+                    let weeks = model.weeks
+                    for week in weeks {
+                        entity?.weeks = [week]
+                        GALocalPushManager.share.post(planModel: entity!)
+                    }
+                } else {
+                    GALocalPushManager.share.post(planModel: entity!)
+                }
+            }
         }) { (models) in
             DispatchQueue.main.async {
                 completion(models)

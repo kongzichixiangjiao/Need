@@ -63,14 +63,15 @@ class GAListingViewController: NeedNavViewController, Refreshable {
             cell.listingModel = self.listingModel
             cell.model = model
             cell.iconAction.subscribe { (b) in
-                GACoreData.ga_save_planModel(name: model.name ?? "", isFinished: !model.isFinished) { [unowned self] models in
-                    GAShowWindow.ga_show(message: "操作完成")
-                    self.refreshHeader.beginRefreshing()
-                }
-            }.disposed(by: self.disposeBag)
+                self.tableView.reloadData()
+            }.disposed(by: cell.disposeBag)
             return cell
         })
         return dataSource
+    }
+    
+    func reload() {
+        self.tableView.reloadData()
     }
     
     private func _initViews() {
@@ -119,6 +120,8 @@ class GAListingCell: NeedCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var alertTimeLabel: UILabel!
+    @IBOutlet weak var alertDateLabel: UILabel!
     
     let iconAction = PublishSubject<Bool>()
     
@@ -135,11 +138,19 @@ class GAListingCell: NeedCell {
             self.nameLabel.text = model.name ?? ""
             self.noteLabel.text = model.note ?? ""
             self.peopleLabel.text = model.people?.joined(separator: Other.kStringSegmentationSymbols)
+            self.alertTimeLabel.text = (model.alertTimeString ?? "")
+            self.alertDateLabel.text = (model.alertDateString ?? "")
         }
     }
     
     @IBAction func iconAction(_ sender: UIButton) {
-        iconAction.onNext(true)
+        GALocalPushManager.share.remove(requesIDs: [(self.model.planId ?? "")])
+        
+        GACoreData.ga_save_planModel(model: GAPlanItemModel.getItem(planModel: model), isFinished: !model.isFinished) {
+            [unowned self] models in
+            GAShowWindow.ga_show(message: "操作完成")
+            self.iconAction.onNext(true)
+        }
     }
     
     override func awakeFromNib() {
@@ -186,7 +197,6 @@ extension GAListingViewModel: GAViewModelType {
         let out = ListingOutput(sections: sections)
         out.requestCommand.subscribe(onNext: { [unowned self] model in
             let result = GACoreData.ga_find_planModels(value: model.1)
-            print(result)
             self.vmDatas.value = [result]
             out.refreshStatus.value = .endHeaderRefresh
         }).disposed(by: disposeBag)

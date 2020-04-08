@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G3020" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="GAAlarms" representedClassName=".Alarms" syncable="YES">
+        <attribute name="creationDateID" optional="YES" attributeType="String"/>
+        <attribute name="enabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatFri" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatMon" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatSat" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatSun" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatThu" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatTue" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="repeatWed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="GAListingModel" representedClassName="GAListingModel" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="coverImage" optional="YES" attributeType="Binary"/>
@@ -16,7 +28,10 @@
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="GAPlanModel" representedClassName="GAPlanModel" syncable="YES">
+        <attribute name="alertDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="alertDateString" optional="YES" attributeType="String"/>
         <attribute name="alertTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="alertTimeString" optional="YES" attributeType="String"/>
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="date" optional="YES" attributeType="String"/>
@@ -32,6 +47,7 @@
         <attribute name="planId" optional="YES" attributeType="String"/>
         <attribute name="repeatString" optional="YES" attributeType="String"/>
         <attribute name="subtasks" optional="YES" attributeType="Transformable"/>
+        <attribute name="weeks" optional="YES" attributeType="Transformable" customClassName="[String]"/>
     </entity>
     <entity name="GARecordingModel" representedClassName="GARecordingModel" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary"/>
@@ -43,7 +59,8 @@
     </entity>
     <elements>
         <element name="GAListingModel" positionX="160" positionY="192" width="128" height="238"/>
-        <element name="GAPlanModel" positionX="-306" positionY="171" width="128" height="283"/>
+        <element name="GAPlanModel" positionX="-306" positionY="171" width="128" height="343"/>
         <element name="GARecordingModel" positionX="-525.484375" positionY="4.24609375" width="128" height="133"/>
+        <element name="GAAlarms" positionX="-324" positionY="153" width="128" height="193"/>
     </elements>
 </model>

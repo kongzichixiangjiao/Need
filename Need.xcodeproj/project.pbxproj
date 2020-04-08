@@ -13,6 +13,7 @@
 		DC15516D242FA2C000128B07 /* need_picker_selected_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC15516A242FA2BF00128B07 /* need_picker_selected_icon@3x.png */; };
 		DC15516E242FA2C000128B07 /* need_picker_selected_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC15516B242FA2BF00128B07 /* need_picker_selected_icon@2x.png */; };
 		DC15516F242FA2C000128B07 /* need_picker_selected_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC15516C242FA2C000128B07 /* need_picker_selected_icon.png */; };
+		DC171DDD243CA77D004920A6 /* GASelectedIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC171DDC243CA77D004920A6 /* GASelectedIconViewController.swift */; };
 		DC178F99242629CA00ABE3F2 /* GACoreData+Need.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178F98242629CA00ABE3F2 /* GACoreData+Need.swift */; };
 		DC178FCC2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FCB2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift */; };
 		DC178FCE2427005600ABE3F2 /* GAHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */; };
@@ -22,6 +23,8 @@
 		DC191292242ECDF100C9992B /* GANormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC191290242ECDF100C9992B /* GANormalViewController.swift */; };
 		DC191293242ECDF100C9992B /* GANormalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC191291242ECDF100C9992B /* GANormalViewController.xib */; };
 		DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */; };
+		DC2110D22438692100B02779 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2110D12438692100B02779 /* Date+Extension.swift */; };
+		DC2110D42438692C00B02779 /* GASwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2110D32438692C00B02779 /* GASwiftDate.swift */; };
 		DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40552423264800C4819C /* GAKeyboardObserver.swift */; };
 		DC2F40582423279700C4819C /* GAKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F40572423279700C4819C /* GAKeyboardView.swift */; };
 		DC2F40602423448000C4819C /* GAIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F405F2423448000C4819C /* GAIconButton.swift */; };
@@ -39,6 +42,11 @@
 		DC55779724305D2100A65832 /* ListingSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC55779624305D2100A65832 /* ListingSetting.storyboard */; };
 		DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */; };
 		DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E1186242066070043396D /* RecordingStoryboard.swift */; };
+		DC62BAB62436D4090094EC8F /* GASelectedDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62BAB42436D4090094EC8F /* GASelectedDataCell.swift */; };
+		DC62BAB72436D4090094EC8F /* GASelectedDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC62BAB52436D4090094EC8F /* GASelectedDataCell.xib */; };
+		DC62BABA2436D51B0094EC8F /* GASelectedBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62BAB82436D51B0094EC8F /* GASelectedBasicCell.swift */; };
+		DC62BABB2436D51B0094EC8F /* GASelectedBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC62BAB92436D51B0094EC8F /* GASelectedBasicCell.xib */; };
+		DC62BABF2436E51A0094EC8F /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62BABE2436E51A0094EC8F /* CustomCellView.swift */; };
 		DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745112241C6BAE0038562C /* AppDelegate.swift */; };
 		DC74511A241C6BAE0038562C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC745118241C6BAE0038562C /* Main.storyboard */; };
 		DC74511D241C6BAE0038562C /* Need.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC74511B241C6BAE0038562C /* Need.xcdatamodeld */; };
@@ -141,17 +149,19 @@
 		DCB44CA824230C350000D3C3 /* GAPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44CA624230C350000D3C3 /* GAPickerViewController.swift */; };
 		DCB44CA924230C350000D3C3 /* GAPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB44CA724230C350000D3C3 /* GAPickerViewController.xib */; };
 		DCB44CB02423164A0000D3C3 /* GAMicrophoneKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */; };
+		DCB89F3A243AE40200642D02 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB89F39243AE40200642D02 /* CoreLocation.framework */; };
+		DCB89F3C243AEBD700642D02 /* firstSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F3B243AEBD700642D02 /* firstSound.mp3 */; };
+		DCB89F3F243AEC5D00642D02 /* scarySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F3D243AEC5C00642D02 /* scarySound.mp3 */; };
+		DCB89F40243AEC5D00642D02 /* secondSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F3E243AEC5C00642D02 /* secondSound.mp3 */; };
+		DCB89F64243AF53A00642D02 /* GAFloatWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F61243AF53A00642D02 /* GAFloatWindowViewController.swift */; };
+		DCB89F65243AF53A00642D02 /* GAFloatWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F62243AF53A00642D02 /* GAFloatWindow.swift */; };
+		DCB89F66243AF53A00642D02 /* GAFloatWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F63243AF53A00642D02 /* GAFloatWindowViewController.xib */; };
+		DCB89F68243AF54A00642D02 /* AppDelegate+FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F67243AF54A00642D02 /* AppDelegate+FloatButton.swift */; };
+		DCB89F6A243AF73100642D02 /* float_icon_add_plan.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F69243AF73000642D02 /* float_icon_add_plan.png */; };
+		DCB89F6C243B634E00642D02 /* GARxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F6B243B634E00642D02 /* GARxTableViewCell.swift */; };
 		DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */; };
 		DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */; };
 		DCBDEE63243573DC005ABAF7 /* GALocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */; };
-		DCBDEE66243573DC005ABAF7 /* GAAppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE50243573DC005ABAF7 /* GAAppRootViewController.swift */; };
-		DCBDEE67243573DC005ABAF7 /* GAClock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE51243573DC005ABAF7 /* GAClock.storyboard */; };
-		DCBDEE69243573DC005ABAF7 /* GAClockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE54243573DC005ABAF7 /* GAClockDetailsViewController.swift */; };
-		DCBDEE6A243573DC005ABAF7 /* GAClockTagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE55243573DC005ABAF7 /* GAClockTagViewController.xib */; };
-		DCBDEE6B243573DC005ABAF7 /* GAClockRepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE56243573DC005ABAF7 /* GAClockRepeatViewController.swift */; };
-		DCBDEE6C243573DC005ABAF7 /* GAClockRepeatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE57243573DC005ABAF7 /* GAClockRepeatViewController.xib */; };
-		DCBDEE6D243573DC005ABAF7 /* GAClockTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE58243573DC005ABAF7 /* GAClockTagViewController.swift */; };
-		DCBDEE6E243573DC005ABAF7 /* GAClockDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCBDEE59243573DC005ABAF7 /* GAClockDetailsViewController.xib */; };
 		DCC8AF16242728410037BB9E /* GAListingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */; };
 		DCC8AF1824276AF20037BB9E /* GADemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1724276AF20037BB9E /* GADemoView.swift */; };
 		DCC8AF1A24279B210037BB9E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1924279B210037BB9E /* Other.swift */; };
@@ -176,8 +186,6 @@
 		DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735D241E6194006857BD /* MCProgressView.swift */; };
 		DCDD7362241E6194006857BD /* MCVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD735E241E6194006857BD /* MCVolumeView.swift */; };
 		DCE576A5241DB3B600266FF2 /* GARecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */; };
-		DCF703A52429A2A70052755F /* 123.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCF703A42429A2A70052755F /* 123.pdf */; };
-		DCF703A72429A6750052755F /* ContractSign.pdf in Resources */ = {isa = PBXBuildFile; fileRef = DCF703A62429A6750052755F /* ContractSign.pdf */; };
 		DCF703B02429F3EE0052755F /* GAPickerDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF703AE2429F3EE0052755F /* GAPickerDateViewController.swift */; };
 		DCF703B12429F3EE0052755F /* GAPickerDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF703AF2429F3EE0052755F /* GAPickerDateViewController.xib */; };
 /* End PBXBuildFile section */
@@ -212,6 +220,7 @@
 		DC15516A242FA2BF00128B07 /* need_picker_selected_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "need_picker_selected_icon@3x.png"; sourceTree = "<group>"; };
 		DC15516B242FA2BF00128B07 /* need_picker_selected_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "need_picker_selected_icon@2x.png"; sourceTree = "<group>"; };
 		DC15516C242FA2C000128B07 /* need_picker_selected_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = need_picker_selected_icon.png; sourceTree = "<group>"; };
+		DC171DDC243CA77D004920A6 /* GASelectedIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASelectedIconViewController.swift; sourceTree = "<group>"; };
 		DC178F98242629CA00ABE3F2 /* GACoreData+Need.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GACoreData+Need.swift"; sourceTree = "<group>"; };
 		DC178FCB2426FCFC00ABE3F2 /* VegaScrollFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegaScrollFlowLayout.swift; sourceTree = "<group>"; };
 		DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAHomeViewModel.swift; sourceTree = "<group>"; };
@@ -222,13 +231,14 @@
 		DC191290242ECDF100C9992B /* GANormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GANormalViewController.swift; sourceTree = "<group>"; };
 		DC191291242ECDF100C9992B /* GANormalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GANormalViewController.xib; sourceTree = "<group>"; };
 		DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghsy.mp3; sourceTree = "<group>"; };
+		DC2110D12438692100B02779 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		DC2110D32438692C00B02779 /* GASwiftDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASwiftDate.swift; sourceTree = "<group>"; };
 		DC2F40552423264800C4819C /* GAKeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardObserver.swift; sourceTree = "<group>"; };
 		DC2F40572423279700C4819C /* GAKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAKeyboardView.swift; sourceTree = "<group>"; };
 		DC2F405F2423448000C4819C /* GAIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAIconButton.swift; sourceTree = "<group>"; };
 		DC32EC912431C09F00699317 /* GAListPlaceholderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAListPlaceholderView.xib; sourceTree = "<group>"; };
 		DC32EC922431C09F00699317 /* GAListPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAListPlaceholderView.swift; sourceTree = "<group>"; };
 		DC32EC952431C63100699317 /* GAGlobal+Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GAGlobal+Runtime.swift"; sourceTree = "<group>"; };
-		DC377D96243608180039AF69 /* dx07.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dx07.caf; sourceTree = "<group>"; };
 		DC5482042424A67F0041E0BD /* YYPlayerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPlayerSlider.swift; sourceTree = "<group>"; };
 		DC54820B24250A400041E0BD /* Need1.6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.6.xcdatamodel; sourceTree = "<group>"; };
 		DC54820C24250A840041E0BD /* Need1.7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.7.xcdatamodel; sourceTree = "<group>"; };
@@ -247,6 +257,11 @@
 		DC5E1183241FC38B0043396D /* Need1.5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.5.xcdatamodel; sourceTree = "<group>"; };
 		DC5E118424205DD40043396D /* GASpeechRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASpeechRecognitionViewController.swift; sourceTree = "<group>"; };
 		DC5E1186242066070043396D /* RecordingStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingStoryboard.swift; sourceTree = "<group>"; };
+		DC62BAB42436D4090094EC8F /* GASelectedDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASelectedDataCell.swift; sourceTree = "<group>"; };
+		DC62BAB52436D4090094EC8F /* GASelectedDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GASelectedDataCell.xib; sourceTree = "<group>"; };
+		DC62BAB82436D51B0094EC8F /* GASelectedBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASelectedBasicCell.swift; sourceTree = "<group>"; };
+		DC62BAB92436D51B0094EC8F /* GASelectedBasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GASelectedBasicCell.xib; sourceTree = "<group>"; };
+		DC62BABE2436E51A0094EC8F /* CustomCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
 		DC74510F241C6BAE0038562C /* Need.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Need.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC745112241C6BAE0038562C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC745119241C6BAE0038562C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -359,17 +374,19 @@
 		DCB44CA624230C350000D3C3 /* GAPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPickerViewController.swift; sourceTree = "<group>"; };
 		DCB44CA724230C350000D3C3 /* GAPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPickerViewController.xib; sourceTree = "<group>"; };
 		DCB44CAF2423164A0000D3C3 /* GAMicrophoneKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMicrophoneKeyboardView.swift; sourceTree = "<group>"; };
+		DCB89F39243AE40200642D02 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DCB89F3B243AEBD700642D02 /* firstSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = firstSound.mp3; sourceTree = "<group>"; };
+		DCB89F3D243AEC5C00642D02 /* scarySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scarySound.mp3; sourceTree = "<group>"; };
+		DCB89F3E243AEC5C00642D02 /* secondSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secondSound.mp3; sourceTree = "<group>"; };
+		DCB89F61243AF53A00642D02 /* GAFloatWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAFloatWindowViewController.swift; sourceTree = "<group>"; };
+		DCB89F62243AF53A00642D02 /* GAFloatWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAFloatWindow.swift; sourceTree = "<group>"; };
+		DCB89F63243AF53A00642D02 /* GAFloatWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAFloatWindowViewController.xib; sourceTree = "<group>"; };
+		DCB89F67243AF54A00642D02 /* AppDelegate+FloatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+FloatButton.swift"; sourceTree = "<group>"; };
+		DCB89F69243AF73000642D02 /* float_icon_add_plan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_icon_add_plan.png; sourceTree = "<group>"; };
+		DCB89F6B243B634E00642D02 /* GARxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARxTableViewCell.swift; sourceTree = "<group>"; };
 		DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+MagicalRecord.swift"; sourceTree = "<group>"; };
 		DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GACoreData.swift; sourceTree = "<group>"; };
 		DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GALocalPushManager.swift; sourceTree = "<group>"; };
-		DCBDEE50243573DC005ABAF7 /* GAAppRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAAppRootViewController.swift; sourceTree = "<group>"; };
-		DCBDEE51243573DC005ABAF7 /* GAClock.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GAClock.storyboard; sourceTree = "<group>"; };
-		DCBDEE54243573DC005ABAF7 /* GAClockDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAClockDetailsViewController.swift; sourceTree = "<group>"; };
-		DCBDEE55243573DC005ABAF7 /* GAClockTagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAClockTagViewController.xib; sourceTree = "<group>"; };
-		DCBDEE56243573DC005ABAF7 /* GAClockRepeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAClockRepeatViewController.swift; sourceTree = "<group>"; };
-		DCBDEE57243573DC005ABAF7 /* GAClockRepeatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAClockRepeatViewController.xib; sourceTree = "<group>"; };
-		DCBDEE58243573DC005ABAF7 /* GAClockTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAClockTagViewController.swift; sourceTree = "<group>"; };
-		DCBDEE59243573DC005ABAF7 /* GAClockDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAClockDetailsViewController.xib; sourceTree = "<group>"; };
 		DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingDetailsViewController.swift; sourceTree = "<group>"; };
 		DCC8AF1724276AF20037BB9E /* GADemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADemoView.swift; sourceTree = "<group>"; };
 		DCC8AF1924279B210037BB9E /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
@@ -396,8 +413,6 @@
 		DCDD735E241E6194006857BD /* MCVolumeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCVolumeView.swift; sourceTree = "<group>"; };
 		DCE576A4241DB3B600266FF2 /* GARecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingViewModel.swift; sourceTree = "<group>"; };
 		DCF703A22429A1290052755F /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		DCF703A42429A2A70052755F /* 123.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 123.pdf; sourceTree = "<group>"; };
-		DCF703A62429A6750052755F /* ContractSign.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ContractSign.pdf; sourceTree = "<group>"; };
 		DCF703AE2429F3EE0052755F /* GAPickerDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPickerDateViewController.swift; sourceTree = "<group>"; };
 		DCF703AF2429F3EE0052755F /* GAPickerDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPickerDateViewController.xib; sourceTree = "<group>"; };
 		DF9A71F013A30B6E7F726ADF /* Pods-Need.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Need.release.xcconfig"; path = "Target Support Files/Pods-Need/Pods-Need.release.xcconfig"; sourceTree = "<group>"; };
@@ -409,6 +424,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB89F3A243AE40200642D02 /* CoreLocation.framework in Frameworks */,
 				155F0965E657E548E5DECF8E /* Pods_Need.framework in Frameworks */,
 				DC745280241CCA2C0038562C /* CloudKit.framework in Frameworks */,
 			);
@@ -451,6 +467,7 @@
 		8F9E330CB874CE432F5D0CEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DCB89F39243AE40200642D02 /* CoreLocation.framework */,
 				DCF703A22429A1290052755F /* QuickLook.framework */,
 				DC74527F241CCA2C0038562C /* CloudKit.framework */,
 				CE4500D2290CC9E0BD0EE5AF /* Pods_Need.framework */,
@@ -471,15 +488,21 @@
 		DC1DF2EE241F1AF500C09048 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DCF703A62429A6750052755F /* ContractSign.pdf */,
-				DCCDCF0A242884A300BB6A78 /* IMG_4527.jpg */,
-				DCF703A42429A2A70052755F /* 123.pdf */,
-				DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */,
-				DC377D96243608180039AF69 /* dx07.caf */,
-				DCCDCF1D2428A73700BB6A78 /* planAdd.plist */,
-				DC5577922430528100A65832 /* listingSetting.plist */,
+				DCB89F43243AEC7E00642D02 /* image */,
+				DCB89F42243AEC6F00642D02 /* plist */,
+				DCB89F41243AEC6600642D02 /* sound */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		DC2110D02438690C00B02779 /* GADate */ = {
+			isa = PBXGroup;
+			children = (
+				DC745283241CD8770038562C /* GADate.swift */,
+				DC2110D12438692100B02779 /* Date+Extension.swift */,
+				DC2110D32438692C00B02779 /* GASwiftDate.swift */,
+			);
+			path = GADate;
 			sourceTree = "<group>";
 		};
 		DC2F4059242327F600C4819C /* Keyboard */ = {
@@ -834,6 +857,7 @@
 				DC178FD824270BE100ABE3F2 /* GAListingViewController.swift */,
 				DCCDCF082428824000BB6A78 /* GAListingSettingViewController.swift */,
 				DC774A96243387D60088D0F5 /* GASelectedColorsViewController.swift */,
+				DC171DDC243CA77D004920A6 /* GASelectedIconViewController.swift */,
 				DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */,
 				DC55779424305CE900A65832 /* GARenameViewController.swift */,
 				DC178FCD2427005600ABE3F2 /* GAHomeViewModel.swift */,
@@ -882,6 +906,7 @@
 		DC745236241C77740038562C /* GARx */ = {
 			isa = PBXGroup;
 			children = (
+				DCB89F6D243B635200642D02 /* View */,
 				DC745256241C7BA70038562C /* VC */,
 				DC745243241C778A0038562C /* NetWork */,
 				DC745237241C77850038562C /* Protocol */,
@@ -993,10 +1018,11 @@
 		DC74527B241CBECF0038562C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				DCB89F37243A1A0800642D02 /* LocalPush（本地推送） */,
+				DC2110D02438690C00B02779 /* GADate */,
 				DC32EC952431C63100699317 /* GAGlobal+Runtime.swift */,
 				DCCDCF1F2428A87100BB6A78 /* GAPlistManager.swift */,
 				DC2F4059242327F600C4819C /* Keyboard */,
-				DC745283241CD8770038562C /* GADate.swift */,
 				DC745271241C976C0038562C /* Speech.swift */,
 				DC74527C241CBEEB0038562C /* Recording.swift */,
 				DCDD7356241DE5B2006857BD /* Player.swift */,
@@ -1039,36 +1065,67 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		DCBDEE4A243573DC005ABAF7 /* GAClock */ = {
+		DCB89F37243A1A0800642D02 /* LocalPush（本地推送） */ = {
 			isa = PBXGroup;
 			children = (
 				DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */,
-				DCBDEE4F243573DC005ABAF7 /* Root */,
-				DCBDEE53243573DC005ABAF7 /* Class */,
+			);
+			path = "LocalPush（本地推送）";
+			sourceTree = "<group>";
+		};
+		DCB89F41243AEC6600642D02 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				DC1DF2EF241F1B0600C09048 /* ghsy.mp3 */,
+				DCB89F3D243AEC5C00642D02 /* scarySound.mp3 */,
+				DCB89F3E243AEC5C00642D02 /* secondSound.mp3 */,
+				DCB89F3B243AEBD700642D02 /* firstSound.mp3 */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
+		DCB89F42243AEC6F00642D02 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				DCCDCF1D2428A73700BB6A78 /* planAdd.plist */,
+				DC5577922430528100A65832 /* listingSetting.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		DCB89F43243AEC7E00642D02 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				DCCDCF0A242884A300BB6A78 /* IMG_4527.jpg */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		DCB89F60243AF53A00642D02 /* GAFloatButton（浮窗按钮） */ = {
+			isa = PBXGroup;
+			children = (
+				DCB89F69243AF73000642D02 /* float_icon_add_plan.png */,
+				DCB89F67243AF54A00642D02 /* AppDelegate+FloatButton.swift */,
+				DCB89F61243AF53A00642D02 /* GAFloatWindowViewController.swift */,
+				DCB89F62243AF53A00642D02 /* GAFloatWindow.swift */,
+				DCB89F63243AF53A00642D02 /* GAFloatWindowViewController.xib */,
+			);
+			path = "GAFloatButton（浮窗按钮）";
+			sourceTree = "<group>";
+		};
+		DCB89F6D243B635200642D02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCB89F6B243B634E00642D02 /* GARxTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCBDEE4A243573DC005ABAF7 /* GAClock */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = GAClock;
-			sourceTree = "<group>";
-		};
-		DCBDEE4F243573DC005ABAF7 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				DCBDEE50243573DC005ABAF7 /* GAAppRootViewController.swift */,
-				DCBDEE51243573DC005ABAF7 /* GAClock.storyboard */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
-		DCBDEE53243573DC005ABAF7 /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				DCBDEE54243573DC005ABAF7 /* GAClockDetailsViewController.swift */,
-				DCBDEE59243573DC005ABAF7 /* GAClockDetailsViewController.xib */,
-				DCBDEE56243573DC005ABAF7 /* GAClockRepeatViewController.swift */,
-				DCBDEE57243573DC005ABAF7 /* GAClockRepeatViewController.xib */,
-				DCBDEE58243573DC005ABAF7 /* GAClockTagViewController.swift */,
-				DCBDEE55243573DC005ABAF7 /* GAClockTagViewController.xib */,
-			);
-			path = Class;
 			sourceTree = "<group>";
 		};
 		DCCDCF0C2428910100BB6A78 /* addCells */ = {
@@ -1080,6 +1137,10 @@
 				DCCDCF12242891AA00BB6A78 /* GAPlanAddNoteCell.xib */,
 				DCCDCF19242892D700BB6A78 /* GAPlanAddBasicCell.swift */,
 				DCCDCF1A242892D700BB6A78 /* GAPlanAddBasicCell.xib */,
+				DC62BAB42436D4090094EC8F /* GASelectedDataCell.swift */,
+				DC62BAB52436D4090094EC8F /* GASelectedDataCell.xib */,
+				DC62BAB82436D51B0094EC8F /* GASelectedBasicCell.swift */,
+				DC62BAB92436D51B0094EC8F /* GASelectedBasicCell.xib */,
 			);
 			path = addCells;
 			sourceTree = "<group>";
@@ -1087,6 +1148,8 @@
 		DCDD7358241E616F006857BD /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				DCB89F60243AF53A00642D02 /* GAFloatButton（浮窗按钮） */,
+				DC62BABE2436E51A0094EC8F /* CustomCellView.swift */,
 				DC32EC922431C09F00699317 /* GAListPlaceholderView.swift */,
 				DC32EC912431C09F00699317 /* GAListPlaceholderView.xib */,
 				DCC8AF1724276AF20037BB9E /* GADemoView.swift */,
@@ -1222,6 +1285,7 @@
 			files = (
 				DC55779724305D2100A65832 /* ListingSetting.storyboard in Resources */,
 				DC7451C2241C73610038562C /* toast_icon_failure@2x.png in Resources */,
+				DC62BAB72436D4090094EC8F /* GASelectedDataCell.xib in Resources */,
 				DC7451C0241C73610038562C /* toast_icon_error@2x.png in Resources */,
 				DC7451F2241C73610038562C /* GANormalizeNavigationView.xib in Resources */,
 				DC74522C241C761A0038562C /* Home.storyboard in Resources */,
@@ -1232,8 +1296,7 @@
 				DCCDCF1C242892D700BB6A78 /* GAPlanAddBasicCell.xib in Resources */,
 				DC32EC932431C09F00699317 /* GAListPlaceholderView.xib in Resources */,
 				DCCDCF14242891AA00BB6A78 /* GAPlanAddNoteCell.xib in Resources */,
-				DCBDEE6C243573DC005ABAF7 /* GAClockRepeatViewController.xib in Resources */,
-				DCBDEE6A243573DC005ABAF7 /* GAClockTagViewController.xib in Resources */,
+				DCB89F3F243AEC5D00642D02 /* scarySound.mp3 in Resources */,
 				DC745122241C6BAF0038562C /* LaunchScreen.storyboard in Resources */,
 				DC745235241C766B0038562C /* Mine.storyboard in Resources */,
 				DC74511F241C6BAF0038562C /* Assets.xcassets in Resources */,
@@ -1244,23 +1307,24 @@
 				DC745200241C73610038562C /* GANormalizePickerView.xib in Resources */,
 				DCB44CA924230C350000D3C3 /* GAPickerViewController.xib in Resources */,
 				DC7451C1241C73610038562C /* toast_icon_right@2x.png in Resources */,
+				DCB89F6A243AF73100642D02 /* float_icon_add_plan.png in Resources */,
 				DCB44C9D24225EBB0000D3C3 /* GAPickerDataCell.xib in Resources */,
+				DCB89F66243AF53A00642D02 /* GAFloatWindowViewController.xib in Resources */,
 				DC74511A241C6BAE0038562C /* Main.storyboard in Resources */,
 				DC74520E241C73610038562C /* GANormalizeTabsCell.xib in Resources */,
-				DCBDEE6E243573DC005ABAF7 /* GAClockDetailsViewController.xib in Resources */,
-				DCF703A52429A2A70052755F /* 123.pdf in Resources */,
 				DC5577932430528100A65832 /* listingSetting.plist in Resources */,
 				DC745230241C76480038562C /* Recording.storyboard in Resources */,
 				DC191293242ECDF100C9992B /* GANormalViewController.xib in Resources */,
+				DC62BABB2436D51B0094EC8F /* GASelectedBasicCell.xib in Resources */,
 				DC745266241C8A6F0038562C /* nav_back_icon@3x.png in Resources */,
 				DC15516F242FA2C000128B07 /* need_picker_selected_icon.png in Resources */,
 				DC7451C5241C73610038562C /* GAToast.xib in Resources */,
 				DCCDCF102428916100BB6A78 /* GAPlanAddTitleCell.xib in Resources */,
 				DCF703B12429F3EE0052755F /* GAPickerDateViewController.xib in Resources */,
-				DCF703A72429A6750052755F /* ContractSign.pdf in Resources */,
 				DC745206241C73610038562C /* TabsTestViewController.xib in Resources */,
 				DC745227241C75010038562C /* GABaseXibTabBarView.xib in Resources */,
-				DCBDEE67243573DC005ABAF7 /* GAClock.storyboard in Resources */,
+				DCB89F3C243AEBD700642D02 /* firstSound.mp3 in Resources */,
+				DCB89F40243AEC5D00642D02 /* secondSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1412,6 +1476,7 @@
 				DC74520C241C73610038562C /* GANormalizeTabsCell.swift in Sources */,
 				DC191292242ECDF100C9992B /* GANormalViewController.swift in Sources */,
 				DC7451F6241C73610038562C /* GANormalizeTextField.swift in Sources */,
+				DC62BABA2436D51B0094EC8F /* GASelectedBasicCell.swift in Sources */,
 				DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */,
 				DC74521B241C73610038562C /* GANavViewController.swift in Sources */,
 				DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */,
@@ -1423,13 +1488,13 @@
 				DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */,
 				DCC8AF1A24279B210037BB9E /* Other.swift in Sources */,
 				DCB44CA824230C350000D3C3 /* GAPickerViewController.swift in Sources */,
+				DCB89F64243AF53A00642D02 /* GAFloatWindowViewController.swift in Sources */,
 				DC745228241C75010038562C /* GABaseXibTabBarView.swift in Sources */,
 				DC74521C241C73610038562C /* GATableViewController.swift in Sources */,
 				DCACF6CE242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift in Sources */,
 				DC745215241C73610038562C /* GANormalizeOther+Enum.swift in Sources */,
 				DC32EC962431C63100699317 /* GAGlobal+Runtime.swift in Sources */,
 				DC774A95243387900088D0F5 /* ListingSetting.swift in Sources */,
-				DCBDEE6B243573DC005ABAF7 /* GAClockRepeatViewController.swift in Sources */,
 				DC178FD924270BE100ABE3F2 /* GAListingViewController.swift in Sources */,
 				DC745209241C73610038562C /* GANormalizeTabsStackView.swift in Sources */,
 				DC745251241C778A0038562C /* String+RSA.swift in Sources */,
@@ -1452,7 +1517,6 @@
 				DC745204241C73610038562C /* GANormalizeCollectionView.swift in Sources */,
 				DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */,
 				DC7451F3241C73610038562C /* GANormalizeNavigationView.swift in Sources */,
-				DCBDEE69243573DC005ABAF7 /* GAClockDetailsViewController.swift in Sources */,
 				DC745241241C77850038562C /* GANibloadable.swift in Sources */,
 				DCDD7355241DE3B3006857BD /* GAAudioDetailsViewController.swift in Sources */,
 				DC7451FE241C73610038562C /* GANormalizePickerViewConfig.swift in Sources */,
@@ -1474,8 +1538,8 @@
 				DC7451C3241C73610038562C /* GAToast.swift in Sources */,
 				DCBDEE63243573DC005ABAF7 /* GALocalPushManager.swift in Sources */,
 				DC7451F5241C73610038562C /* GANormalizeTextView.swift in Sources */,
+				DCB89F68243AF54A00642D02 /* AppDelegate+FloatButton.swift in Sources */,
 				DC5482052424A6800041E0BD /* YYPlayerSlider.swift in Sources */,
-				DCBDEE6D243573DC005ABAF7 /* GAClockTagViewController.swift in Sources */,
 				DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
 				DCB44C9E24225EBB0000D3C3 /* GAPickerDataCell.swift in Sources */,
@@ -1485,6 +1549,7 @@
 				DC74521E241C73610038562C /* GACustomCellView.swift in Sources */,
 				DC55778B2430439500A65832 /* NeedCell.swift in Sources */,
 				DC74524F241C778A0038562C /* GAAPI.swift in Sources */,
+				DCB89F65243AF53A00642D02 /* GAFloatWindow.swift in Sources */,
 				DCF703B02429F3EE0052755F /* GAPickerDateViewController.swift in Sources */,
 				DC7451FC241C73610038562C /* GANormalizePickerView.swift in Sources */,
 				DCACF6C9242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift in Sources */,
@@ -1497,6 +1562,7 @@
 				DC74521D241C73610038562C /* GABaseDefine.swift in Sources */,
 				DC74527D241CBEEB0038562C /* Recording.swift in Sources */,
 				DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */,
+				DCB89F6C243B634E00642D02 /* GARxTableViewCell.swift in Sources */,
 				DC745270241C96BD0038562C /* GARecordingAddViewController.swift in Sources */,
 				DC178FCE2427005600ABE3F2 /* GAHomeViewModel.swift in Sources */,
 				DC7451F0241C73610038562C /* NotificationCenter+Rx.swift in Sources */,
@@ -1507,15 +1573,16 @@
 				DC178FD52427093300ABE3F2 /* GAPlanAddViewController.swift in Sources */,
 				DC55778F243043B200A65832 /* NeedOnePixView.swift in Sources */,
 				DC745205241C73610038562C /* GANormalize_JF_TabsStackViewController.swift in Sources */,
-				DCBDEE66243573DC005ABAF7 /* GAAppRootViewController.swift in Sources */,
 				DC745218241C73610038562C /* GANormalizeOther.swift in Sources */,
 				DC74520B241C73610038562C /* GANormalizeTabsMainCell.swift in Sources */,
+				DC2110D42438692C00B02779 /* GASwiftDate.swift in Sources */,
 				DCCDCF092428824000BB6A78 /* GAListingSettingViewController.swift in Sources */,
 				DC745212241C73610038562C /* GANormalizeTabsContentView.swift in Sources */,
 				DC178FD724270B6B00ABE3F2 /* HomeStoryboard.swift in Sources */,
 				DC74520F241C73610038562C /* GANormalizeTabsBaseViewController.swift in Sources */,
 				DC745226241C75010038562C /* GAXibTabBarItem.swift in Sources */,
 				DCCDCF1B242892D700BB6A78 /* GAPlanAddBasicCell.swift in Sources */,
+				DC62BABF2436E51A0094EC8F /* CustomCellView.swift in Sources */,
 				DC557791243045AF00A65832 /* NeedLabel.swift in Sources */,
 				DC745210241C73610038562C /* GANormalizeTabsStackViewController.swift in Sources */,
 				DC2F40582423279700C4819C /* GAKeyboardView.swift in Sources */,
@@ -1529,8 +1596,11 @@
 				DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */,
 				DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */,
 				DC55779524305CE900A65832 /* GARenameViewController.swift in Sources */,
+				DC2110D22438692100B02779 /* Date+Extension.swift in Sources */,
 				DC74521A241C73610038562C /* GANavigationViewController.swift in Sources */,
 				DCAE671C24207B33000A1A42 /* GATableScrollCell.swift in Sources */,
+				DC171DDD243CA77D004920A6 /* GASelectedIconViewController.swift in Sources */,
+				DC62BAB62436D4090094EC8F /* GASelectedDataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

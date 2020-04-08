@@ -49,6 +49,10 @@ class GAViewController: UIViewController {
         
     }
     
+    func b_endEdit() {
+        self.view.endEditing(true)
+    }
+    
     @objc private func _applicationWillChangeStatusBarOrientationNotification(sender: Notification) {
       if let userInfo = sender.userInfo {
           if let rawValue = userInfo[UIApplication.statusBarOrientationUserInfoKey] as? Int {

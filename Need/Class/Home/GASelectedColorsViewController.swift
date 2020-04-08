@@ -8,12 +8,9 @@
 
 import UIKit
 
-class GASelectedColorsViewController: GANavViewController {
+class GASelectedColorsViewController: GASelectedBaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var listingModel: GAListingModel!
-    
     var dataSource: [[String : String]] = [["name" : "默认", "color" : "ffffff"],
                                            ["name" : "黄色", "color" : "f0f30a"],
                                            ["name" : "绿色", "color" : "41f30a"],

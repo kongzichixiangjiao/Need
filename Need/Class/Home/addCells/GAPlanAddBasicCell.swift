@@ -22,6 +22,7 @@ class GAPlanAddBasicCell: NeedCell {
                 titleLabel.text = model.isEdited ? model.editText : model.title
             }
             iconImageView.iconName = model.icon
+            
             vipImageView.isHidden = !model.isVip
             self.selectionStyle = model.isClicked ? .default : .none
         }

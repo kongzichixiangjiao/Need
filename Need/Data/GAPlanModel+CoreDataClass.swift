@@ -19,6 +19,9 @@ class GAPlanItemModel {
     var createTime: Date?
     var date: String = ""
     var alertTime: Date?
+    var alertTimeString: String?
+    var alertDate: Date?
+    var alertDateString: String?
     var file: [String] = []
     var iconName: String = ""
     var listingName: String = ""
@@ -31,6 +34,7 @@ class GAPlanItemModel {
     var people: [String] = []
     var listingId: String = ""
     var planId: String = ""
+    var weeks: [String] = []
     
     static func getItem(planModel: GAPlanModel) -> GAPlanItemModel {
         let model = GAPlanItemModel()
@@ -47,7 +51,11 @@ class GAPlanItemModel {
         model.isFinished = planModel.isFinished
         model.people = planModel.people ?? []
         model.planId = planModel.planId ?? ""
+        model.weeks = planModel.weeks ?? []
         model.alertTime = planModel.alertTime
+        model.alertTimeString = planModel.alertTimeString
+        model.alertDate = planModel.alertDate
+        model.alertDateString = planModel.alertDateString
         return model
     }
 }
