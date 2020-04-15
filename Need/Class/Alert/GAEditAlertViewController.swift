@@ -14,7 +14,7 @@ class GAEditAlertViewController: YYPresentationBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textField.becomeFirstResponder()
     }
     
     @IBAction func confirm(_ sender: UIButton) {

@@ -36,7 +36,7 @@ class GATagsViewModel {
     
     var isShowLastButton: Bool = true   // 是否展示最后一个icon按钮
     var lastButtonIcon: String = "listting_setting_icon_resetName"
-    
+    var lastButtonWidth: CGFloat = 120
     
     var isShowEditView: Bool = false 
     var editViewHeight: CGFloat = 30

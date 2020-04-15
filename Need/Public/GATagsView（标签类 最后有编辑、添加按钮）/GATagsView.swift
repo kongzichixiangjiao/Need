@@ -163,6 +163,7 @@ class GATagsView: UIView {
         
         if model.isLast {
             b.setImage(UIImage(named: _m.lastButtonIcon), for: .normal)
+            b.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: _m.lastButtonWidth, height: frame.size.height)
         } else {
             b.titleLabel?.font = UIFont.systemFont(ofSize: _m.fontSize)
             b.setTitle(model.name, for: .normal)
@@ -181,6 +182,7 @@ class GATagsView: UIView {
     }
     
     // 刷新数据 并返回高度
+    @discardableResult
     public func reloadViews(btnModels: [GATagsButtonModel], maxRows: Int = 2, clickedHandler: @escaping ClickedHandler) -> CGFloat {
         self._frames.removeAll()
         self._buttons.removeAll()

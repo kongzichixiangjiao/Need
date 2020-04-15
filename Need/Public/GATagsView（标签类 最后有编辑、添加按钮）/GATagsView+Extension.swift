@@ -162,7 +162,7 @@ extension GATagsView {
         return reloadViewsMoreType(btnModels: btnModels, maxRows: maxRows)
     }
     
-    
+    @discardableResult
     public func reloadViewsMoreType(btnModels: [GATagsButtonModel], maxRows: Int = 2) -> CGFloat {
         self._frames.removeAll()
         self._buttons.removeAll()
