@@ -9,7 +9,7 @@
 import UIKit
 import GAExtension
 
-class GAImageView: UIView {
+public class GAImageView: UIView {
 
     @IBInspectable var imgW: CGFloat = 0
     @IBInspectable var imgH: CGFloat = 0
@@ -22,7 +22,7 @@ class GAImageView: UIView {
     
     @IBInspectable var iconColor: UIColor?
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         super.draw(rect)
         let w: CGFloat = (imgW == 0 ? self.size.width : imgW)
         let h: CGFloat = (imgH == 0 ? self.size.width : imgH)

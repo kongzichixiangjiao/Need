@@ -5,7 +5,9 @@ PODS:
     - Reachability (~> 3.0)
   - GAAlertPresentation (0.0.7)
   - GAExtension (0.1.1)
+  - GAPublicUI (0.0.5)
   - IQKeyboardManagerSwift (6.5.4)
+  - JTAppleCalendar (8.0.3)
   - Kingfisher (5.11.0):
     - Kingfisher/Core (= 5.11.0)
   - Kingfisher/Core (5.11.0)
@@ -66,7 +68,9 @@ DEPENDENCIES:
   - FreeStreamer
   - GAAlertPresentation
   - GAExtension
+  - GAPublicUI
   - IQKeyboardManagerSwift
+  - JTAppleCalendar
   - Kingfisher
   - MagicalRecord
   - MJRefresh
@@ -104,7 +108,9 @@ SPEC REPOS:
     - FreeStreamer
     - GAAlertPresentation
     - GAExtension
+    - GAPublicUI
     - IQKeyboardManagerSwift
+    - JTAppleCalendar
     - Kingfisher
     - MagicalRecord
     - MJRefresh
@@ -142,7 +148,9 @@ SPEC CHECKSUMS:
   FreeStreamer: 7e9c976045701ac2f7e9c14c17245203c37bf2ea
   GAAlertPresentation: d93bad5a2fef4fca14b6bce68018376676643411
   GAExtension: d6d4deb97006b9732d55fee4d1589c5000406198
+  GAPublicUI: 6bc04cf1bcfb68c63818bfac2488e756ff1f51f0
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  JTAppleCalendar: 932cadea40b1051beab10f67843451d48ba16c99
   Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
@@ -174,6 +182,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
 
-PODFILE CHECKSUM: f36aef50f2e136cd8788d67f27ec8c76f298b867
+PODFILE CHECKSUM: 6b6153a02c27c151e40f3d367d3be7280d847f02
 
 COCOAPODS: 1.9.1

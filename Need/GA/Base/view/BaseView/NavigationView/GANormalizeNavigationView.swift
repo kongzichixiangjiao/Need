@@ -41,6 +41,12 @@ class GANormalizeNavigationView: UIView {
     private var rightButtonHandler: ButtonHandler?
     private var leftButtonHandler: ButtonHandler?
     
+    public var title: String! {
+        didSet {
+            self.titleLable.text = title 
+        }
+    }
+    
     public var isShowLineView: Bool! {
         didSet {
             lineViewHeight.constant =  1.0 / UIScreen.main.scale

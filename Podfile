@@ -14,6 +14,7 @@ target 'Need' do
       # MY
       pod 'GAAlertPresentation'
       pod 'GAExtension'
+      pod 'GAPublicUI'
       
       # Networking
       pod 'RxAlamofire'
@@ -37,7 +38,7 @@ target 'Need' do
       pod 'TYPagerController'
       pod 'MJRefresh'
       # pod 'TextFieldEffects'
-      pod 'lottie-ios' # 动画
+#      pod 'lottie-ios' # 动画
 
       # Misc.
       pod 'IQKeyboardManagerSwift'
@@ -58,10 +59,9 @@ target 'Need' do
 #      pod 'SwiftLint' # 代码规范
       pod 'VegaScrollFlowLayout'
       pod 'SwipeCellKit'  # 侧滑cell出按钮
+      pod 'JTAppleCalendar'
       
       pod 'SwiftMonkeyPaws' # UI测试
-
-      
       
       target 'NeedTests' do
         

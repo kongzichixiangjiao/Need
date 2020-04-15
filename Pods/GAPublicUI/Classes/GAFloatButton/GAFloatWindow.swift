@@ -17,21 +17,22 @@ DispatchQueue.main.fw_after(2.0) {
 
 import UIKit
 
-enum GAFloatPositionType: Int {
+public enum GAFloatPositionType: Int {
     case right = 1, left = 2, none = 33
 }
 
-var floatWindow: GAFloatWindow?
+public var floatWindow: GAFloatWindow?
 
-class GAFloatWindow: UIWindow {
-    
-    static let bW: CGFloat = 50.0
-    static let bH: CGFloat = 40.0
-    static let bY: CGFloat = 240.0
+open class GAFloatWindow: UIWindow {
+
+    static var bY: CGFloat = 240.0
     static var imgName: String = ""
     static var iconColor: UIColor = UIColor.white
+
+    private var bW: CGFloat = 0
+    private var bH: CGFloat = 0
     
-    typealias GAFLoatHandler = () -> ()
+    public typealias GAFLoatHandler = () -> ()
     var handler: GAFLoatHandler!
     
     var postionType: GAFloatPositionType = .right
@@ -51,12 +52,14 @@ class GAFloatWindow: UIWindow {
         
         self.postionType = type
         self.handler = handler
+        self.bW = frame.size.width
+        self.bH = frame.size.height
         
         self.addSubview(imgView)
     }
     
     // MARK: show
-    static func initFloatWindow(imgName: String = "float_icon_add_plan", iconColor: UIColor = UIColor.fw_randomColor(), windowLevel: CGFloat = 1000001.0, handler: @escaping GAFLoatHandler) {
+    public static func initFloatWindow(imgName: String = "float_icon_add_plan", iconColor: UIColor = UIColor.fw_randomColor(), w: CGFloat = 50.0, h: CGFloat = 50.0, windowLevel: CGFloat = 1000001.0, handler: @escaping GAFLoatHandler) {
         guard let currentWindow = UIApplication.shared.keyWindow else {
             return
         }
@@ -65,7 +68,7 @@ class GAFloatWindow: UIWindow {
         }
         GAFloatWindow.imgName = imgName
         GAFloatWindow.iconColor = iconColor
-        let frame = CGRect(x: UIScreen.main.bounds.width - bW, y: bY, width: bW, height: bH)
+        let frame = CGRect(x: UIScreen.main.bounds.width - w, y: bY, width: w, height: h)
         floatWindow = GAFloatWindow(frame: frame, type: .right, handler: handler)
         floatWindow?.makeKeyAndVisible()
         floatWindow?.windowLevel = .init(windowLevel)
@@ -74,12 +77,12 @@ class GAFloatWindow: UIWindow {
         currentWindow.makeKey()
     }
     
-    static func show(handler: @escaping GAFLoatHandler) {
+    public static func show(handler: @escaping GAFLoatHandler) {
         floatWindow?.handler = handler
         floatWindow?.isHidden = false
     }
     
-    static func hide() {
+    public static func hide() {
         floatWindow?.isHidden = true
     }
     
@@ -87,7 +90,7 @@ class GAFloatWindow: UIWindow {
     var touchBtnY: CGFloat!
     var touchPoint: CGPoint!
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
         guard let touch = touches.first else {
@@ -99,7 +102,7 @@ class GAFloatWindow: UIWindow {
         touchBtnY = self.frame.origin.y
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         
         guard let touch = touches.first else {
@@ -143,7 +146,7 @@ class GAFloatWindow: UIWindow {
         
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         
         guard let touch = touches.first else {
@@ -188,29 +191,29 @@ class GAFloatWindow: UIWindow {
     
     private func _right(y: CGFloat) {
         UIView.animate(withDuration: 0.3) {
-            let bX = UIScreen.main.bounds.width - GAFloatWindow.bW
-            self.frame = CGRect(x: bX, y: y, width: GAFloatWindow.bW, height: GAFloatWindow.bH)
+            let bX = UIScreen.main.bounds.width - self.bW
+            self.frame = CGRect(x: bX, y: y, width: self.bW, height: self.bH)
         }
     }
     
     private func _left(y: CGFloat) {
         UIView.animate(withDuration: 0.3) {
             let bX: CGFloat = 0.0
-            self.frame = CGRect(x: bX, y: y, width: GAFloatWindow.bW, height: GAFloatWindow.bH)
+            self.frame = CGRect(x: bX, y: y, width: self.bW, height: self.bH)
         }
     }
     
 }
 
-extension DispatchQueue {
+public extension DispatchQueue {
     func fw_after(_ delay: TimeInterval, execute closure: @escaping () -> Void) {
         asyncAfter(deadline: .now() + delay, execute: closure)
     }
 }
 
-extension UIColor {
+public extension UIColor {
     static func fw_randomCGColor(alpha a: CGFloat = 1) -> CGColor {
-        return self.randomColor(a).cgColor
+        return self.fw_randomColor(a).cgColor
     }
     
     static func fw_randomColor(_ alpha: CGFloat = 1) -> UIColor {
@@ -225,7 +228,7 @@ extension UIColor {
     }
 }
 
-extension UIImage {
+public extension UIImage {
     func fw_imageWithTintColor(tintColor: UIColor, blendMode: CGBlendMode) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
         tintColor.setFill()

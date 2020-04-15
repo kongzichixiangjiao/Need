@@ -8,29 +8,83 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mine View Controller-->
         <scene sceneID="BBD-gz-u6C">
             <objects>
-                <viewController id="uhZ-OL-UWV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GAMineViewController" id="uhZ-OL-UWV" customClass="GAMineViewController" customModule="Need" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="INf-b0-yxv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mm-Hb-csl">
-                                <rect key="frame" x="206" y="299" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFi-OK-t9s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GAMineCell" rowHeight="95" id="6op-DM-Qk7" customClass="GAMineCell" customModule="Need" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6op-DM-Qk7" id="qHl-YS-qbw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间轴标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgy-iI-PMn">
+                                                    <rect key="frame" x="20" y="36.5" width="92" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-9X-FTb" customClass="GAImageView" customModule="Need" customModuleProvider="target">
+                                                    <rect key="frame" x="374" y="37.5" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="J5E-Xo-RxD"/>
+                                                        <constraint firstAttribute="width" constant="20" id="Tdl-hg-5Df"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="iconName" value="cell_raw_icon_right"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="imgW">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="imgH">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                            <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bgy-iI-PMn" firstAttribute="centerY" secondItem="qHl-YS-qbw" secondAttribute="centerY" id="KqX-0l-FSi"/>
+                                                <constraint firstItem="bgy-iI-PMn" firstAttribute="leading" secondItem="qHl-YS-qbw" secondAttribute="leading" constant="20" id="VJY-RW-5Pk"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Wv-9X-FTb" secondAttribute="trailing" constant="20" id="c78-Ku-0aw"/>
+                                                <constraint firstItem="3Wv-9X-FTb" firstAttribute="centerY" secondItem="qHl-YS-qbw" secondAttribute="centerY" id="e7Y-5o-TXl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="bgy-iI-PMn" id="GFs-lw-Ao7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VFi-OK-t9s" firstAttribute="leading" secondItem="bZd-GD-2ch" secondAttribute="leading" id="EeA-Cq-9YX"/>
+                            <constraint firstItem="bZd-GD-2ch" firstAttribute="trailing" secondItem="VFi-OK-t9s" secondAttribute="trailing" id="bW0-Ur-b8q"/>
+                            <constraint firstItem="bZd-GD-2ch" firstAttribute="bottom" secondItem="VFi-OK-t9s" secondAttribute="bottom" id="mpo-x5-ifg"/>
+                            <constraint firstItem="VFi-OK-t9s" firstAttribute="top" secondItem="bZd-GD-2ch" secondAttribute="top" id="vDy-Oi-qiM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bZd-GD-2ch"/>
                     </view>
+                    <connections>
+                        <outlet property="b_saveTopSpace" destination="vDy-Oi-qiM" id="T69-5k-9BK"/>
+                        <outlet property="tableView" destination="VFi-OK-t9s" id="KfX-S1-QuM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZJ-5B-PwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="91"/>
+            <point key="canvasLocation" x="-117.39130434782609" y="90.401785714285708"/>
         </scene>
     </scenes>
 </document>

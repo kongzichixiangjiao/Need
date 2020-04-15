@@ -122,11 +122,9 @@
 		DC745251241C778A0038562C /* String+RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74524A241C778A0038562C /* String+RSA.swift */; };
 		DC745253241C7B7D0038562C /* GAHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745252241C7B7D0038562C /* GAHomeViewController.swift */; };
 		DC745255241C7BA10038562C /* GARxSwiftBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745254241C7BA00038562C /* GARxSwiftBaseViewController.swift */; };
-		DC745260241C87A50038562C /* GATimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74525F241C87A50038562C /* GATimeViewController.swift */; };
 		DC745266241C8A6F0038562C /* nav_back_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC745265241C8A6F0038562C /* nav_back_icon@3x.png */; };
 		DC745268241C8C820038562C /* GATimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745267241C8C820038562C /* GATimeViewModel.swift */; };
 		DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745269241C8C8D0038562C /* GATimeModel.swift */; };
-		DC74526C241C94E40038562C /* GATimeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526B241C94E40038562C /* GATimeAddViewController.swift */; };
 		DC74526E241C964A0038562C /* GARecordingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526D241C964A0038562C /* GARecordingListViewController.swift */; };
 		DC745270241C96BD0038562C /* GARecordingAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC74526F241C96BD0038562C /* GARecordingAddViewController.swift */; };
 		DC745272241C976C0038562C /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745271241C976C0038562C /* Speech.swift */; };
@@ -136,6 +134,30 @@
 		DC745284241CD8770038562C /* GADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC745283241CD8770038562C /* GADate.swift */; };
 		DC774A95243387900088D0F5 /* ListingSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC774A94243387900088D0F5 /* ListingSetting.swift */; };
 		DC774A97243387D60088D0F5 /* GASelectedColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC774A96243387D60088D0F5 /* GASelectedColorsViewController.swift */; };
+		DC957E0B2444A49C00BF0BE4 /* GAMineSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC957E0A2444A49C00BF0BE4 /* GAMineSectionView.xib */; };
+		DC957E0D2444A4A400BF0BE4 /* GAMineSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E0C2444A4A400BF0BE4 /* GAMineSectionView.swift */; };
+		DC957E0F2444A92D00BF0BE4 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC957E0E2444A92D00BF0BE4 /* Setting.storyboard */; };
+		DC957E112444A97600BF0BE4 /* GATimeLineTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E102444A97500BF0BE4 /* GATimeLineTitleViewController.swift */; };
+		DC957E2324469F0B00BF0BE4 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E2224469F0B00BF0BE4 /* Setting.swift */; };
+		DC957E372446A93B00BF0BE4 /* GATagsView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E252446A93B00BF0BE4 /* GATagsView+Extension.swift */; };
+		DC957E382446A93B00BF0BE4 /* tags_moreBtn_icon_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E272446A93B00BF0BE4 /* tags_moreBtn_icon_up.png */; };
+		DC957E392446A93B00BF0BE4 /* tags_moreBtn_icon_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E282446A93B00BF0BE4 /* tags_moreBtn_icon_up@3x.png */; };
+		DC957E3A2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E292446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon.png */; };
+		DC957E3B2446A93B00BF0BE4 /* tags_moreBtn_icon_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E2A2446A93B00BF0BE4 /* tags_moreBtn_icon_up@2x.png */; };
+		DC957E3C2446A93B00BF0BE4 /* tags_moreBtn_icon_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E2B2446A93B00BF0BE4 /* tags_moreBtn_icon_down@2x.png */; };
+		DC957E3D2446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E2C2446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon.png */; };
+		DC957E3E2446A93B00BF0BE4 /* tags_moreBtn_icon_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E2D2446A93B00BF0BE4 /* tags_moreBtn_icon_down@3x.png */; };
+		DC957E3F2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E2E2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@2x.png */; };
+		DC957E402446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E2F2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@3x.png */; };
+		DC957E412446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E302446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@3x.png */; };
+		DC957E422446A93B00BF0BE4 /* tags_moreBtn_icon_down.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E312446A93B00BF0BE4 /* tags_moreBtn_icon_down.png */; };
+		DC957E432446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC957E322446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@2x.png */; };
+		DC957E442446A93B00BF0BE4 /* GATagsOther.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E332446A93B00BF0BE4 /* GATagsOther.swift */; };
+		DC957E452446A93B00BF0BE4 /* GATagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E342446A93B00BF0BE4 /* GATagsView.swift */; };
+		DC957E462446A93B00BF0BE4 /* GATagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E352446A93B00BF0BE4 /* GATagsViewModel.swift */; };
+		DC957E472446A93B00BF0BE4 /* GATagsEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E362446A93B00BF0BE4 /* GATagsEditView.swift */; };
+		DC957E4A2446B0C300BF0BE4 /* GAEditAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC957E482446B0C300BF0BE4 /* GAEditAlertViewController.swift */; };
+		DC957E4B2446B0C300BF0BE4 /* GAEditAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC957E492446B0C300BF0BE4 /* GAEditAlertViewController.xib */; };
 		DCACF6C6242B2F41002FADA5 /* GAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C5242B2F41002FADA5 /* GAImageView.swift */; };
 		DCACF6C9242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */; };
 		DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */; };
@@ -153,15 +175,18 @@
 		DCB89F3C243AEBD700642D02 /* firstSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F3B243AEBD700642D02 /* firstSound.mp3 */; };
 		DCB89F3F243AEC5D00642D02 /* scarySound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F3D243AEC5C00642D02 /* scarySound.mp3 */; };
 		DCB89F40243AEC5D00642D02 /* secondSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F3E243AEC5C00642D02 /* secondSound.mp3 */; };
-		DCB89F64243AF53A00642D02 /* GAFloatWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F61243AF53A00642D02 /* GAFloatWindowViewController.swift */; };
-		DCB89F65243AF53A00642D02 /* GAFloatWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F62243AF53A00642D02 /* GAFloatWindow.swift */; };
-		DCB89F66243AF53A00642D02 /* GAFloatWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F63243AF53A00642D02 /* GAFloatWindowViewController.xib */; };
-		DCB89F68243AF54A00642D02 /* AppDelegate+FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F67243AF54A00642D02 /* AppDelegate+FloatButton.swift */; };
-		DCB89F6A243AF73100642D02 /* float_icon_add_plan.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB89F69243AF73000642D02 /* float_icon_add_plan.png */; };
 		DCB89F6C243B634E00642D02 /* GARxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB89F6B243B634E00642D02 /* GARxTableViewCell.swift */; };
 		DCBB35A5241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */; };
 		DCBB35A7241DBDEF00BD2E32 /* GACoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */; };
 		DCBDEE63243573DC005ABAF7 /* GALocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */; };
+		DCC2019F243D9BA5004435B8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2019E243D9BA5004435B8 /* Time.swift */; };
+		DCC201A2243DA10F004435B8 /* AppDelegate+FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201A1243DA10F004435B8 /* AppDelegate+FloatButton.swift */; };
+		DCC201A4243DA274004435B8 /* GATimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201A3243DA274004435B8 /* GATimeLineViewController.swift */; };
+		DCC201AA243DF3A5004435B8 /* GATimeLineAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201A9243DF3A5004435B8 /* GATimeLineAddViewController.swift */; };
+		DCC201AC243DF7D1004435B8 /* GAPickerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201AB243DF7D1004435B8 /* GAPickerViewProtocol.swift */; };
+		DCC201AE243DF897004435B8 /* GAAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201AD243DF897004435B8 /* GAAlertProtocol.swift */; };
+		DCC201B1243DFB3A004435B8 /* GATimeLineModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201AF243DFB3A004435B8 /* GATimeLineModel+CoreDataClass.swift */; };
+		DCC201B2243DFB3A004435B8 /* GATimeLineModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC201B0243DFB3A004435B8 /* GATimeLineModel+CoreDataProperties.swift */; };
 		DCC8AF16242728410037BB9E /* GAListingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */; };
 		DCC8AF1824276AF20037BB9E /* GADemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1724276AF20037BB9E /* GADemoView.swift */; };
 		DCC8AF1A24279B210037BB9E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8AF1924279B210037BB9E /* Other.swift */; };
@@ -176,6 +201,8 @@
 		DCCDCF1C242892D700BB6A78 /* GAPlanAddBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF1A242892D700BB6A78 /* GAPlanAddBasicCell.xib */; };
 		DCCDCF1E2428A73700BB6A78 /* planAdd.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCCDCF1D2428A73700BB6A78 /* planAdd.plist */; };
 		DCCDCF202428A87100BB6A78 /* GAPlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDCF1F2428A87100BB6A78 /* GAPlistManager.swift */; };
+		DCD2ECE9243EAD680088436A /* GAMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2ECE8243EAD680088436A /* GAMineViewController.swift */; };
+		DCD2ECEB243EAF7E0088436A /* GAShowWindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2ECEA243EAF7E0088436A /* GAShowWindowProtocol.swift */; };
 		DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */; };
 		DCDD7350241DC191006857BD /* GARecordingModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */; };
 		DCDD7353241DE0D3006857BD /* GARecordingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDD7352241DE0D3006857BD /* GARecordingBaseViewController.swift */; };
@@ -344,11 +371,9 @@
 		DC74524A241C778A0038562C /* String+RSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+RSA.swift"; sourceTree = "<group>"; };
 		DC745252241C7B7D0038562C /* GAHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAHomeViewController.swift; sourceTree = "<group>"; };
 		DC745254241C7BA00038562C /* GARxSwiftBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GARxSwiftBaseViewController.swift; sourceTree = "<group>"; };
-		DC74525F241C87A50038562C /* GATimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeViewController.swift; sourceTree = "<group>"; };
 		DC745265241C8A6F0038562C /* nav_back_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_icon@3x.png"; sourceTree = "<group>"; };
 		DC745267241C8C820038562C /* GATimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeViewModel.swift; sourceTree = "<group>"; };
 		DC745269241C8C8D0038562C /* GATimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeModel.swift; sourceTree = "<group>"; };
-		DC74526B241C94E40038562C /* GATimeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeAddViewController.swift; sourceTree = "<group>"; };
 		DC74526D241C964A0038562C /* GARecordingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingListViewController.swift; sourceTree = "<group>"; };
 		DC74526F241C96BD0038562C /* GARecordingAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARecordingAddViewController.swift; sourceTree = "<group>"; };
 		DC745271241C976C0038562C /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
@@ -359,6 +384,30 @@
 		DC745283241CD8770038562C /* GADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADate.swift; sourceTree = "<group>"; };
 		DC774A94243387900088D0F5 /* ListingSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingSetting.swift; sourceTree = "<group>"; };
 		DC774A96243387D60088D0F5 /* GASelectedColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GASelectedColorsViewController.swift; sourceTree = "<group>"; };
+		DC957E0A2444A49C00BF0BE4 /* GAMineSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAMineSectionView.xib; sourceTree = "<group>"; };
+		DC957E0C2444A4A400BF0BE4 /* GAMineSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMineSectionView.swift; sourceTree = "<group>"; };
+		DC957E0E2444A92D00BF0BE4 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		DC957E102444A97500BF0BE4 /* GATimeLineTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeLineTitleViewController.swift; sourceTree = "<group>"; };
+		DC957E2224469F0B00BF0BE4 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		DC957E252446A93B00BF0BE4 /* GATagsView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GATagsView+Extension.swift"; sourceTree = "<group>"; };
+		DC957E272446A93B00BF0BE4 /* tags_moreBtn_icon_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tags_moreBtn_icon_up.png; sourceTree = "<group>"; };
+		DC957E282446A93B00BF0BE4 /* tags_moreBtn_icon_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tags_moreBtn_icon_up@3x.png"; sourceTree = "<group>"; };
+		DC957E292446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tagsEditView_btn_bg_normal_icon.png; sourceTree = "<group>"; };
+		DC957E2A2446A93B00BF0BE4 /* tags_moreBtn_icon_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tags_moreBtn_icon_up@2x.png"; sourceTree = "<group>"; };
+		DC957E2B2446A93B00BF0BE4 /* tags_moreBtn_icon_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tags_moreBtn_icon_down@2x.png"; sourceTree = "<group>"; };
+		DC957E2C2446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tagsEditView_btn_bg_enable_icon.png; sourceTree = "<group>"; };
+		DC957E2D2446A93B00BF0BE4 /* tags_moreBtn_icon_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tags_moreBtn_icon_down@3x.png"; sourceTree = "<group>"; };
+		DC957E2E2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tagsEditView_btn_bg_normal_icon@2x.png"; sourceTree = "<group>"; };
+		DC957E2F2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tagsEditView_btn_bg_normal_icon@3x.png"; sourceTree = "<group>"; };
+		DC957E302446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tagsEditView_btn_bg_enable_icon@3x.png"; sourceTree = "<group>"; };
+		DC957E312446A93B00BF0BE4 /* tags_moreBtn_icon_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tags_moreBtn_icon_down.png; sourceTree = "<group>"; };
+		DC957E322446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tagsEditView_btn_bg_enable_icon@2x.png"; sourceTree = "<group>"; };
+		DC957E332446A93B00BF0BE4 /* GATagsOther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GATagsOther.swift; sourceTree = "<group>"; };
+		DC957E342446A93B00BF0BE4 /* GATagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GATagsView.swift; sourceTree = "<group>"; };
+		DC957E352446A93B00BF0BE4 /* GATagsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GATagsViewModel.swift; sourceTree = "<group>"; };
+		DC957E362446A93B00BF0BE4 /* GATagsEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GATagsEditView.swift; sourceTree = "<group>"; };
+		DC957E482446B0C300BF0BE4 /* GAEditAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAEditAlertViewController.swift; sourceTree = "<group>"; };
+		DC957E492446B0C300BF0BE4 /* GAEditAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAEditAlertViewController.xib; sourceTree = "<group>"; };
 		DCACF6C5242B2F41002FADA5 /* GAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAImageView.swift; sourceTree = "<group>"; };
 		DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAListingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DCACF6C8242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GAListingModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -378,15 +427,18 @@
 		DCB89F3B243AEBD700642D02 /* firstSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = firstSound.mp3; sourceTree = "<group>"; };
 		DCB89F3D243AEC5C00642D02 /* scarySound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scarySound.mp3; sourceTree = "<group>"; };
 		DCB89F3E243AEC5C00642D02 /* secondSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secondSound.mp3; sourceTree = "<group>"; };
-		DCB89F61243AF53A00642D02 /* GAFloatWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAFloatWindowViewController.swift; sourceTree = "<group>"; };
-		DCB89F62243AF53A00642D02 /* GAFloatWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAFloatWindow.swift; sourceTree = "<group>"; };
-		DCB89F63243AF53A00642D02 /* GAFloatWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GAFloatWindowViewController.xib; sourceTree = "<group>"; };
-		DCB89F67243AF54A00642D02 /* AppDelegate+FloatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+FloatButton.swift"; sourceTree = "<group>"; };
-		DCB89F69243AF73000642D02 /* float_icon_add_plan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = float_icon_add_plan.png; sourceTree = "<group>"; };
 		DCB89F6B243B634E00642D02 /* GARxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GARxTableViewCell.swift; sourceTree = "<group>"; };
 		DCBB35A4241DBDBA00BD2E32 /* AppDelegate+MagicalRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+MagicalRecord.swift"; sourceTree = "<group>"; };
 		DCBB35A6241DBDEF00BD2E32 /* GACoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GACoreData.swift; sourceTree = "<group>"; };
 		DCBDEE4B243573DC005ABAF7 /* GALocalPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GALocalPushManager.swift; sourceTree = "<group>"; };
+		DCC2019E243D9BA5004435B8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		DCC201A1243DA10F004435B8 /* AppDelegate+FloatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+FloatButton.swift"; sourceTree = "<group>"; };
+		DCC201A3243DA274004435B8 /* GATimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeLineViewController.swift; sourceTree = "<group>"; };
+		DCC201A9243DF3A5004435B8 /* GATimeLineAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATimeLineAddViewController.swift; sourceTree = "<group>"; };
+		DCC201AB243DF7D1004435B8 /* GAPickerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAPickerViewProtocol.swift; sourceTree = "<group>"; };
+		DCC201AD243DF897004435B8 /* GAAlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAAlertProtocol.swift; sourceTree = "<group>"; };
+		DCC201AF243DFB3A004435B8 /* GATimeLineModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GATimeLineModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DCC201B0243DFB3A004435B8 /* GATimeLineModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GATimeLineModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DCC8AF15242728400037BB9E /* GAListingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAListingDetailsViewController.swift; sourceTree = "<group>"; };
 		DCC8AF1724276AF20037BB9E /* GADemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADemoView.swift; sourceTree = "<group>"; };
 		DCC8AF1924279B210037BB9E /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
@@ -401,6 +453,8 @@
 		DCCDCF1A242892D700BB6A78 /* GAPlanAddBasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GAPlanAddBasicCell.xib; sourceTree = "<group>"; };
 		DCCDCF1D2428A73700BB6A78 /* planAdd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = planAdd.plist; sourceTree = "<group>"; };
 		DCCDCF1F2428A87100BB6A78 /* GAPlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPlistManager.swift; sourceTree = "<group>"; };
+		DCD2ECE8243EAD680088436A /* GAMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAMineViewController.swift; sourceTree = "<group>"; };
+		DCD2ECEA243EAF7E0088436A /* GAShowWindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAShowWindowProtocol.swift; sourceTree = "<group>"; };
 		DCDD734D241DC191006857BD /* GARecordingModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DCDD734E241DC191006857BD /* GARecordingModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GARecordingModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DCDD7351241DD443006857BD /* Need1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Need1.0.xcdatamodel; sourceTree = "<group>"; };
@@ -560,7 +614,6 @@
 		DC745111241C6BAE0038562C /* Need */ = {
 			isa = PBXGroup;
 			children = (
-				DC1DF2EE241F1AF500C09048 /* Source */,
 				DC745259241C7C540038562C /* AppDelegate */,
 				DC745229241C75F70038562C /* Class */,
 				DC74525B241C7CC20038562C /* Data */,
@@ -569,6 +622,7 @@
 				DC74527E241CCA170038562C /* Need.entitlements */,
 				DC74525C241C81380038562C /* Other */,
 				DCDD7358241E616F006857BD /* Public */,
+				DC1DF2EE241F1AF500C09048 /* Source */,
 				DC74525A241C7C7E0038562C /* System */,
 				DC74527B241CBECF0038562C /* Tools */,
 			);
@@ -638,6 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				DC74514F241C73610038562C /* GAShowWindow.swift */,
+				DCD2ECEA243EAF7E0088436A /* GAShowWindowProtocol.swift */,
 			);
 			path = toast2;
 			sourceTree = "<group>";
@@ -835,7 +890,6 @@
 			isa = PBXGroup;
 			children = (
 				DCC8AF1924279B210037BB9E /* Other.swift */,
-				DCBDEE4A243573DC005ABAF7 /* GAClock */,
 				DC557787243042BD00A65832 /* Base */,
 				DCB44CA524230C180000D3C3 /* Alert */,
 				DC745233241C765F0038562C /* Mine */,
@@ -872,10 +926,11 @@
 			isa = PBXGroup;
 			children = (
 				DC74522D241C76340038562C /* Time.storyboard */,
-				DC74525F241C87A50038562C /* GATimeViewController.swift */,
-				DC74526B241C94E40038562C /* GATimeAddViewController.swift */,
 				DC745267241C8C820038562C /* GATimeViewModel.swift */,
 				DC745269241C8C8D0038562C /* GATimeModel.swift */,
+				DCC2019E243D9BA5004435B8 /* Time.swift */,
+				DCC201A3243DA274004435B8 /* GATimeLineViewController.swift */,
+				DCC201A9243DF3A5004435B8 /* GATimeLineAddViewController.swift */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -899,6 +954,12 @@
 			isa = PBXGroup;
 			children = (
 				DC745234241C766B0038562C /* Mine.storyboard */,
+				DC957E0A2444A49C00BF0BE4 /* GAMineSectionView.xib */,
+				DC957E0C2444A4A400BF0BE4 /* GAMineSectionView.swift */,
+				DCD2ECE8243EAD680088436A /* GAMineViewController.swift */,
+				DC957E102444A97500BF0BE4 /* GATimeLineTitleViewController.swift */,
+				DC957E0E2444A92D00BF0BE4 /* Setting.storyboard */,
+				DC957E2224469F0B00BF0BE4 /* Setting.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -995,6 +1056,8 @@
 		DC74525B241C7CC20038562C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DCC201AF243DFB3A004435B8 /* GATimeLineModel+CoreDataClass.swift */,
+				DCC201B0243DFB3A004435B8 /* GATimeLineModel+CoreDataProperties.swift */,
 				DCACF6CC242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift */,
 				DCACF6CD242B3837002FADA5 /* GAPlanModel+CoreDataProperties.swift */,
 				DCACF6C7242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift */,
@@ -1031,6 +1094,38 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		DC957E242446A93B00BF0BE4 /* GATagsView（标签类 最后有编辑、添加按钮） */ = {
+			isa = PBXGroup;
+			children = (
+				DC957E252446A93B00BF0BE4 /* GATagsView+Extension.swift */,
+				DC957E262446A93B00BF0BE4 /* source */,
+				DC957E332446A93B00BF0BE4 /* GATagsOther.swift */,
+				DC957E342446A93B00BF0BE4 /* GATagsView.swift */,
+				DC957E352446A93B00BF0BE4 /* GATagsViewModel.swift */,
+				DC957E362446A93B00BF0BE4 /* GATagsEditView.swift */,
+			);
+			path = "GATagsView（标签类 最后有编辑、添加按钮）";
+			sourceTree = "<group>";
+		};
+		DC957E262446A93B00BF0BE4 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				DC957E272446A93B00BF0BE4 /* tags_moreBtn_icon_up.png */,
+				DC957E282446A93B00BF0BE4 /* tags_moreBtn_icon_up@3x.png */,
+				DC957E292446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon.png */,
+				DC957E2A2446A93B00BF0BE4 /* tags_moreBtn_icon_up@2x.png */,
+				DC957E2B2446A93B00BF0BE4 /* tags_moreBtn_icon_down@2x.png */,
+				DC957E2C2446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon.png */,
+				DC957E2D2446A93B00BF0BE4 /* tags_moreBtn_icon_down@3x.png */,
+				DC957E2E2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@2x.png */,
+				DC957E2F2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@3x.png */,
+				DC957E302446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@3x.png */,
+				DC957E312446A93B00BF0BE4 /* tags_moreBtn_icon_down.png */,
+				DC957E322446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@2x.png */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		DCAE671D2421129E000A1A42 /* OnePixView（一像素） */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,6 +1156,10 @@
 				DCF703AF2429F3EE0052755F /* GAPickerDateViewController.xib */,
 				DC191290242ECDF100C9992B /* GANormalViewController.swift */,
 				DC191291242ECDF100C9992B /* GANormalViewController.xib */,
+				DCC201AB243DF7D1004435B8 /* GAPickerViewProtocol.swift */,
+				DCC201AD243DF897004435B8 /* GAAlertProtocol.swift */,
+				DC957E482446B0C300BF0BE4 /* GAEditAlertViewController.swift */,
+				DC957E492446B0C300BF0BE4 /* GAEditAlertViewController.xib */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -1101,18 +1200,6 @@
 			path = image;
 			sourceTree = "<group>";
 		};
-		DCB89F60243AF53A00642D02 /* GAFloatButton（浮窗按钮） */ = {
-			isa = PBXGroup;
-			children = (
-				DCB89F69243AF73000642D02 /* float_icon_add_plan.png */,
-				DCB89F67243AF54A00642D02 /* AppDelegate+FloatButton.swift */,
-				DCB89F61243AF53A00642D02 /* GAFloatWindowViewController.swift */,
-				DCB89F62243AF53A00642D02 /* GAFloatWindow.swift */,
-				DCB89F63243AF53A00642D02 /* GAFloatWindowViewController.xib */,
-			);
-			path = "GAFloatButton（浮窗按钮）";
-			sourceTree = "<group>";
-		};
 		DCB89F6D243B635200642D02 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1121,11 +1208,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DCBDEE4A243573DC005ABAF7 /* GAClock */ = {
+		DCC201A0243DA10F004435B8 /* GAFloatButton（浮窗按钮） */ = {
 			isa = PBXGroup;
 			children = (
+				DCC201A1243DA10F004435B8 /* AppDelegate+FloatButton.swift */,
 			);
-			path = GAClock;
+			path = "GAFloatButton（浮窗按钮）";
 			sourceTree = "<group>";
 		};
 		DCCDCF0C2428910100BB6A78 /* addCells */ = {
@@ -1148,7 +1236,8 @@
 		DCDD7358241E616F006857BD /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				DCB89F60243AF53A00642D02 /* GAFloatButton（浮窗按钮） */,
+				DC957E242446A93B00BF0BE4 /* GATagsView（标签类 最后有编辑、添加按钮） */,
+				DCC201A0243DA10F004435B8 /* GAFloatButton（浮窗按钮） */,
 				DC62BABE2436E51A0094EC8F /* CustomCellView.swift */,
 				DC32EC922431C09F00699317 /* GAListPlaceholderView.swift */,
 				DC32EC912431C09F00699317 /* GAListPlaceholderView.xib */,
@@ -1293,38 +1382,51 @@
 				DC15516E242FA2C000128B07 /* need_picker_selected_icon@2x.png in Resources */,
 				DC74522E241C76340038562C /* Time.storyboard in Resources */,
 				DCCDCF1E2428A73700BB6A78 /* planAdd.plist in Resources */,
+				DC957E392446A93B00BF0BE4 /* tags_moreBtn_icon_up@3x.png in Resources */,
 				DCCDCF1C242892D700BB6A78 /* GAPlanAddBasicCell.xib in Resources */,
 				DC32EC932431C09F00699317 /* GAListPlaceholderView.xib in Resources */,
 				DCCDCF14242891AA00BB6A78 /* GAPlanAddNoteCell.xib in Resources */,
+				DC957E432446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@2x.png in Resources */,
 				DCB89F3F243AEC5D00642D02 /* scarySound.mp3 in Resources */,
 				DC745122241C6BAF0038562C /* LaunchScreen.storyboard in Resources */,
 				DC745235241C766B0038562C /* Mine.storyboard in Resources */,
 				DC74511F241C6BAF0038562C /* Assets.xcassets in Resources */,
+				DC957E4B2446B0C300BF0BE4 /* GAEditAlertViewController.xib in Resources */,
 				DC1DF2F0241F1B0600C09048 /* ghsy.mp3 in Resources */,
 				DC74520D241C73610038562C /* GANormalizeTabsMainCell.xib in Resources */,
+				DC957E3F2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@2x.png in Resources */,
 				DC15516D242FA2C000128B07 /* need_picker_selected_icon@3x.png in Resources */,
 				DC7451FF241C73610038562C /* GANormalizeDatePickerView.xib in Resources */,
 				DC745200241C73610038562C /* GANormalizePickerView.xib in Resources */,
+				DC957E382446A93B00BF0BE4 /* tags_moreBtn_icon_up.png in Resources */,
 				DCB44CA924230C350000D3C3 /* GAPickerViewController.xib in Resources */,
+				DC957E0F2444A92D00BF0BE4 /* Setting.storyboard in Resources */,
 				DC7451C1241C73610038562C /* toast_icon_right@2x.png in Resources */,
-				DCB89F6A243AF73100642D02 /* float_icon_add_plan.png in Resources */,
 				DCB44C9D24225EBB0000D3C3 /* GAPickerDataCell.xib in Resources */,
-				DCB89F66243AF53A00642D02 /* GAFloatWindowViewController.xib in Resources */,
 				DC74511A241C6BAE0038562C /* Main.storyboard in Resources */,
 				DC74520E241C73610038562C /* GANormalizeTabsCell.xib in Resources */,
 				DC5577932430528100A65832 /* listingSetting.plist in Resources */,
+				DC957E0B2444A49C00BF0BE4 /* GAMineSectionView.xib in Resources */,
 				DC745230241C76480038562C /* Recording.storyboard in Resources */,
+				DC957E3B2446A93B00BF0BE4 /* tags_moreBtn_icon_up@2x.png in Resources */,
 				DC191293242ECDF100C9992B /* GANormalViewController.xib in Resources */,
 				DC62BABB2436D51B0094EC8F /* GASelectedBasicCell.xib in Resources */,
 				DC745266241C8A6F0038562C /* nav_back_icon@3x.png in Resources */,
 				DC15516F242FA2C000128B07 /* need_picker_selected_icon.png in Resources */,
 				DC7451C5241C73610038562C /* GAToast.xib in Resources */,
+				DC957E402446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon@3x.png in Resources */,
+				DC957E412446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon@3x.png in Resources */,
+				DC957E3D2446A93B00BF0BE4 /* tagsEditView_btn_bg_enable_icon.png in Resources */,
 				DCCDCF102428916100BB6A78 /* GAPlanAddTitleCell.xib in Resources */,
+				DC957E3A2446A93B00BF0BE4 /* tagsEditView_btn_bg_normal_icon.png in Resources */,
 				DCF703B12429F3EE0052755F /* GAPickerDateViewController.xib in Resources */,
 				DC745206241C73610038562C /* TabsTestViewController.xib in Resources */,
 				DC745227241C75010038562C /* GABaseXibTabBarView.xib in Resources */,
 				DCB89F3C243AEBD700642D02 /* firstSound.mp3 in Resources */,
+				DC957E422446A93B00BF0BE4 /* tags_moreBtn_icon_down.png in Resources */,
+				DC957E3E2446A93B00BF0BE4 /* tags_moreBtn_icon_down@3x.png in Resources */,
 				DCB89F40243AEC5D00642D02 /* secondSound.mp3 in Resources */,
+				DC957E3C2446A93B00BF0BE4 /* tags_moreBtn_icon_down@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,25 +1572,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC8AF1824276AF20037BB9E /* GADemoView.swift in Sources */,
+				DCD2ECEB243EAF7E0088436A /* GAShowWindowProtocol.swift in Sources */,
+				DC957E372446A93B00BF0BE4 /* GATagsView+Extension.swift in Sources */,
 				DC74524E241C778A0038562C /* GAService.swift in Sources */,
 				DC7451BF241C73610038562C /* View+Toast.swift in Sources */,
-				DC74526C241C94E40038562C /* GATimeAddViewController.swift in Sources */,
 				DC74520C241C73610038562C /* GANormalizeTabsCell.swift in Sources */,
 				DC191292242ECDF100C9992B /* GANormalViewController.swift in Sources */,
 				DC7451F6241C73610038562C /* GANormalizeTextField.swift in Sources */,
 				DC62BABA2436D51B0094EC8F /* GASelectedBasicCell.swift in Sources */,
 				DC74526A241C8C8D0038562C /* GATimeModel.swift in Sources */,
+				DCC201AA243DF3A5004435B8 /* GATimeLineAddViewController.swift in Sources */,
 				DC74521B241C73610038562C /* GANavViewController.swift in Sources */,
 				DC5E1187242066070043396D /* RecordingStoryboard.swift in Sources */,
+				DC957E4A2446B0C300BF0BE4 /* GAEditAlertViewController.swift in Sources */,
+				DCC201A2243DA10F004435B8 /* AppDelegate+FloatButton.swift in Sources */,
 				DCDD7362241E6194006857BD /* MCVolumeView.swift in Sources */,
 				DC7451F1241C73610038562C /* UIViewController+Rx.swift in Sources */,
 				DCDD7350241DC191006857BD /* GARecordingModel+CoreDataProperties.swift in Sources */,
+				DCC201B2243DFB3A004435B8 /* GATimeLineModel+CoreDataProperties.swift in Sources */,
 				DCC8AF1C24279DF10037BB9E /* GAListingSettingCell.swift in Sources */,
 				DC745272241C976C0038562C /* Speech.swift in Sources */,
 				DCDD7361241E6194006857BD /* MCProgressView.swift in Sources */,
+				DC957E112444A97600BF0BE4 /* GATimeLineTitleViewController.swift in Sources */,
 				DCC8AF1A24279B210037BB9E /* Other.swift in Sources */,
 				DCB44CA824230C350000D3C3 /* GAPickerViewController.swift in Sources */,
-				DCB89F64243AF53A00642D02 /* GAFloatWindowViewController.swift in Sources */,
 				DC745228241C75010038562C /* GABaseXibTabBarView.swift in Sources */,
 				DC74521C241C73610038562C /* GATableViewController.swift in Sources */,
 				DCACF6CE242B3837002FADA5 /* GAPlanModel+CoreDataClass.swift in Sources */,
@@ -1502,9 +1609,12 @@
 				DC7451F4241C73610038562C /* GANormalizeTextEditProtocol.swift in Sources */,
 				DC74523F241C77850038562C /* GAViewModel.swift in Sources */,
 				DCDD734F241DC191006857BD /* GARecordingModel+CoreDataClass.swift in Sources */,
+				DCC201B1243DFB3A004435B8 /* GATimeLineModel+CoreDataClass.swift in Sources */,
+				DC957E452446A93B00BF0BE4 /* GATagsView.swift in Sources */,
 				DCCDCF0F2428916100BB6A78 /* GAPlanAddTitleCell.swift in Sources */,
 				DC32EC942431C09F00699317 /* GAListPlaceholderView.swift in Sources */,
 				DC745219241C73610038562C /* GAViewController.swift in Sources */,
+				DC957E472446A93B00BF0BE4 /* GATagsEditView.swift in Sources */,
 				DC774A97243387D60088D0F5 /* GASelectedColorsViewController.swift in Sources */,
 				DCCDCF13242891AA00BB6A78 /* GAPlanAddNoteCell.swift in Sources */,
 				DC745240241C77850038562C /* GAViewHeightProtocol.swift in Sources */,
@@ -1523,33 +1633,33 @@
 				DCDD735F241E6194006857BD /* HUDMarco.swift in Sources */,
 				DC745207241C73610038562C /* TabsTestViewController.swift in Sources */,
 				DC745221241C74A00038562C /* GATabBarViewController.swift in Sources */,
+				DC957E442446A93B00BF0BE4 /* GATagsOther.swift in Sources */,
 				DC74524B241C778A0038562C /* GANetWork.swift in Sources */,
 				DCDD7360241E6194006857BD /* MCRecordHUD.swift in Sources */,
 				DC745255241C7BA10038562C /* GARxSwiftBaseViewController.swift in Sources */,
 				DC745284241CD8770038562C /* GADate.swift in Sources */,
+				DCC2019F243D9BA5004435B8 /* Time.swift in Sources */,
 				DCACF6C6242B2F41002FADA5 /* GAImageView.swift in Sources */,
 				DC745211241C73610038562C /* GANormalizeTabsMainView.swift in Sources */,
 				DC74524D241C778A0038562C /* GAPlugin.swift in Sources */,
 				DCDD7357241DE5B2006857BD /* Player.swift in Sources */,
 				DC745268241C8C820038562C /* GATimeViewModel.swift in Sources */,
 				DC557789243042D300A65832 /* GANeedViewController.swift in Sources */,
-				DC745260241C87A50038562C /* GATimeViewController.swift in Sources */,
 				DC7451C4241C73610038562C /* GAShowWindow.swift in Sources */,
 				DC7451C3241C73610038562C /* GAToast.swift in Sources */,
 				DCBDEE63243573DC005ABAF7 /* GALocalPushManager.swift in Sources */,
 				DC7451F5241C73610038562C /* GANormalizeTextView.swift in Sources */,
-				DCB89F68243AF54A00642D02 /* AppDelegate+FloatButton.swift in Sources */,
 				DC5482052424A6800041E0BD /* YYPlayerSlider.swift in Sources */,
 				DCACF6CA242B36BC002FADA5 /* GAListingModel+CoreDataProperties.swift in Sources */,
 				DC745216241C73610038562C /* GANormalizeOther+Extension.swift in Sources */,
 				DCB44C9E24225EBB0000D3C3 /* GAPickerDataCell.swift in Sources */,
 				DCE576A5241DB3B600266FF2 /* GARecordingViewModel.swift in Sources */,
+				DCC201AC243DF7D1004435B8 /* GAPickerViewProtocol.swift in Sources */,
 				DC178F99242629CA00ABE3F2 /* GACoreData+Need.swift in Sources */,
 				DCC8AF16242728410037BB9E /* GAListingDetailsViewController.swift in Sources */,
 				DC74521E241C73610038562C /* GACustomCellView.swift in Sources */,
 				DC55778B2430439500A65832 /* NeedCell.swift in Sources */,
 				DC74524F241C778A0038562C /* GAAPI.swift in Sources */,
-				DCB89F65243AF53A00642D02 /* GAFloatWindow.swift in Sources */,
 				DCF703B02429F3EE0052755F /* GAPickerDateViewController.swift in Sources */,
 				DC7451FC241C73610038562C /* GANormalizePickerView.swift in Sources */,
 				DCACF6C9242B36BC002FADA5 /* GAListingModel+CoreDataClass.swift in Sources */,
@@ -1558,11 +1668,14 @@
 				DC745253241C7B7D0038562C /* GAHomeViewController.swift in Sources */,
 				DC74524C241C778A0038562C /* ResultData.swift in Sources */,
 				DC74511D241C6BAE0038562C /* Need.xcdatamodeld in Sources */,
+				DC957E0D2444A4A400BF0BE4 /* GAMineSectionView.swift in Sources */,
 				DC745250241C778A0038562C /* RxObjectMapper.swift in Sources */,
 				DC74521D241C73610038562C /* GABaseDefine.swift in Sources */,
 				DC74527D241CBEEB0038562C /* Recording.swift in Sources */,
+				DC957E462446A93B00BF0BE4 /* GATagsViewModel.swift in Sources */,
 				DC5E118524205DD40043396D /* GASpeechRecognitionViewController.swift in Sources */,
 				DCB89F6C243B634E00642D02 /* GARxTableViewCell.swift in Sources */,
+				DCD2ECE9243EAD680088436A /* GAMineViewController.swift in Sources */,
 				DC745270241C96BD0038562C /* GARecordingAddViewController.swift in Sources */,
 				DC178FCE2427005600ABE3F2 /* GAHomeViewModel.swift in Sources */,
 				DC7451F0241C73610038562C /* NotificationCenter+Rx.swift in Sources */,
@@ -1581,6 +1694,7 @@
 				DC178FD724270B6B00ABE3F2 /* HomeStoryboard.swift in Sources */,
 				DC74520F241C73610038562C /* GANormalizeTabsBaseViewController.swift in Sources */,
 				DC745226241C75010038562C /* GAXibTabBarItem.swift in Sources */,
+				DCC201AE243DF897004435B8 /* GAAlertProtocol.swift in Sources */,
 				DCCDCF1B242892D700BB6A78 /* GAPlanAddBasicCell.swift in Sources */,
 				DC62BABF2436E51A0094EC8F /* CustomCellView.swift in Sources */,
 				DC557791243045AF00A65832 /* NeedLabel.swift in Sources */,
@@ -1589,9 +1703,11 @@
 				DC745217241C73610038562C /* GAIphoneType.swift in Sources */,
 				DC745201241C73610038562C /* GANormalizeView.swift in Sources */,
 				DC745214241C73610038562C /* GANormalizeOther+Class.swift in Sources */,
+				DCC201A4243DA274004435B8 /* GATimeLineViewController.swift in Sources */,
 				DC745113241C6BAE0038562C /* AppDelegate.swift in Sources */,
 				DC2F40602423448000C4819C /* GAIconButton.swift in Sources */,
 				DC745282241CD19A0038562C /* GAFilePathManager.swift in Sources */,
+				DC957E2324469F0B00BF0BE4 /* Setting.swift in Sources */,
 				DCB44C9C24225EBB0000D3C3 /* GAPickerView.swift in Sources */,
 				DC2F40562423264800C4819C /* GAKeyboardObserver.swift in Sources */,
 				DCAE671F2421129E000A1A42 /* YYOnePixView.swift in Sources */,

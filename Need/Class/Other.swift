@@ -36,6 +36,13 @@ struct Need {
     static let tabsBgColor = "F5F5F5".color0X
     
     static let kListingDefaultColor = "000000"
+    
+    static let kRedColor = "CD2528".color0X
+    
+    static func natureButtonColor(title: String) -> UIColor {
+        return (title == DefaultText.nature) ? Need.title1Color! : Need.kRedColor!
+    }
+    
 }
 
 struct DefaultText {
@@ -46,5 +53,12 @@ struct DefaultText {
     static let people = ["自己"]
     struct Toast {
         static let success = "保存成功"
+    }
+    static let nature = "一般"
+}
+
+struct Plist {
+    struct FileName {
+        static let kTimeLineTitles = "kTimeLineTitles"
     }
 }

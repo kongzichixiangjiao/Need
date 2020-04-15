@@ -17,7 +17,7 @@ class GAShowViewController: UIViewController {
     }
 }
 
-class GAShowWindow: UIWindow {
+open class GAShowWindow: UIWindow {
     
     static var isShowLoading: Bool = false
     static var windows: [GAShowWindow] = []
@@ -119,38 +119,5 @@ class GAShowWindow: UIWindow {
         }
 
         GAShowWindow.isShowLoading = false
-    }
-}
-
-protocol GAShowWindowProtocol {
-    
-}
-
-extension GAShowWindowProtocol where Self: GANavViewController {
-    func b_showLoading(isAllScreen: Bool = false) {
-        if isAllScreen {
-            GAShowWindow.ga_showLoading()
-        } else {
-            let w: CGFloat = 90.0
-            let h: CGFloat = 90.0
-            let screenW: CGFloat =  UIScreen.main.bounds.width
-            let screenH: CGFloat =  UIScreen.main.bounds.height
-            GAShowWindow.ga_showLoading(windowFrame: CGRect(x: (screenW - w) / 2, y: (screenH - h) / 2, width: w, height: h))
-        }
-    }
-    
-    func b_hideLoading() {
-        GAShowWindow.ga_hideLoading()
-    }
-    
-}
-
-extension GAShowWindowProtocol where Self: UIView {
-    func b_showLoadingAllScreen() {
-        GAShowWindow.ga_showLoading()
-    }
-    
-    func b_hideLoading() {
-        GAShowWindow.ga_hideLoading()
     }
 }

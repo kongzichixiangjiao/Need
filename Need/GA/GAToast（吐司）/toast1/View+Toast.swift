@@ -19,7 +19,7 @@ import UIKit
 fileprivate let kToastLoadingTag: Int = 20198291
 fileprivate let kTextOnlyTag: Int = 20198292
 
-extension UIView {
+public extension UIView {
     
     func ga_toast(type: GAToastType, delay: TimeInterval = 3.0, touchEnable:Bool = false) {
         _toast(type: type, delay: delay, touchEnable: touchEnable)

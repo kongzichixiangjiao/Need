@@ -17,7 +17,7 @@ enum GAListingSettingCellType: Int {
     case iconName = 0, conver = 1, color = 2, voice = 3, password = 4, name = 5, delete = 6
 }
 
-class GAListingSettingViewController: NeedNavViewController, Refreshable, GAAlertProtocol {
+class GAListingSettingViewController: NeedNavViewController, Refreshable, GAPickerViewProtocol, GAAlertProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var deleteButton: UIButton!

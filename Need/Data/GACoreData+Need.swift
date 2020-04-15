@@ -116,4 +116,22 @@ extension GACoreData {
         }
     }
     
+    static func ga_save_timeLineModel(model: GATimeLineModel, timeLineId: String, finished: @escaping FinishedHanlder) {
+        GACoreData.saveDB(type: GATimeLineModel.self, key: "timeLineId", value: timeLineId, block: { (entity) in
+            entity?.startDate = model.startDate
+            entity?.endDate = model.endDate
+            entity?.describe = model.describe
+            entity?.name = model.name
+            entity?.nature = model.nature
+            entity?.createTime = Date()
+            entity?.timeLineId = String.ga_random(18)
+        }) { (result) in
+            GAShowWindow.ga_show(message: "保存成功")
+        }
+    }
+    static func ga_delete_timeLineModel(timeLineId: String, finished: @escaping FinishedHanlder) {
+        GACoreData.delete(type: GATimeLineModel.self, key: "timeLineId", value: timeLineId) { (result) in
+            GAShowWindow.ga_show(message: "删除成功")
+        }
+    }
 }

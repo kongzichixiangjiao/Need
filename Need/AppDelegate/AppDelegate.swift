@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var _locationManager: CLLocationManager!
     
-    let center = UNUserNotificationCenter.current()
-    
     var paws: MonkeyPaws?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GAPublicUI
 
 extension AppDelegate {
     func _showFloatButton() {

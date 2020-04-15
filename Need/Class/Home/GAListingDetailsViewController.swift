@@ -8,6 +8,7 @@
 
 import UIKit
 import TYPagerController
+import GAPublicUI
 
 class GAListingDetailsViewController: NeedNavViewController {
     var listingModel: GAListingModel!

@@ -32,7 +32,6 @@ class GAHomeViewController: NeedNavViewController, GANavViewControllerProtocol, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         _initViews()
         _request()
         
